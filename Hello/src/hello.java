@@ -16,5 +16,9 @@ public class hello {
 		System.out.println("hello");
 		
 		System.out.println("bye");
+		System.out.println("bye");
+		System.out.println("bye");
+		System.out.println("bye");
+		System.out.println("bye");
 	}
 }
