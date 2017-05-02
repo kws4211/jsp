@@ -8,7 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<marquee>이동</marquee>
+<marquee>이동</marquee><br/>
+<marquee>이동</marquee><br/>
+<marquee>이동</marquee><br/>
+<marquee>이동</marquee><br/>
 <%=name %>
 </body>
 </html>
