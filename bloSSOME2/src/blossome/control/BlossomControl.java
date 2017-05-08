@@ -20,7 +20,7 @@ import blossome.command.CommandNull;
 public class BlossomControl extends HttpServlet {
 	
 	private HashMap commandMap;
-	private String	jspDir = "/blossom/";
+	private String	jspDir = "/bloMain/";
 	private String  error = "error.jsp";
 	
 
@@ -31,7 +31,7 @@ public class BlossomControl extends HttpServlet {
 
 	private void initCommand(){
 		commandMap = new HashMap();
-		commandMap.put("main", new CommandNull("index.jsp"));
+		commandMap.put("main", new CommandNull("index.html"));
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
