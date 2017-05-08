@@ -32,6 +32,7 @@ public class BlossomControl extends HttpServlet {
 	private void initCommand(){
 		commandMap = new HashMap();
 		commandMap.put("main", new CommandNull("index.jsp"));
+		commandMap.put("find", new CommandNull("findidealtype.jsp"));
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -62,7 +63,10 @@ public class BlossomControl extends HttpServlet {
 				throw new CommandException("지정할 명령어가 존재하지 않음");
 			}
 			nextPage = cmd.execute( request );
-
+			if(cmdKey.equals("find")){
+				jspDir = "/find/";
+			}
+			
 		}catch( CommandException e ){
 			request.setAttribute("javax.servlet.jsp.jspException", e );
 			nextPage = error;
