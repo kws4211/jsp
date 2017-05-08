@@ -32,7 +32,6 @@ public class BlossomControl extends HttpServlet {
 		commandMap = new HashMap();
 		commandMap.put("main", new CommandNull("/bloMain/index.jsp"));
 		commandMap.put("find", new CommandNull("/find/findidealtype.jsp"));
-		commandMap.put("tuk", new CommandNull("/tuk/tukList.jsp"));
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
