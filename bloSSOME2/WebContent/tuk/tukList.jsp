@@ -9,9 +9,9 @@
 
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900" rel="stylesheet">
-
-<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 <link href="/bloSSOME2/tuk/css/tuk.css" type="text/css" rel="stylesheet">
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+<script type="text/javascript"" src="js/tuk.js"></script>
 
 </head>
 <body>
