@@ -87,9 +87,11 @@ body {
     background: none repeat scroll 0 0 #FFFFFF;
     border-radius: 4px;
     color: #444444;
+    
 }
 .card-container, .front, .back {
-	width: 100%;
+	float: left;
+	width: 300px;
 	height: 420px;
 	border-radius: 4px;
 	-webkit-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
@@ -122,6 +124,7 @@ box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
     background-color: rgba(0, 0, 0, 0);
     box-shadow: none;
     padding: 10px 20px 20px;
+    	margin-left : 30px;
 }
 .card .content .main {
     min-height: 160px;
