@@ -30,7 +30,7 @@
                                 <i class="glyphicon glyphicon-folder-open"></i>
                             </span>
                         </a>
-                    </li>
+                    </li> 
 
                     <li role="presentation" class="disabled">
                         <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="성별">
