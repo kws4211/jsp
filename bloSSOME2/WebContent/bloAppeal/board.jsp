@@ -7,7 +7,7 @@
 	 <link href="/bloSSOME2/bloAppeal/css/appeal.css" rel="stylesheet">
      <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900" rel="stylesheet">
     <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
-    <script src="/bloSSOME2/bloAppeal/css/appeal.js"></script>
+    <script src="/bloSSOME2/bloAppeal/js/appeal.js"></script>
 
     
 </head>
