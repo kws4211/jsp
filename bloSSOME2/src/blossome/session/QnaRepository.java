@@ -1,14 +1,16 @@
 package blossome.session;
 
 import java.io.InputStream;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class BorderRepository {
-	
+import blossome.vo.QnaVO;
+
+public class QnaRepository {
 	String namespace = "blossom.mapper.QnaMapper";
 
 	private SqlSessionFactory getSelSessionFactory(){
@@ -16,7 +18,6 @@ public class BorderRepository {
 		InputStream input = null;
 		try {
 			input = Resources.getResourceAsStream(resource);
-			
 		} catch (Exception e) {
 			
 		}
@@ -25,5 +26,13 @@ public class BorderRepository {
 		return factory;
 	}
 	
-
+	public List<QnaVO> selectlist(){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			String statment = namespace + ".alllist";
+			return sqlSess.selectList(statment);
+		} finally {
+			sqlSess.close();
+		}
+	}
 }

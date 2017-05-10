@@ -20,6 +20,6 @@
 		</environment>
 	</environments>
 	<mappers>
-		<mapper resource="blossome/mapper/Mapper.xml" />
+		<mapper resource="blossome/mapper/QnaMapper.xml" />
 	</mappers>
 </configuration>
