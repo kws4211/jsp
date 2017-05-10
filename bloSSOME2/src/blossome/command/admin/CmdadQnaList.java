@@ -1,4 +1,4 @@
-package blossome.command.qna;
+package blossome.command.admin;
 
 import java.util.List;
 
@@ -9,10 +9,10 @@ import blossome.command.CommandException;
 import blossome.session.QnaRepository;
 import blossome.vo.QnaVO;
 
-public class CmdQnaList implements Command{
+public class CmdadQnaList implements Command{
 	private String next;
 	
-	public CmdQnaList(String _next) {
+	public CmdadQnaList(String _next) {
 		next = _next;
 	}
 

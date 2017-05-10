@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import blossome.command.Command;
 import blossome.command.CommandException;
 import blossome.command.CommandNull;
-import blossome.command.qna.CmdQnaList;
+import blossome.command.admin.CmdadQnaList;
 
 
 /**
@@ -37,7 +37,7 @@ public class BlossomControl extends HttpServlet {
 		commandMap.put("tuk", new CommandNull("/tuk/tukList.jsp"));
 		commandMap.put("inmem", new CommandNull("/login/signup.jsp"));
 		commandMap.put("login", new CommandNull("/login/loginform.jsp"));
-		commandMap.put("adqna", new CmdQnaList("/admin/adqna.jsp"));
+		commandMap.put("adqna", new CmdadQnaList("/admin/adqna.jsp"));
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
