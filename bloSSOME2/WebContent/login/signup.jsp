@@ -1,4 +1,4 @@
-<script type="text/javascript" src="lib/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="/bloSSOME2/lib/jquery-3.2.1.js"></script>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  
