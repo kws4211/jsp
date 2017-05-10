@@ -42,7 +42,6 @@ public class BlossomControl extends HttpServlet {
 		commandMap.put("login", new CommandNull("/login/loginform.jsp"));
 		commandMap.put("adqna", new CmdadQnaList("/admin/adqna.jsp"));
 		commandMap.put("memqna", new CommandNull("/memqna/memqna.jsp"));
-		commandMap.put("tuk", new CmdTukList("/tuk/tukList.jsp"));
 		commandMap.put("appealView", new CmdAppealView("/bloAppeal/AppealView.jsp"));
 	    commandMap.put("appdetail", new CmdAppealList("/bloAppeal/AppealViewDetail.jsp"));
 	}
