@@ -31,8 +31,8 @@
                         </div>
                         <div class="content">
                             <div class="main">
-                                <h3 class="name">John Marvel</h3>
-                                <p class="profession">CEO</p>
+                                <h3 class="name">이름</h3>
+                                <p class="area">지역</p>
                                 <p class="text-center">"I'm the new Sinatra, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
                             </div>
                             <div class="footer">
@@ -96,8 +96,9 @@
                         </div>
                         <div class="content">
                             <div class="main">
-                                <h3 class="name">Andrew Mike</h3>
-                                <p class="profession">Web Developer</p>
+                                <h3 class="name">이름</h3>
+                                <p class="area">지역</p>
+                                <p class="area">지역</p>
                                 <p class="text-center">"Lamborghini Mercy <br>Your chick she so thirsty <br>I'm in that two seat Lambo"</p>
                             </div>
                             <div class="footer">
@@ -166,8 +167,8 @@
                         </div>
                         <div class="content">
                             <div class="main">
-                                <h3 class="name">Inna Corman</h3>
-                                <p class="profession">Product Manager</p>
+                                <h3 class="name">이름</h3>
+                                <p class="area">지역</p>
 
                                 <p class="text-center">"I'm the new Sinatra, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
                             </div>
