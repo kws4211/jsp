@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="blossom.mapper.TukMapper">
+	<select id="tukList" parameterType="hashMap" resultType="blossome.vo.TukVO">
+		select b.*, m.*, am.* 
+		from BLO_CHOICE b, BLO_MEMBER m, BLO_ADDMEMBER am 
+		where b.mem_id=#{id} and b.CHOICE_ID=m.MEM_ID and b.CHOICE_ID=am.MEM_ID
+	</select>
+	
+
+</mapper>
