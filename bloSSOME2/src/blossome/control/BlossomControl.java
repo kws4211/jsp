@@ -58,7 +58,6 @@ public class BlossomControl extends HttpServlet {
 		Command cmd = null;
 
 		try{
-			
 			if( commandMap.containsKey( cmdKey ) ){
 				cmd = (Command)commandMap.get( cmdKey );
 			}else{
