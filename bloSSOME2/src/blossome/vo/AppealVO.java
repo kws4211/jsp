@@ -3,17 +3,20 @@ package blossome.vo;
 public class AppealVO {
 
 	//글번호
-	private	String	 app_num;
+	private	String	 appNum;
 	//아이디
-	private	String mem_id;
+	private	String memId;
 	//제목
-	private	String	app_title;
+	private	String	appTitle;
 	//내용
-	private	String	app_content;
+	private	String	appContent;
 	//작성일
-	private	String app_date;
+	private	String appDate;
 	//이미지주소
-	private	String	app_img;
+	private	String	appImg;
+	
+	//이름
+	private String memName;
 
 	// 생성자
 	public AppealVO()
@@ -21,75 +24,63 @@ public class AppealVO {
 		
 	}
 
-	public String getApp_num() {
-		return app_num;
+	public String getAppNum() {
+		return appNum;
 	}
 
-
-
-	public void setApp_num(String app_num) {
-		this.app_num = app_num;
+	public void setAppNum(String appNum) {
+		this.appNum = appNum;
 	}
 
-
-
-	public String getMem_id() {
-		return mem_id;
+	public String getMemId() {
+		return memId;
 	}
 
-
-
-	public void setMem_id(String mem_id) {
-		this.mem_id = mem_id;
+	public void setMemId(String memId) {
+		this.memId = memId;
 	}
 
-
-
-	public String getApp_title() {
-		return app_title;
+	public String getAppTitle() {
+		return appTitle;
 	}
 
-
-
-	public void setApp_title(String app_title) {
-		this.app_title = app_title;
+	public void setAppTitle(String appTitle) {
+		this.appTitle = appTitle;
 	}
 
-
-
-	public String getApp_content() {
-		return app_content;
+	public String getAppContent() {
+		return appContent;
 	}
 
-
-
-	public void setApp_content(String app_content) {
-		this.app_content = app_content;
+	public void setAppContent(String appContent) {
+		this.appContent = appContent;
 	}
 
-
-
-	public String getApp_date() {
-		return app_date;
+	public String getAppDate() {
+		return appDate;
 	}
 
-
-
-	public void setApp_date(String app_date) {
-		this.app_date = app_date;
+	public void setAppDate(String appDate) {
+		this.appDate = appDate;
 	}
 
-
-
-	public String getApp_img() {
-		return app_img;
+	public String getAppImg() {
+		return appImg;
 	}
 
-
-
-	public void setApp_img(String app_img) {
-		this.app_img = app_img;
+	public void setAppImg(String appImg) {
+		this.appImg = appImg;
 	}
+
+	public String getMemName() {
+		return memName;
+	}
+
+	public void setMemName(String memName) {
+		this.memName = memName;
+	}
+	
+	
 	
 	
 	
