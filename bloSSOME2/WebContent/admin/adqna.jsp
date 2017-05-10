@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% List<QnaVO> list = (List<QnaVO>)request.getAttribute("list"); %>
+<%System.out.println(list.size()); %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -34,7 +35,7 @@
 				</thead>
 				<!-- 추가되는 부분 for문 돌릴부분 -->
 				
-				<%if(list != null){ %>
+				<%if(list.size() != 0){ %>
 					<%for(QnaVO vo : list){ %>
 					<tr>
 						<td><%=vo.getQnaNum() %></td>
@@ -42,15 +43,24 @@
 						<td><%=vo.getMemId() %></td>
 						<td><%=vo.getQnaDate() %></td>
 						<!-- if문으로 상태에 따라 다르게 출력 -->
-						<td><a href="#" class="btn btn-danger btn-xs"> <span
-							class="glyphicon glyphicon-remove"></span>답변대기중
-						</a></td>
+						<td>
+							<%if(vo.getAnswerContent()==null){ %>
+							<a href="#" class="btn btn-danger btn-xs">
+								<span class="glyphicon glyphicon-remove"></span>답변대기중
+							</a>
+							<%}else{ %>
+							<a href="#" class="btn btn-info btn-xs">
+								<span class="glyphicon glyphicon-edit" ></span>답변완료
+							</a>	
+							<%} %>
+						</td>
 					</tr>
 					<%}%>
 				<%}else{ %>
 				<tr>
 					<td>0001</td>
-					<td>김모시기</td>
+					<td>신고</td>
+					<td>질문이 없습니다</td>
 					<td>2017/05/10</td>
 					<td>
 						<a href="#" class="btn btn-danger btn-xs">
@@ -60,6 +70,7 @@
 				</tr>
 				<tr>
 					<td>0001</td>
+					<td>질문이 없습니다</td>
 					<td>김모시기</td>
 					<td>2017/05/10</td>
 					<td>

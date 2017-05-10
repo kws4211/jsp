@@ -19,6 +19,11 @@ public class QnaVO {
 	private String questionContent;
 	private String answerContent;
 	private int qnaState;
+	private String type;
+	
+	public QnaVO() {
+		
+	}
 	
 	public String getQnaNum() {
 		return qnaNum;
@@ -66,7 +71,20 @@ public class QnaVO {
 		return qnaState;
 	}
 	public void setQnaState(int qnaState) {
+		if(qnaState == 1){
+			setType("1:1문의");
+		}else if(qnaState == 2){
+			setType("신고");
+		}
 		this.qnaState = qnaState;
 	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+	
 
 }
