@@ -1,6 +1,4 @@
-@CHARSET "UTF-8";
-
-    @import url('https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900');
 body {
 	margin-top: 60px;
 	font-size: 14px;
@@ -91,7 +89,7 @@ body {
     color: #444444;
 }
 .card-container, .front, .back {
-	width: 300px;
+	width: 100%;
 	height: 420px;
 	border-radius: 4px;
 	-webkit-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
@@ -326,4 +324,3 @@ box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
         visibility: visible;
     }
 }
-    
