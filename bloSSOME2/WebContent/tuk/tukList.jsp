@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-    
+<%@page import="java.util.List"%>
+<%@ page import="blossome.vo.TukVO" %>
+<%
+	// 1. 해당 아이디의 정보를 얻어온다
+// 	String mem_id = request.getParameter("mem_id");
+	// 2. Service에 getArticleById() 호출하여 그 게시글번호를 갖는 레코드를 검색한다.
+	List<TukVO> list = (List<TukVO>)request.getAttribute("list");
+%>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,61 +18,93 @@
 <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900" rel="stylesheet">
 <link href="/bloSSOME2/tuk/css/tuk.css" type="text/css" rel="stylesheet">
 <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
-<script type="text/javascript"" src="js/tuk.js"></script>
+<script type="text/javascript" src="js/tuk.js"></script>
 
 </head>
 <body>
-<jsp:include page="../bloMain/header.jsp"></jsp:include>
+
+<%-- <jsp:include page="../bloMain/header.jsp"></jsp:include> --%>
+
+
 <div class="container">
     <div class="row">
      <div class="col-sm-10 col-sm-offset-1">
          <div class="col-md-4 col-sm-6">
              <div class="card-container">
                 <div class="card">
+                	<!-- 툭 앞면 -->
                     <div class="front">
+						<!-- 배경이미지 -->
                         <div class="cover">
                             <img src="https://www.clipartsgram.com/image/129556292-kyz84k3.jpg"/>
                         </div>
+                        <!-- 프로필이미지 -->
                         <div class="user">
                             <img class="img-circle" src="https://www2.mmu.ac.uk/media/mmuacuk/style-assets/images/r-research/profile-Zeyad.jpg"/>
                         </div>
                         <div class="content">
                             <div class="main">
-                                <h3 class="name">이름</h3>
-                                <p class="area">지역</p>
-                                <p class="text-center">"I'm the new Sinatra, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
+                            <!-- 이름/ 지역 받아오기 -->
+                            <%if(list.size() != 0){ %>
+                            <%for(TukVO vo : list){ %>
+                                <h3 class="name"><%=vo.getMemName() %> / <%=vo.getMemLoc() %></h3>
+                                <p class="age">나이  <%=vo.getMemAge() %></p>
+                                <div class="stats-container">
+                                    <div class="stats">
+                                        <h4>혈액형</h4>
+                                        <p>
+                                            <%=vo.getMemBlood() %>
+                                        </p>
+                                    </div>
+                                    <div class="stats">
+                                        <h4>키</h4>
+                                        <p>
+                                           	<%=vo.getMemHeight() %>
+                                        </p>
+                                    </div>
+                                    <div class="stats">
+                                        <h4>학력</h4>
+                                        <p>
+                                           	<%=vo.getMemAbility() %>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="footer">
-                                <i class="fa fa-mail-forward"></i> Auto Rotation
+<!--                                 <i class="fa fa-mail-forward"></i> Auto Rotation -->
                             </div>
                         </div>
                     </div> <!-- end front panel -->
+                    
+                    <!-- 툭 뒷면 -->
                     <div class="back">
-                        <div class="header">
-                            <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
-                        </div>
+                        
                         <div class="content">
                             <div class="main">
-                                <h4 class="text-center">Job Description</h4>
-                                <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
-
+                          
                                 <div class="stats-container">
-                                    <div class="stats">
-                                        <h4>235</h4>
+                                    <div class="">
+                                        <h4>취미</h4>
                                         <p>
-                                            Followers
+                                           	<%=vo.getMemHobby() %>
+                                        </p>
+                                    </div>
+                                    <div class="">
+                                        <h4>이메일</h4>
+                                        <p>
+                                           	<%=vo.getMemEmail() %>
                                         </p>
                                     </div>
                                     <div class="stats">
-                                        <h4>114</h4>
+                                        <h4>생일</h4>
                                         <p>
-                                            Following
+                                           	<%=vo.getMemBirth() %>
                                         </p>
                                     </div>
                                     <div class="stats">
-                                        <h4>35</h4>
+                                        <h4>종교</h4>
                                         <p>
-                                            Projects
+                                           	<%= vo.getMemReligion() %>
                                         </p>
                                     </div>
                                 </div>
@@ -74,154 +113,22 @@
                         </div>
                         <div class="footer">
                             <div class="social-links text-center">
-                                <a href="http://deepak646.blogspot.in/" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-                                <a href="http://deepak646.blogspot.in/" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
-                                <a href="http://deepak646.blogspot.in/" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                         	   <button type="button" class="btn btn-success btn-sm">툭취소</button>
+                         	   <button type="button" class="btn btn-success btn-sm">꾸욱하기</button>
                             </div>
                         </div>
+                        <%}%> <!-- end of for -->
+					<%}%> <!-- end of if -->
                     </div> <!-- end back panel -->
                 </div> <!-- end card -->
             </div> <!-- end card-container -->
         </div> <!-- end col sm 3 -->
 <!--         <div class="col-sm-1"></div> -->
-        <div class="col-md-4 col-sm-6">
-             <div class="card-container manual-flip">
-                <div class="card">
-                    <div class="front">
-                        <div class="cover">
-                            <img src="https://www.clipartsgram.com/image/124089475-california-beaches-tumblr-wallpaper-3.jpg"/>
-                        </div>
-                        <div class="user">
-                            <img class="img-circle" src="http://www.outbrain.com/risingstars/wp-content/uploads/708x708-RS-Profile-Ashley-Callahan-400x400.jpg"/>
-                        </div>
-                        <div class="content">
-                            <div class="main">
-                                <h3 class="name">이름</h3>
-                                <p class="area">지역</p>
-                                <p class="area">지역</p>
-                                <p class="text-center">"Lamborghini Mercy <br>Your chick she so thirsty <br>I'm in that two seat Lambo"</p>
-                            </div>
-                            <div class="footer">
-                                <button class="btn btn-simple" onclick="rotateCard(this)">
-                                    <i class="fa fa-mail-forward"></i> Manual Rotation
-                                </button>
-                            </div>
-                        </div>
-                    </div> <!-- end front panel -->
-                    <div class="back">
-                        <div class="header">
-                            <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
-                        </div>
-                        <div class="content">
-                            <div class="main">
-                                <h4 class="text-center">Job Description</h4>
-                                <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
 
-                                <div class="stats-container">
-                                    <div class="stats">
-                                        <h4>235</h4>
-                                        <p>
-                                            Followers
-                                        </p>
-                                    </div>
-                                    <div class="stats">
-                                        <h4>114</h4>
-                                        <p>
-                                            Following
-                                        </p>
-                                    </div>
-                                    <div class="stats">
-                                        <h4>35</h4>
-                                        <p>
-                                            Projects
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="footer">
-                            <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
-                                <i class="fa fa-reply"></i> Back
-                            </button>
-                            <div class="social-links text-center">
-                                <a href="http://deepak646.blogspot.in/" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-                                <a href="http://deepak646.blogspot.in/" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
-                                <a href="http://deepak646.blogspot.in/" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
-                            </div>
-                        </div>
-                    </div> <!-- end back panel -->
-                </div> <!-- end card -->
-            </div> <!-- end card-container -->
-        </div> <!-- end col sm 3 -->
-<!--         <div class="col-sm-1"></div> -->
-        <div class="col-md-4 col-sm-6">
-            <div class="card-container">
-                <div class="card">
-                    <div class="front">
-                        <div class="cover">
-                            <img src="http://www.hdimageson.com/wp-content/uploads/2016/05/beach-images-tumblr-300x188.jpg"/>
-                        </div>
-                        <div class="user">
-                            <img class="img-circle" src="https://1.bp.blogspot.com/-aruLLVlXyJM/V_t-TxTncZI/AAAAAAAAJ3k/hnQKKVmKuOY_awf1nHGTsukGfw4qrde-gCLcB/s400/2.jpg"/>
-                        </div>
-                        <div class="content">
-                            <div class="main">
-                                <h3 class="name">이름</h3>
-                                <p class="area">지역</p>
-
-                                <p class="text-center">"I'm the new Sinatra, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
-                            </div>
-                            <div class="footer">
-                                <div class="rating">
-                                    <i class="fa fa-mail-forward"></i> Auto Rotation
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- end front panel -->
-                    <div class="back">
-                        <div class="header">
-                            <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
-                        </div>
-                        <div class="content">
-                            <div class="main">
-                                <h4 class="text-center">Job Description</h4>
-                                <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
-
-                                <div class="stats-container">
-                                    <div class="stats">
-                                        <h4>235</h4>
-                                        <p>
-                                            Followers
-                                        </p>
-                                    </div>
-                                    <div class="stats">
-                                        <h4>114</h4>
-                                        <p>
-                                            Following
-                                        </p>
-                                    </div>
-                                    <div class="stats">
-                                        <h4>35</h4>
-                                        <p>
-                                            Projects
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="footer">
-                            <div class="social-links text-center">
-                                <a href="http://deepak646.blogspot.in/" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-                                <a href="http://deepak646.blogspot.in/" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
-                                <a href="http://deepak646.blogspot.in/" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
-                            </div>
-                        </div>
-                    </div> <!-- end back panel -->
-                </div> <!-- end card -->
-            </div> <!-- end card-container -->
-        </div> <!-- end col-sm-3 -->
+        
+        
+        
+        
         </div> <!-- end col-sm-10 -->
     </div> <!-- end row -->
     <div class="space-200"></div>
