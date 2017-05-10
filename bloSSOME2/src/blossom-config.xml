@@ -22,5 +22,6 @@
 	<mappers>
 		<mapper resource="blossome/mapper/QnaMapper.xml" />
 		<mapper resource="blossome/mapper/TukMapper.xml" />
+		<mapper resource="blossome/mapper/AppealMapper.xml" />
 	</mappers>
 </configuration>
