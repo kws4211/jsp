@@ -44,7 +44,7 @@
 					<form class="form-horizontal" method="post" action="#">
 						
 						<div class="form-group">
-							<label for="view" class="cols-sm-2 control-label">Your View</label>
+							<label for="view" class="cols-sm-2 control-label">Your View/공개여부</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
@@ -55,7 +55,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label for="id" class="cols-sm-2 control-label">Your Id</label>
+							<label for="id" class="cols-sm-2 control-label">Your Id/아이디</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
@@ -66,27 +66,47 @@
 						</div>
 						
 						<div class="form-group">
-							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<label for="password" class="cols-sm-2 control-label">Password/비밀번호</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+									<input type="text" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+							<label for="confirm" class="cols-sm-2 control-label">Confirm Password/비밀번호 확인</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+									<input type="text" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
 								</div>
 							</div>
 						</div>
 						
 						<div class="form-group">
-							<label for="nickname" class="cols-sm-2 control-label">Your Nickname</label>
+							<label for="confirm" class="cols-sm-2 control-label">Your Question/비밀번호 확인 질문</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="question" id="question"  placeholder="Confirm your Question"/>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="confirm" class="cols-sm-2 control-label">Your Answer/비밀번호 확인 답변</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="answer" id="answer"  placeholder="Confirm your Answer"/>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="nickname" class="cols-sm-2 control-label">Your Nickname/닉네임</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
@@ -97,7 +117,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label for="name" class="cols-sm-2 control-label">Your Name</label>
+							<label for="name" class="cols-sm-2 control-label">Your Name/이름</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
@@ -107,7 +127,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label for="birthday" class="cols-sm-2 control-label">Your Birthday</label>
+							<label for="birthday" class="cols-sm-2 control-label">Your Birthday/생일</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
@@ -123,7 +143,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label for="tel" class="cols-sm-2 control-label">Your Tel</label>
+							<label for="tel" class="cols-sm-2 control-label">Your Tel/전화번호</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
@@ -139,7 +159,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label for="area" class="cols-sm-2 control-label">Your Area</label>
+							<label for="area" class="cols-sm-2 control-label">Your Area/지역</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
@@ -159,7 +179,7 @@
 						</div>
 
 						<div class="form-group">
-							<label for="email" class="cols-sm-2 control-label">Your Email</label>
+							<label for="email" class="cols-sm-2 control-label">Your Email/이메일</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
@@ -169,7 +189,7 @@
 						</div>
 
 						<div class="form-group">
-							<label for="blood" class="cols-sm-2 control-label">Your Blood</label>
+							<label for="blood" class="cols-sm-2 control-label">Your Blood/혈액형</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
@@ -184,7 +204,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label for="hobby" class="cols-sm-2 control-label">Your Hobby</label>
+							<label for="hobby" class="cols-sm-2 control-label">Your Hobby/취미</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
@@ -194,7 +214,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label for="religion" class="cols-sm-2 control-label">Your Religion</label>
+							<label for="religion" class="cols-sm-2 control-label">Your Religion/종교</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
@@ -209,7 +229,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label for="height" class="cols-sm-2 control-label">Your Height</label>
+							<label for="height" class="cols-sm-2 control-label">Your Height/키</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
@@ -225,7 +245,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label for="ability" class="cols-sm-2 control-label">Your Ability</label>
+							<label for="ability" class="cols-sm-2 control-label">Your Ability/학력</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
@@ -238,7 +258,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label for="gender" class="cols-sm-2 control-label">Your Gender</label>
+							<label for="gender" class="cols-sm-2 control-label">Your Gender/성별</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
@@ -249,13 +269,12 @@
 						</div>
 						
 						<div class="form-group">
-							<label for="gender2" class="cols-sm-2 control-label">interest Gender</label>
+							<label for="gender2" class="cols-sm-2 control-label">interest Gender/상대방 성별</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
 									<input type = "radio"  id= 'gender_1' name='gender_1' value="남자">남자
 									<input type = "radio"  id= 'gender_2' name='gender_2' value="여자"> 여자
-									<input type = "radio"  id= 'gender_3' name='gender_3' value="무관"> 성별무관
 								</div>
 							</div>
 						</div>

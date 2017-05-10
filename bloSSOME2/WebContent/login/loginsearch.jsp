@@ -41,42 +41,13 @@
 	            <div class="tabbable-panel">
 				<div class="tabbable-line">
 					<ul class="nav nav-tabs ">
-						<li class="active">
-							<a href="#tab_default_1" data-toggle="tab">
-							아이디찾기 </a>
-						</li>
-						<li>
-							<a href="#tab_default_2" data-toggle="tab">
-							비밀번호찾기 </a>
-						</li>
 						<li>
 				<div class="main-login main-center">
 					<form class="form-horizontal" method="post" action="#">
 						
-						<div class="form-group" id="tab_default_2">
-							<label for="id" class="cols-sm-2 control-label" >Your Id</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="id" id="id"  placeholder="Enter your Id"/>
-									<input type="submit"id = 'input' value="중복확인"/>
-								</div>
-							</div>
-						</div>
-						
+
 						<div class="form-group">
-							<label for="password" class="cols-sm-2 control-label">Password</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
-								</div>
-							</div>
-						</div>
-						
-						
-						<div class="form-group">
-							<label for="name" class="cols-sm-2 control-label">Your Name</label>
+							<label for="name" class="cols-sm-2 control-label">Your Name/이름</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
@@ -85,40 +56,9 @@
 							</div>
 						</div>
 						
-						<div class="form-group">
-							<label for="birthday" class="cols-sm-2 control-label">Your Birthday</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<select><option id="year" value="1990년">1990년</option>
-									</select>
-									<select><option id="mon" value="1월">1월</option>
-									</select>
-									<select><option id="yo" value="1일">1일</option>
-									</select>
-									<div id='result'></div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="form-group">
-							<label for="tel" class="cols-sm-2 control-label">Your Tel</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									</select>
-									<select><option id="tel-first" value="010">010</option>
-									<option id="tel-first" value="011">011</option>
-									<option id="tel-first" value="017">017</option>
-									<option id="tel-first" value="018">018</option>
-									</select>
-									<input type="text" class="form-control" name="tel-second" id="tel-second"  />
-								</div>
-							</div>
-						</div>
 
 						<div class="form-group">
-							<label for="email" class="cols-sm-2 control-label">Your Email</label>
+							<label for="email" class="cols-sm-2 control-label">Your Email/이메일</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
