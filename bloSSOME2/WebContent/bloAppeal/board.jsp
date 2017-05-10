@@ -25,7 +25,7 @@
                             <img src="https://www.clipartsgram.com/image/129556292-kyz84k3.jpg"/>
                         </div>
                         <div class="user">
-                            <img class="img-circle" src="https://www2.mmu.ac.uk/media/mmuacuk/style-assets/images/r-research/profile-Zeyad.jpg"/>
+                            <img class="img-circle" src="/bloAppeal/img/hyeuntae.jpg"/>
                         </div>
                         <div class="content">
                             <div class="main">
