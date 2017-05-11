@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import blossome.command.Command;
 import blossome.command.CommandException;
 import blossome.command.CommandNull;
-import blossome.command.admin.CmdadQnaList;
-import blossome.command.appeal.CmdAppealList;
-import blossome.command.appeal.CmdAppealView;
-import blossome.command.tuk.CmdTukList;
+
+import blossome.command.tuk.CmdMyTukDelete;
+import blossome.command.tuk.CmdMyTukList;
+import blossome.command.tuk.CmdTukList2;
 
 
 /**
@@ -35,7 +35,13 @@ public class TukControl extends HttpServlet {
 
 	private void initCommand(){
 		commandMap = new HashMap();
-		commandMap.put("tuk", new CmdTukList("tukList.jsp"));
+		//내가툭한사람 목록
+		commandMap.put("mytuk", new CmdMyTukList("MytukList.jsp"));
+		//툭취소
+		commandMap.put("mydelete-do", new CmdMyTukDelete("tukList.jsp"));
+		//나를툭한사람 목록
+		commandMap.put("tuk2", new CmdTukList2("tukList2.jsp"));
+		
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -28,13 +28,13 @@ public class TukRepository {
 	}
 	
 	
-	//툭리스트 
+	// 툭 리스트 
 		public List<TukVO> selectlist(){
 			SqlSession sqlSess = getSelSessionFactory().openSession();
 			try {
 				HashMap map = new HashMap();
 				map.put("id", "myid");
-				String statment = namespace + ".tukList";
+				String statment = namespace + ".mytukList";
 				return sqlSess.selectList(statment, map);
 			} finally {
 				sqlSess.close();
@@ -42,7 +42,7 @@ public class TukRepository {
 		
 	}
 		
-	//툭 추가
+	// 툭 추가
 	public Integer insertTuk( TukVO vo ){
 		// JDBC : Connection, Mybatis : SqlSession
 		SqlSession sqlSess = getSelSessionFactory().openSession();
@@ -61,6 +61,29 @@ public class TukRepository {
 		}
 		return 0;
 	}
+	
+	// 툭 취소
+	public Integer deleteTuk( String choiceN  ){
+		// JDBC : Connection, Mybatis : SqlSession 
+		SqlSession sqlSess = getSelSessionFactory().openSession();
 		
+		try {
+			
+			HashMap map = new HashMap();
+			map.put("choiceN", choiceN);
+			String statment = namespace + ".tukDelete";
+			int result = sqlSess.delete(statment, choiceN);
+			 
+			if( result > 0){
+				sqlSess.commit();
+				// JDBC : auto-commit, Mybatis : �븘�떂
+			}else{
+				sqlSess.rollback();
+			}
+		} finally {
+			sqlSess.close();
+		}
+		return 0;
+	}
 
 }

@@ -15,7 +15,7 @@ import blossome.command.CommandNull;
 import blossome.command.admin.CmdadQnaList;
 import blossome.command.appeal.CmdAppealList;
 import blossome.command.appeal.CmdAppealView;
-import blossome.command.tuk.CmdTukList;
+import blossome.command.tuk.CmdMyTukList;
 
 
 /**
@@ -37,7 +37,7 @@ public class BlossomControl extends HttpServlet {
 		commandMap.put("main", new CommandNull("/bloMain/index.jsp"));
 		commandMap.put("find", new CommandNull("/find/findidealtype.jsp"));
 		commandMap.put("board", new CommandNull("/bloAppeal/board.jsp"));
-		commandMap.put("tuk", new CmdTukList("/tuk/tukList.jsp"));
+		commandMap.put("mytuk", new CmdMyTukList("/tuk/MytukList.jsp"));
 		commandMap.put("inmem", new CommandNull("/login/signup.jsp"));
 		commandMap.put("login", new CommandNull("/login/loginform.jsp"));
 		commandMap.put("adqna", new CmdadQnaList("/admin/adqna.jsp"));

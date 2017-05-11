@@ -15,7 +15,6 @@ import blossome.command.CommandNull;
 import blossome.command.admin.CmdadQnaList;
 import blossome.command.appeal.CmdAppealList;
 import blossome.command.appeal.CmdAppealView;
-import blossome.command.tuk.CmdTukList;
 
 
 /**
