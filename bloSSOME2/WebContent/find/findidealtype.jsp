@@ -80,14 +80,14 @@
                 </ul>
             </div>
 
-            <form role="form">
+            <form role="form" name="frm" id="frm" >
                 <div class="tab-content">
                     <div class="tab-pane active" role="tabpanel" id="step1">
                         <h3>나이</h3>
                         <div class="col-md-2">
-								<input class="form-control input-md" type="text" placeholder="">
+								<input class="form-control input-md" name="age1" type="text" placeholder="">
 								<label class="col-md-1 control-label" for="">~</label> 
-								<input class="form-control input-md" type="text" placeholder="">
+								<input class="form-control input-md" name="age2" type="text" placeholder="">
 						</div>
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
@@ -95,8 +95,8 @@
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step2">
                         <h3>성별</h3>
-                        <input type="radio" name="gender" value="m"/> 남자
-                        <input type="radio" name="gender" value="w"/> 여자
+                        <input type="radio" name="gender" class="gender" value="m"/> 남자
+                        <input type="radio" name="gender" class="gender" value="w"/> 여자
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
                             <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
@@ -104,16 +104,16 @@
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step3">
                         <h3>지역</h3>
-                        <input type="checkbox" value="서울"/> 서울
-                        <input type="checkbox" value="경기"/> 경기
-                        <input type="checkbox" value="강원"/> 강원
-                        <input type="checkbox" value="충북"/> 충북
-                        <input type="checkbox" value="충남"/> 충남
-                        <input type="checkbox" value="전북"/> 전북
-                        <input type="checkbox" value="전남"/> 전남
-                        <input type="checkbox" value="경북"/> 경북
-                        <input type="checkbox" value="경남"/> 경남
-                        <input type="checkbox" value="제주"/> 제주
+                        <input type="checkbox" class="loc" value="서울"/> 서울
+                        <input type="checkbox" class="loc" value="경기"/> 경기
+                        <input type="checkbox" class="loc" value="강원"/> 강원
+                        <input type="checkbox" class="loc" value="충북"/> 충북
+                        <input type="checkbox" class="loc" value="충남"/> 충남
+                        <input type="checkbox" class="loc" value="전북"/> 전북
+                        <input type="checkbox" class="loc" value="전남"/> 전남
+                        <input type="checkbox" class="loc" value="경북"/> 경북
+                        <input type="checkbox" class="loc" value="경남"/> 경남
+                        <input type="checkbox" class="loc" value="제주"/> 제주
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
                             <li><button type="button" class="btn btn-default next-step">Skip</button></li>
@@ -122,9 +122,9 @@
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step4">
                         <h3>학력</h3>
-                       	<input type="checkbox" value="중졸"/> 중졸
-                       	<input type="checkbox" value="고졸"/> 고졸
-                       	<input type="checkbox" value="대졸"/> 대졸
+                       	<input type="checkbox" class="hak" value="중졸"/> 중졸
+                       	<input type="checkbox" class="hak" value="고졸"/> 고졸
+                       	<input type="checkbox" class="hak" value="대졸"/> 대졸
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
                             <li><button type="button" class="btn btn-default next-step">Skip</button></li>
@@ -147,9 +147,9 @@
                     <div class="tab-pane" role="tabpanel" id="step6">
                         <h3>종교</h3>
 							<div class="col-md-2">
-                        		<input type="checkbox" value="기독교"/> 기독교
-                       			<input type="checkbox" value="불교"/> 불교
-                       			<input type="checkbox" value="천주교"/> 천주교
+                        		<input type="checkbox" class="mo" value="기독교"/> 기독교
+                       			<input type="checkbox" class="mo" value="불교"/> 불교
+                       			<input type="checkbox" class="mo" value="천주교"/> 천주교
 								<div class="input-group">
 									<span class="input-group-addon"><input type="checkbox"></span>
 									<input class="form-control" type="text" placeholder="">
@@ -165,8 +165,7 @@
 							<h3>Complete</h3>
 							<label class="col-md-4 control-label" for="subbtn"></label>
 							<div class="col-md-4">
-								<button name="subbtn" class="btn btn-success" id="subbtn">결과
-									찾기</button>
+								<button name="subbtn" class="btn btn-success" id="subbtn">결과 찾기</button>
 							</div>
 						</div>
 						<div class="clearfix"></div>

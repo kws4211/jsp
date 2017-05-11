@@ -15,6 +15,7 @@ import blossome.command.CommandNull;
 import blossome.command.admin.CmdadQnaList;
 import blossome.command.appeal.CmdAppealList;
 import blossome.command.appeal.CmdAppealView;
+import blossome.command.find.CmdfindResult;
 import blossome.command.tuk.CmdTukList;
 
 
@@ -36,6 +37,7 @@ public class FindControl extends HttpServlet {
 	private void initCommand(){
 		commandMap = new HashMap();
 		commandMap.put("find", new CommandNull("findidealtype.jsp"));
+		commandMap.put("res", new CmdfindResult("test.jsp"));
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

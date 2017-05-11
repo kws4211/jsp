@@ -24,6 +24,16 @@ $(function () {
         prevTab($active);
 
     });
+    
+    $("#subbtn").click(function(){
+//    	유효성 검사 그리고 체크 안될시 값 지정
+    	
+    	$("#frm").attr("method","post");
+    	$("#frm").attr("action","result.find?cmd=res");
+    	$("#frm").submit();
+    });
+    
+    
 });
 
 function nextTab(elem) {
