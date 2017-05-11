@@ -37,6 +37,7 @@ public class LoginControl extends HttpServlet {
 		commandMap = new HashMap();
 		commandMap.put("inmem", new CommandNull("signup.jsp"));
 		commandMap.put("login", new CommandNull("loginform.jsp"));
+		commandMap.put("search", new CommandNull("loginsearch.jsp"));
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
