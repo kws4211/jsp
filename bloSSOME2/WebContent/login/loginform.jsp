@@ -1,10 +1,7 @@
 <script type="text/javascript" src="/bloSSOME2/lib/jquery-3.2.1.js"></script>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -16,6 +13,8 @@
 
 		<!-- Website CSS style -->
 		<link rel="stylesheet" type="text/css" href="/bloSSOME2/login/css/loginform.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 		<!-- Website Font style -->
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
@@ -25,17 +24,16 @@
 		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 <title></title>
 	<script type="text/javascript">
-	window.onload = function(){
-		var btn = document.getElementById('login');
-		btn.onclick = function(){
-			alert("로그인 이벤트발생")
-		}
-		var btn = document.getElementById('search');
-		btn.onclick = function(){
-			alert("아이디/비밀번호찾기 이벤트발생")
-		}
-		}
+		<%
+		
+		
+		%>
 
+	
+		alert('로그인이 되었습니다');
+		window.location.href = "http://localhost:8080/bloSSOME2/BlossomControl";
+	
+	
 	</script>
 </head>
 <body>
