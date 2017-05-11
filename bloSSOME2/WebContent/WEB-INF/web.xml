@@ -18,4 +18,64 @@
     <url-pattern>/BlossomControl</url-pattern>
     <url-pattern>*.blossom</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AdminControl</servlet-name>
+    <servlet-class>blossome.control.AdminControl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminControl</servlet-name>
+    <url-pattern>/AdminControl</url-pattern>
+    <url-pattern>*.admin</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AppealControl</servlet-name>
+    <servlet-class>blossome.control.AppealControl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AppealControl</servlet-name>
+    <url-pattern>/AppealControl</url-pattern>
+    <url-pattern>*.appeal</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>FindControl</servlet-name>
+    <servlet-class>blossome.control.FindControl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FindControl</servlet-name>
+    <url-pattern>/FindControl</url-pattern>
+    <url-pattern>*.find</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>LoginControl</servlet-name>
+    <servlet-class>blossome.control.LoginControl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginControl</servlet-name>
+    <url-pattern>/LoginControl</url-pattern>
+    <url-pattern>*.login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>MemberControl</servlet-name>
+    <servlet-class>blossome.control.MemberControl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MemberControl</servlet-name>
+    <url-pattern>/MemberControl</url-pattern>
+    <url-pattern>*.member</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>TukControl</servlet-name>
+    <servlet-class>blossome.control.TukControl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TukControl</servlet-name>
+    <url-pattern>/TukControl</url-pattern>
+    <url-pattern>*.tuk</url-pattern>
+  </servlet-mapping>
 </web-app>
