@@ -37,7 +37,7 @@
     		<option>1:1문의</option>
     		<option>신고</option>
     	</select>
-    	<textarea rows="5" cols="100%"></textarea>
+    	<textarea class="asd" rows="5" cols="100%"></textarea>
     	<button id="qnabtn">보내기</button>
     </div>
 </div>
