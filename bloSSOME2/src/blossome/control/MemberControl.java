@@ -53,7 +53,7 @@ public class MemberControl extends HttpServlet {
 		String nextPage = "";
 		String cmdKey	= request.getParameter("cmd");//페이지 명을 보낼 파라미터 이름
 		if( cmdKey == null ){
-			cmdKey = "main";//메인 페이지 명
+			cmdKey = "memqna";//메인 페이지 명
 		}
 		
 		Command cmd = null;
