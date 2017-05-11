@@ -75,9 +75,9 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a class="page-scroll" href="body">Home</a></li>
-                            <li><a class="page-scroll" href="#about-section">이상형찾기</a></li>
-                            <li><a class="page-scroll" href="#services-section">어필게시판</a></li>
+                            <li><a class="page-scroll" href="index.blossom">Home</a></li>
+                            <li><a class="page-scroll" href="index.find">이상형찾기</a></li>
+                            <li><a class="page-scroll" href="index.appeal">어필게시판</a></li>
                             <li><a class="page-scroll" href="#portfolio-section">채팅</a></li>
                             <li><a class="page-scroll" href="#team-section">후기</a></li>                            
                             <li><a class="page-scroll" href="#prices-section">이상형월드컵</a></li>
