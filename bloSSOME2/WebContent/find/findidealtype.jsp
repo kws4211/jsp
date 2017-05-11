@@ -134,9 +134,9 @@
                     <div class="tab-pane" role="tabpanel" id="step5">
                         <h3>키</h3>
 							<div class="col-md-2">
-								<input class="form-control input-md" type="text" placeholder="">
+								<input class="form-control input-md" name="key1" type="text" placeholder="">
 								<label class="col-md-1 control-label" for="">~</label> 
-								<input class="form-control input-md" type="text" placeholder="">
+								<input class="form-control input-md" name="key2" type="text" placeholder="">
 							</div>
 							<ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
