@@ -36,7 +36,7 @@
 			<div class="row main">
 				<div class="panel-heading">
 	               <div class="panel-title text-center">
-	               		<h1 class="title">회원가입</h1>
+	               		<h1 class="title">회원수정</h1>
 	               		<hr />
 	               	</div>
 	            </div> 
@@ -60,7 +60,8 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="id" id="id"  placeholder="Enter your Id"/>
+									<label for="idview" class="form-control" style="padding-left:170px"/>
+<!-- 									<label type="text" class="form-control" name="id" id="id"/> -->
 									<input type="submit"id = 'input' value="중복확인"/>
 								</div>
 							</div>
@@ -167,7 +168,7 @@
 									<option id="tel-first" value="017">017</option>
 									<option id="tel-first" value="018">018</option>
 									</select>
-									<input type="text" class="form-control" name="tel-second" id="tel-second" placeholder="Enter your Tel"/>
+									<input type="text" class="form-control" name="tel-second" id="tel-second"  />
 								</div>
 							</div>
 						</div>
