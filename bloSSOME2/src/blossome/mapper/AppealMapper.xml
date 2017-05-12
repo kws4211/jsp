@@ -4,17 +4,43 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="blossome.mapper.AppealMapper">
 
+<!-- 게시판 목록 -->
  <select id="selectAppealView"  resultType="blossome.vo.AppealVO">
 	SELECT * 
 	FROM blo_member m, blo_appeal a
 	WHERE  m.mem_id = a.mem_id
  </select> 
  
+ <!-- 각각의 내용 -->
 <select id="selectAppealDetailView" parameterType="hashMap"  resultType="blossome.vo.AppealVO">
 	 SELECT *
 	 FROM blo_member m, blo_appeal a
 	 WHERE  m.mem_id = a.mem_id
 	 AND app_num = #{appId}
- </select> 
+ </select>
+ 
+ <!-- 게시판 추가 -->
+ <insert id="insertAppeal" parameterType="blossome.vo.AppealVO" >
+	INSERT INTO blo_appeal
+ 	VALUES(#{appNum}, #{memId}, #{appTitle}, #{appContent}, sysdate ,#{appImg},0  )
+</insert> 
+
+<!-- 게시판 시퀀스 추가 -->
+<select id="selectAppealSeq" resultType="String">
+	SELECT appeal_seq.nextval as appeal_seq FROM dual
+</select>
+
+<!-- 게시판 수정 -->
+<update id="updateAppeal" parameterType="blossome.vo.AppealVO">
+	UPDATE blo_appeal
+	SET app_title = #{appTitle}, app_content = #{appContent}, app_date = sysdate
+	WHERE app_num = #{appNum}
+</update>
+
+<!-- 게시판 삭제 -->
+ <delete id="deleteAppeal" parameterType="String" >
+ 	DELETE FROM blo_appeal
+ 	WHERE app_num = #{appId}
+ </delete>
 
 </mapper>

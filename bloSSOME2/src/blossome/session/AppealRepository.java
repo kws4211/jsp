@@ -39,17 +39,6 @@ public class AppealRepository {
 
 	}
 	
-	/*
-	 * public Comment selectCommentByPK(long commentNo){
-		SqlSession sqlSess = getSelSessionFactory().openSession();
-		try{
-			HashMap map = new HashMap();
-			map.put("commentNo", commentNo);
-			return sqlSess.selectOne(namespace + ".selectComment", map);
-		}finally{
-			sqlSess.close();
-		}*/
-	
 	public AppealVO selectAppealDetailList(String appId){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try{
@@ -61,5 +50,74 @@ public class AppealRepository {
 		}
 
 	}
+	
+	//게시판 추가
+	public AppealVO insertAppeal(AppealVO vo){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			
+			int result = 0;
+			 int res = sqlSess.insert(namespace + ".insertAppeal", vo);
+			 if(res != 0){
+				 sqlSess.commit();
+				 result++;
+			 }else{
+				 sqlSess.rollback();;
+			 }
+			return vo;
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
+	//시퀀스 가져오기
+	public String selectSeq(){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			 String result = sqlSess.selectOne(namespace + ".selectAppealSeq");
+			
+			return result;
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
+	//게시판 수정
+	public AppealVO updateapp(AppealVO vo){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			
+			int result = 0;
+			 int res = sqlSess.insert(namespace + ".updateAppeal", vo);
+			 if(res != 0){
+				 sqlSess.commit();
+				 result++;
+			 }else{
+				 sqlSess.rollback();;
+			 }
+			return vo;
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
+	//게시판 삭제
+	public Integer deleteAppealList(String appId){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			int result = 0;
+			int res = sqlSess.delete(namespace + ".deleteAppeal" , appId); 
+			if(res != 0){
+				 sqlSess.commit();
+				 result++;
+			 }else{
+				 sqlSess.rollback();;
+			 }
+			return result;
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
 	
 }

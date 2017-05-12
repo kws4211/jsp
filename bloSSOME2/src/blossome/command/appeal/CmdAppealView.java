@@ -18,8 +18,6 @@ public class CmdAppealView implements Command {
    public String execute(HttpServletRequest request) throws CommandException {
       try{
 
-    	 System.out.println("CmdAppealView ");
-    	  
          AppealRepository repo = new AppealRepository();
          List<AppealVO> list = repo.selectAppealList();
          request.setAttribute("list", list);

@@ -17,6 +17,9 @@ public class AppealVO {
 	
 	//이름
 	private String memName;
+	
+	//직업
+	private String memJob;
 
 	// 생성자
 	public AppealVO()
@@ -79,6 +82,16 @@ public class AppealVO {
 	public void setMemName(String memName) {
 		this.memName = memName;
 	}
+
+	public String getMemJob() {
+		return memJob;
+	}
+
+	public void setMemJob(String memJob) {
+		this.memJob = memJob;
+	}
+	
+	
 	
 	
 	

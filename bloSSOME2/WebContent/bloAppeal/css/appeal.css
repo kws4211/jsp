@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900');
 body {
-	margin-top: 60px;
+	margin-top: 30px;
 	font-size: 14px;
 	font-family: 'Arima Madurai', cursive;
 	background-color: #E5E9ED;
@@ -17,7 +17,9 @@ body {
      -o-perspective: 800px;
         perspective: 800px;
         margin-bottom: 30px;
+        
 }
+
 /* flip the pane when hovered */
 .card-container:not(.manual-flip):hover .card,
 .card-container.hover.manual-flip .card{
@@ -27,6 +29,9 @@ body {
     transform: rotateY( 180deg );
 }
 
+.row{
+	margin-top:200px;
+}
 
 .card-container.static:hover .card,
 .card-container.static.hover .card {
@@ -90,7 +95,7 @@ body {
 }
 .card-container, .front, .back {
 	width: 100%;
-	height: 420px;
+	height: 300px;
 	border-radius: 4px;
 	-webkit-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
 -moz-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
@@ -124,7 +129,7 @@ box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
     padding: 10px 20px 20px;
 }
 .card .content .main {
-    min-height: 160px;
+    min-height: 100px;
 }
 .card .back .content .main {
     height: 215px;
@@ -151,7 +156,7 @@ box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
     border-top: 1px solid #EEEEEE;
     color: #999999;
     margin: 30px 0 0;
-    padding: 10px 0 0;
+    padding: 20px 0 0;
     text-align: center;
 }
 .card .footer .social-links{
@@ -322,5 +327,10 @@ box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
     .card-container.manual-flip.hover .back{
         z-index: 5;
         visibility: visible;
+       
+    }
+    
+    .applink{
+    
     }
 }

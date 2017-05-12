@@ -22,11 +22,11 @@ public class CmdAppealList implements Command
 	public String execute( HttpServletRequest request ) throws CommandException{
 		try{
 			String appId = request.getParameter("appId");
-			
+			System.out.println("appId=>>>>>" + appId);
 			AppealRepository repo = new AppealRepository();
-			AppealVO list = repo.selectAppealDetailList(appId);
-			
-			request.setAttribute("list", list);
+			AppealVO vo = repo.selectAppealDetailList(appId);
+			vo.setMemId(appId);
+			request.setAttribute("vo", vo);
 			
 		}catch( Exception ex ){
 			throw new CommandException("CommandList.java < 목록보기시 > " + ex.toString() ); 

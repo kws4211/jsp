@@ -2,24 +2,21 @@ package blossome.control;
 
 import java.io.IOException;
 import java.util.HashMap;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import blossome.command.Command;
 import blossome.command.CommandException;
-import blossome.command.CommandNull;
-import blossome.command.admin.CmdadQnaList;
+import blossome.command.appeal.CmdAppealDelete;
+import blossome.command.appeal.CmdAppealInput;
 import blossome.command.appeal.CmdAppealList;
+import blossome.command.appeal.CmdAppealModify;
+import blossome.command.appeal.CmdAppealModify2;
+import blossome.command.appeal.CmdAppealNull;
 import blossome.command.appeal.CmdAppealView;
 
-
-/**
- * Servlet implementation class GuestControl
- */
 public class AppealControl extends HttpServlet {
 	
 	private HashMap commandMap;
@@ -31,12 +28,17 @@ public class AppealControl extends HttpServlet {
         super();       
 		initCommand();
 	}
+    
 
 	private void initCommand(){
 		commandMap = new HashMap();
-		commandMap.put("board", new CommandNull("board.jsp"));
-		commandMap.put("appealView", new CmdAppealView("AppealView.jsp"));
-	    commandMap.put("appdetail", new CmdAppealList("AppealViewDetail.jsp"));
+		commandMap.put("appealView", new CmdAppealView("appealView.jsp"));
+	    commandMap.put("appdetail", new CmdAppealList("appealViewDetail.jsp"));
+	    commandMap.put("appinsert", new CmdAppealNull("AppealInputForm.jsp"));
+	    commandMap.put("insertappeal", new CmdAppealInput("AppealSave.jsp"));
+	    commandMap.put("appmodi", new CmdAppealModify("appModifyForm.jsp"));
+	    commandMap.put("appmodidi", new CmdAppealModify2("appModify.jsp"));
+	    commandMap.put("appdelete", new CmdAppealDelete("appealView.jsp"));
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -54,7 +56,7 @@ public class AppealControl extends HttpServlet {
 		String nextPage = "";
 		String cmdKey	= request.getParameter("cmd");//페이지 명을 보낼 파라미터 이름
 		if( cmdKey == null ){
-			cmdKey = "board";//메인 페이지 명
+			cmdKey = "appealView";//메인 페이지 명
 		}
 		
 		Command cmd = null;
