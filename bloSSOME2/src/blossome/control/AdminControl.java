@@ -15,6 +15,7 @@ import blossome.command.CommandNull;
 import blossome.command.admin.CmdadQnaList;
 import blossome.command.admin.CmdadQnaPopup;
 import blossome.command.admin.CmdadQnaReple;
+import blossome.command.admin.CmdadmatchingDel;
 import blossome.command.admin.CmdadmatchingList;
 import blossome.command.appeal.CmdAppealList;
 import blossome.command.appeal.CmdAppealView;
@@ -41,6 +42,7 @@ public class AdminControl extends HttpServlet {
 		commandMap.put("admat", new CmdadmatchingList("admatching.jsp"));
 		commandMap.put("popup", new CmdadQnaPopup("adqnareple.jsp"));
 		commandMap.put("insert", new CmdadQnaReple("adqna.jsp"));
+		commandMap.put("delect", new CmdadmatchingDel("admatching.jsp"));
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

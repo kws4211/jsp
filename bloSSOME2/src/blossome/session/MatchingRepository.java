@@ -35,4 +35,20 @@ public class MatchingRepository {
 			sqlSess.close();
 		}
 	}
+	
+	public Integer delmatching(String num){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			String statment = namespace + ".delmatching";
+			int res = sqlSess.delete(statment,num);
+			if(res > 0){
+				sqlSess.commit();
+			}else{
+				sqlSess.rollback();
+			}
+			return res;
+		} finally {
+			sqlSess.close();
+		}
+	}
 }

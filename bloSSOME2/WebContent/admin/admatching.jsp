@@ -13,7 +13,6 @@
 <link rel="stylesheet" href="/bloSSOME2/admin/css/admatching.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-<script type="text/javascript" src="/bloSSOME2/admin/js/admatching.js"></script>
 </head>
 <body>
 	<jsp:include page="adminHeader.jsp"></jsp:include>
@@ -42,9 +41,10 @@
 						<td><%=vo.getMatId2name() %></td>
 						<td><%=vo.getMatDate() %></td>
 						<td>
-							<a href="#" class="btn btn-danger btn-xs">
+							<a href="matching.admin?cmd=admat&num=<%=vo.getMatNum() %>" class="btn btn-danger btn-xs">
 								<span class="glyphicon glyphicon-remove" ></span>매칭해제
 							</a>
+							<input type="hidden" name="num" value="<%=vo.getMatNum() %>" />
 						</td>
 					<%} %>
 				<%}else{ %>
@@ -56,7 +56,7 @@
 					<td>홍씨</td>
 					<td>2017/05/10</td>
 					<td>
-						<a href="#" class="btn btn-danger btn-xs">
+						<a href="matching.admin?cmd=admat&num=0" class="btn btn-danger btn-xs">
 							<span class="glyphicon glyphicon-remove" ></span>매칭해제
 						</a>
 					</td>
