@@ -29,7 +29,6 @@
 	<%if(id != null){ %>
 		<jsp:forward page="index.blossom?cmd=main"></jsp:forward>
 	<%} %>
-	
 	<div class="container">
 		<div class="login-container">
 			<form method="post" id="frm">
