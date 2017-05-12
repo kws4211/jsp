@@ -4,29 +4,29 @@ public class AddMemVO {
 	
 
 	//아이디
-	private String memid;
+	private String memId;
 	//혈액형
-	private String memblood;
+	private String memBlood;
 	//취미
-	private String memhobby;
+	private String memHobby;
 	//종교
-	private String memreligion;
+	private String memReligion;
 	//키
-	private String memheight;
+	private String memHeight;
 	//학력
-	private String memability;
+	private String memAbility;
 	//성별
-	private String memgender;
+	private String memGender;
 	//상대성별
-	private String memfavor_gender;
+	private String memFavorgender;
 	//연봉
-	private String memsalary;
+	private String memSalary;
 	//재산
-	private String memproperty;
+	private String memProperty;
 	//꾸욱여부
-	private String memcount;
+	private String memCount;
 	//직업
-	private String memjob;
+	private String memJob;
 
 	
 		
@@ -41,222 +41,223 @@ public class AddMemVO {
 
 
 
-
-
-
-	public String getMemid() {
-		return memid;
-	}
-
-
-
-
-
-
-	public void setMemid(String memid) {
-		this.memid = memid;
-	}
-
-
-
-
-
-
-	public String getMemblood() {
-		return memblood;
-	}
-
-
-
-
-
-
-	public void setMemblood(String memblood) {
-		this.memblood = memblood;
-	}
-
-
-
-
-
-
-	public String getMemhobby() {
-		return memhobby;
-	}
-
-
-
-
-
-
-	public void setMemhobby(String memhobby) {
-		this.memhobby = memhobby;
-	}
-
-
-
-
-
-
-	public String getMemreligion() {
-		return memreligion;
-	}
-
-
-
-
-
-
-	public void setMemreligion(String memreligion) {
-		this.memreligion = memreligion;
-	}
-
-
-
-
-
-
-	public String getMemheight() {
-		return memheight;
-	}
-
-
-
-
-
-
-	public void setMemheight(String memheight) {
-		this.memheight = memheight;
-	}
-
-
-
-
-
-
-	public String getMemability() {
-		return memability;
-	}
-
-
-
-
-
-
-	public void setMemability(String memability) {
-		this.memability = memability;
-	}
-
-
-
-
-
-
-	public String getMemgender() {
-		return memgender;
-	}
-
-
-
-
-
-
-	public void setMemgender(String memgender) {
-		this.memgender = memgender;
-	}
-
-
-
-
-
-
-	public String getMemfavor_gender() {
-		return memfavor_gender;
-	}
-
-
-
-
-
-
-	public void setMemfavor_gender(String memfavor_gender) {
-		this.memfavor_gender = memfavor_gender;
-	}
-
-
-
-
-
-
-	public String getMemsalary() {
-		return memsalary;
-	}
-
-
-
-
-
-
-	public void setMemsalary(String memsalary) {
-		this.memsalary = memsalary;
-	}
-
-
-
-
-
-
-	public String getMemproperty() {
-		return memproperty;
-	}
-
-
-
-
-
-
-	public void setMemproperty(String memproperty) {
-		this.memproperty = memproperty;
-	}
-
-
-
-
-
-
-	public String getMemcount() {
-		return memcount;
-	}
-
-
-
-
-
-
-	public void setMemcount(String memcount) {
-		this.memcount = memcount;
-	}
-
-
-
-
-
-
-	public String getMemjob() {
-		return memjob;
-	}
-
-
-
-
-
-
-	public void setMemjob(String memjob) {
-		this.memjob = memjob;
-	}
-
-
 	//setters getters
+
+
+	public String getMemId() {
+		return memId;
+	}
+
+
+
+
+
+
+	public void setMemId(String memId) {
+		this.memId = memId;
+	}
+
+
+
+
+
+
+	public String getMemBlood() {
+		return memBlood;
+	}
+
+
+
+
+
+
+	public void setMemBlood(String memBlood) {
+		this.memBlood = memBlood;
+	}
+
+
+
+
+
+
+	public String getMemHobby() {
+		return memHobby;
+	}
+
+
+
+
+
+
+	public void setMemHobby(String memHobby) {
+		this.memHobby = memHobby;
+	}
+
+
+
+
+
+
+	public String getMemReligion() {
+		return memReligion;
+	}
+
+
+
+
+
+
+	public void setMemReligion(String memReligion) {
+		this.memReligion = memReligion;
+	}
+
+
+
+
+
+
+	public String getMemHeight() {
+		return memHeight;
+	}
+
+
+
+
+
+
+	public void setMemHeight(String memHeight) {
+		this.memHeight = memHeight;
+	}
+
+
+
+
+
+
+	public String getMemAbility() {
+		return memAbility;
+	}
+
+
+
+
+
+
+	public void setMemAbility(String memAbility) {
+		this.memAbility = memAbility;
+	}
+
+
+
+
+
+
+	public String getMemGender() {
+		return memGender;
+	}
+
+
+
+
+
+
+	public void setMemGender(String memGender) {
+		this.memGender = memGender;
+	}
+
+
+
+
+
+
+	public String getMemFavorgender() {
+		return memFavorgender;
+	}
+
+
+
+
+
+
+	public void setMemFavorgender(String memFavorgender) {
+		this.memFavorgender = memFavorgender;
+	}
+
+
+
+
+
+
+	public String getMemSalary() {
+		return memSalary;
+	}
+
+
+
+
+
+
+	public void setMemSalary(String memSalary) {
+		this.memSalary = memSalary;
+	}
+
+
+
+
+
+
+	public String getMemProperty() {
+		return memProperty;
+	}
+
+
+
+
+
+
+	public void setMemProperty(String memProperty) {
+		this.memProperty = memProperty;
+	}
+
+
+
+
+
+
+	public String getMemCount() {
+		return memCount;
+	}
+
+
+
+
+
+
+	public void setMemCount(String memCount) {
+		this.memCount = memCount;
+	}
+
+
+
+
+
+
+	public String getMemJob() {
+		return memJob;
+	}
+
+
+
+
+
+
+	public void setMemJob(String memJob) {
+		this.memJob = memJob;
+	}
+
+
+	
+	
 	
 	
 }
