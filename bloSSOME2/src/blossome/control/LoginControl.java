@@ -15,6 +15,7 @@ import blossome.command.CommandNull;
 import blossome.command.admin.CmdadQnaList;
 import blossome.command.appeal.CmdAppealList;
 import blossome.command.appeal.CmdAppealView;
+import blossome.command.member.CmdmemCheckId;
 
 
 /**
@@ -37,6 +38,7 @@ public class LoginControl extends HttpServlet {
 		commandMap.put("inmem", new CommandNull("signup.jsp"));
 		commandMap.put("login", new CommandNull("loginform.jsp"));
 		commandMap.put("search", new CommandNull("loginsearch.jsp"));
+		commandMap.put("checkid", new CmdmemCheckId("loginform.jsp"));
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
