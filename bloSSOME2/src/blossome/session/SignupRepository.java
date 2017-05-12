@@ -36,14 +36,14 @@ public class SignupRepository {
 			
 			String statment = namespace + ".seqlogin";
 			//시퀀스 값을 증가 시킨 후 값을 저장
-			vo.setQnaNum(sqlSess.selectOne(statment));
+//			vo.setQnaNum(sqlSess.selectOne(statment));
 			//qna0000001  <- 글번호 지정
 			String a = "signup";
-			for(int i = 0 ; i < 7-vo.getQnaNum().length() ; i++){
+//			for(int i = 0 ; i < 7-vo.getQnaNum().length() ; i++){
 			   a += "0";
-			}
-			a+=vo.getQnaNum();
-			vo.setQnaNum(a);
+//			}
+//			a+=vo.getQnaNum();
+//			vo.setQnaNum(a);
 			
 			statment = namespace + ".insertqna";
 			//모든 작업 완료 후 insert
@@ -55,7 +55,7 @@ public class SignupRepository {
 			}
 			
 			HashMap map = new HashMap();
-			map.put("id", vo.getMemId());
+//			map.put("id", vo.getMemId());
 			
 			statment = namespace + ".alllist";
 			return sqlSess.selectList(statment, map);
