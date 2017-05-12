@@ -1,7 +1,9 @@
 package blossome.vo;
 
-public class LoginVO {
-
+public class MemVO {
+	
+	//공개여부
+	private String open;
 	//아이디
 	private String memid;
 	//이름
@@ -10,8 +12,6 @@ public class LoginVO {
 	private String memnick;
 	//비밀번호
 	private String mempass;
-	//나이
-	private String memage;
 	//생일
 	private String membirth;
 	//전화번호
@@ -19,15 +19,13 @@ public class LoginVO {
 	//지역
 	private String memloc;
 	//이메일
-	private String mememil;
+	private String mememail;
 	//질문
 	private String memquestion;
 	//답변
 	private String memanswer;
-	//이미지
-	private String memimg;
 	//상태
-	private String memstate;
+	private int memstate;
 	//가입날짜
 	private String memsignup;
 	//탈퇴여부
@@ -38,19 +36,31 @@ public class LoginVO {
 	
 
 	// 생성자
-	public LoginVO()
+	public MemVO()
 	{
 		
 	}
 
 
 	//setters getters
+	
+	
 	public String getMemid() {
 		return memid;
 	}
 
 
 
+
+
+	public String getOpen() {
+		return open;
+	}
+
+
+	public void setOpen(String open) {
+		this.open = open;
+	}
 
 
 	public void setMemid(String memid) {
@@ -107,24 +117,6 @@ public class LoginVO {
 
 
 
-
-
-	public String getMemage() {
-		return memage;
-	}
-
-
-
-
-
-	public void setMemage(String memage) {
-		this.memage = memage;
-	}
-
-
-
-
-
 	public String getMembirth() {
 		return membirth;
 	}
@@ -173,16 +165,16 @@ public class LoginVO {
 
 
 
-	public String getMememil() {
-		return mememil;
+	public String getMememail() {
+		return mememail;
 	}
 
 
 
 
 
-	public void setMememil(String mememil) {
-		this.mememil = mememil;
+	public void setMememail(String mememail) {
+		this.mememail = mememail;
 	}
 
 
@@ -221,23 +213,7 @@ public class LoginVO {
 
 
 
-	public String getMemimg() {
-		return memimg;
-	}
-
-
-
-
-
-	public void setMemimg(String memimg) {
-		this.memimg = memimg;
-	}
-
-
-
-
-
-	public String getMemstate() {
+	public int getMemstate() {
 		return memstate;
 	}
 
@@ -245,7 +221,7 @@ public class LoginVO {
 
 
 
-	public void setMemstate(String memstate) {
+	public void setMemstate(int memstate) {
 		this.memstate = memstate;
 	}
 

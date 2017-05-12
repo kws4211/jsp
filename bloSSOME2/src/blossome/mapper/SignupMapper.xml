@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="blossome.mapper.SignupMapper">
+
+ 	<insert id="insertMem" parameterType="blossome.vo.MemVO">
+		insert into BLO_MEMBER(mem_id ,mem_name ,mem_nick ,mem_pass ,mem_birth ,mem_tel ,mem_loc ,mem_email ,mem_state ,mem_signup ,mem_question ,mem_answer) 
+		values(#{memid}, #{memname}, #{memnick}, #{mempass}, #{membirth}, #{memtel}, #{memloc}, #{mememail}, #{memstate}, sysdate, #{memquestion},  #{memanswer})
+	</insert>
+
+</mapper>
