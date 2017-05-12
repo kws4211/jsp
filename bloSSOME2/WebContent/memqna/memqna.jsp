@@ -38,7 +38,7 @@
 	    			<div class="<%=state %>" data-badger="<%=isnull %> 답변"><%=vo.getAnswerContent() %></div>
 	    		<%}else{ %>
 	    			<%state = "badger-right"; %>
-	    			<div class="<%=state %>" data-badger="<%=isnull %> 답변"><%=vo.getAnswerContent() %></div>
+	    			<div class="<%=state %>" data-badger="<%=isnull %> 답변">동록된 답변이 없습니다</div>
 	    		<%} %>
 	    	<%} %>
     	<%}else{ %>
@@ -56,7 +56,7 @@
     </div>
     <div>
     	<form id="memfrm">
-    		<input type="hidden" name="id" value="<%=session.getAttribute("memid") %>">
+    		<input type="hidden" name="id" value="<%=session.getAttribute("id") %>">
 	    	<select name="qnachoice">
 	    		<option>유형 선택</option>
 	    		<option>1:1문의</option>

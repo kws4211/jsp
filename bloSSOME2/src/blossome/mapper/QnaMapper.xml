@@ -11,7 +11,7 @@
 				mem_id = #{id}
 			</if>
 		</where>
-		ORDER BY qna_date desc
+		ORDER BY qna_num desc
 	</select>
 	<select id="seqqna" resultType="String">
 		select qna_seq.nextval as qna_num 

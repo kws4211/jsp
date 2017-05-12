@@ -76,7 +76,7 @@ public class QnaRepository {
 			HashMap map = new HashMap();
 			map.put("id", vo.getMemId());
 			
-			statment = namespace + ".insetqna";
+			statment = namespace + ".alllist";
 			return sqlSess.selectList(statment, map);
 		} finally {
 			sqlSess.close();
