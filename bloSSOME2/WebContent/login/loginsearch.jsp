@@ -71,7 +71,7 @@
 							<button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
 						</div>
 						<div class="login-register">
-				            <a href="index.php">Login</a>
+				            <a href="login.login">Login</a>
 				         </div>
 					</form>
 				</div>

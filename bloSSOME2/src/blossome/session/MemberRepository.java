@@ -41,5 +41,16 @@ public class MemberRepository {
 		}
 
 	}
-	
+
+	public int SearchFirst(String name, String email) {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			HashMap map = new HashMap();
+			map.put("name", name);
+			map.put("email", email);
+			return sqlSess.selectOne(namespace + ".searchfirst", map);
+		}finally{
+			sqlSess.close();
+		}
+	}
 }

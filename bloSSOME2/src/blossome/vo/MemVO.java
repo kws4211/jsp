@@ -2,38 +2,32 @@ package blossome.vo;
 
 public class MemVO {
 	
-	//공개여부
-	private String open;
 	//아이디
-	private String memid;
+	private String memId;
 	//이름
-	private String memname;
+	private String memName;
 	//닉네임
-	private String memnick;
+	private String memNick;
 	//비밀번호
-	private String mempass;
+	private String memPass;
 	//생일
-	private String membirth;
+	private String memBirth;
 	//전화번호
-	private String memtel;
+	private String memTel;
 	//지역
-	private String memloc;
+	private String memLoc;
 	//이메일
-	private String mememail;
+	private String memEmail;
 	//질문
-	private String memquestion;
+	private String memQuestion;
 	//답변
-	private String memanswer;
+	private String memAnswer;
 	//상태
-	private int memstate;
+	private int memState;
 	//가입날짜
-	private String memsignup;
+	private String memSignup;
 	//탈퇴여부
-	private String memleave;
-	
-		
-	
-	
+	private String memLeave;
 
 	// 생성자
 	public MemVO()
@@ -41,226 +35,108 @@ public class MemVO {
 		
 	}
 
-
-	//setters getters
-	
-	
-	public String getMemid() {
-		return memid;
+	public String getMemId() {
+		return memId;
 	}
 
-
-
-
-
-	public String getOpen() {
-		return open;
+	public void setMemId(String memId) {
+		this.memId = memId;
 	}
 
-
-	public void setOpen(String open) {
-		this.open = open;
+	public String getMemName() {
+		return memName;
 	}
 
-
-	public void setMemid(String memid) {
-		this.memid = memid;
-	}
-	
-	
-	
-	
-	
-	public String getMemname() {
-		return memname;
+	public void setMemName(String memName) {
+		this.memName = memName;
 	}
 
-
-
-
-
-	public void setMemname(String memname) {
-		this.memname = memname;
+	public String getMemNick() {
+		return memNick;
 	}
 
-
-
-
-
-	public String getMemnick() {
-		return memnick;
+	public void setMemNick(String memNick) {
+		this.memNick = memNick;
 	}
 
-
-
-
-
-	public void setMemnick(String memnick) {
-		this.memnick = memnick;
+	public String getMemPass() {
+		return memPass;
 	}
 
-
-
-
-
-	public String getMempass() {
-		return mempass;
+	public void setMemPass(String memPass) {
+		this.memPass = memPass;
 	}
 
-
-
-
-
-	public void setMempass(String mempass) {
-		this.mempass = mempass;
+	public String getMemBirth() {
+		return memBirth;
 	}
 
-
-
-	public String getMembirth() {
-		return membirth;
+	public void setMemBirth(String memBirth) {
+		this.memBirth = memBirth;
 	}
 
-
-
-
-
-	public void setMembirth(String membirth) {
-		this.membirth = membirth;
+	public String getMemTel() {
+		return memTel;
 	}
 
-
-
-
-
-	public String getMemtel() {
-		return memtel;
+	public void setMemTel(String memTel) {
+		this.memTel = memTel;
 	}
 
-
-
-
-
-	public void setMemtel(String memtel) {
-		this.memtel = memtel;
+	public String getMemLoc() {
+		return memLoc;
 	}
 
-
-
-
-
-	public String getMemloc() {
-		return memloc;
+	public void setMemLoc(String memLoc) {
+		this.memLoc = memLoc;
 	}
 
-
-
-
-
-	public void setMemloc(String memloc) {
-		this.memloc = memloc;
+	public String getMemEmail() {
+		return memEmail;
 	}
 
-
-
-
-
-	public String getMememail() {
-		return mememail;
+	public void setMemEmail(String memEmail) {
+		this.memEmail = memEmail;
 	}
 
-
-
-
-
-	public void setMememail(String mememail) {
-		this.mememail = mememail;
+	public String getMemQuestion() {
+		return memQuestion;
 	}
 
-
-
-
-
-	public String getMemquestion() {
-		return memquestion;
+	public void setMemQuestion(String memQuestion) {
+		this.memQuestion = memQuestion;
 	}
 
-
-
-
-
-	public void setMemquestion(String memquestion) {
-		this.memquestion = memquestion;
+	public String getMemAnswer() {
+		return memAnswer;
 	}
 
-
-
-
-
-	public String getMemanswer() {
-		return memanswer;
+	public void setMemAnswer(String memAnswer) {
+		this.memAnswer = memAnswer;
 	}
 
-
-
-
-
-	public void setMemanswer(String memanswer) {
-		this.memanswer = memanswer;
+	public int getMemState() {
+		return memState;
 	}
 
-
-
-
-
-	public int getMemstate() {
-		return memstate;
+	public void setMemState(int memState) {
+		this.memState = memState;
 	}
 
-
-
-
-
-	public void setMemstate(int memstate) {
-		this.memstate = memstate;
+	public String getMemSignup() {
+		return memSignup;
 	}
 
-
-
-
-
-	public String getMemsignup() {
-		return memsignup;
+	public void setMemSignup(String memSignup) {
+		this.memSignup = memSignup;
 	}
 
-
-
-
-
-	public void setMemsignup(String memsignup) {
-		this.memsignup = memsignup;
+	public String getMemLeave() {
+		return memLeave;
 	}
 
-
-
-
-
-	public String getMemleave() {
-		return memleave;
+	public void setMemLeave(String memLeave) {
+		this.memLeave = memLeave;
 	}
-
-
-
-
-
-	public void setMemleave(String memleave) {
-		this.memleave = memleave;
-	}
-
-	
-	
-	
-	
-	
 	
 }
