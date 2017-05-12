@@ -29,6 +29,47 @@
 
 		<title>Admin</title>
 		
+		<script type="text/javascript">
+		function input_check_func(){
+			var input_open = document.getElementById('open').value;
+			var input_noopen = document.getElementById('noopen').value;
+			var input_id = document.getElementById('id').value;
+			var input_password = document.getElementById('password').value;
+			var input_confirm = document.getElementById('confirm').value;
+			var input_question = document.getElementById('question').value;
+			var input_answer = document.getElementById('answer').value;
+			var input_nickname = document.getElementById('nickname').value;
+			var input_name = document.getElementById('name').value;
+			var input_filebutton = document.getElementById('filebutton').value;
+			var input_year = document.getElementById('year').value;
+			var input_mon = document.getElementById('mon').value;
+			var input_yo = document.getElementById('yo').value;
+			var input_tel_first = document.getElementById('tel-first').value;
+			var input_area = document.getElementById('area').value;
+			var input_email = document.getElementById('email').value;
+			var input_blood = document.getElementById('blood').value;
+			var input_hobby = document.getElementById('hobby').value;
+			var input_religion = document.getElementById('religion').value;
+			var input_height = document.getElementById('height').value;
+			var input_ability = document.getElementById('ability').value;
+			var input_gender_1 = document.getElementById('gender-1').value;
+			var input_gender_2 = document.getElementById('gender-2').value;
+			
+			if(input_id == null || input_name == null || input_nickname == null || input_password == null || input_year == null ||
+				input_mon == null || input_yo == null || input_tel_first == null ||input_area == null ||input_email == null ||
+				input_open == null || input_noopen == null || input_id == "" || input_name == "" || input_nickname == "" || 
+				input_password == "" || input_year == "" ||input_mon == "" || input_yo == "" || input_tel_first == "" ||
+				input_area == "" ||input_email == "" ||input_open == "" || input_noopen == ""){
+				alert("필수입력창을 입력하세요");
+				return false;
+			}else{
+				return ture;
+			}
+			
+		}
+		
+		
+		</script>
 		
 	</head>
 	<body>
@@ -49,8 +90,8 @@
 								<div class="input-group">
 								<!-- 앞에그림 -->
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type = "radio"  id= 'gender' name='gender' value="공개" href="/bloSSOME2/login/signup.jsp">공개
-									<input type = "radio"  id= 'gender' name='gender' value="비공개" href="/bloSSOME2/login/formnoopen.jsp"> 비공개
+									<input type = "radio"  id= 'open' name='open' value="공개" href="/bloSSOME2/login/signup.jsp">공개
+									<input type = "radio"  id= 'noopen' name='noopen' value="비공개" href="/bloSSOME2/login/formnoopen.jsp"> 비공개
 								</div>
 							</div>
 						</div>
@@ -220,26 +261,6 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
 									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="signup" class="cols-sm-2 control-label">Your Signup/가입날짜</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="signup" id="signup"  placeholder="Enter your Signup"/>
-								</div>
-							</div>
-						</div>
-						
-						<div class="form-group">
-							<label for="leave" class="cols-sm-2 control-label">Your Leave/탈퇴여부</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="leave" id="leave"  placeholder="Enter your Leave"/>
 								</div>
 							</div>
 						</div>

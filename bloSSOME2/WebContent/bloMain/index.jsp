@@ -76,6 +76,7 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a class="page-scroll" href="index.blossom">Home</a></li>
+                            <li><a class="page-scroll" href="index.login">Login</a></li>
                             <li><a class="page-scroll" href="index.find">이상형찾기</a></li>
                             <li><a class="page-scroll" href="index.appeal">어필게시판</a></li>
                             <li><a class="page-scroll" href="#portfolio-section">채팅</a></li>
