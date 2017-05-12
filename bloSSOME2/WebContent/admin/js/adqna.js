@@ -5,7 +5,8 @@ $(function(){
 });
 
 function openWin() {
-	var data = $("#qna").val();
+	var data = $(this).next().val();
+	alert(data);
 	var idn = $a.popup({
 		title : "답변 달기",
 		width : 680, //크기

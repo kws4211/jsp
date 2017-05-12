@@ -45,11 +45,11 @@
 						<td><%=vo.getQnaDate() %></td>
 						<!-- if문으로 상태에 따라 다르게 출력 -->
 						<td>
-							<input type="hidden" id="qna" value="<%=vo.getQuestionContent() %>" />
 							<%if(vo.getAnswerContent()==null){ %>
 							<a href="#" class="btn btn-danger btn-xs">
 								<span class="glyphicon glyphicon-remove"></span>답변대기중
 							</a>
+							<input type="hidden" id="qna" value="<%=vo.getQuestionContent() %>" />
 							<%}else{ %>
 							<a href="#" class="btn btn-info btn-xs">
 								<span class="glyphicon glyphicon-edit" ></span>답변완료
