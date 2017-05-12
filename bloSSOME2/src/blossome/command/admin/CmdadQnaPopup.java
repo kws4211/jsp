@@ -19,10 +19,12 @@ public class CmdadQnaPopup implements Command{
 
 	@Override
 	public String execute(HttpServletRequest request) throws CommandException {
+		//글번호를 받음
 		String num = request.getParameter("num");
-		System.out.println(num);
+		QnaRepository repo = new QnaRepository();
+		QnaVO vo = repo.selectByNum(num);
 		
-		request.setAttribute("num", num);
+		request.setAttribute("qnavo", vo);
 		return next;
 	}
 	

@@ -13,10 +13,18 @@
 		</where>
 		ORDER BY qna_num desc
 	</select>
+	
+	<select id="selNum" parameterType="hashmap" resultType="blossome.vo.QnaVO">
+		select * 
+		from BLO_QNA
+		where qna_num = #{num}
+	</select>
+	
 	<select id="seqqna" resultType="String">
 		select qna_seq.nextval as qna_num 
 		from dual
 	</select>
+	
 	<insert id="insertqna" parameterType="blossome.vo.QnaVO">
 		insert into BLO_QNA(qna_num,mem_id,qna_date,question_content,qna_state) 
 		values(#{qnaNum}, #{memId}, sysdate, #{questionContent}, #{qnaState})

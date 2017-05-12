@@ -83,4 +83,17 @@ public class QnaRepository {
 		}
 	}
 	
+	
+	public QnaVO selectByNum(String num){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			HashMap map = new HashMap();
+			map.put("num", num);
+			String statment = namespace + ".selNum";
+			return sqlSess.selectOne(statment, map);
+		} finally {
+			sqlSess.close();
+		}
+	}
+	
 }
