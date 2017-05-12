@@ -26,7 +26,7 @@ public class CmdadQnaReple implements Command{
 		int res = repo.reple(num,reple);
 		
 		List<QnaVO> list = repo.selectlist();
-		request.getAttribute("list");
+		request.setAttribute("list",list);
 		return next;
 	}
 	

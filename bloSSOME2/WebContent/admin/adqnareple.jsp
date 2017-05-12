@@ -7,16 +7,16 @@
 	String type = "";
 	if(a == 1){	type="1:1문의";	}else{ type="신고"; }
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> -->
+<!-- <html> -->
+<!-- <head> -->
+<!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
+<!-- <title>Insert title here</title> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="/bloSSOME2/lib/alopex-ui.min.js"></script>
 <script type="text/javascript" src="/bloSSOME2/admin/js/adqna.js"></script>
-</head>
-<body>
+<!-- </head> -->
+<!-- <body> -->
 <form name="frmreple" id="frmreple">
 <div>번호 : <%=vo.getQnaNum() %></div>
 <div>유형 : <%=type %></div>
@@ -28,5 +28,5 @@
 </form>
 <br/>
 <input type="button" id="rebtn" value="넣기"/>
-</body>
-</html>
+<!-- </body> -->
+<!-- </html> -->

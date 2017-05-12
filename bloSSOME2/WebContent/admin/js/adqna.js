@@ -6,7 +6,7 @@ $(function(){
 			width : 600, //크기
 			height : 500,
 			url : "popup.admin?cmd=popup&num="+data, 
-			iframe : true // default
+			iframe : false // default
 		});
 	});
 	
