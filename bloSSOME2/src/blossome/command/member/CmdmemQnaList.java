@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 
 import blossome.command.Command;
@@ -21,7 +22,8 @@ public class CmdmemQnaList implements Command{
 	@Override
 	public String execute(HttpServletRequest request) throws CommandException {
 		//세션에서 ID값 받아옴
-		String id = "id";
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("id");;
 		QnaRepository repo = new QnaRepository();
 		List<QnaVO> list = repo.selbyIdlist(id);
 		request.setAttribute("list", list);
