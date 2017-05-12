@@ -27,7 +27,7 @@
 </head>
 <body>
 	<%if(id != null){ %>
-		<jsp:forward page="index.blossom?cmd=main"></jsp:forward>
+		<%response.sendRedirect("index.blossom"); %>
 	<%} %>
 	<div class="container">
 		<div class="login-container">
