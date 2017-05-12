@@ -1,18 +1,13 @@
 $(function(){
 	$(".btn-danger").click(function(){
-		openWin();
+		var data = $(this).next().val();
+		var idn = $a.popup({
+			title : "답변 달기",
+			width : 680, //크기
+			height : 400,
+			url : "popup.admin?cmd=popup&num="+data, 
+			iframe : true // default
+		});
 	});
 });
 
-function openWin() {
-	var data = $(this).next().val();
-	alert(data);
-	var idn = $a.popup({
-		title : "답변 달기",
-		width : 680, //크기
-		height : 400,
-		data : {"item" : data},
-		url : "/bloSSOME2/admin/adqnareple.jsp", // 팝업에 표시될 HTML
-		iframe : true // default
-	});
-}

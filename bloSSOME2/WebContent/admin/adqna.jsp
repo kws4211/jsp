@@ -49,7 +49,7 @@
 							<a href="#" class="btn btn-danger btn-xs">
 								<span class="glyphicon glyphicon-remove"></span>답변대기중
 							</a>
-							<input type="hidden" id="qna" value="<%=vo.getQuestionContent() %>" />
+							<input type="hidden" class="qna" value="<%=vo.getQnaNum() %>" />
 							<%}else{ %>
 							<a href="#" class="btn btn-info btn-xs">
 								<span class="glyphicon glyphicon-edit" ></span>답변완료
