@@ -19,3 +19,10 @@ function openWin() {
 		iframe : false // default
 	});
 }
+
+$(function(){
+	$('#btn_tuk').click(function(){
+		$('#frm').attr("action", "xx.tuk?cmd=tuk-insert");
+		$('#frm').submit();
+	});
+});

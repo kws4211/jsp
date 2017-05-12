@@ -3,18 +3,34 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="blossom.mapper.TukMapper">
+	
+	<!-- 내가 툭 리스트 -->
 	<select id="mytukList" parameterType="hashMap" resultType="blossome.vo.TukVO">
 		select b.*, m.*, am.* 
 		from BLO_CHOICE b, BLO_MEMBER m, BLO_ADDMEMBER am 
 		where b.mem_id=#{id} and b.CHOICE_ID=m.MEM_ID and b.CHOICE_ID=am.MEM_ID
 	</select>
 	
-<!-- 	<insert id="tukInsert"> -->
-<!-- 		INSERT INTO BLO_CHOICE VALUES ('2', 'myid', 'myid2', '20170511', 1, 'img', 'img'); -->
-<!-- 	</insert> -->
+	<!-- 나를 툭 리스트 -->
+	<select id="metukList" parameterType="hashMap" resultType="blossome.vo.TukVO">
+		select b.*, m.*, am.* 
+		from BLO_CHOICE b, BLO_MEMBER m, BLO_ADDMEMBER am 
+		where b.CHOICE_ID=#{id} and b.mem_ID=m.MEM_ID and b.mem_ID=am.MEM_ID
+	</select>
+	
+	<!-- 나를 툭한 리스트에서 툭하기  -->	
+	<insert id="tukInsert" parameterType="blossome.vo.TukVO">
+		INSERT INTO BLO_CHOICE
+		VALUES (#{choiceNum}, #{memId}, #{choiceId}, sysdate, 1, #{choiceMainImg}, #{choiceSubImg} )
+	</insert>
 
+	<!-- 내가 툭한 리스트에서 툭 취소 -->
 	<delete id="tukDelete" parameterType="hashMap">
 		delete from BLO_CHOICE where CHOICE_NUM=#{choiceN}
 	</delete>
-
+	
+	<!-- 게시판 시퀀스 추가 -->
+	<select id="selectTukSeq" resultType="String">
+  	 SELECT tuk_seq.nextval as tuk_seq FROM dual
+	</select>
 </mapper>

@@ -14,8 +14,9 @@ import blossome.command.CommandException;
 import blossome.command.CommandNull;
 
 import blossome.command.tuk.CmdMyTukDelete;
+import blossome.command.tuk.CmdMyTukInsert;
 import blossome.command.tuk.CmdMyTukList;
-import blossome.command.tuk.CmdTukList2;
+import blossome.command.tuk.CmdMeTukList;
 
 
 /**
@@ -37,11 +38,12 @@ public class TukControl extends HttpServlet {
 		commandMap = new HashMap();
 		//내가툭한사람 목록
 		commandMap.put("mytuk", new CmdMyTukList("MytukList.jsp"));
-		//툭취소
-		commandMap.put("mydelete-do", new CmdMyTukDelete("tukList.jsp"));
+		//내가 툭한 사람 목록에서 툭취소
+		commandMap.put("mydelete-do", new CmdMyTukDelete("MytukList.jsp"));
 		//나를툭한사람 목록
-		commandMap.put("tuk2", new CmdTukList2("tukList2.jsp"));
-		
+		commandMap.put("metuk", new CmdMeTukList("metukList.jsp"));
+		//나를툭한사람 목룍에서 툭하기
+		commandMap.put("tuk-insert", new CmdMyTukInsert("MytukList.jsp"));
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -59,7 +61,7 @@ public class TukControl extends HttpServlet {
 		String nextPage = "";
 		String cmdKey	= request.getParameter("cmd");//페이지 명을 보낼 파라미터 이름
 		if( cmdKey == null ){
-			cmdKey = "tuk";//메인 페이지 명
+			cmdKey = "mytuk";//메인 페이지 명
 		}
 		
 		Command cmd = null;

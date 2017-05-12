@@ -23,7 +23,7 @@ public class CmdMyTukDelete implements Command{
 			TukRepository repo = new TukRepository();
 			int result = repo.deleteTuk(choiceN);
 			
-			List<TukVO> list = repo.selectlist();
+			List<TukVO> list = repo.myselectlist();
 			request.setAttribute("list", list);
 		
 		return next;
