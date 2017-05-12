@@ -25,7 +25,13 @@
 		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
 		<title>Admin</title>
-		
+		<script type="text/javascript">
+			$(function(){
+				$("#btn").click(function(){
+					$("#frm").submit();
+				});
+			});
+		</script>
 		
 	</head>
 	<body>
@@ -43,7 +49,7 @@
 					<ul class="nav nav-tabs ">
 						<li>
 				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="#">
+					<form class="form-horizontal" id="frm" method="post" action="search.login?cmd=searchfirst">
 						
 
 						<div class="form-group">
@@ -68,7 +74,7 @@
 						</div>
 
 						<div class="form-group ">
-							<button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+							<button type="button" id="btn" class="btn btn-primary btn-lg btn-block login-button">Register</button>
 						</div>
 						<div class="login-register">
 				            <a href="login.login">Login</a>

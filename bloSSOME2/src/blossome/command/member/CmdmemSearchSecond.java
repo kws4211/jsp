@@ -16,19 +16,19 @@ import blossome.session.QnaRepository;
 import blossome.vo.MemVO;
 import blossome.vo.QnaVO;
 
-public class CmdmemSearchFirst implements Command{
+public class CmdmemSearchSecond implements Command{
 	private String next;
 	
-	public CmdmemSearchFirst(String _next) {
+	public CmdmemSearchSecond(String _next) {
 		next = _next;
 	}
 
 	@Override
 	public String execute(HttpServletRequest request) throws CommandException {
-		String name = request.getParameter("name");
-		String email = request.getParameter("email");
+		String id = request.getParameter("id");
+		String answer = request.getParameter("answer");
 		MemberRepository repo = new MemberRepository();
-		MemVO vo = repo.SearchFirst(name, email);
+		MemVO vo = repo.SearchSecond(id, answer);
 		
 		request.setAttribute("vo", vo);
 		

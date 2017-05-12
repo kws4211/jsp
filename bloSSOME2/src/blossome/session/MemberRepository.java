@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import blossome.vo.AppealVO;
+import blossome.vo.MemVO;
 
 public class MemberRepository {
 	
@@ -42,13 +43,27 @@ public class MemberRepository {
 
 	}
 
-	public int SearchFirst(String name, String email) {
+	public MemVO SearchFirst(String name, String email) {
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try{
 			HashMap map = new HashMap();
 			map.put("name", name);
 			map.put("email", email);
-			return sqlSess.selectOne(namespace + ".searchfirst", map);
+			MemVO vo = sqlSess.selectOne(namespace + ".searchfirst", map);
+			return vo;
+		}finally{
+			sqlSess.close();
+		}
+	}
+
+	public MemVO SearchSecond(String id, String answer) {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			HashMap map = new HashMap();
+			map.put("id", id);
+			map.put("answer", answer);
+			MemVO vo = sqlSess.selectOne(namespace + ".searchsecond", map);
+			return vo;
 		}finally{
 			sqlSess.close();
 		}

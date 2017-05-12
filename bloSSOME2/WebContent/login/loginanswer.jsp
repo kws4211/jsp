@@ -1,4 +1,7 @@
+<%@page import="blossome.vo.MemVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<% MemVO vo = (MemVO)request.getAttribute("vo"); %>
+
 <!DOCTYPE html>
 <html lang="en">
     <head> 
@@ -23,20 +26,12 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script type="text/javascript">
-		
 			$(function(){
-				var data = {que};
-				$.post("answerserver.jsp", data, parseData);
-				
+				$(".login-button").click(function(){
+					$(".form-horizontal").submit();
+				});
 			});
-			
-			function parseData(resData){
-		    	var obj = {};
-		    	obj = eval("("+ resData + ")");
-		    	$('#que').val(obj.first);
-		    }
 		</script>
-		
 	</head>
 	<body>
 	
@@ -53,15 +48,14 @@
 					<ul class="nav nav-tabs ">
 						<li>
 				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="#">
-						
-
+					<form class="form-horizontal" method="post" action="searchsecond.login?cmd=searchsecond">
+						<input type="hidden" name="id" value="<%=vo.getMemId() %>"/>
 						<div class="form-group">
 							<label for="name" class="cols-sm-2 control-label">Question/질문</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="que" id="que"> </input>
+									<input type="text" class="form-control" name="que" id="que" value="<%=vo.getMemQuestion() %>"/>
 								</div>
 							</div>
 						</div>

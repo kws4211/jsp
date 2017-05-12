@@ -10,9 +10,16 @@
 	WHERE MEM_ID = #{id} and mem_pass = #{pw}
 </select>
 
-<select id="searchfirst" parameterType="hashMap" resultType="blossome.vo.LoginVO">
-	SELECT mem_question, mem_answer
+<select id="searchfirst" parameterType="hashMap" resultType="blossome.vo.MemVO">
+	SELECT mem_id, mem_question, mem_answer
 	FROM BLO_MEMBER
 	WHERE mem_name = #{name} and mem_email = #{email}
 </select>
+
+<select id="searchsecond" parameterType="hashMap" resultType="blossome.vo.MemVO">
+	SELECT mem_id, mem_pass
+	FROM BLO_MEMBER
+	WHERE mem_id = #{id} and mem_answer = #{answer}
+</select>
+
 </mapper>
