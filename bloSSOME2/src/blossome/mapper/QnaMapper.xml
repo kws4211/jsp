@@ -3,8 +3,22 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="blossom.mapper.QnaMapper">
-	<select id="alllist" resultType="blossome.vo.QnaVO">
+	<select id="alllist" parameterType="hashmap" resultType="blossome.vo.QnaVO">
 		select * 
 		from BLO_QNA
+		<where>
+			<if test="id != null">
+				mem_id = #{id}
+			</if>
+		</where>
+		ORDER BY qna_date desc
 	</select>
+	<select id="seqqna" resultType="String">
+		select qna_seq.nextval as qna_num 
+		from dual
+	</select>
+	<insert id="insertqna" parameterType="blossome.vo.QnaVO">
+		insert into BLO_QNA(qna_num,mem_id,qna_date,question_content,qna_state) 
+		values(#{qnaNum}, #{memId}, sysdate, #{questionContent}, #{qnaState})
+	</insert>
 </mapper>

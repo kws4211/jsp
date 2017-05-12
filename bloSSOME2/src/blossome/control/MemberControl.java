@@ -15,6 +15,8 @@ import blossome.command.CommandNull;
 import blossome.command.admin.CmdadQnaList;
 import blossome.command.appeal.CmdAppealList;
 import blossome.command.appeal.CmdAppealView;
+import blossome.command.member.CmdmemQnaList;
+import blossome.command.member.CmdmemQnainsert;
 
 
 /**
@@ -34,7 +36,8 @@ public class MemberControl extends HttpServlet {
 
 	private void initCommand(){
 		commandMap = new HashMap();
-		commandMap.put("memqna", new CommandNull("memqna.jsp"));
+		commandMap.put("memqna", new CmdmemQnaList("memqna.jsp"));
+		commandMap.put("insert", new CmdmemQnainsert("memqna.jsp"));
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

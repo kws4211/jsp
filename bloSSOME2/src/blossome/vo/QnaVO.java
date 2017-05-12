@@ -15,11 +15,9 @@ public class QnaVO {
 	private String memId;
 	private String qnaDate;
 	private String qnaType;
-	private String qnaTitle;
 	private String questionContent;
 	private String answerContent;
 	private int qnaState;
-	private String type;
 	
 	public QnaVO() {
 		
@@ -49,12 +47,6 @@ public class QnaVO {
 	public void setQnaType(String qnaType) {
 		this.qnaType = qnaType;
 	}
-	public String getQnaTitle() {
-		return qnaTitle;
-	}
-	public void setQnaTitle(String qnaTitle) {
-		this.qnaTitle = qnaTitle;
-	}
 	public String getQuestionContent() {
 		return questionContent;
 	}
@@ -71,20 +63,7 @@ public class QnaVO {
 		return qnaState;
 	}
 	public void setQnaState(int qnaState) {
-		if(qnaState == 1){
-			setType("1:1문의");
-		}else if(qnaState == 2){
-			setType("신고");
-		}
 		this.qnaState = qnaState;
 	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
-	
-	
 
 }
