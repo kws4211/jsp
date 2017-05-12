@@ -38,9 +38,12 @@
 				
 				<%if(list.size() != 0){ %>
 					<%for(QnaVO vo : list){ %>
+					<% int a = vo.getQnaState();
+						String type = "";
+						if(a == 1){	type="1:1문의";	}else{ type="신고"; }%>
 					<tr>
 						<td><%=vo.getQnaNum() %></td>
-						<td><%=vo.getQnaState() %></td>
+						<td><%=type%></td>
 						<td><%=vo.getMemId() %></td>
 						<td><%=vo.getQnaDate() %></td>
 						<!-- if문으로 상태에 따라 다르게 출력 -->

@@ -17,8 +17,8 @@ public class CmdTukList2 implements Command{
 	public String execute(HttpServletRequest request) throws CommandException {
 		
 		TukRepository repo = new TukRepository();
-		List<TukVO> list = repo.selectlist();
-		request.setAttribute("list", list);
+//		List<TukVO> list = repo.selectlist();
+//		request.setAttribute("list", list);
 		return next;
 	}
 

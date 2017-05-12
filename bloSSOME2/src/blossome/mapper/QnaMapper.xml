@@ -29,4 +29,10 @@
 		insert into BLO_QNA(qna_num,mem_id,qna_date,question_content,qna_state) 
 		values(#{qnaNum}, #{memId}, sysdate, #{questionContent}, #{qnaState})
 	</insert>
+	
+	<update id="reple" parameterType="hashMap">
+		UPDATE BLO_QNA 
+		SET answer_content = #{reple}
+		where qna_num = #{num}
+	</update>
 </mapper>

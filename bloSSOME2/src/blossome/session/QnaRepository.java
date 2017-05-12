@@ -95,5 +95,23 @@ public class QnaRepository {
 			sqlSess.close();
 		}
 	}
-	
+
+	public int reple(String num, String reple) {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			HashMap map = new HashMap();
+			map.put("num", num);
+			map.put("reple", reple);
+			String statment = namespace + ".reple";
+			int res = sqlSess.update(statment, map);
+			if(res > 0){
+				sqlSess.commit();
+			}else{
+				sqlSess.rollback();
+			}
+			return res;
+		} finally {
+			sqlSess.close();
+		}
+	}
 }
