@@ -4,14 +4,27 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="blossom.mapper.QnaMapper">
 	<select id="alllist" parameterType="hashmap" resultType="blossome.vo.QnaVO">
-		select * 
+		SELECT *
+		FROM (SELECT rownum as rnum, g.*  
+      		  FROM (SELECT * 
+            		FROM BLO_QNA  
+            		order by qna_num desc) g)
+        <where>
+			<if test="id != null">
+				mem_id = #{id} AND 
+			</if>
+			rnum <![CDATA[>=]]>  #{startnum} AND rnum <![CDATA[<=]]> #{endnum}
+		</where>   		
+	</select>
+	
+	<select id="totalcol" parameterType="String" resultType="int">
+		Select count(*)
 		from BLO_QNA
 		<where>
 			<if test="id != null">
 				mem_id = #{id}
 			</if>
 		</where>
-		ORDER BY qna_num desc
 	</select>
 	
 	<select id="selNum" parameterType="hashmap" resultType="blossome.vo.QnaVO">

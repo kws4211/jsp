@@ -37,11 +37,34 @@ public class QnaRepository {
 		}
 	}
 	
+	public Integer totalcol(String id){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			String statment = namespace + ".totalcol";
+			return sqlSess.selectOne(statment);
+		} finally {
+			sqlSess.close();
+		}
+	}
 	public List<QnaVO> selbyIdlist(String id){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try {
 			HashMap map = new HashMap();
 			map.put("id", id);
+			String statment = namespace + ".alllist";
+			return sqlSess.selectList(statment, map);
+		} finally {
+			sqlSess.close();
+		}
+	}
+	
+	public List<QnaVO> selbyIdlist(String id, int startnum, int endnum){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			HashMap map = new HashMap();
+			map.put("id", id);
+			map.put("startnum", startnum);
+			map.put("endnum", endnum);
 			String statment = namespace + ".alllist";
 			return sqlSess.selectList(statment, map);
 		} finally {

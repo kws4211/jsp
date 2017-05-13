@@ -4,6 +4,7 @@
     pageEncoding="UTF-8"%>
     
 <% List<QnaVO> list = (List<QnaVO>)request.getAttribute("list"); %>
+<% int totalpage = (int)request.getAttribute("totalPage"); %>
 <% String isnull = ""; %>
 <% String state = ""; %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -50,9 +51,15 @@
 	        <div class="badger-right" data-badger="신고 답변내용x">답변이 등록되지 않았습니다</div>
         <%} %>
     </div>
-    <div>
+    <div align="center">
     	<!-- 페이지 번호 들어가는 곳 -->
+    	<% if(totalpage !=0){ %>
+    		<%for(int i = 1 ; i <= totalpage ; i++){ %>
+				<a href="index.member?cmd=memqna&pnum=<%=i %>">&#171;<%=i %>&#187;</a>
+    		<%} %>
+    	<%}else{ %>
     	1 2 3 4 5
+    	<%} %>
     </div>
     <div>
     	<form id="memfrm">
