@@ -30,10 +30,10 @@ position:fixed;left:2%;top:12%;
 		<td>메뉴2</td>
 	</tr>
 	<tr>
-		<td>메뉴3</td>
+		<td><a href="index.member?cmd=memqna">1:1문의</a></td>
 	</tr>
 	<tr>
-		<td>로그아웃</td>
+		<td><a href="index.login?cmd=logout">로그아웃</a></td>
 	</tr>
 </table>
 </body>
