@@ -1,6 +1,7 @@
 package blossome.session;
 
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -31,6 +32,31 @@ public class MatchingRepository {
 		try {
 			String statment = namespace + ".list";
 			return sqlSess.selectList(statment);
+		} finally {
+			sqlSess.close();
+		}
+	}
+	
+	public List<MatchingVO> selectlist(int startnum, int endnum){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			HashMap map = new HashMap();
+			map.put("startnum", startnum);
+			map.put("endnum", endnum);
+			
+			String statment = namespace + ".list";
+			return sqlSess.selectList(statment,map);
+		} finally {
+			sqlSess.close();
+		}
+	}
+	
+	
+	public int totalcol(){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			String statment = namespace + ".total";
+			return sqlSess.selectOne(statment);
 		} finally {
 			sqlSess.close();
 		}
