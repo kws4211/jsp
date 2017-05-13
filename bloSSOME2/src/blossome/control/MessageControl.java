@@ -18,6 +18,7 @@ import blossome.command.appeal.CmdAppealView;
 import blossome.command.member.CmdmemQnaList;
 import blossome.command.member.CmdmemQnainsert;
 import blossome.command.message.CmdMsgList;
+import blossome.command.message.CmdMsgSendList;
 
 
 /**
@@ -38,6 +39,7 @@ public class MessageControl extends HttpServlet {
 	private void initCommand(){
 		commandMap = new HashMap();
 		commandMap.put("main", new CmdMsgList("Msgmain.jsp"));
+		commandMap.put("send", new CmdMsgSendList("MsgSend.jsp"));
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

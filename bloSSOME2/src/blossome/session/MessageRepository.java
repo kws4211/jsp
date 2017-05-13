@@ -31,14 +31,36 @@ public class MessageRepository {
 		return factory;
 	}
 	
-	public List<MsgVO> alllist(){
+	public List<MsgVO> Receivealllist(){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try{
-			
-			return sqlSess.selectList(namespace + ".all");
+			return sqlSess.selectList(namespace + ".receiveall");
 		}finally{
 			sqlSess.close();
 		}
-
 	}
+	
+	public List<MsgVO> Receivealllist(String id){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			HashMap map = new HashMap();
+			map.put("id", id);
+			return sqlSess.selectList(namespace + ".receiveall", map);
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
+	public List<MsgVO> Sendalllist(String id){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			HashMap map = new HashMap();
+			map.put("id", id);
+			return sqlSess.selectList(namespace + ".sendall", map);
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
+	
 }

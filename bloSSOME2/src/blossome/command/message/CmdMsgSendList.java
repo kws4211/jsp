@@ -10,10 +10,10 @@ import blossome.command.CommandException;
 import blossome.session.MessageRepository;
 import blossome.vo.MsgVO;
 
-public class CmdMsgList implements Command{
+public class CmdMsgSendList implements Command{
 	private String next;
 
-	public CmdMsgList( String _next ){
+	public CmdMsgSendList( String _next ){
 		next = _next;
 	}
 	
@@ -22,7 +22,7 @@ public class CmdMsgList implements Command{
 		String id = (String)session.getAttribute("id");
 		//msg 리스를 불러와서 출력
 		MessageRepository repo = new MessageRepository();
-		List<MsgVO> list = repo.Receivealllist(id);
+		List<MsgVO> list = repo.Sendalllist(id);
 		
 		request.setAttribute("list", list);
 		return next;

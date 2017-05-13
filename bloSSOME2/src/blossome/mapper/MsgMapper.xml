@@ -3,7 +3,7 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="blossom.mapper.MsgMapper">
-	<select id="all" parameterType="String" resultType="blossome.vo.MsgVO">
+	<select id="sendall" parameterType="hashMap" resultType="blossome.vo.MsgVO">
 		select *
 		from blo_message
 		<where>
@@ -12,5 +12,37 @@
 			</if>
 		</where>
 		order by msg_num desc
+	</select>
+	
+	<select id="receiveall" parameterType="hashMap" resultType="blossome.vo.MsgVO">
+		select *
+		from blo_message
+		<where>
+			<if test="id != null">
+				msg_id = #{id}
+			</if>
+		</where>
+		order by msg_num desc
+	</select>
+	
+	<select id="notread" parameterType="hashMap" resultType="int">
+		select count(*)
+		from blo_message
+		<where>
+			<if test="id != null">
+				mem_id = #{id}
+			</if>
+		</where>
+		where msg_state = 2
+	</select>
+	
+	<select id="total" parameterType="hashMap" resultType="int">
+		select count(*)
+		from blo_message
+		<where>
+			<if test="id != null">
+				mem_id = #{id}
+			</if>
+		</where>
 	</select>
 </mapper>
