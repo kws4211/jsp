@@ -79,7 +79,6 @@
                             <li><a class="page-scroll" href="index.login">Login</a></li>
                             <li><a class="page-scroll" href="index.find">이상형찾기</a></li>
                             <li><a class="page-scroll" href="index.appeal">어필게시판</a></li>
-                            <li><a class="page-scroll" href="#portfolio-section">채팅</a></li>
                             <li><a class="page-scroll" href="#team-section">후기</a></li>                            
                             <li><a class="page-scroll" href="#prices-section">이상형월드컵</a></li>
                         </ul>
@@ -126,8 +125,8 @@
                                                 <div class="portfolio_single_content">
                                                     <img src="/bloSSOME2/bloMain/img/portfolio/p2.jpg" alt="title"/>
                                                     <div>
-                                                        <a href="#">Photo Frame</a>
-                                                        <span>Subtitle</span>
+                                                        <a href=" main.appeal">어필게시판</a>
+                                                        <span>어필 어필</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -135,8 +134,8 @@
                                                 <div class="portfolio_single_content">
                                                     <img src="/bloSSOME2/bloMain/img/portfolio/p3.jpg" alt="title"/>
                                                     <div>
-                                                        <a href="#">Hand Shots</a>
-                                                        <span>Subtitle</span>
+                                                        <a href="main.find">이상형 찾기</a>
+                                                        <span>찾기 찾기</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -144,7 +143,7 @@
                                                 <div class="portfolio_single_content">
                                                     <img src="/bloSSOME2/bloMain/img/portfolio/p4.jpg" alt="title"/>
                                                     <div>
-                                                        <a href="#">Night Abstract</a>
+                                                        <a href="#">뭐넣어?</a>
                                                         <span>Subtitle</span>
                                                     </div>
                                                 </div>
@@ -153,7 +152,7 @@
                                                 <div class="portfolio_single_content">
                                                     <img src="/bloSSOME2/bloMain/img//portfolio/p5.jpg" alt="title"/>
                                                     <div>
-                                                        <a href="#">Joy of Independence</a>
+                                                        <a href="main.review">후기</a>
                                                         <span>Subtitle</span>
                                                     </div>
                                                 </div>
