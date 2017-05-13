@@ -3,4 +3,14 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="blossom.mapper.MsgMapper">
+	<select id="all" parameterType="String" resultType="blossome.vo.MsgVO">
+		select *
+		from blo_message
+		<where>
+			<if test="id != null">
+				mem_id = #{id}
+			</if>
+		</where>
+		order by msg_num desc
+	</select>
 </mapper>

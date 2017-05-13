@@ -11,6 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import blossome.vo.AppealVO;
 import blossome.vo.MemVO;
+import blossome.vo.MsgVO;
 
 public class MessageRepository {
 	
@@ -30,11 +31,11 @@ public class MessageRepository {
 		return factory;
 	}
 	
-	public List alllist(){
+	public List<MsgVO> alllist(){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try{
-			sqlSess.selectOne(namespace + ".checklogin");
-			return null;
+			
+			return sqlSess.selectList(namespace + ".all");
 		}finally{
 			sqlSess.close();
 		}
