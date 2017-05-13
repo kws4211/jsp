@@ -16,6 +16,7 @@ import blossome.command.admin.CmdadQnaList;
 import blossome.command.appeal.CmdAppealList;
 import blossome.command.appeal.CmdAppealView;
 import blossome.command.member.CmdmemCheckId;
+import blossome.command.member.CmdmemLogout;
 import blossome.command.member.CmdmemSearchFirst;
 import blossome.command.member.CmdmemSearchSecond;
 
@@ -27,7 +28,7 @@ public class LoginControl extends HttpServlet {
 	
 	private HashMap commandMap;
 	private String  error = "error.jsp";
-	private String dir = "/login/";
+	private String dir = "";
 	
 
     public LoginControl() {
@@ -43,6 +44,7 @@ public class LoginControl extends HttpServlet {
 		commandMap.put("checkid", new CmdmemCheckId("loginform.jsp"));
 		commandMap.put("searchfirst", new CmdmemSearchFirst("loginanswer.jsp"));
 		commandMap.put("searchsecond", new CmdmemSearchSecond("EndSearch.jsp"));
+		commandMap.put("logout", new CmdmemLogout("index.jsp"));
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -72,7 +74,11 @@ public class LoginControl extends HttpServlet {
 				throw new CommandException("지정할 명령어가 존재하지 않음");
 			}
 			nextPage = cmd.execute( request );
-			
+			if(cmdKey.equals("logout")){
+				dir = "/bloMain/";
+			}else{
+				dir = "/login/";
+			}
 		}catch( CommandException e ){
 			request.setAttribute("javax.servlet.jsp.jspException", e );
 			nextPage = error;
