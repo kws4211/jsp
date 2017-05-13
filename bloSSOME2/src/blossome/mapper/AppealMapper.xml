@@ -9,6 +9,7 @@
 	SELECT * 
 	FROM blo_member m, blo_appeal a
 	WHERE  m.mem_id = a.mem_id
+	ORDER BY app_num DESC
  </select> 
  
  <!-- 각각의 내용 -->

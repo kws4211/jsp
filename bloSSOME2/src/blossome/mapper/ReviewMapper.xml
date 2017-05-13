@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="blossome.mapper.ReviewMapper">
+
+<!-- 게시판 목록 -->
+ <select id="selectReviewView"  resultType="blossome.vo.ReviewVO">
+	SELECT * 
+	FROM blo_member m, blo_review a
+	WHERE  m.mem_id = a.mem_id
+	ORDER BY rev_num DESC
+ </select> 
+ 
+ <!-- 각각의 내용 -->
+<select id="selectReviewDetailView" parameterType="hashMap"  resultType="blossome.vo.ReviewVO">
+	 SELECT *
+	 FROM blo_member m, blo_review a
+	 WHERE  m.mem_id = a.mem_id
+	 AND rev_num = #{revId}
+	 
+ </select>
+ 
+ <!-- 게시판 추가 -->
+ <insert id="insertReview" parameterType="blossome.vo.ReviewVO" >
+	INSERT INTO blo_review
+ 	VALUES(#{revNum}, #{memId}, #{revTitle}, #{revContent}, sysdate ,#{revImg})
+</insert> 
+
+<!-- 게시판 시퀀스 추가 -->
+<select id="selectReviewSeq" resultType="String">
+	SELECT review_seq.nextval as review_seq FROM dual
+</select>
+
+<!-- 게시판 수정 -->
+<update id="updateReview" parameterType="blossome.vo.ReviewVO">
+	UPDATE blo_review
+	SET rev_title = #{revTitle}, rev_content = #{revContent}, rev_date = sysdate
+	WHERE rev_num = #{revNum}
+</update>
+
+<!-- 게시판 삭제 -->
+ <delete id="deleteReview" parameterType="String" >
+ 	DELETE FROM blo_review
+ 	WHERE rev_num = #{revId}
+ </delete>
+
+</mapper>

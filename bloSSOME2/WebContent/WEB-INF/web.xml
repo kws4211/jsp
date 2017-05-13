@@ -78,4 +78,14 @@
     <url-pattern>/TukControl</url-pattern>
     <url-pattern>*.tuk</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ReviewControl</servlet-name>
+    <servlet-class>blossome.control.ReviewControl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReviewControl</servlet-name>
+    <url-pattern>/ReviewControl</url-pattern>
+    <url-pattern>*.review</url-pattern>
+  </servlet-mapping>
 </web-app>
