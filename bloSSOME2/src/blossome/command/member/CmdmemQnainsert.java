@@ -32,7 +32,7 @@ public class CmdmemQnainsert implements Command{
 		}
 		QnaRepository repo = new QnaRepository();
 		repo.insetQna(vo);
-		List<QnaVO> list = repo.selbyIdlist(vo.getMemId());
+		List<QnaVO> list = repo.selectlist(vo.getMemId());
 		
 		request.setAttribute("list", list);
 		return next;

@@ -42,7 +42,7 @@ public class CmdmemQnaList implements Command{
 		//계산된 숫자를 res배열에 저장
 		int[] res = p.SettingPageNum(repo.totalcol(id), 3, pageNum);
 		
-		List<QnaVO> list = repo.selbyIdlist(id,res[1], res[2]);
+		List<QnaVO> list = repo.selectlist(id,res[1], res[2]);
 		
 		request.setAttribute("list", list);
 		request.setAttribute("totalPage", res[0]);

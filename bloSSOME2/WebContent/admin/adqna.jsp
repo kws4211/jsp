@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% List<QnaVO> list = (List<QnaVO>)request.getAttribute("list"); %>
+<% int total = (int)request.getAttribute("total"); %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -86,6 +87,13 @@
 					</td>
 				</tr>
 				<%} %>
+				<tr>
+					<td colspan="5">
+						<%for(int i = 1 ; i <= total ; i++){ %>
+							<a href="index.admin?cmd=adqna&pnum=<%=i %>">&#171;<%=i %>&#187;</a>
+						<%} %>
+					</td>
+				</tr>
 			</table>
 		</div>
 	</div>

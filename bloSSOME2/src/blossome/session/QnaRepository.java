@@ -37,16 +37,7 @@ public class QnaRepository {
 		}
 	}
 	
-	public Integer totalcol(String id){
-		SqlSession sqlSess = getSelSessionFactory().openSession();
-		try {
-			String statment = namespace + ".totalcol";
-			return sqlSess.selectOne(statment);
-		} finally {
-			sqlSess.close();
-		}
-	}
-	public List<QnaVO> selbyIdlist(String id){
+	public List<QnaVO> selectlist(String id){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try {
 			HashMap map = new HashMap();
@@ -58,7 +49,21 @@ public class QnaRepository {
 		}
 	}
 	
-	public List<QnaVO> selbyIdlist(String id, int startnum, int endnum){
+	public List<QnaVO> selectlist(int startnum, int endnum){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			HashMap map = new HashMap();
+			map.put("startnum", startnum);
+			map.put("endnum", endnum);
+			
+			String statment = namespace + ".alllist";
+			return sqlSess.selectList(statment,map);
+		} finally {
+			sqlSess.close();
+		}
+	}
+	
+	public List<QnaVO> selectlist(String id, int startnum, int endnum){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try {
 			HashMap map = new HashMap();
@@ -67,6 +72,26 @@ public class QnaRepository {
 			map.put("endnum", endnum);
 			String statment = namespace + ".alllist";
 			return sqlSess.selectList(statment, map);
+		} finally {
+			sqlSess.close();
+		}
+	}
+	
+	public Integer totalcol(){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			String statment = namespace + ".totalcol";
+			return sqlSess.selectOne(statment);
+		} finally {
+			sqlSess.close();
+		}
+	}
+	
+	public Integer totalcol(String id){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			String statment = namespace + ".totalcol";
+			return sqlSess.selectOne(statment);
 		} finally {
 			sqlSess.close();
 		}
