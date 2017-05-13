@@ -88,4 +88,14 @@
     <url-pattern>/ReviewControl</url-pattern>
     <url-pattern>*.review</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>MessageControl</servlet-name>
+    <servlet-class>blossome.control.MessageControl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MessageControl</servlet-name>
+    <url-pattern>/MessageControl</url-pattern>
+    <url-pattern>*.msg</url-pattern>
+  </servlet-mapping>
 </web-app>
