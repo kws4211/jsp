@@ -27,18 +27,19 @@
 <script type="text/javascript" src="/bloSSOME2/lib/alopex-ui.min.js"></script>
 <script type="text/javascript" src="/bloSSOME2/tuk/js/tuk.js"></script>
 
+
+
 </head>
 <body>
 
 <%-- <jsp:include page="../bloMain/header.jsp"></jsp:include> --%>
-<h3>내가 툭한 사람</h3>
+<h3>나를 꾹한 사람</h3>
 <%if(list.size() != 0){ %>
 <%for(TukVO vo : list){ %>
 <div class="container">
     <div class="row">
      <div class="col-sm-10 col-sm-offset-1">
          <div class="col-md-4 col-sm-6">
-         
              <div class="card-container">
                 <div class="card">
                 	<!-- 툭 앞면 -->
@@ -121,14 +122,22 @@
                         </div>
                         <div class="footer">
                             <div class="social-links text-center">
-
-                         	    <button type="button" class="btn btn-success btn-sm"><a href="xx.tuk?cmd=mydelete-do&choicenum=<%=vo.getChoiceNum()%>">툭취소</a></button>
-								<input type="hidden" name="choiceN" value="<%=vo.getChoiceNum() %>"/>                         	    
-                         	    <button type="button" class="btn btn-success btn-sm"><a id="gguck" href="xx.tuk?cmd=popup&choicenum=<%=vo.getChoiceNum()%>">꾸욱하기</a></button>
-<%-- 								<%if(vo.getChoiceState() == 1){ %> --%>
-<%-- 								<%}else{ %> --%>
+								<form id='frm' method="post">
 								
-<%-- 								<%} %> --%>
+								<!-- 나를툭한사람의 정보를 넘겨줌 -->
+<%-- 								<input type="hidden" name="choiceN" value="<%=vo.getChoiceNum() %>"/> --%>
+								<!-- 상대방 아이디 -->
+								<input type="hidden" name="memId" value="<%=vo.getMemId() %>"/>
+								<input type="hidden" name="choiceId" value="<%=vo.getChoiceId() %>"/>
+								<input type="hidden" name="date" value="<%=vo.getChoiceDate() %>"/>
+								<input type="hidden" name="state" value="<%=vo.getChoiceState() %>"/>
+								<input type="hidden" name="mainImg" value="mainImg"/>
+								<input type="hidden" name="subImg" value="SubImg"/>
+								
+<%-- 								<input type="hidden" name="choiceId" value="<%=vo.getChoiceId() %>"/> --%>
+
+                         	    <input type="button" id="btn_tuk" value="툭하기" />
+                         	    </form>
                             </div>
                         </div>
                      </div> <!-- end back panel -->
@@ -207,9 +216,9 @@
                         </div>
                         <div class="footer">
                             <div class="social-links text-center">
-								
+
                          	    <button type="button" class="btn btn-success btn-sm"><a href="">툭취소</a></button>
-                         	   <a  class="btn btn-success btn-sm" id="gguck">꾸욱하기</a>
+                         	    <a  class="btn btn-success btn-sm" id="gguck">꾸욱하기</a>
                          	   
 
                             </div>

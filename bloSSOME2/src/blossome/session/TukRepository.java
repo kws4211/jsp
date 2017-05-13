@@ -114,6 +114,34 @@ public class TukRepository {
 	      }
 	   }
 	
-
+	
+	//꾸욱 리스트
+	public List<TukVO> mygguckselectlist(){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			HashMap map = new HashMap();
+			map.put("id", "myid");
+			String statment = namespace + ".mygguckList";
+			return sqlSess.selectList(statment, map);
+		} finally {
+			sqlSess.close();
+		}
+	
+	}
+	
+	// 나를 꾹 리스트 
+	public List<TukVO> megguckselectlist(){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			HashMap map = new HashMap();
+			map.put("id", "myid");
+			String statment = namespace + ".megguckList";
+			return sqlSess.selectList(statment, map);
+		} finally {
+			sqlSess.close();
+		}
+	
+}	
+	
 
 }

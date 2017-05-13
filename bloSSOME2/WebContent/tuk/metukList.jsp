@@ -33,7 +33,7 @@
 <body>
 
 <%-- <jsp:include page="../bloMain/header.jsp"></jsp:include> --%>
-
+<h3>나를 툭한 사람</h3>
 <%if(list.size() != 0){ %>
 <%for(TukVO vo : list){ %>
 <div class="container">
@@ -139,6 +139,7 @@
                          	    <input type="button" id="btn_tuk" value="툭하기" />
                          	    
                          	    </form>
+                         	    
 								<input type="button"><a href="xx.tuk?cmd=mydelete-do&choicenum=<%=vo.getChoiceNum()%>">툭취소</a></input>
 
                             </div>

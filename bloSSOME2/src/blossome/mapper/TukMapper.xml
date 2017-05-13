@@ -33,4 +33,18 @@
 	<select id="selectTukSeq" resultType="String">
   	 SELECT tuk_seq.nextval as tuk_seq FROM dual
 	</select>
+	
+	<!-- 내가 꾹 리스트 -->
+	<select id="mygguckList" parameterType="hashMap" resultType="blossome.vo.TukVO">
+		select b.*, m.*, am.* 
+		from BLO_CHOICE b, BLO_MEMBER m, BLO_ADDMEMBER am 
+		where b.mem_id=#{id} and b.CHOICE_STATE=2 and b.CHOICE_ID=m.MEM_ID and b.CHOICE_ID=am.MEM_ID
+	</select>
+	
+	<!-- 나를 꾹 리스트 -->
+	<select id="megguckList" parameterType="hashMap" resultType="blossome.vo.TukVO">
+		select b.*, m.*, am.* 
+		from BLO_CHOICE b, BLO_MEMBER m, BLO_ADDMEMBER am 
+		where b.choice_id=#{id} and b.CHOICE_STATE=2 and b.mem_ID=m.MEM_ID and b.mem_ID=am.MEM_ID
+	</select>
 </mapper>

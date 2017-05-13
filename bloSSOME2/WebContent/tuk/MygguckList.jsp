@@ -31,14 +31,14 @@
 <body>
 
 <%-- <jsp:include page="../bloMain/header.jsp"></jsp:include> --%>
-<h3>내가 툭한 사람</h3>
+<h3>내가 꾸욱한 사람</h3>
 <%if(list.size() != 0){ %>
 <%for(TukVO vo : list){ %>
 <div class="container">
     <div class="row">
      <div class="col-sm-10 col-sm-offset-1">
          <div class="col-md-4 col-sm-6">
-         
+         	
              <div class="card-container">
                 <div class="card">
                 	<!-- 툭 앞면 -->
@@ -122,9 +122,9 @@
                         <div class="footer">
                             <div class="social-links text-center">
 
-                         	    <button type="button" class="btn btn-success btn-sm"><a href="xx.tuk?cmd=mydelete-do&choicenum=<%=vo.getChoiceNum()%>">툭취소</a></button>
+                         	    <button type="button" class="btn btn-success btn-sm"><a href="xx.tuk?cmd=mydelete-do&choicenum=<%=vo.getChoiceNum()%>">꾸욱취소</a></button>
 								<input type="hidden" name="choiceN" value="<%=vo.getChoiceNum() %>"/>                         	    
-                         	    <button type="button" class="btn btn-success btn-sm"><a id="gguck" href="xx.tuk?cmd=popup&choicenum=<%=vo.getChoiceNum()%>">꾸욱하기</a></button>
+                         	    
 <%-- 								<%if(vo.getChoiceState() == 1){ %> --%>
 <%-- 								<%}else{ %> --%>
 								
@@ -207,11 +207,7 @@
                         </div>
                         <div class="footer">
                             <div class="social-links text-center">
-								
-                         	    <button type="button" class="btn btn-success btn-sm"><a href="">툭취소</a></button>
-                         	   <a  class="btn btn-success btn-sm" id="gguck">꾸욱하기</a>
-                         	   
-
+                         	    <button type="button" class="btn btn-success btn-sm"><a href="">꾸욱취소</a></button>
                             </div>
                         </div>
 					
