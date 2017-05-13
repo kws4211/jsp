@@ -23,7 +23,7 @@
 <div class="container">
     <div class="row">
     	<!-- for문 사용으로 리스트 출력 -->
-    	<%if(list.size() > 0){ %>
+    	<%if(list.size() > 0 && session.getAttribute("id") != null){ %>
 	    	<%for(QnaVO vo : list){ %>
 	    		<!-- if문으로 문의 유형 선택후 신고or1:1문의 로 출력 -->
 	    		<%if(vo.getQnaState() == 1){ %>
