@@ -27,6 +27,7 @@ public class CmdmemLogout implements Command{
 
 		HttpSession session = request.getSession();
 		session.removeAttribute("id");
+		session.removeAttribute("admin");
 		
 		return next;
 	}

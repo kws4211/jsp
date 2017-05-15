@@ -152,7 +152,7 @@
                                                 <div class="portfolio_single_content">
                                                     <img src="/bloSSOME2/bloMain/img/portfolio/p4.jpg" alt="title"/>
                                                     <div>
-                                                        <a href="#">뭐넣어?</a>
+                                                        <a href="#"><%=st %></a>
                                                         <span>Subtitle</span>
                                                     </div>
                                                 </div>
