@@ -13,12 +13,12 @@
 		<div class="MainName">BloSSOME</div>
 		<div class="Menu">
 			<ul>
-				<li><a href="#">HOME</a></li>
+				<li><a href="index.blossom">HOME</a></li>
 				<li><a href="#">Logout</a></li>
 				<li><a href="#">회원 승인</a></li>
 				<li><a href="#">회원 관리</a></li>
-				<li><a href="#">문의</a></li>
-				<li><a href="#">매칭관리</a></li>
+				<li><a href="Qna.admin?cmd=adqna">문의</a></li>
+				<li><a href="Qna.admin?cmd=admat">매칭관리</a></li>
 			</ul>
 		</div>
 	</div>

@@ -12,7 +12,7 @@
          	  order by b.mat_num desc) m)
     <where>
 		<if test="startnum != null">
-			WHERE rnum <![CDATA[>=]]> #{startnum} AND rnum <![CDATA[<=]]> #{endnum}
+			rnum <![CDATA[>=]]> #{startnum} AND rnum <![CDATA[<=]]> #{endnum}
 		</if>
 	</where>
 </select>
