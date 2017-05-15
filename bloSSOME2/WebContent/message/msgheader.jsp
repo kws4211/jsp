@@ -15,10 +15,9 @@
 			<ul>
 				<li><a href="index.blossom">HOME</a></li>
 				<li><a href="index.login?cmd=logout">Logout</a></li>
-				<li><a href="#">회원 승인</a></li>
-				<li><a href="#">회원 관리</a></li>
-				<li><a href="Qna.admin?cmd=adqna">문의</a></li>
-				<li><a href="Qna.admin?cmd=admat">매칭관리</a></li>
+				<li><a href="index.msg?cmd=main">받은 쪽지</a></li>
+				<li><a href="index.msg?cmd=send">보낸 쪽지</a></li>
+				<li><a href="Qna.member?cmd=memqna">문의</a></li>
 			</ul>
 		</div>
 	</div>

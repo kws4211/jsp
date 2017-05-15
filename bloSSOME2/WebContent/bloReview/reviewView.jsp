@@ -18,10 +18,10 @@
 </head>
 
 <body>
-<jsp:include page="../bloMain/header.jsp" flush="false"/>
+<%-- <jsp:include page="../bloMain/header.jsp" flush="false"/> --%>
+	<jsp:include page="../bloMain/mainHeader.jsp"></jsp:include>
 <h2>Review board</h2>
 <div class="container">
-	
     <div class="row">
     <button><a href="xxxxx.review?cmd=revinsert">글쓰기</a></button>
     <% for( ReviewVO vo : list) { %>

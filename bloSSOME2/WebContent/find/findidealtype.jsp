@@ -16,7 +16,7 @@
 <script type="text/javascript" src="/bloSSOME2/find/js/findidealtype.js"></script>
 </head>
 <body>
-<jsp:include page="../bloMain/header.jsp"></jsp:include>
+<jsp:include page="../bloMain/mainHeader.jsp"></jsp:include>
 <div class="container">
 	<div class="row">
 		<section>
