@@ -17,7 +17,10 @@ import blossome.command.tuk.CmdMyTukDelete;
 import blossome.command.tuk.CmdMyTukInsert;
 import blossome.command.tuk.CmdMyTukList;
 import blossome.command.tuk.CmdMyTukPopup;
+import blossome.command.tuk.CmdMygguckInsert;
 import blossome.command.tuk.CmdMygguckList;
+import blossome.command.tuk.CmdMegguckblock;
+import blossome.command.tuk.CmdMygguckdelete;
 import blossome.command.tuk.CmdMeTukDelete;
 import blossome.command.tuk.CmdMeTukList;
 import blossome.command.tuk.CmdMegguckList;
@@ -57,6 +60,13 @@ public class TukControl extends HttpServlet {
 		commandMap.put("mygguck", new CmdMygguckList("MygguckList.jsp"));
 		//나를 꾸욱 리스트
 		commandMap.put("megguck", new CmdMegguckList("megguckList.jsp"));
+		//나의 꾸욱 리스트에서 꾸욱취소
+		commandMap.put("mygguck-delete", new CmdMygguckdelete("MygguckList.jsp"));
+		//나의 꾸욱 리스트에서 차단하기
+		commandMap.put("megguck-block", new CmdMegguckblock("megguckList.jsp"));
+		//나를 꾸욱 리스트에서 꾹하기
+		commandMap.put("megguck-insert", new CmdMygguckInsert("megguckList.jsp"));
+		
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

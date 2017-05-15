@@ -7,18 +7,23 @@ import blossome.command.*;
 import blossome.session.TukRepository;
 import blossome.vo.TukVO;
 
-public class CmdMygguckList implements Command{
+public class CmdMegguckblock implements Command{
 	private String next;
 
-	public CmdMygguckList( String _next ){
+	public CmdMegguckblock( String _next ){
 		next = _next;
 	}
 	
 	public String execute(HttpServletRequest request) throws CommandException {
+		String choiceN = (String) request.getParameter("choicenum");
+
 		
 		TukRepository repo = new TukRepository();
-		List<TukVO> list = repo.mygguckselectlist();
+		int result = repo.blockgguck(choiceN);
+		
+		List<TukVO> list = repo.megguckselectlist();
 		request.setAttribute("list", list);
 		return next;
 	}
+
 }

@@ -8,14 +8,14 @@
 	<select id="mytukList" parameterType="hashMap" resultType="blossome.vo.TukVO">
 		select b.*, m.*, am.* 
 		from BLO_CHOICE b, BLO_MEMBER m, BLO_ADDMEMBER am 
-		where b.mem_id=#{id} and b.CHOICE_ID=m.MEM_ID and b.CHOICE_ID=am.MEM_ID
+		where b.mem_id=#{id} and b.CHOICE_ID=m.MEM_ID and b.CHOICE_ID=am.MEM_ID and CHOICE_STATE in (1, 2)
 	</select>
 	
 	<!-- 나를 툭 리스트 -->
 	<select id="metukList" parameterType="hashMap" resultType="blossome.vo.TukVO">
 		select b.*, m.*, am.* 
 		from BLO_CHOICE b, BLO_MEMBER m, BLO_ADDMEMBER am 
-		where b.CHOICE_ID=#{id} and b.mem_ID=m.MEM_ID and b.mem_ID=am.MEM_ID
+		where b.CHOICE_ID=#{id} and b.mem_ID=m.MEM_ID and b.mem_ID=am.MEM_ID and CHOICE_STATE in (1, 2)
 	</select>
 	
 	<!-- 나를 툭한 리스트에서 툭하기  -->	
@@ -47,4 +47,33 @@
 		from BLO_CHOICE b, BLO_MEMBER m, BLO_ADDMEMBER am 
 		where b.choice_id=#{id} and b.CHOICE_STATE=2 and b.mem_ID=m.MEM_ID and b.mem_ID=am.MEM_ID
 	</select>
+	
+	<!-- 꾸욱취소 -->
+	<update id="gguckDelete">
+		update BLO_CHOICE
+		set CHOICE_STATE=1
+		where CHOICE_NUM=#{choiceN}
+	</update>
+	
+	<!-- 차단하기 -->
+	<update id="gguckBlock">
+		update BLO_CHOICE
+		set CHOICE_STATE=0
+		where CHOICE_NUM=#{choiceN}
+	</update>
+	
+	<!-- 꾸욱 매칭 -->
+	<update id="gguckUpdate">
+		update BLO_CHOICE
+		set CHOICE_STATE=4
+		where CHOICE_NUM=#{choiceN}
+	</update>
+	<insert id="gguckInsert">
+		INSERT INTO BLO_CHOICE
+		VALUES ( #{choiceNum}, #{memId}, #{choiceId}, sysdate, 4, #{choiceMainImg}, #{choiceSubImg} )
+	</insert>
+	<select id="">
+		select 
+	</select>
+	
 </mapper>

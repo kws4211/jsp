@@ -141,7 +141,51 @@ public class TukRepository {
 			sqlSess.close();
 		}
 	
-}	
+	}	
 	
+	// 나를 꾹한 리스트에서 꾹취소 => state 1
+	public Integer deletegguck( String choiceN ){
+		// JDBC : Connection, Mybatis : SqlSession
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		
+		try {
+			int result = 0;
+			String statment = namespace + ".gguckDelete";
+			int res = sqlSess.insert(statment, choiceN);
+			if( res > 0){
+				sqlSess.commit();
+				result++;
+				// JDBC : auto-commit, Mybatis : �븘�떂
+			}else{
+				sqlSess.rollback();
+			}
+			return result;
+		} finally {
+			sqlSess.close();
+		}
+		
+	}
+	// 나를 꾹한 리스트에서 차단하기 => state 0
+	public Integer blockgguck( String choiceN ){
+		// JDBC : Connection, Mybatis : SqlSession
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		
+		try {
+			int result = 0;
+			String statment = namespace + ".gguckBlock";
+			int res = sqlSess.insert(statment, choiceN);
+			if( res > 0){
+				sqlSess.commit();
+				result++;
+				// JDBC : auto-commit, Mybatis : �븘�떂
+			}else{
+				sqlSess.rollback();
+			}
+			return result;
+		} finally {
+			sqlSess.close();
+		}
+		
+	}
 
 }

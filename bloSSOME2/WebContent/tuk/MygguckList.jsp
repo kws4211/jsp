@@ -7,7 +7,6 @@
 // 	String mem_id = request.getParameter("mem_id");
 	// 2. Service에 getArticleById() 호출하여 그 게시글번호를 갖는 레코드를 검색한다.
 	List<TukVO> list = (List<TukVO>)request.getAttribute("list");
-
 %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -29,8 +28,8 @@
 
 </head>
 <body>
-
-<%-- <jsp:include page="../bloMain/header.jsp"></jsp:include> --%>
+<jsp:include page="../bloMain/mainHeader.jsp"></jsp:include>
+<div id="aside"></div>
 <h3>내가 꾸욱한 사람</h3>
 <%if(list.size() != 0){ %>
 <%for(TukVO vo : list){ %>
@@ -122,13 +121,10 @@
                         <div class="footer">
                             <div class="social-links text-center">
 
-                         	    <button type="button" class="btn btn-success btn-sm"><a href="xx.tuk?cmd=mydelete-do&choicenum=<%=vo.getChoiceNum()%>">꾸욱취소</a></button>
-								<input type="hidden" name="choiceN" value="<%=vo.getChoiceNum() %>"/>                         	    
+                         	    <button type="button" class="btn btn-success btn-sm"><a href="xx.tuk?cmd=mygguck-delete&choicenum=<%=vo.getChoiceNum()%>">꾸욱취소</a></button>
                          	    
-<%-- 								<%if(vo.getChoiceState() == 1){ %> --%>
-<%-- 								<%}else{ %> --%>
-								
-<%-- 								<%} %> --%>
+								<input type="hidden" name="choiceN" value="<%=vo.getChoiceNum() %>"/>                         	    
+
                             </div>
                         </div>
                      </div> <!-- end back panel -->

@@ -1,6 +1,6 @@
 $(function(){
 	$(".btn-success").click(function(){
-
+		$("#aside").load("side.blossom?cmd=aside");
 		openWin();
 	});
 	

@@ -7,7 +7,6 @@
 // 	String mem_id = request.getParameter("mem_id");
 	// 2. Service에 getArticleById() 호출하여 그 게시글번호를 갖는 레코드를 검색한다.
 	List<TukVO> list = (List<TukVO>)request.getAttribute("list");
-
 %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -32,7 +31,8 @@
 </head>
 <body>
 
-<%-- <jsp:include page="../bloMain/header.jsp"></jsp:include> --%>
+<jsp:include page="../bloMain/mainHeader.jsp"></jsp:include>
+<div id="aside"></div>
 <h3>나를 툭한 사람</h3>
 <%if(list.size() != 0){ %>
 <%for(TukVO vo : list){ %>
@@ -136,11 +136,11 @@
 								
 <%-- 								<input type="hidden" name="choiceId" value="<%=vo.getChoiceId() %>"/> --%>
 
-                         	    <input type="button" id="btn_tuk" value="툭하기" />
-                         	    
+<!--                          	    <input type="button" id="btn_tuk" value="툭하기" /> -->
+                         	    <button type="button" id="btn_tuk" class="btn btn-success btn-sm">툭하기</button>
                          	    </form>
-                         	    
-								<input type="button"><a href="xx.tuk?cmd=mydelete-do&choicenum=<%=vo.getChoiceNum()%>">툭취소</a></input>
+<%--                          	    <button type="button" id="btn_tuk" class="btn btn-success btn-sm"><a href="xx.tuk?cmd=mydelete-do&choicenum=<%=vo.getChoiceNum()%>">툭취소</a></button> --%>
+<%-- 								<input type="button"><a href="xx.tuk?cmd=mydelete-do&choicenum=<%=vo.getChoiceNum()%>">툭취소</a></input> --%>
 
                             </div>
                         </div>
