@@ -1,5 +1,4 @@
 $(function () {
-	$("#aside").load("side.blossom?cmd=aside");
     //Initialize tooltips
 	$('.nav-tabs > li a[title]').tooltip();
     

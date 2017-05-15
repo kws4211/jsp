@@ -17,7 +17,6 @@
 </head>
 <body>
 <jsp:include page="../bloMain/mainHeader.jsp"></jsp:include>
-<!-- <div id="aside"></div> -->
 <div class="container">
 	<div class="row">
 		<section>

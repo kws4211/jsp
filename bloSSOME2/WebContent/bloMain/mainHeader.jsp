@@ -17,6 +17,14 @@
 				<%if(session.getAttribute("id") == null) {%>
 					<li><a href="index.login?cmd=login">Login</a></li>
                 <%}else{ %>
+                	<li>
+                		<span class="submenu"><%=session.getAttribute("id") %></span>
+                		<ul>
+                			<li><a href="index.msg">쪽지함</a></li>
+                			<li><a href="index.member?cmd=memqna">1:1문의</a></li>
+                			<li><a href="">회원정보수정</a></li>
+                		</ul>
+                	</li>
 					<li><a href="index.login?cmd=logout">Logout</a></li>
 				<%} %>
 				<li><a href="index.find">이상형찾기</a></li>

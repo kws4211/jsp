@@ -1,8 +1,8 @@
 @CHARSET "UTF-8";
 
 div.header {
-	height: 58px;
-	background-color: black;
+	height: 65px;
+	background-color: #242424;
 }
 
 div.header .MainName {
@@ -21,7 +21,8 @@ div.header .Menu {
 div.header .Menu ul li {
 	display: inline;
 	border-left: 1px solid #999;
-	padding: 0 10px;
+	padding: 0 20px;
+	color : gray;
 }
 
 div.header .Menu ul li a{
@@ -31,6 +32,24 @@ div.header .Menu ul li a{
 
 div.header .Menu ul li a:hover{
 	color: white;
+}
+
+div.header .Menu ul li:hover{
+	border-bottom : solid 2px white;
+	color: white;
+}
+
+div.header .Menu ul li:hover ul{
+	display: block;
+}
+
+div.header .Menu ul ul{
+	padding-left : 10px;
+	padding-top : 2px;
+	position:absolute;
+	background-color: #242424;
+	height:30px;
+	display: none;
 }
 
 div.header .Menu ul li:first-child {
