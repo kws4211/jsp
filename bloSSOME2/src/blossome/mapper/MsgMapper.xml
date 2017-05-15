@@ -45,4 +45,14 @@
 			</if>
 		</where>
 	</select>
+	
+	<select id="view" parameterType="hashMap" resultType="blossome.vo.MsgVO">
+		select *
+		from blo_message
+		<where>
+			<if test="num != null">
+				msg_num = #{num}
+			</if>
+		</where>
+	</select>
 </mapper>

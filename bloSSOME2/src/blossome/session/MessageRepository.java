@@ -62,5 +62,16 @@ public class MessageRepository {
 		}
 	}
 	
+	public MsgVO view(String num) {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			HashMap map = new HashMap();
+			map.put("num", num);
+			return sqlSess.selectOne(namespace + ".view", map);
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
 	
 }

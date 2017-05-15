@@ -9,6 +9,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 <body>
 받은 메시지 출력 부분
@@ -25,11 +27,13 @@
 			<td><%=vo.getMsgNum() %></td>
 			<td><%=vo.getMemId() %></td>
 			<td><%=vo.getMsgName() %></td>
+			<td><a href="view.msg?cmd=view&num=<%=vo.getMsgNum() %>">
 			<%if(vo.getMsgState() == 2){ %>
-				<td>읽지 않음</td>
+				읽지 않음
 			<%}else{ %>
-				<td>읽음</td>
+				읽음
 			<%} %>
+			</a></td>
 		<%} %>
 		</tr>
 	</table>
