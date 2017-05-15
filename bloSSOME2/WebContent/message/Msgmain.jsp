@@ -9,6 +9,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+table {
+	margin-top: 50px;
+}
+</style>
 <link rel="stylesheet" href="/bloSSOME2/lib/alopex-ui-default.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="/bloSSOME2/lib/alopex-ui.min.js"></script>
@@ -16,6 +21,7 @@
 
 </head>
 <body>
+<jsp:include page="../message/msgheader.jsp"></jsp:include>
 받은 메시지 출력 부분
 <%if(list.size() > 0){ %>
 	<table>
