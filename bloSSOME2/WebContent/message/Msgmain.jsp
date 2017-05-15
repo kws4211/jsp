@@ -9,7 +9,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/bloSSOME2/lib/alopex-ui-default.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/bloSSOME2/lib/alopex-ui.min.js"></script>
+<script type="text/javascript" src="/bloSSOME2/message/js/Msg.js"></script>
 
 </head>
 <body>
@@ -24,16 +27,17 @@
 		</tr>
 		<tr>
 		<%for(MsgVO vo : list) {%>
-			<td><%=vo.getMsgNum() %></td>
+			<td><span id="num"><%=vo.getMsgNum() %></span></td>
 			<td><%=vo.getMemId() %></td>
 			<td><%=vo.getMsgName() %></td>
-			<td><a href="view.msg?cmd=view&num=<%=vo.getMsgNum() %>">
+<%-- 			<a href="view.msg?cmd=view&num=<%=vo.getMsgNum() %>"> --%>
+			<td><span id="link">
 			<%if(vo.getMsgState() == 2){ %>
 				읽지 않음
 			<%}else{ %>
 				읽음
 			<%} %>
-			</a></td>
+			</span></a></td>
 		<%} %>
 		</tr>
 	</table>
