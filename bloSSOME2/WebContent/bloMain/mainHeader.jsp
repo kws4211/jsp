@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-	<link rel="stylesheet" href="/bloSSOME2/admin/css/adheader.css">
+	<link rel="stylesheet" href="/bloSSOME2/bloMain/css/header.css">
 </head>
 <body>
 	<div class="header">
@@ -14,11 +14,15 @@
 		<div class="Menu">
 			<ul>
 				<li><a href="index.blossom">HOME</a></li>
-				<li><a href="index.login?cmd=logout">Logout</a></li>
-				<li><a href="#">회원 승인</a></li>
-				<li><a href="#">회원 관리</a></li>
-				<li><a href="Qna.admin?cmd=adqna">문의</a></li>
-				<li><a href="Qna.admin?cmd=admat">매칭관리</a></li>
+				<%if(session.getAttribute("id") == null) {%>
+					<li><a href="index.login?cmd=login">Login</a></li>
+                <%}else{ %>
+					<li><a href="index.login?cmd=logout">Logout</a></li>
+				<%} %>
+				<li><a href="index.find">이상형찾기</a></li>
+				<li><a href="index.appeal">어필게시판</a></li>
+				<li><a href="index.review">후기</a></li>
+				<li><a href="#">이상형월드컵</a></li>
 			</ul>
 		</div>
 	</div>
