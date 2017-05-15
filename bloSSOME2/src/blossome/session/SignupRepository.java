@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import blossome.vo.MemVO;
+import blossome.vo.AddMemVO;
 
 public class SignupRepository {
 	
@@ -36,6 +37,24 @@ public class SignupRepository {
 		try {
 			System.out.println("dd");
 			String statment = namespace + ".insertMem";
+			//모든 작업 완료 후 insert
+			int res = sqlSess.insert(statment, vo);
+			if(res > 0){
+				sqlSess.commit();
+			}else{
+				sqlSess.rollback();
+			}
+			return res;
+		} finally {
+			sqlSess.close();
+		}
+	}
+	
+	public int insertAddSignup(AddMemVO vo){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			System.out.println("dd");
+			String statment = namespace + ".insertAddMem";
 			//모든 작업 완료 후 insert
 			int res = sqlSess.insert(statment, vo);
 			if(res > 0){

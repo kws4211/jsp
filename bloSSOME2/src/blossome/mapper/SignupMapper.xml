@@ -7,5 +7,10 @@
 		insert into BLO_MEMBER(mem_id ,mem_name ,mem_nick ,mem_pass ,mem_birth ,mem_tel ,mem_loc ,mem_email ,mem_state ,mem_signup ,mem_question ,mem_answer, mem_leave) 
 		values(#{memId}, #{memName}, #{memNick}, #{memPass}, #{memBirth}, #{memTel}, #{memLoc}, #{memEmail}, #{memState}, sysdate, #{memQuestion},  #{memAnswer}, 0)
 	</insert>
+	
+	<insert id="insertAddMem" parameterType="blossome.vo.AddMemVO">
+		insert into BLO_ADDMEMBER(MEM_BLOOD ,MEM_HOBBY ,MEM_RELIGION ,MEM_HEIGHT ,MEM_ABILITY ,MEM_GENDER ,MEM_FAVOR_GENDER ,MEM_SALARY ,MEM_PROPERTY ,MEM_COUNT ,MEM_JOB ,MEM_IMG) 
+		values(#{memBlood}, #{memHobby}, #{memReligion}, #{memHeight}, #{memAbility}, #{memGender}, #{memFavorgender}, #{memSalary}, #{memProperty}, #{memCount}, #{memJob})
+	</insert>
 
 </mapper>

@@ -28,37 +28,142 @@
 		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
 		<title>Signup</title>
-		<%
-		String input_id = (String)session.getAttribute("id"); 
-		String input_open = (String)session.getAttribute("open"); 
-		String input_pass = (String)session.getAttribute("pass"); 
-		String input_confirm = (String)session.getAttribute("confirm"); 
-		String input_question = (String)session.getAttribute("question"); 
-		String input_answer = (String)session.getAttribute("answer"); 
-		String input_nick = (String)session.getAttribute("nick"); 
-		String input_name = (String)session.getAttribute("name"); 
-		String input_filebutton = (String)session.getAttribute("filebutton"); 
-		String input_year = (String)session.getAttribute("year"); 
-		String input_mon = (String)session.getAttribute("mon"); 
-		String input_birth = (String)session.getAttribute("birth"); 
-		String input_tel_0 = (String)session.getAttribute("tel_0"); 
-		String input_tel_1 = (String)session.getAttribute("tel_1"); 
-		String input_tel_2 = (String)session.getAttribute("tel_2"); 
-		String input_loc = (String)session.getAttribute("loc"); 
-		String input_email = (String)session.getAttribute("email"); 
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript">
 		
-		%>
-	
+		 		//정규화 
+		 		window.onload = function(){ 
+		 			
+		 			//id 정규화
+		 			var id = document.getElementById('id'); 
+		 			id.onblur = function(){ 
+		 			id = /^[a-z]+[a-z0-9]{5,19}$/g; 
+		 				var nid = document.frm.id.value; 
+		 				if(!id.test(nid)){ 
+		 					alert("잘못된 아이디 형식입니다"); 
+		 				} //if문 끝 
+		 			} 
+					//pass 정규화
+		 			var pass = document.getElementById('pass'); 
+		 			pass.onblur = function(){ 
+		 			pass = /^[A-Za-z0-9]{6,12}$/;
+		 				var npass = document.frm.pass.value; 
+		 				if(!pass.test(npass)){ 
+		 					alert("잘못된 패스워드입니다"); 
+		 				} //if문 끝
+		 			} 
+					//tel 정규화
+		 			var tel_0 = document.getElementById('tel_0'); 
+		 			tel_0.onblur = function(){
+		 				tel_0 = /^[0-9]{2,3}$/;
+		 				var ntel_0 = document.frm.tel_0.value;
+		 				if(!tel_0.test(ntel_0)){
+		 					alert("잘못된 전화번호 형식입니다");
+		 				}
+		 			}
+		 			var tel_1 = document.getElementById('tel_1'); 
+		 			tel_1.onblur = function(){
+		 				tel_1 = /^[0-9]{3,4}$/;
+		 				var ntel_1 = document.frm.tel_1.value;
+		 				if(!tel_1.test(ntel_1)){
+		 					alert("잘못된 전화번호 형식입니다");
+		 				}
+		 			}
+		 			var tel_2 = document.getElementById('tel_2'); 
+		 			tel_2.onblur = function(){
+		 				tel_2 = /^[0-9]{4}$/;
+		 				var ntel_2 = document.frm.tel_2.value;
+		 				if(!tel_2.test(ntel_2)){
+		 					alert("잘못된 전화번호 형식입니다");
+		 				}
+		 			}
+		 			//닉네임 **************수정해야함
+		 			var nick = document.getElementById('nick'); 
+		 			nick.onblur = function(){
+		 				nick = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\*]+$/;
+		 				var nnick = document.frm.nick.value;
+		 				if(!nick.test(nnick)){
+		 					alert("잘못된 닉네임 형식입니다");
+		 				}
+		 			}
+		 			//이름
+		 			var name = document.getElementById('name'); 
+		 			name.onblur = function(){
+		 				name = /^[가-힣]+$/;
+		 				var nname = document.frm.name.value;
+		 				if(!name.test(nname)){
+		 					alert("잘못된 이름 형식입니다");
+		 				}
+		 			}
+		 			//이메일
+		 			var email = document.getElementById('email'); 
+		 			email.onblur = function(){
+		 			email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+		 				var nemail = document.frm.email.value;
+		 				if(!email.test(nemail)){
+		 					alert("잘못된 이메일 형식입니다");
+		 				}
+		 			}
+		 			
+		 		}
+					
+		 		 
+		
+		$(function(){
+			//아이디 중복확인
+			$('#id_check').click(function(){
+				$.ajax({
+					url : 'check.jsp',
+					type : 'get',
+					data : { 'id' : $('#id').val()},
+					dataType : 'text',
+					success : function(data){
+						if(data.trim() == 'YES'){
+							$('#idmessage').text("이미 사용중인 아이디가 있습니다");
+							$('#idmessage').show();
+						}else if(data.trim() == 'NO'){
+							$('#idmessage').text("사용가능합니다");
+							$('#idmessage').show();
+						}
+					},
+					error : function( err ){
+						alert('id 중복검사 에러발생' + err.toString());
+					}
+				})
+			}); //id_check function 끝
+			
+			//닉네임 중복확인
+			$('#nick_check').click(function(){
+				$.ajax({
+					url : 'check.jsp',
+					type : 'get',
+					data : { 'nick' : $('#nick').val()},
+					dataType : 'text',
+					success : function(data){
+						if(data.trim() == 'YES'){
+							$('#idme_ssage').text("이미 사용중인 닉네임이 있습니다");
+							$('#idme_ssage').show();
+						}else if(data.trim() == 'NO'){
+							$('#idme_ssage').text("사용가능합니다");
+							$('#idme_ssage').show();
+						}
+					},
+					error : function( err ){
+						alert('nick 중복검사 에러발생' + err.toString());
+					}
+				})
+			}); //nick_check function 끝
+		});// 첫 function끝
+		
+		
+		
+		
+		
+		</script>
 		
 	</head>
 	<body>
 	
-	<%if(input_id != null && input_name != null && input_nick != null && input_pass != null && input_birth != null && input_year != null && input_mon != null &&
-			input_tel_0 != null && input_tel_1 != null && input_tel_2 != null && input_loc != null && input_email != null && input_id != "" && input_name != "" && 
-			input_nick != "" && input_pass != "" && input_birth != "" && input_mon != "" && input_year != "" && input_tel_0 != "" && input_tel_1 != "" && input_tel_0 != "" && input_loc != "" 
-			&& input_email != "" && input_open != ""){ %>
-		<%response.sendRedirect("index.login?cmd=inmemdb"); %>
-	<%} %>
 	
 		<div class="container">
 			<div class="row main">
@@ -69,7 +174,7 @@
 	               	</div>
 	            </div> 
 				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" onsubmit="return input_check_func()">
+					<form class="form-horizontal" method="post" onsubmit="return input_check_func()" name="frm">
 						
 						<div class="form-group">
 							<label for="view" class="cols-sm-2 control-label">Your View/공개여부</label>
@@ -90,7 +195,8 @@
 								<!-- 앞에그림 -->
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
 									<input type="text" class="form-control" name="id" id="id"  placeholder="Enter your Id"/>
-									<input type="submit" id = 'input' value="중복확인"/>
+									<input type="submit" id = 'id_check' value="중복확인"/>
+									<div id="idmessage" style="display:none;"></div>
 								</div>
 							</div>
 						</div>
@@ -141,7 +247,8 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
 									<input type="text" class="form-control" name="nick" id="nick"  placeholder="Enter your Nickname"/>
-									<input type="submit" id = 'input' value="중복확인"/>
+									<input type="submit" id = 'nick_check' value="중복확인"/>
+									<div id="idme_ssage" style="display:none;"></div>
 								</div>
 							</div>
 						</div>

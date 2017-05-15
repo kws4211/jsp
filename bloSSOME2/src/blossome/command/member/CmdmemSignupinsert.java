@@ -4,6 +4,7 @@ package blossome.command.member;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import blossome.command.Command;
 import blossome.command.CommandException;
@@ -63,6 +64,24 @@ public class CmdmemSignupinsert implements Command{
 //		List<MemVO> list = repo.selbyIdlist(vo.getMemId());
 //		request.setAttribute("list", list);
 		return next;
+	}
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response){
+		//요청한 url
+		String url = request.getRequestURI().toString();
+		System.out.println(url);
+		
+		SignupRepository repo = new SignupRepository();
+//		if(url.indexOf("") != -1){
+//			
+//		}
+		
+		//get방식으로 넘어온 데이터
+		String id=request.getParameter("id");
+		String nick=request.getParameter("nick");
+		//repo에 로그인 체크 요청
+//		String result=repo.
+		//***********하다가 말았음
 	}
 	
 }

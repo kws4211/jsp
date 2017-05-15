@@ -28,49 +28,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
 		<title>Add Signup</title>
-<%-- 		<% --%>
-<!-- // 		String input_id = (String)session.getAttribute("id");  -->
-<!-- // 		String input_open = (String)session.getAttribute("open");  -->
-<!-- // 		String input_password = (String)session.getAttribute("password");  -->
-<!-- // 		String input_confirm = (String)session.getAttribute("confirm");  -->
-<!-- // 		String input_question = (String)session.getAttribute("question");  -->
-<!-- // 		String input_answer = (String)session.getAttribute("answer");  -->
-<!-- // 		String input_nickname = (String)session.getAttribute("nickname");  -->
-<!-- // 		String input_name = (String)session.getAttribute("name");  -->
-<!-- // 		String input_filebutton = (String)session.getAttribute("filebutton");  -->
-<!-- // 		String input_year = (String)session.getAttribute("year");  -->
-<!-- // 		String input_mon = (String)session.getAttribute("mon");  -->
-<!-- // 		String input_yo = (String)session.getAttribute("yo");  -->
-<!-- // 		String input_tel_first = (String)session.getAttribute("tel_first");  -->
-<!-- // 		String input_area = (String)session.getAttribute("area");  -->
-<!-- // 		String input_email = (String)session.getAttribute("email");  -->
 
-		
-<!-- 		//정규화 -->
-<!-- // 		window.onload = function(){ -->
-<!-- // 			var id = document.getElementById("id"); //id 정규화 -->
-<!-- // 			id.onblur = function(){ -->
-<!-- // 				id = /^[a-z]+[a-z0-9]{5,19}$/g; -->
-<!-- // 				var nid = document.frm.id.value; -->
-<!-- // 				if(!id.test(nid)){ -->
-<!-- // 					alert("잘못된 아이디 형식입니다"); -->
-<!-- // 				} //if문 끝 -->
-<!-- // 			} -->
-			
-<!-- // 			var pass = document.getElementById("password"); -->
-<!-- // 			pass.onblur = function(){ -->
-<!-- // 				pass = /^[A-Za-z0-9]{6,12}$/; -->
-<!-- // 				var npass = document.frm.pass.value; -->
-<!-- // 				if(!pass.test(npass)){ -->
-<!-- // 					alert("잘못된 패스워드입니다"); -->
-<!-- // 				} //if문 끝 -->
-<!-- // 			} -->
-			
-<!-- // 			============================정규화 추가 -->
-			
-<!-- // 		} -->
-		
-<!-- 		</script> -->
 		
 		
 	</head>
@@ -96,10 +54,10 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
 									</select>
-									<select><option id="blood" value="A형">A형</option>
-									<option id="blood" value="B형">B형</option>
-									<option id="blood" value="O형">O형</option>
-									<option id="blood" value="AB형">AB형</option>
+									<select name="blood"><option value="A형">A형</option>
+									<option value="B형">B형</option>
+									<option value="O형">O형</option>
+									<option value="AB형">AB형</option>
 									</select>
 								</div>
 							</div>
@@ -121,11 +79,11 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
 									</select>
-									<select><option id="religion" value="기독교">기독교</option>
-									<option id="religion" value="불교">불교</option>
-									<option id="religion" value="천주교">천주교</option>
-									<option id="religion" value="기타">기타</option>
-									<option id="religion" value="무교">무교</option>
+									<select name="religion"><option value="기독교">기독교</option>
+									<option value="불교">불교</option>
+									<option value="천주교">천주교</option>
+									<option value="기타">기타</option>
+									<option value="무교">무교</option>
 									</select>
 								</div>
 							</div>
@@ -147,12 +105,12 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<select><option id="height" value="140">150cm이하</option>
-									<option id="height" value="150">150~159cm</option>
-									<option id="height" value="160">160~169cm</option>
-									<option id="height" value="170">170~179cm</option>
-									<option id="height" value="180">180~189cm</option>
-									<option id="height" value="190">190cm이상</option>
+									<select name="height"><option value="140">150cm이하</option>
+									<option value="150">150~159cm</option>
+									<option value="160">160~169cm</option>
+									<option value="170">170~179cm</option>
+									<option value="180">180~189cm</option>
+									<option value="190">190cm이상</option>
 									</select>
 								</div>
 							</div>
@@ -163,9 +121,9 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<select><option id="ability" value="중졸">중졸이하</option>
-									<option id="ability" value="고졸">고졸이상</option>
-									<option id="ability" value="대졸">대졸이상</option>
+									<select name="ability"><option value="중졸">중졸이하</option>
+									<option value="고졸">고졸이상</option>
+									<option value="대졸">대졸이상</option>
 									</select>
 								</div>
 							</div>
@@ -198,13 +156,13 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<select><option id="salary" value="1000이하">1000이하</option>
-									<option id="salary" value="1000이상">1000이상</option>
-									<option id="salary" value="2000이상">2000이상</option>
-									<option id="salary" value="3000이상">3000이상</option>
-									<option id="salary" value="4000이상">4000이상</option>
-									<option id="salary" value="5000이상">5000이상</option>
-									<option id="salary" value="6000이상">6000이상</option>
+									<select name="salary"><option value="1000">1000이하</option>
+									<option value="1000">1000이상</option>
+									<option value="2000">2000이상</option>
+									<option value="3000">3000이상</option>
+									<option value="4000">4000이상</option>
+									<option value="5000">5000이상</option>
+									<option value="6000">6000이상</option>
 									</select>
 								</div>
 							</div>
@@ -215,16 +173,16 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<select><option id="property" value="1000이하">1000이하</option>
-									<option id="property" value="1000이상">1000이상</option>
-									<option id="property" value="2000이상">2000이상</option>
-									<option id="property" value="3000이상">3000이상</option>
-									<option id="property" value="4000이상">4000이상</option>
-									<option id="property" value="5000이상">5000이상</option>
-									<option id="property" value="6000이상">6000이상</option>
-									<option id="property" value="7000이상">7000이상</option>
-									<option id="property" value="8000이상">8000이상</option>
-									<option id="property" value="9000이상">9000이상</option>
+									<select name="property"><option value="1000">1000이하</option>
+									<option value="1000">1000이상</option>
+									<option value="2000">2000이상</option>
+									<option value="3000">3000이상</option>
+									<option value="4000">4000이상</option>
+									<option value="5000">5000이상</option>
+									<option value="6000">6000이상</option>
+									<option value="7000">7000이상</option>
+									<option value="8000">8000이상</option>
+									<option value="9000">9000이상</option>
 									</select>
 								</div>
 							</div>
@@ -232,7 +190,8 @@
 						
 
 						<div class="form-group ">
-							<button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-button">추가회원가입 완료</button>
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-button">추가 안함</button>
 						</div>
 						<div class="Addlogin-register">
 				            <a href="index.php">AddLogin</a>
