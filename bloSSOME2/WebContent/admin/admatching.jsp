@@ -16,7 +16,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
 </head>
 <body>
-	<jsp:include page="adminHeader.jsp"></jsp:include>
+	<jsp:include page="adheader.jsp"></jsp:include>
 	<div class="container">
 		<div class="row col-md-6 col-md-offset-2 custyle">
 		<h2>매칭관리</h2>

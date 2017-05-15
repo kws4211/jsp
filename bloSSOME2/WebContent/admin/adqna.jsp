@@ -21,7 +21,7 @@
 
 </head>
 <body>
-	<jsp:include page="adminHeader.jsp"></jsp:include>
+	<jsp:include page="adheader.jsp"></jsp:include>
 	<div class="container">
 		<div class="row col-md-6 col-md-offset-2 custyle">
 		<h2>Q&A</h2>
