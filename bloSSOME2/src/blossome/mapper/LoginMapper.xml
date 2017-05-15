@@ -30,7 +30,7 @@
 		<if test="age1 != null and  age1 != 'null' and age1 != '' ">
 			and to_char(m.mem_birth,'yyyy') between #{age1} and #{age2}
 		</if>
-		<if test="key1 != null and  key1 != 'null' and key1 != ''">
+		<if test="key1 != null and  key1 != 'null' and key1 != '' ">
 			and a.MEM_HEIGHT between #{key1} and #{key2}
 		</if>
 		<if test="loc != null">
