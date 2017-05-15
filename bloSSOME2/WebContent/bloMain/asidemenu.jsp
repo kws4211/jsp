@@ -27,7 +27,7 @@ position:fixed;left:2%;top:12%;
 		<td>메뉴1</td>
 	</tr>
 	<tr>
-		<td>메뉴2</td>
+		<td><a href="index.msg">쪽지함</a></td>
 	</tr>
 	<tr>
 		<td><a href="index.member?cmd=memqna">1:1문의</a></td>
