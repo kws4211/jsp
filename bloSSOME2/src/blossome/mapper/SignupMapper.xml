@@ -2,10 +2,10 @@
 <!DOCTYPE mapper
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="blossome.mapper.SignupMapper">
+<mapper namespace="blossom.mapper.SignupMapper">
  	<insert id="insertMem" parameterType="blossome.vo.MemVO">
-		insert into BLO_MEMBER(mem_id ,mem_name ,mem_nick ,mem_pass ,mem_birth ,mem_tel ,mem_loc ,mem_email ,mem_state ,mem_signup ,mem_question ,mem_answer) 
-		values(#{id}, #{name}, #{nick}, #{pass}, #{birth}, #{tel}, #{loc}, #{email}, #{state}, sysdate, #{question},  #{answer})
+		insert into BLO_MEMBER(mem_id ,mem_name ,mem_nick ,mem_pass ,mem_birth ,mem_tel ,mem_loc ,mem_email ,mem_state ,mem_signup ,mem_question ,mem_answer, mem_leave) 
+		values(#{memId}, #{memName}, #{memNick}, #{memPass}, #{memBirth}, #{memTel}, #{memLoc}, #{memEmail}, #{memState}, sysdate, #{memQuestion},  #{memAnswer}, 0)
 	</insert>
 
 </mapper>

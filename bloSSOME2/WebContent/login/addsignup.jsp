@@ -124,6 +124,7 @@
 									<select><option id="religion" value="기독교">기독교</option>
 									<option id="religion" value="불교">불교</option>
 									<option id="religion" value="천주교">천주교</option>
+									<option id="religion" value="기타">기타</option>
 									<option id="religion" value="무교">무교</option>
 									</select>
 								</div>

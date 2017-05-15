@@ -34,7 +34,7 @@ public class SignupRepository {
 	public int insertSignup(MemVO vo){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try {
-			
+			System.out.println("dd");
 			String statment = namespace + ".insertMem";
 			//모든 작업 완료 후 insert
 			int res = sqlSess.insert(statment, vo);

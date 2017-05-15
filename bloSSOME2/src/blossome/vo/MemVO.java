@@ -12,7 +12,7 @@ public class MemVO {
 	private String memPass;
 	//생일
 	private String memBirth;
-	//전화번호 첫번째
+	//전화번호
 	private String memTel;
 	//지역
 	private String memLoc;

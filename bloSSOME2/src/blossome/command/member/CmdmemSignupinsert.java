@@ -58,7 +58,7 @@ public class CmdmemSignupinsert implements Command{
 		
 		
 		SignupRepository repo = new SignupRepository();
-		//repo.insertSignup(vo);
+		repo.insertSignup(vo);
 //***************************************여기수정
 //		List<MemVO> list = repo.selbyIdlist(vo.getMemId());
 //		request.setAttribute("list", list);

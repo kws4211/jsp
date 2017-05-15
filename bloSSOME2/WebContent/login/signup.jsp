@@ -164,28 +164,28 @@
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
 									<select name="year" ><option value="1990">1990년</option>
 									</select>
-									<select name="mon" ><option value="1">1월</option>
-											<option value="2">2월</option>
-											<option value="3">3월</option>
-											<option value="4">4월</option>
-											<option value="5">5월</option>
-											<option value="6">6월</option>
-											<option value="7">7월</option>
-											<option value="8">8월</option>
-											<option value="9">9월</option>
+									<select name="mon" ><option value="01">1월</option>
+											<option value="02">2월</option>
+											<option value="03">3월</option>
+											<option value="04">4월</option>
+											<option value="05">5월</option>
+											<option value="06">6월</option>
+											<option value="07">7월</option>
+											<option value="08">8월</option>
+											<option value="09">9월</option>
 											<option value="10">10월</option>
 											<option value="11">11월</option>
 											<option value="12">12월</option>
 									</select>
-									<select name="birth" ><option value="1">1일</option>
-											<option value="2">2일
-											<option value="3">3일
-											<option value="4">4일
-											<option value="5">5일
-											<option value="6">6일
-											<option value="7">7일
-											<option value="8">8일
-											<option value="9">9일
+									<select name="birth" ><option value="01">1일</option>
+											<option value="02">2일
+											<option value="03">3일
+											<option value="04">4일
+											<option value="05">5일
+											<option value="06">6일
+											<option value="07">7일
+											<option value="08">8일
+											<option value="09">9일
 											<option value="10">10
 											<option value="11">11일
 											<option value="12">12일
