@@ -105,16 +105,16 @@
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step3">
                         <h3>지역</h3>
-                        <input type="checkbox" class="loc" value="서울"/> 서울
-                        <input type="checkbox" class="loc" value="경기"/> 경기
-                        <input type="checkbox" class="loc" value="강원"/> 강원
-                        <input type="checkbox" class="loc" value="충북"/> 충북
-                        <input type="checkbox" class="loc" value="충남"/> 충남
-                        <input type="checkbox" class="loc" value="전북"/> 전북
-                        <input type="checkbox" class="loc" value="전남"/> 전남
-                        <input type="checkbox" class="loc" value="경북"/> 경북
-                        <input type="checkbox" class="loc" value="경남"/> 경남
-                        <input type="checkbox" class="loc" value="제주"/> 제주
+                        <input type="checkbox" name="loc" class="loc" value="서울"/> 서울
+                        <input type="checkbox" name="loc" class="loc" value="경기"/> 경기
+                        <input type="checkbox" name="loc" class="loc" value="강원"/> 강원
+                        <input type="checkbox" name="loc" class="loc" value="충북"/> 충북
+                        <input type="checkbox" name="loc" class="loc" value="충남"/> 충남
+                        <input type="checkbox" name="loc" class="loc" value="전북"/> 전북
+                        <input type="checkbox" name="loc" class="loc" value="전남"/> 전남
+                        <input type="checkbox" name="loc" class="loc" value="경북"/> 경북
+                        <input type="checkbox" name="loc" class="loc" value="경남"/> 경남
+                        <input type="checkbox" name="loc" class="loc" value="제주"/> 제주
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
                             <li><button type="button" class="btn btn-default next-step">Skip</button></li>
@@ -123,9 +123,11 @@
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step4">
                         <h3>학력</h3>
-                       	<input type="checkbox" class="hak" value="중졸"/> 중졸
-                       	<input type="checkbox" class="hak" value="고졸"/> 고졸
-                       	<input type="checkbox" class="hak" value="대졸"/> 대졸
+                       	<input type="checkbox" name="hak" class="hak" value="중졸"/> 중졸
+                       	<input type="checkbox" name="hak" class="hak" value="고졸"/> 고졸
+                       	<input type="checkbox" name="hak" class="hak" value="대졸"/> 대졸
+                       	<input type="checkbox" name="hak" class="hak" value="박사"/> 박사
+                       	<input type="checkbox" name="hak" class="hak" value="무관"/> 무관
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
                             <li><button type="button" class="btn btn-default next-step">Skip</button></li>
@@ -148,12 +150,12 @@
                     <div class="tab-pane" role="tabpanel" id="step6">
                         <h3>종교</h3>
 							<div class="col-md-2">
-                        		<input type="checkbox" class="mo" value="기독교"/> 기독교
-                       			<input type="checkbox" class="mo" value="불교"/> 불교
-                       			<input type="checkbox" class="mo" value="천주교"/> 천주교
+                        		<input type="checkbox" name="mo" class="mo" value="기독교"/> 기독교
+                       			<input type="checkbox" name="mo" class="mo" value="불교"/> 불교
+                       			<input type="checkbox" name="mo" class="mo" value="천주교"/> 천주교
 								<div class="input-group">
 									<span class="input-group-addon"><input type="checkbox"></span>
-									<input class="form-control" type="text" placeholder="">
+									<input class="form-control" name="mo" type="text" placeholder="">
 								</div>
 							</div>
 							<ul class="list-inline pull-right">
