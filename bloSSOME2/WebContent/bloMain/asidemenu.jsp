@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<% int count = (int)request.getAttribute("count"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -21,13 +23,13 @@ position:fixed;left:2%;top:12%;
 		</td>
 	</tr>
 	<tr>
-		<td>이름</td>
+		<td><%=session.getAttribute("id") %> / 이름</td>
 	</tr>
 	<tr>
-		<td>메뉴1</td>
-	</tr>
-	<tr>
-		<td><a href="index.msg">쪽지함</a></td>
+		<td>
+			<a href="index.msg">쪽지함</a>
+			<%=count %>
+		</td>
 	</tr>
 	<tr>
 		<td><a href="index.member?cmd=memqna">1:1문의</a></td>

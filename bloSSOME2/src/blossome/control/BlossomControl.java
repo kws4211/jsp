@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import blossome.command.Command;
 import blossome.command.CommandException;
 import blossome.command.CommandNull;
+import blossome.command.CommandSide;
 import blossome.command.admin.CmdadQnaList;
 import blossome.command.appeal.CmdAppealList;
 import blossome.command.appeal.CmdAppealView;
@@ -24,6 +25,7 @@ import blossome.command.tuk.CmdMyTukList;
 public class BlossomControl extends HttpServlet {
 	
 	private HashMap commandMap;
+	private String dir = "/bloMain/";
 	private String  error = "error.jsp";
 	
 
@@ -34,16 +36,8 @@ public class BlossomControl extends HttpServlet {
 
 	private void initCommand(){
 		commandMap = new HashMap();
-		commandMap.put("main", new CommandNull("/bloMain/index.jsp"));
-		commandMap.put("find", new CommandNull("/find/findidealtype.jsp"));
-		commandMap.put("board", new CommandNull("/bloAppeal/board.jsp"));
-		commandMap.put("mytuk", new CmdMyTukList("/tuk/MytukList.jsp"));
-		commandMap.put("inmem", new CommandNull("/login/signup.jsp"));
-		commandMap.put("login", new CommandNull("/login/loginform.jsp"));
-		commandMap.put("adqna", new CmdadQnaList("/admin/adqna.jsp"));
-		commandMap.put("memqna", new CommandNull("/memqna/memqna.jsp"));
-		commandMap.put("appealView", new CmdAppealView("/bloAppeal/AppealView.jsp"));
-	    commandMap.put("appdetail", new CmdAppealList("/bloAppeal/AppealViewDetail.jsp"));
+		commandMap.put("main", new CommandNull("index.jsp"));
+		commandMap.put("aside", new CommandSide("asidemenu.jsp"));
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -80,7 +74,7 @@ public class BlossomControl extends HttpServlet {
 			System.out.println("오류 : " + e.getMessage() );
 		}
 		
-		RequestDispatcher reqDp = getServletContext().getRequestDispatcher( nextPage );
+		RequestDispatcher reqDp = getServletContext().getRequestDispatcher(dir + nextPage );
 		reqDp.forward( request, response );
 		
 	}

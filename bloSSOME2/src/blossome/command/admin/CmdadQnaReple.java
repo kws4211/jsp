@@ -7,7 +7,10 @@ import javax.servlet.http.HttpSession;
 
 import blossome.command.Command;
 import blossome.command.CommandException;
+import blossome.command.pageNumClass;
+import blossome.session.MatchingRepository;
 import blossome.session.QnaRepository;
+import blossome.vo.MatchingVO;
 import blossome.vo.QnaVO;
 
 public class CmdadQnaReple implements Command{
@@ -23,10 +26,20 @@ public class CmdadQnaReple implements Command{
 		String num = request.getParameter("num");
 		String reple = request.getParameter("reple");
 		QnaRepository repo = new QnaRepository();
-		int res = repo.reple(num,reple);
+		repo.reple(num,reple);
 		
-		List<QnaVO> list = repo.selectlist();
-		request.setAttribute("list",list);
+		//현재 페이지 넘버값을 받아옴
+		String pnum = request.getParameter("pnum");
+		//만약 받아온 페이지 넘버값이 없다면 1페이지로 고정
+		int pageNum = 1;
+		if(pnum !=  null) pageNum = Integer.parseInt(pnum);
+		
+		pageNumClass p = new pageNumClass();
+		int[] res = p.SettingPageNum(repo.totalcol(), 10, pageNum);
+				
+		List<QnaVO> list = repo.selectlist(res[1],res[2]);
+		request.setAttribute("list", list);
+		request.setAttribute("total", res[0]);
 		return next;
 	}
 	

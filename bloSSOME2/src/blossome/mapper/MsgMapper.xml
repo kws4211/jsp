@@ -30,10 +30,10 @@
 		from blo_message
 		<where>
 			<if test="id != null">
-				mem_id = #{id}
+				mem_id = #{id} and
 			</if>
+			msg_state = 2
 		</where>
-		where msg_state = 2
 	</select>
 	
 	<select id="total" parameterType="hashMap" resultType="int">

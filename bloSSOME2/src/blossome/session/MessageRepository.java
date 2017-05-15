@@ -73,5 +73,16 @@ public class MessageRepository {
 		}
 	}
 	
+	public int NotReadCount(String id) {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			HashMap map = new HashMap();
+			map.put("id", id);
+			return sqlSess.selectOne(namespace + ".notread", map);
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
 	
 }
