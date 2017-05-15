@@ -7,10 +7,18 @@
 <!-- 게시판 목록 -->
  <select id="selectReviewView"  resultType="blossome.vo.ReviewVO">
 	SELECT * 
-	FROM blo_member m, blo_review a
-	WHERE  m.mem_id = a.mem_id
-	ORDER BY rev_num DESC
- </select> 
+	FROM (SELECT rownum as rnum, g.*
+			  FROM (SELECT r.*, m.mem_name
+			  			FROM blo_review r, blo_member m
+			  			WHERE r.mem_id = m.mem_id
+			  			ORDER BY r.rev_num desc) g)
+	<where>
+			<if test="id != null">
+				mem_id = #{id} AND 
+			</if>
+			rnum <![CDATA[>=]]>  #{startnum} AND rnum <![CDATA[<=]]> #{endnum}
+		</where>   		
+	</select>
  
  <!-- 각각의 내용 -->
 <select id="selectReviewDetailView" parameterType="hashMap"  resultType="blossome.vo.ReviewVO">
@@ -23,8 +31,8 @@
  
  <!-- 게시판 추가 -->
  <insert id="insertReview" parameterType="blossome.vo.ReviewVO" >
-	INSERT INTO blo_review
- 	VALUES(#{revNum}, #{memId}, #{revTitle}, #{revContent}, sysdate ,#{revImg})
+	INSERT INTO blo_review(rev_num, mem_id, rev_title, rev_content, rev_date, rev_img, rev_count)
+ 	VALUES(#{revNum}, #{memId}, #{revTitle}, #{revContent}, sysdate ,#{revImg}, 0 )
 </insert> 
 
 <!-- 게시판 시퀀스 추가 -->
@@ -45,4 +53,21 @@
  	WHERE rev_num = #{revId}
  </delete>
 
+ <!-- totalcol얻어오기 -->
+<select id="totalcol" parameterType="String" resultType="int">
+		SELECT count(*)
+		FROM BLO_REVIEW
+		<where>
+			<if test="revId != null">
+				mem_id = #{revId}
+			</if>
+		</where>
+	</select>
+	
+ <!-- count 수정 -->
+<update id="updateRevCount" parameterType="blossome.vo.ReviewVO">
+	UPDATE blo_review
+	SET rev_count = rev_count + 1
+	WHERE rev_num = #{revNum}
+</update>
 </mapper>

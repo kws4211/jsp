@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>게시판 글쓰기</title>
-<link href="/bloSSOME4/bloAppeal/css/input.css" rel="stylesheet">
+<link href="/bloSSOME2/bloAppeal/css/input.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function(){ 
@@ -26,7 +26,7 @@
 </script>
 </head>
  <body>
- <jsp:include page="../bloMain/header.jsp" flush="false"/>
+ <jsp:include page="../bloMain/mainHeader.jsp" flush="false"/>
 	<form class="form-horizontal" method="post" role="form" id="frm">
 	
 	<div class="input-form">

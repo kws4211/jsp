@@ -38,7 +38,6 @@ public class CmdReviewInput implements Command {
 			
 			
 			vo.setRevNum(seq);
-			System.out.println("seq>>>>>>" + seq);
 			ReviewVO revo = repo.insertReview(vo);			
 			
 			request.setAttribute("vo", revo);

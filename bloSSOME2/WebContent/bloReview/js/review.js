@@ -1,4 +1,5 @@
    $().ready(function(){
+	   $("#aside").load("side.blossom?cmd=aside");
         $('[rel="tooltip"]').tooltip();
 
     });

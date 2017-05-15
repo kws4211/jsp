@@ -13,27 +13,57 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>게시글 수정하기</title>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link href="/bloSSOME2/bloAppeal/css/detail.css" rel="stylesheet">
+    <link href="/bloSSOME2/bloAppeal/css/input.css" rel="stylesheet">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$("#btn").click(function(){
-
-			$("#frm").attr("action","xx.review?cmd=revmodidi");
-			$("#frm").submit();
+			
+			var result = confirm("수정하시겠습니까?");
+			if(result){
+				alert("수정되었습니다.");			
+				$("#frm").attr("action","xx.review?cmd=revmodidi");
+				$("#frm").submit();
+			}
+		});
+		
+		$("#canBtn").click(function(){
+			//목록으로 돌아가기
+			window.history.back();
 		});
 	});
-</script>
-</head>
- <body>
-	<h4> 게시판 글 수정하기 </h4><br/> 
-	<form name='frm' method='post' id='frm'>
-	제  목 : <input type='text' id="title" name='title' value="<%=vo.getRevTitle()  %>"><br/><br/>
-	내  용 : <textarea id='content' name='content' rows='10' cols='40'><%=vo.getRevContent()  %></textarea><br/><br/>
-
-	<input type='button'  id='btn' name='btn'  value='수정하기'>
-	<input type='button' value='목록보기' onclick=""/>
-	<input type='hidden' id='revId' name='revId' value="<%=vo.getRevNum()  %>"/>
-	</form>
-
-</body>
-</html>
+	</script>
+	</head>
+	 <body>
+	 <jsp:include page="../bloMain/mainHeader.jsp" flush="false"/>
+		<form class="form-horizontal" method="post" role="form" id="frm">
+		
+		<div class="input-form">
+		
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-2 control-label">제목</label><br/>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="title" name="title" value="<%=vo.getRevTitle()  %>">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputPassword3" class="col-sm-2 control-label">내용</label><br/>
+				<div class="col-sm-10">
+					<textarea class="form-control" rows='10' cols='40'   name="content" ><%=vo.getRevContent()  %></textarea>
+	 			</div>
+			</div>
+			 <div class="form-group"> 
+				<div class="col-sm-offset-2 col-sm-10">
+					<input type="button" class="btn btn-default" id="btn"  value="수정하기"/>
+					<input type="button" class="btn btn-default" id="canBtn" value="목록으로"/>
+					<input type='hidden' id='revId' name='revId' value="<%=vo.getRevNum()  %>"/>
+				</div>
+			</div>
+		</div>
+		</form>
+	<jsp:include page="../bloMain/footer.jsp" flush="false"/>
+	</body>
+	</html>

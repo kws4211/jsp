@@ -35,7 +35,7 @@
   </head>
 
   <body>
-  <jsp:include page="../bloMain/header.jsp" flush="false"/>
+  <jsp:include page="../bloMain/mainHeader.jsp" flush="false"/>
 	
 	<div class="container">
 	<div>

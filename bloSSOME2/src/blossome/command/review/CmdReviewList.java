@@ -20,8 +20,8 @@ public class CmdReviewList implements Command
 	public String execute( HttpServletRequest request ) throws CommandException{
 		try{
 			String revId = request.getParameter("revId");
-			System.out.println("revId=>>>>>" + revId);
 			ReviewRepository repo = new ReviewRepository();
+			repo.updateRevCount(revId);
 			ReviewVO vo = repo.selectReviewDetailList(revId);
 			vo.setMemId(revId);
 			request.setAttribute("vo", vo);

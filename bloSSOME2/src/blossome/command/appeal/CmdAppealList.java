@@ -22,7 +22,6 @@ public class CmdAppealList implements Command
 	public String execute( HttpServletRequest request ) throws CommandException{
 		try{
 			String appId = request.getParameter("appId");
-			System.out.println("appId=>>>>>" + appId);
 			AppealRepository repo = new AppealRepository();
 			repo.updateappCount(appId);
 			AppealVO vo = repo.selectAppealDetailList(appId);

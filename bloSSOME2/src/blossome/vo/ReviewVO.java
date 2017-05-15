@@ -16,6 +16,9 @@ public class ReviewVO {
 	private String revImg;
 	//작성한 사람
 	private String memName;
+	
+	private String revCount;
+	
 	public String getRevNum() {
 		return revNum;
 	}
@@ -58,6 +61,13 @@ public class ReviewVO {
 	public void setMemName(String memName) {
 		this.memName = memName;
 	}
+	public String getRevCount() {
+		return revCount;
+	}
+	public void setRevCount(String revCount) {
+		this.revCount = revCount;
+	}
+	
 	
 	
 	

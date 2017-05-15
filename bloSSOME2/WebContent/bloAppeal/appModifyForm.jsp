@@ -16,8 +16,8 @@
 <title>게시글 수정하기</title>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-    <link href="/bloSSOME4/bloAppeal/css/detail.css" rel="stylesheet">
-    <link href="/bloSSOME4/bloAppeal/css/input.css" rel="stylesheet">
+    <link href="/bloSSOME2/bloAppeal/css/detail.css" rel="stylesheet">
+    <link href="/bloSSOME2/bloAppeal/css/input.css" rel="stylesheet">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function(){
@@ -45,7 +45,7 @@
 </script>
 </head>
  <body>
- <jsp:include page="../bloMain/header.jsp" flush="false"/>
+ <jsp:include page="../bloMain/mainHeader.jsp" flush="false"/>
 	<form class="form-horizontal" method="post" role="form" id="frm">
 	
 	<div class="input-form">
