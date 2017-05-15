@@ -13,11 +13,28 @@
 <body>
 받은 메시지 출력 부분
 <%if(list.size() > 0){ %>
-	<%for(MsgVO vo : list) {%>
-		리스트 값 출력 부분
-	<%} %>
+	<table>
+		<tr>
+			<th>번호</th>
+			<th>보낸 ID</th>
+			<th>이름</th>
+			<th>상태</th>
+		</tr>
+		<tr>
+		<%for(MsgVO vo : list) {%>
+			<td><%=vo.getMsgNum() %></td>
+			<td><%=vo.getMemId() %></td>
+			<td><%=vo.getMsgName() %></td>
+			<%if(vo.getMsgState() == 2){ %>
+				<td>읽지 않음</td>
+			<%}else{ %>
+				<td>읽음</td>
+			<%} %>
+		<%} %>
+		</tr>
+	</table>
 <%}else{ %>
-디비는 정상적으로 갔다왔구먼...
+받은 쪽지가 없습니다.
 <%} %>
 
 </body>
