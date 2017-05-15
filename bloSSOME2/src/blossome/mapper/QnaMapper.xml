@@ -17,7 +17,7 @@
 		</where>   		
 	</select>
 	
-	<select id="totalcol" parameterType="String" resultType="int">
+	<select id="totalcol" parameterType="Hashmap" resultType="int">
 		Select count(*)
 		from BLO_QNA
 		<where>

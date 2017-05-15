@@ -90,8 +90,10 @@ public class QnaRepository {
 	public Integer totalcol(String id){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try {
+			HashMap map = new HashMap();
+			map.put("id", id);
 			String statment = namespace + ".totalcol";
-			return sqlSess.selectOne(statment);
+			return sqlSess.selectOne(statment, map);
 		} finally {
 			sqlSess.close();
 		}

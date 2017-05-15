@@ -4,7 +4,7 @@ Warning! this first div styles can affect all your div styles! It is for demonst
 You can append this div's style to [class*="badger"] section if you want this style by default for all badgers
 ------------------------- */
 
-div {
+div .qna{
     margin: 15px 0;
     padding: 33px 15px 15px;
     background: #fff;
@@ -30,12 +30,12 @@ div {
     color: #fff
 }
 
-.badger-left {
+div .qna .badger-left {
 	margin-right:30%;
     border-top-left-radius: 6px
 }
 
-.badger-right {
+div .qna .badger-right {
 	margin-left:30%;
     border-top-right-radius: 6px
 }

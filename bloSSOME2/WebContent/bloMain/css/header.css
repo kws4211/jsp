@@ -20,7 +20,6 @@ div.header .Menu {
 
 div.header .Menu ul li {
 	display: inline;
-	border-left: 1px solid #999;
 	padding: 0 20px;
 	color : gray;
 }
@@ -31,11 +30,11 @@ div.header .Menu ul li a{
 }
 
 div.header .Menu ul li a:hover{
+	border-bottom : solid 2px white;
 	color: white;
 }
 
 div.header .Menu ul li:hover{
-	border-bottom : solid 2px white;
 	color: white;
 }
 
@@ -50,8 +49,4 @@ div.header .Menu ul ul{
 	background-color: #242424;
 	height:30px;
 	display: none;
-}
-
-div.header .Menu ul li:first-child {
-	border-left: none;
 }
