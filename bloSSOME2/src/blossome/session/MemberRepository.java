@@ -30,7 +30,10 @@ public class MemberRepository {
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(input);
 		return factory;
 	}
-	
+	/*
+	 * checkLogin
+	 * 역할 : 로그인 확인
+	 */
 	public int checkLogin(String id, String pw){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try{
@@ -43,7 +46,10 @@ public class MemberRepository {
 		}
 
 	}
-
+	/*
+	 * SearchFirst
+	 * 역할 : 이름과 email정보로 질문 값 가져옴
+	 */
 	public MemVO SearchFirst(String name, String email) {
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try{
@@ -56,7 +62,10 @@ public class MemberRepository {
 			sqlSess.close();
 		}
 	}
-
+	/*
+	 * SearchSecond
+	 * 역할 : id와 답변으로 id/pw를 알려줌
+	 */
 	public MemVO SearchSecond(String id, String answer) {
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try{
@@ -69,7 +78,10 @@ public class MemberRepository {
 			sqlSess.close();
 		}
 	}
-	
+	/*
+	 * Find
+	 * 역할 : 이상형 검색 옵션을 받아서 맞는 사람 검색
+	 */
 	public List<MemVO> Find(FIndVO vo) {
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try{
