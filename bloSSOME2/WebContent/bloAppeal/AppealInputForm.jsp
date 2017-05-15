@@ -7,29 +7,53 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>게시판 글쓰기</title>
+<link href="/bloSSOME4/bloAppeal/css/input.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
-	$(function(){
+	$(function(){ 
 		$("#btn").click(function(){
 			//각 입력값들의 validate 가능
 			$("#frm").attr("action","xx.appeal?cmd=insertappeal");
 			$("#frm").submit();
+		});
+		
+		$("#canBtn").click(function(){
+			//목록으로 돌아가기
+			window.history.back();
 		});
 	});
 
 </script>
 </head>
  <body>
-	<h4> 게시판 글 쓰기 </h4><br/>
-	나중에 이쁘게 만드시오 <br/><br/>
-	<form name='frm' method='post'  id='frm' >
-	제  목 : <input type='text' name='title'><br/><br/>
-	내  용 : <textarea rows='10' cols='40' name='content'></textarea><br/><br/>
+ <jsp:include page="../bloMain/header.jsp" flush="false"/>
+	<form class="form-horizontal" method="post" role="form" id="frm">
+	
+	<div class="input-form">
+	
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-2 control-label">제목</label><br/>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="title" name="title" placeholder="제목을 입력하여 주세요.">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputPassword3" class="col-sm-2 control-label">내용</label><br/>
+			<div class="col-sm-10">
+				<textarea class="form-control" rows='10' cols='40'   name="content" placeholder="내용을 입력하여 주세요."></textarea>
+ 			</div>
+		</div>
+		 <div class="form-group"> 
+			<div class="col-sm-offset-2 col-sm-10">
+				<input type="button" class="btn btn-default" id="canBtn"  value="목록으로"/>
+				<input type="button" class="btn btn-default" id="btn" value="작성"/>
+			</div>
+		</div>
+	</div>
 	<input type='hidden' name='memid' value='dpdms403'>
 	<input type='hidden' name='appImg' value='appimg'>
-	<input type='button' id='btn' name='btn' value='작성'>
-	<input type='reset' value='취소'>
+	
 	</form>
-
+<jsp:include page="../bloMain/footer.jsp" flush="false"/>
 </body>
 </html>

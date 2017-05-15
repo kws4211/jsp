@@ -29,10 +29,14 @@ public class AppealRepository {
 		return factory;
 	}
 	
-	public List<AppealVO> selectAppealList(){
+	public List<AppealVO> selectAppealList(String id, int startnum, int endnum){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try{
-			return sqlSess.selectList(namespace + ".selectAppealView");
+			HashMap map = new HashMap();
+			map.put("id", id);
+			map.put("startnum", startnum);
+			map.put("endnum", endnum);
+			return sqlSess.selectList(namespace + ".selectAppealView",map);
 		}finally{
 			sqlSess.close();
 		}
@@ -119,5 +123,30 @@ public class AppealRepository {
 		}
 	}
 	
-	
-}
+	//count상태값 변경
+	public Integer updateappCount(String appId){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			int result = 0;
+			int res = sqlSess.update(namespace + ".updateappCount" , appId); 
+			if(res != 0){
+				 sqlSess.commit();
+				 result++;
+			 }else{
+				 sqlSess.rollback();;
+			 }
+			return result;
+		}finally{
+			sqlSess.close();
+		}
+	}
+		public Integer totalcol(String id){
+			SqlSession sqlSess = getSelSessionFactory().openSession();
+			try {
+				String statment = namespace + ".totalcol";
+				return sqlSess.selectOne(statment);
+			} finally {
+				sqlSess.close();
+			}
+		}
+	}

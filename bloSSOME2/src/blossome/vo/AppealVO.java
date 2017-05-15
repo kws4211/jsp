@@ -20,6 +20,9 @@ public class AppealVO {
 	
 	//직업
 	private String memJob;
+	
+	//조회수
+	private String appCount;
 
 	// 생성자
 	public AppealVO()
@@ -90,11 +93,13 @@ public class AppealVO {
 	public void setMemJob(String memJob) {
 		this.memJob = memJob;
 	}
-	
-	
-	
-	
-	
-	
+
+	public String getAppCount() {
+		return appCount;
+	}
+
+	public void setAppCount(String appCount) {
+		this.appCount = appCount;
+	}
 	
 }

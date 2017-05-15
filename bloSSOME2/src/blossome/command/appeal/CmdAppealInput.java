@@ -27,7 +27,7 @@ public class CmdAppealInput implements Command {
 			vo.setAppContent(request.getParameter("content"));
 			vo.setMemId(request.getParameter("memid"));
 			vo.setAppImg(request.getParameter("appImg"));
-			
+			System.out.println("dasdasd>>>>>>>>" + vo.getAppTitle());
 			AppealRepository repo = new AppealRepository();
 			
 			//시퀀스값 받아오기

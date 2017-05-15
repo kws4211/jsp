@@ -7,10 +7,17 @@
 <!-- 게시판 목록 -->
  <select id="selectAppealView"  resultType="blossome.vo.AppealVO">
 	SELECT * 
-	FROM blo_member m, blo_appeal a
-	WHERE  m.mem_id = a.mem_id
-	ORDER BY app_num DESC
- </select> 
+	FROM (SELECT rownum as rnum, g.*
+			  FROM (SELECT *
+			  			FROM blo_appeal
+			  			ORDER BY app_num desc) g)
+	<where>
+			<if test="id != null">
+				mem_id = #{id} AND 
+			</if>
+			rnum <![CDATA[>=]]>  #{startnum} AND rnum <![CDATA[<=]]> #{endnum}
+		</where>   		
+	</select>
  
  <!-- 각각의 내용 -->
 <select id="selectAppealDetailView" parameterType="hashMap"  resultType="blossome.vo.AppealVO">
@@ -43,5 +50,22 @@
  	DELETE FROM blo_appeal
  	WHERE app_num = #{appId}
  </delete>
+ 
+ <!-- count 수정 -->
+<update id="updateappCount" parameterType="blossome.vo.AppealVO">
+	UPDATE blo_appeal
+	SET app_count = app_count + 1
+	WHERE app_num = #{appNum}
+</update>
+
+<select id="totalcol" parameterType="String" resultType="int">
+		Select count(*)
+		from BLO_APPEAL
+		<where>
+			<if test="appId != null">
+				mem_id = #{appId}
+			</if>
+		</where>
+	</select>
 
 </mapper>
