@@ -18,10 +18,6 @@ import blossome.command.appeal.CmdAppealList;
 import blossome.command.appeal.CmdAppealView;
 import blossome.command.tuk.CmdMyTukList;
 
-
-/**
- * Servlet implementation class GuestControl
- */
 public class BlossomControl extends HttpServlet {
 	
 	private HashMap commandMap;

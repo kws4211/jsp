@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
 <%@ page import="blossome.vo.AppealVO" %>
+<% String id = (String)session.getAttribute("id"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +51,7 @@
 			</div>
 		</div>
 	</div>
-	<input type='hidden' name='memid' value='dpdms403'>
+	<input type='hidden' name='memid' value='<%=id%>'>
 	<input type='hidden' name='appImg' value='appimg'>
 	
 	</form>

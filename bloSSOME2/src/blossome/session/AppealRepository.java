@@ -3,13 +3,13 @@ package blossome.session;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
-
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import blossome.vo.AppealVO;
+import blossome.vo.TukVO;
 
 public class AppealRepository {
 	
@@ -149,4 +149,64 @@ public class AppealRepository {
 				sqlSess.close();
 			}
 		}
+
+		//툭하기
+		public Integer insertTuk(String memId, String choiceId) {
+			SqlSession sqlSess = getSelSessionFactory().openSession();
+			try{
+				int result = 0;
+				HashMap map = new HashMap();
+				map.put("memId", memId);
+				map.put("choiceId", choiceId);
+				int res = sqlSess.insert(namespace + ".insertTuk" , map); 
+				if(res != 0){
+					 sqlSess.commit();
+					 result++;
+				 }else{
+					 sqlSess.rollback();;
+				 }
+				return result;
+			}finally{
+				
+				sqlSess.close();
+			}
+		
+		}
+		
+		//툭하기
+		public int insertTuk( TukVO vo ){
+			// JDBC : Connection, Mybatis : SqlSession
+			SqlSession sqlSess = getSelSessionFactory().openSession();
+			
+			try {
+				
+				String statment = namespace + ".tukInsert";
+				int result = sqlSess.insert(statment, vo);
+				if( result > 0){
+					sqlSess.commit();
+					// JDBC : auto-commit, Mybatis : �븘�떂
+				}else{
+					sqlSess.rollback();
+				}
+				return result;
+			} finally {
+				sqlSess.close();
+			}
+		}
+		//툭삭제
+		public int deleteTuk(TukVO vo) {
+			SqlSession sqlSess = getSelSessionFactory().openSession();
+			try {
+				String statment = namespace + ".tukDelete";
+				int result = sqlSess.delete(statment, vo);
+				if( result > 0){
+					sqlSess.commit();
+				}else{
+					sqlSess.rollback();
+				}
+				return result;
+			} finally {
+				sqlSess.close();
+			}
 	}
+}

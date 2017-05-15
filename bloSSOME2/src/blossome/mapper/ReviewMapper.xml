@@ -13,9 +13,6 @@
 			  			WHERE r.mem_id = m.mem_id
 			  			ORDER BY r.rev_num desc) g)
 	<where>
-			<if test="id != null">
-				mem_id = #{id} AND 
-			</if>
 			rnum <![CDATA[>=]]>  #{startnum} AND rnum <![CDATA[<=]]> #{endnum}
 		</where>   		
 	</select>

@@ -16,6 +16,8 @@ import blossome.command.appeal.CmdAppealModify;
 import blossome.command.appeal.CmdAppealModify2;
 import blossome.command.appeal.CmdAppealNull;
 import blossome.command.appeal.CmdAppealView;
+import blossome.command.appeal.CmdTukDelete;
+import blossome.command.appeal.CmdTukInsert;
 
 public class AppealControl extends HttpServlet {
 	
@@ -39,6 +41,8 @@ public class AppealControl extends HttpServlet {
 	    commandMap.put("appmodi", new CmdAppealModify("appModifyForm.jsp"));
 	    commandMap.put("appmodidi", new CmdAppealModify2("appModify.jsp"));
 	    commandMap.put("appdelete", new CmdAppealDelete("appealView.jsp"));
+	    commandMap.put("tuk-insert", new CmdTukInsert("appealViewDetail.jsp"));
+	    commandMap.put("tuk-delete", new CmdTukDelete("appealViewDetail.jsp"));
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -74,10 +78,10 @@ public class AppealControl extends HttpServlet {
 			nextPage = error;
 			System.out.println("오류 : " + e.getMessage() );
 		}
-		
+		if(nextPage != null){
 		RequestDispatcher reqDp = getServletContext().getRequestDispatcher(dir +  nextPage );
 		reqDp.forward( request, response );
-		
+		}
 	}
 
 }

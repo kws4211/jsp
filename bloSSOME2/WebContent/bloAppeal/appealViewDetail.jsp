@@ -4,6 +4,24 @@
 <%
 	// 1. 해당 게시물의 게시글번호값을 얻어온다
 	AppealVO vo = (AppealVO)request.getAttribute("vo");
+String id = (String)session.getAttribute("id");
+int result = 0;
+Object obj = request.getAttribute("result");
+if(obj != null){
+	result = 1;
+}else{
+	result=0;
+}
+
+int resultDel = 0;
+Object obj2 = request.getAttribute("resultDel");
+if(obj2 != null){
+	resultDel = 1;
+}else{
+	resultDel=0;
+}
+
+// result = Integer.parseInt(request.getAttribute("result").toString());
 %>    
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +36,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript">
 	$(function(){
+		$("#tukCan").hide();
+		if("<%=result%>" == 1){
+			$("#tuk").hide();
+			$("#tukCan").show();
+		}
+		if("<%=resultDel%>" == 1){
+			$("#tuk").show();
+			$("#tukCan").hide();
+		}
 		$("#delBtn").click(function(){
 			var result = confirm("정말로 삭제하시겠습니까?");
 			
@@ -29,6 +56,16 @@
 				
 			}
 			
+		});
+		
+		$("#tuk").click(function(){
+			$("#tukfrm").attr("action","xx.appeal?cmd=tuk-insert");
+			$("#tukfrm").submit();
+		});
+		
+		$("#tukCan").click(function(){
+			$("#tukfrm").attr("action","xx.appeal?cmd=tuk-delete");
+			$("#tukfrm").submit();
 		});
 	});
 </script>
@@ -90,11 +127,22 @@
 							<span class="color blue"></span>
 						</h5> -->
 						<div class="action">
-						    <button class="add-to-cart btn btn-default" type="button" onclick="location.href='xx.appeal?cmd=appealView' ">뒤로가기</button>
-							<button class="add-to-cart btn btn-default" type="button">★툭하기</button>
+						<%if(id.equals(vo.getMemId())){ %>
 							<button class="add-to-cart btn btn-default" type="button"  onclick="location.href='xx.appeal?cmd=appmodi&appId=<%=vo.getMemId()%>' ">수정하기</button>
 							<button class="add-to-cart btn btn-default" type="button" id="delBtn" name="delBtn" >삭제하기</button>
+							<%}else{ %>
+						    <button class="add-to-cart btn btn-default" type="button" onclick="location.href='xx.appeal?cmd=appealView' ">뒤로가기</button>
+							
+							<button class="add-to-cart btn btn-default" type="button" id="tukCan">★툭취소</button>
+							<button class="add-to-cart btn btn-default" type="button" id="tuk">★툭하기</button>
+				<%} %>
 							<form method="post" id="frm">
+							<input type="hidden" name="appId" id="appId" value="<%=vo.getAppNum() %>" />
+							<input type="hidden" name="choiceId" id="choiceId" value="<%=vo.getMemId() %>" />
+							</form>
+							
+							<form method="post" id="tukfrm">
+							<input type="hidden" name="memId" id="memId" value="<%=vo.getMemId() %>"/>
 							<input type="hidden" name="appId" id="appId" value="<%=vo.getAppNum() %>" />
 							</form>
 							<!-- <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button> -->

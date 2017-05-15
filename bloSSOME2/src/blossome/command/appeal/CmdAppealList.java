@@ -25,7 +25,7 @@ public class CmdAppealList implements Command
 			AppealRepository repo = new AppealRepository();
 			repo.updateappCount(appId);
 			AppealVO vo = repo.selectAppealDetailList(appId);
-			vo.setMemId(appId);
+			//vo.setMemId(appId);
 			request.setAttribute("vo", vo);
 			
 		}catch( Exception ex ){

@@ -13,9 +13,6 @@
 			  			WHERE a.mem_id = m.mem_id
 			  			ORDER BY a.app_num desc)  g)
 	<where>
-			<if test="id != null">
-				a.mem_id = #{id} AND 
-			</if>
 			rnum <![CDATA[>=]]>  #{startnum} AND rnum <![CDATA[<=]]> #{endnum}
 		</where>   		
 	</select>
@@ -64,9 +61,29 @@
 		from BLO_APPEAL
 		<where>
 			<if test="appId != null">
-				mem_id = #{appId}
+				app_id = #{appId}
 			</if>
 		</where>
 	</select>
+	
+ <!-- 툭 추가 -->
+ <insert id="insertTuk" parameterType="blossome.vo.AppealVO" >
+	INSERT INTO blo_choice
+ 	VALUES(#{appNum}, #{memId}, #{appTitle}, #{appContent}, sysdate ,#{appImg},0  )
+</insert> 
+
+<!-- 툭하기 -->
+<!-- 나를 툭한 리스트에서 툭하기  -->	
+	<insert id="tukInsert" parameterType="blossome.vo.TukVO">
+		INSERT INTO BLO_CHOICE
+		VALUES (#{choiceNum}, #{memId}, #{choiceId}, sysdate, 1)
+	</insert>
+	
+	<!-- 툭취소 -->
+	
+	<delete id="tukDelete" parameterType="blossome.vo.TukVO">
+	DELETE FROM BLO_CHOICE
+	WHERE mem_id=#{memId} AND choice_id = #{choiceId}
+	</delete>
 
 </mapper>

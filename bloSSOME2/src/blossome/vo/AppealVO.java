@@ -18,6 +18,9 @@ public class AppealVO {
 	//이름
 	private String memName;
 	
+	//상대방 아이디
+	private String choiceId;
+	
 	//직업
 	private String memJob;
 	
@@ -100,6 +103,14 @@ public class AppealVO {
 
 	public void setAppCount(String appCount) {
 		this.appCount = appCount;
+	}
+
+	public String getChoiceId() {
+		return choiceId;
+	}
+
+	public void setChoiceId(String choiceId) {
+		this.choiceId = choiceId;
 	}
 	
 }
