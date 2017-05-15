@@ -11,6 +11,10 @@ public class MemVO {
 	//비밀번호
 	private String memPass;
 	//생일
+	private String memyear;
+	//생일
+	private String memmon;
+	//생일
 	private String memBirth;
 	//전화번호 첫번째
 	private String memTel0;
@@ -69,6 +73,24 @@ public class MemVO {
 
 	public void setMemPass(String memPass) {
 		this.memPass = memPass;
+	}
+
+	
+	
+	public String getMemyear() {
+		return memyear;
+	}
+
+	public void setMemyear(String memyear) {
+		this.memyear = memyear;
+	}
+
+	public String getMemmon() {
+		return memmon;
+	}
+
+	public void setMemmon(String memmon) {
+		this.memmon = memmon;
 	}
 
 	public String getMemBirth() {

@@ -31,18 +31,20 @@
 		<%
 		String input_id = (String)session.getAttribute("id"); 
 		String input_open = (String)session.getAttribute("open"); 
-		String input_password = (String)session.getAttribute("password"); 
+		String input_pass = (String)session.getAttribute("pass"); 
 		String input_confirm = (String)session.getAttribute("confirm"); 
 		String input_question = (String)session.getAttribute("question"); 
 		String input_answer = (String)session.getAttribute("answer"); 
-		String input_nickname = (String)session.getAttribute("nickname"); 
+		String input_nick = (String)session.getAttribute("nick"); 
 		String input_name = (String)session.getAttribute("name"); 
 		String input_filebutton = (String)session.getAttribute("filebutton"); 
-		String input_birthday = (String)session.getAttribute("birthday"); 
+		String input_year = (String)session.getAttribute("year"); 
+		String input_mon = (String)session.getAttribute("mon"); 
+		String input_birth = (String)session.getAttribute("birth"); 
 		String input_tel_0 = (String)session.getAttribute("tel_0"); 
 		String input_tel_1 = (String)session.getAttribute("tel_1"); 
 		String input_tel_2 = (String)session.getAttribute("tel_2"); 
-		String input_area = (String)session.getAttribute("area"); 
+		String input_loc = (String)session.getAttribute("loc"); 
 		String input_email = (String)session.getAttribute("email"); 
 		
 		%>
@@ -51,9 +53,9 @@
 	</head>
 	<body>
 	
-	<%if(input_id != null && input_name != null && input_nickname != null && input_password != null && input_birthday != null &&
-			input_tel_0 != null && input_tel_1 != null && input_tel_2 != null && input_area != null && input_email != null && input_id != "" && input_name != "" && 
-			input_nickname != "" && input_password != "" && input_birthday != "" && input_tel_0 != "" && input_tel_1 != "" && input_tel_0 != "" && input_area != "" 
+	<%if(input_id != null && input_name != null && input_nick != null && input_pass != null && input_birth != null && input_year != null && input_mon != null &&
+			input_tel_0 != null && input_tel_1 != null && input_tel_2 != null && input_loc != null && input_email != null && input_id != "" && input_name != "" && 
+			input_nick != "" && input_pass != "" && input_birth != "" && input_mon != "" && input_year != "" && input_tel_0 != "" && input_tel_1 != "" && input_tel_0 != "" && input_loc != "" 
 			&& input_email != "" && input_open != ""){ %>
 		<%response.sendRedirect("index.login?cmd=inmemdb"); %>
 	<%} %>
@@ -67,7 +69,7 @@
 	               	</div>
 	            </div> 
 				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="#" onsubmit="return input_check_func()">
+					<form class="form-horizontal" method="post" onsubmit="return input_check_func()">
 						
 						<div class="form-group">
 							<label for="view" class="cols-sm-2 control-label">Your View/공개여부</label>
@@ -88,17 +90,17 @@
 								<!-- 앞에그림 -->
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
 									<input type="text" class="form-control" name="id" id="id"  placeholder="Enter your Id"/>
-									<input type="submit"id = 'input' value="중복확인"/>
+									<input type="submit" id = 'input' value="중복확인"/>
 								</div>
 							</div>
 						</div>
 						
 						<div class="form-group">
-							<label for="password" class="cols-sm-2 control-label">Your Password/비밀번호</label>
+							<label for="pass" class="cols-sm-2 control-label">Your Password/비밀번호</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+									<input type="text" class="form-control" name="pass" id="pass"  placeholder="Enter your Password"/>
 								</div>
 							</div>
 						</div>
@@ -134,12 +136,12 @@
 						</div>
 						
 						<div class="form-group">
-							<label for="nickname" class="cols-sm-2 control-label">Your Nickname/닉네임</label>
+							<label for="nick" class="cols-sm-2 control-label">Your Nickname/닉네임</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="nickname" id="nickname"  placeholder="Enter your Nickname"/>
-									<input type="submit"id = 'input' value="중복확인"/>
+									<input type="text" class="form-control" name="nick" id="nick"  placeholder="Enter your Nickname"/>
+									<input type="submit" id = 'input' value="중복확인"/>
 								</div>
 							</div>
 						</div>
@@ -160,52 +162,52 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<select><option id="birthday" value="1990">1990년</option>
+									<select name="year" ><option value="1990">1990년</option>
 									</select>
-									<select><option id="birthday" value="1">1월</option>
-											<option id="birthday" value="2">2월</option>
-											<option id="birthday" value="3">3월</option>
-											<option id="birthday" value="4">4월</option>
-											<option id="birthday" value="5">5월</option>
-											<option id="birthday" value="6">6월</option>
-											<option id="birthday" value="7">7월</option>
-											<option id="birthday" value="8">8월</option>
-											<option id="birthday" value="9">9월</option>
-											<option id="birthday" value="10">10월</option>
-											<option id="birthday" value="11">11월</option>
-											<option id="birthday" value="12">12월</option>
+									<select name="mon" ><option value="1">1월</option>
+											<option value="2">2월</option>
+											<option value="3">3월</option>
+											<option value="4">4월</option>
+											<option value="5">5월</option>
+											<option value="6">6월</option>
+											<option value="7">7월</option>
+											<option value="8">8월</option>
+											<option value="9">9월</option>
+											<option value="10">10월</option>
+											<option value="11">11월</option>
+											<option value="12">12월</option>
 									</select>
-									<select><option id="birthday" value="1">1일</option>
-											<option id="birthday" value="2">2일
-											<option id="birthday" value="3">3일
-											<option id="birthday" value="4">4일
-											<option id="birthday" value="5">5일
-											<option id="birthday" value="6">6일
-											<option id="birthday" value="7">7일
-											<option id="birthday" value="8">8일
-											<option id="birthday" value="9">9일
-											<option id="birthday" value="10">10
-											<option id="birthday" value="11">11일
-											<option id="birthday" value="12">12일
-											<option id="birthday" value="13">13일
-											<option id="birthday" value="14">14일
-											<option id="birthday" value="15">15일
-											<option id="birthday" value="16">16일
-											<option id="birthday" value="17">17일
-											<option id="birthday" value="18">18일
-											<option id="birthday" value="19">19일
-											<option id="birthday" value="20">20일
-											<option id="birthday" value="21">21일
-											<option id="birthday" value="22">22일
-											<option id="birthday" value="23">23일
-											<option id="birthday" value="24">24일
-											<option id="birthday" value="25">25일
-											<option id="birthday" value="26">26일
-											<option id="birthday" value="27">27일
-											<option id="birthday" value="28">28일
-											<option id="birthday" value="29">29일
-											<option id="birthday" value="30">30일
-											<option id="birthday" value="31">31일
+									<select name="birth" ><option value="1">1일</option>
+											<option value="2">2일
+											<option value="3">3일
+											<option value="4">4일
+											<option value="5">5일
+											<option value="6">6일
+											<option value="7">7일
+											<option value="8">8일
+											<option value="9">9일
+											<option value="10">10
+											<option value="11">11일
+											<option value="12">12일
+											<option value="13">13일
+											<option value="14">14일
+											<option value="15">15일
+											<option value="16">16일
+											<option value="17">17일
+											<option value="18">18일
+											<option value="19">19일
+											<option value="20">20일
+											<option value="21">21일
+											<option value="22">22일
+											<option value="23">23일
+											<option value="24">24일
+											<option value="25">25일
+											<option value="26">26일
+											<option value="27">27일
+											<option value="28">28일
+											<option value="29">29일
+											<option value="30">30일
+											<option value="31">31일
 									</select>
 									<div id='result'></div>
 								</div>
@@ -229,20 +231,20 @@
 						</div>
 						
 						<div class="form-group">
-							<label for="area" class="cols-sm-2 control-label">Your Area/지역</label>
+							<label for="loc" class="cols-sm-2 control-label">Your Area/지역</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<select><option id="area" value="서울">서울</option>
-									<option id="area" value="경기">경기</option>
-									<option id="area" value="강원">강원</option>
-									<option id="area" value="충북">충북</option>
-									<option id="area" value="충남">충남</option>
-									<option id="area" value="전북">전북</option>
-									<option id="area" value="전남">전남</option>
-									<option id="area" value="경북">경북</option>
-									<option id="area" value="경남">경남</option>
-									<option id="area" value="제주">제주</option>
+									<select name="loc" ><option value="서울">서울</option>
+									<option value="경기">경기</option>
+									<option value="강원">강원</option>
+									<option value="충북">충북</option>
+									<option value="충남">충남</option>
+									<option value="전북">전북</option>
+									<option value="전남">전남</option>
+									<option value="경북">경북</option>
+									<option value="경남">경남</option>
+									<option value="제주">제주</option>
 									</select>
 								</div>
 							</div>

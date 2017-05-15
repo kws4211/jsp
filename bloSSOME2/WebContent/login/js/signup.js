@@ -28,6 +28,14 @@ $(function(){
 			alert("이름을 입력해주세요");
 			$("#name").focus();
 			return false;
+		}else if($("#year").val() == ""){
+			alert("생일을 입력해주세요");
+			$("#year").focus();
+			return false;
+		}else if($("#mon").val() == ""){
+			alert("생일을 입력해주세요");
+			$("#mon").focus();
+			return false;
 		}else if($("#birthday").val() == ""){
 			alert("생일을 입력해주세요");
 			$("#birthday").focus();

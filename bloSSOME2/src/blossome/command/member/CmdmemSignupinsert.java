@@ -27,24 +27,24 @@ public class CmdmemSignupinsert implements Command{
 		vo.setMemName(request.getParameter("name"));
 		
 		vo.setMemNick(request.getParameter("nick"));
-		System.out.println("nick : "+vo.getMemNick());
 		
 		vo.setMemPass(request.getParameter("pass"));
-		System.out.println("pass : "+vo.getMemPass());
 		
 		vo.setMemQuestion(request.getParameter("question"));
 		
 		vo.setMemAnswer(request.getParameter("answer"));
 		
+		vo.setMemyear(request.getParameter("year"));
+		
+		vo.setMemmon(request.getParameter("mon"));
+		
 		vo.setMemBirth(request.getParameter("birth"));
-		System.out.println("birth : "+vo.getMemBirth());
 		
 		vo.setMemTel0(request.getParameter("tel_0"));
 		vo.setMemTel1(request.getParameter("tel_1"));
 		vo.setMemTel2(request.getParameter("tel_2"));
 
 		vo.setMemLoc(request.getParameter("loc"));
-		System.out.println("loc : "+vo.getMemLoc());
 		
 		vo.setMemEmail(request.getParameter("email"));
 		
