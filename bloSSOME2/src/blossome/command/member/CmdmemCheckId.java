@@ -28,9 +28,13 @@ public class CmdmemCheckId implements Command{
 		String pw = request.getParameter("pw");
 		MemberRepository repo = new MemberRepository();
 		int res = repo.checkLogin(id, pw);
+		int st = repo.idinfo(id);
 		if(res > 0){
 			HttpSession session = request.getSession();
 			session.setAttribute("id", id);
+			if(st == 3){
+				session.setAttribute("admin", "admin");
+			}
 		}
 		
 		return next;

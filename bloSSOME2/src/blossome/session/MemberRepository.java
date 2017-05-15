@@ -92,5 +92,17 @@ public class MemberRepository {
 		}
 	}
 	
+	public int idinfo(String id) {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			HashMap map = new HashMap();
+			map.put("id", id);
+			int state = sqlSess.selectOne(namespace + ".idinfo", map);
+			return state;
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
 	
 }

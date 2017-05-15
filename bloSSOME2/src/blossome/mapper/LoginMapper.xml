@@ -22,6 +22,12 @@
 	WHERE mem_id = #{id} and mem_answer = #{answer}
 </select>
 
+<select id="idinfo" parameterType="hashMap" resultType="int">
+	SELECT mem_state
+	FROM BLO_MEMBER
+	WHERE mem_id = #{id}
+</select>
+
 <select id="find" parameterType="blossome.vo.FIndVO" resultType="blossome.vo.MemVO">
 	select  m.*
 	from blo_member m,BLO_ADDMEMBER a

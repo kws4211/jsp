@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% String name = (String)request.getAttribute("re"); %>
+<% String st = (String)session.getAttribute("admin"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -80,6 +81,10 @@
                             	<li><a class="page-scroll" href="index.login">Login</a></li>
                             <%}else{ %>
                             	<li><a class="page-scroll" href="index.login?cmd=logout">Logout</a></li>
+                            <%} %>
+                            
+                            <%if(st != null && st.equals("admin")){ %>
+                            	<li><a class="page-scroll" href="index.admin">관리자메뉴</a></li>
                             <%} %>
                             <li><a class="page-scroll" href="index.find">이상형찾기</a></li>
                             <li><a class="page-scroll" href="index.appeal">어필게시판</a></li>
