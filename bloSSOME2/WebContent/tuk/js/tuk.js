@@ -1,6 +1,5 @@
 $(function(){
 	$(".btn-success").click(function(){
-		$("#aside").load("side.blossom?cmd=aside");
 		openWin();
 	});
 	
@@ -22,6 +21,7 @@ function openWin() {
 
 $(function(){
 	$('#btn_tuk').click(function(){
+		alert('ss');
 		$('#frm').attr("action", "xx.tuk?cmd=tuk-insert");
 		$('#frm').submit();
 	});

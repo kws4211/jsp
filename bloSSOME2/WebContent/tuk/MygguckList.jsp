@@ -29,7 +29,6 @@
 </head>
 <body>
 <jsp:include page="../bloMain/mainHeader.jsp"></jsp:include>
-<div id="aside"></div>
 <h3>내가 꾸욱한 사람</h3>
 <%if(list.size() != 0){ %>
 <%for(TukVO vo : list){ %>

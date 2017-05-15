@@ -7,6 +7,7 @@
 // 	String mem_id = request.getParameter("mem_id");
 	// 2. Service에 getArticleById() 호출하여 그 게시글번호를 갖는 레코드를 검색한다.
 	List<TukVO> list = (List<TukVO>)request.getAttribute("list");
+	String id = (String)session.getAttribute("id");
 %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -24,15 +25,42 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 <script type="text/javascript" src="/bloSSOME2/lib/alopex-ui.min.js"></script>
-<script type="text/javascript" src="/bloSSOME2/tuk/js/tuk.js"></script>
+<!-- <script type="text/javascript" src="/bloSSOME2/tuk/js/tuk.js"></script> -->
+<script type="text/javascript">
+$(function(){
+// 	$(".btn-success").click(function(){
+// 		openWin();
+// 	});
+	
+// 	$("#rebtn").click(function(){
+// 		alert('oo');
+// 	});
+// });
 
+// function openWin() {
+
+// 	$a.popup({
+// 		title : "꾸욱 쪽지보내기",
+// 		width : 680, //크기
+// 		height : 400,
+// 		url : "/bloSSOME2/tuk/gguckMessage.jsp", // 팝업에 표시될 HTML
+// 		iframe : false // default
+// 	});
+// }
+
+	$('#btn_tuk').click(function(){
+		alert('ss');
+		$('#frm').attr("action", "xx.tuk?cmd=tuk-insert");
+		$('#frm').submit();
+	});
+});
+</script>
 
 
 </head>
 <body>
 
 <jsp:include page="../bloMain/mainHeader.jsp"></jsp:include>
-<div id="aside"></div>
 <h3>나를 툭한 사람</h3>
 <%if(list.size() != 0){ %>
 <%for(TukVO vo : list){ %>
@@ -131,8 +159,7 @@
 								<input type="hidden" name="choiceId" value="<%=vo.getChoiceId() %>"/>
 								<input type="hidden" name="date" value="<%=vo.getChoiceDate() %>"/>
 								<input type="hidden" name="state" value="<%=vo.getChoiceState() %>"/>
-								<input type="hidden" name="mainImg" value="mainImg"/>
-								<input type="hidden" name="subImg" value="SubImg"/>
+
 								
 <%-- 								<input type="hidden" name="choiceId" value="<%=vo.getChoiceId() %>"/> --%>
 

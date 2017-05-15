@@ -7,6 +7,7 @@
 // 	String mem_id = request.getParameter("mem_id");
 	// 2. Service에 getArticleById() 호출하여 그 게시글번호를 갖는 레코드를 검색한다.
 	List<TukVO> list = (List<TukVO>)request.getAttribute("list");
+	String id = (String)session.getAttribute("id");
 %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -29,7 +30,6 @@
 </head>
 <body>
 <jsp:include page="../bloMain/mainHeader.jsp"></jsp:include>
-<div id="aside"></div>
 <h3>내가 툭한 사람</h3>
 <%if(list.size() != 0){ %>
 <%for(TukVO vo : list){ %>

@@ -21,7 +21,7 @@
 	<!-- 나를 툭한 리스트에서 툭하기  -->	
 	<insert id="tukInsert" parameterType="blossome.vo.TukVO">
 		INSERT INTO BLO_CHOICE
-		VALUES (#{choiceNum}, #{memId}, #{choiceId}, sysdate, 1, #{choiceMainImg}, #{choiceSubImg} )
+		VALUES (#{choiceNum}, #{memId}, #{choiceId}, sysdate, 1)
 	</insert>
 
 	<!-- 내가 툭한 리스트에서 툭 취소 -->

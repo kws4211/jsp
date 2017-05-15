@@ -29,11 +29,11 @@ public class TukRepository {
 	
 	
 	// 내가 툭 리스트 
-		public List<TukVO> myselectlist(){
+		public List<TukVO> myselectlist(String id){
 			SqlSession sqlSess = getSelSessionFactory().openSession();
 			try {
 				HashMap map = new HashMap();
-				map.put("id", "myid");
+				map.put("id", id);
 				String statment = namespace + ".mytukList";
 				return sqlSess.selectList(statment, map);
 			} finally {
@@ -82,11 +82,12 @@ public class TukRepository {
 		}
 		
 	// 나를 툭한 리스트에서 툭하기
-	public TukVO insertTuk( TukVO vo ){
+	public int insertTuk( TukVO vo ){
 		// JDBC : Connection, Mybatis : SqlSession
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		
 		try {
+			
 			String statment = namespace + ".tukInsert";
 			int result = sqlSess.insert(statment, vo);
 			if( result > 0){
@@ -95,10 +96,10 @@ public class TukRepository {
 			}else{
 				sqlSess.rollback();
 			}
+			return result;
 		} finally {
 			sqlSess.close();
 		}
-		return vo;
 	}
 	
 	
