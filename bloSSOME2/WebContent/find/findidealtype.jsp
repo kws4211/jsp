@@ -17,7 +17,7 @@
 </head>
 <body>
 <jsp:include page="../bloMain/mainHeader.jsp"></jsp:include>
-<div id="aside"></div>
+<!-- <div id="aside"></div> -->
 <div class="container">
 	<div class="row">
 		<section>
@@ -96,8 +96,8 @@
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step2">
                         <h3>성별</h3>
-                        <input type="radio" name="gender" class="gender" value="m"/> 남자
-                        <input type="radio" name="gender" class="gender" value="w"/> 여자
+                        <input type="radio" name="gender" class="gender" value="남"/> 남자
+                        <input type="radio" name="gender" class="gender" value="여"/> 여자
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
                             <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
@@ -127,7 +127,6 @@
                        	<input type="checkbox" name="hak" class="hak" value="고졸"/> 고졸
                        	<input type="checkbox" name="hak" class="hak" value="대졸"/> 대졸
                        	<input type="checkbox" name="hak" class="hak" value="박사"/> 박사
-                       	<input type="checkbox" name="hak" class="hak" value="무관"/> 무관
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
                             <li><button type="button" class="btn btn-default next-step">Skip</button></li>
@@ -153,10 +152,7 @@
                         		<input type="checkbox" name="mo" class="mo" value="기독교"/> 기독교
                        			<input type="checkbox" name="mo" class="mo" value="불교"/> 불교
                        			<input type="checkbox" name="mo" class="mo" value="천주교"/> 천주교
-								<div class="input-group">
-									<span class="input-group-addon"><input type="checkbox"></span>
-									<input class="form-control" name="mo" type="text" placeholder="">
-								</div>
+                       			<input type="checkbox" name="mo" class="mo" value="기타"/> 기타
 							</div>
 							<ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default prev-step">Previous</button></li>

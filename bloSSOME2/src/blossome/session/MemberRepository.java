@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import blossome.vo.AppealVO;
+import blossome.vo.FIndVO;
 import blossome.vo.MemVO;
 
 public class MemberRepository {
@@ -68,4 +69,16 @@ public class MemberRepository {
 			sqlSess.close();
 		}
 	}
+	
+	public List<MemVO> Find(FIndVO vo) {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			List<MemVO> list = sqlSess.selectList(namespace + ".find", vo);
+			return list;
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
+	
 }
