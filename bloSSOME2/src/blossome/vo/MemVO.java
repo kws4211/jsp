@@ -11,17 +11,9 @@ public class MemVO {
 	//비밀번호
 	private String memPass;
 	//생일
-	private String memyear;
-	//생일
-	private String memmon;
-	//생일
 	private String memBirth;
 	//전화번호 첫번째
-	private String memTel0;
-	//전화번호 두번째
-	private String memTel1;
-	//전화번호 세번째
-	private String memTel2;
+	private String memTel;
 	//지역
 	private String memLoc;
 	//이메일
@@ -75,23 +67,6 @@ public class MemVO {
 		this.memPass = memPass;
 	}
 
-	
-	
-	public String getMemyear() {
-		return memyear;
-	}
-
-	public void setMemyear(String memyear) {
-		this.memyear = memyear;
-	}
-
-	public String getMemmon() {
-		return memmon;
-	}
-
-	public void setMemmon(String memmon) {
-		this.memmon = memmon;
-	}
 
 	public String getMemBirth() {
 		return memBirth;
@@ -103,28 +78,12 @@ public class MemVO {
 
 
 
-	public String getMemTel0() {
-		return memTel0;
+	public String getMemTel() {
+		return memTel;
 	}
 
-	public void setMemTel0(String memTel0) {
-		this.memTel0 = memTel0;
-	}
-
-	public String getMemTel1() {
-		return memTel1;
-	}
-
-	public void setMemTel1(String memTel1) {
-		this.memTel1 = memTel1;
-	}
-
-	public String getMemTel2() {
-		return memTel2;
-	}
-
-	public void setMemTel2(String memTel2) {
-		this.memTel2 = memTel2;
+	public void setMemTel(String memTel) {
+		this.memTel = memTel;
 	}
 
 	public String getMemLoc() {

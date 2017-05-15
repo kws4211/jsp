@@ -34,16 +34,10 @@ public class CmdmemSignupinsert implements Command{
 		
 		vo.setMemAnswer(request.getParameter("answer"));
 		
-		vo.setMemyear(request.getParameter("year"));
+		vo.setMemBirth(request.getParameter("year") + request.getParameter("mon") + request.getParameter("birth") );
 		
-		vo.setMemmon(request.getParameter("mon"));
+		vo.setMemTel(request.getParameter("tel_0") + request.getParameter("tel_1") + request.getParameter("tel_2"));
 		
-		vo.setMemBirth(request.getParameter("birth"));
-		
-		vo.setMemTel0(request.getParameter("tel_0"));
-		vo.setMemTel1(request.getParameter("tel_1"));
-		vo.setMemTel2(request.getParameter("tel_2"));
-
 		vo.setMemLoc(request.getParameter("loc"));
 		
 		vo.setMemEmail(request.getParameter("email"));
@@ -60,6 +54,7 @@ public class CmdmemSignupinsert implements Command{
 		}else{
 			vo.setMemState(3);
 		}
+		
 		
 		
 		SignupRepository repo = new SignupRepository();
