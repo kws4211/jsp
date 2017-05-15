@@ -56,7 +56,7 @@
 <update id="updateappCount" parameterType="blossome.vo.AppealVO">
 	UPDATE blo_appeal
 	SET app_count = app_count + 1
-	WHERE app_num = #{appNum}
+	WHERE app_num = #{appId}
 </update>
 
 <select id="totalcol" parameterType="String" resultType="int">

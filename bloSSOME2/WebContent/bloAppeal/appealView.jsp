@@ -13,12 +13,12 @@
 <html>
 <head>
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-	 <link href="/bloSSOME4/bloAppeal/css/appeal.css" rel="stylesheet">
+	 <link href="/bloSSOME2/bloAppeal/css/appeal.css" rel="stylesheet">
      <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900" rel="stylesheet">
      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
-    <script src="/bloSSOME4/bloAppeal/js/appeal.js"></script>
+    <script src="/bloSSOME2/bloAppeal/js/appeal.js"></script>
 
     
 </head>

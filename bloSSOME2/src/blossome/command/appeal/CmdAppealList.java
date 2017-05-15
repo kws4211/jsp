@@ -24,6 +24,7 @@ public class CmdAppealList implements Command
 			String appId = request.getParameter("appId");
 			System.out.println("appId=>>>>>" + appId);
 			AppealRepository repo = new AppealRepository();
+			repo.updateappCount(appId);
 			AppealVO vo = repo.selectAppealDetailList(appId);
 			vo.setMemId(appId);
 			request.setAttribute("vo", vo);
