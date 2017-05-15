@@ -25,37 +25,45 @@ public class SignupRepository {
 		}
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(input);
 		return factory;
-	}
+	} //SqlSessionFactory 끝
 	
 
 //****************************************************** 여기서부터 수정
 	
-	public List<MemVO> insetSignup(MemVO vo){
+//	public List<MemVO> selbyIdlist(String id){
+//		SqlSession sqlSess = getSelSessionFactory().openSession();
+//		try {
+//			HashMap map = new HashMap();
+//			map.put("id", id);
+//			String statment = namespace + ".alllist";
+//			return sqlSess.selectList(statment, map);
+//		} finally {
+//			sqlSess.close();
+//		}
+//	} //selbyIdlist 끝
+	
+	
+	public List<MemVO> insertSignup(MemVO vo){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try {
 			
 			String statment = namespace + ".seqlogin";
-			//시퀀스 값을 증가 시킨 후 값을 저장
-//			vo.setQnaNum(sqlSess.selectOne(statment));
-			//qna0000001  <- 글번호 지정
 			String a = "signup";
-//			for(int i = 0 ; i < 7-vo.getQnaNum().length() ; i++){
-			   a += "0";
-//			}
-//			a+=vo.getQnaNum();
-//			vo.setQnaNum(a);
 			
-			statment = namespace + ".insertqna";
+			statment = namespace + ".insertMem";
 			//모든 작업 완료 후 insert
 			int res = sqlSess.insert(statment, vo);
-			if(res > 0){
+			if(res < 4){
 				sqlSess.commit();
 			}else{
 				sqlSess.rollback();
 			}
+		
+			
+//***********************************
 			
 			HashMap map = new HashMap();
-//			map.put("id", vo.getMemId());
+			map.put("id", vo.getMemId());
 			
 			statment = namespace + ".alllist";
 			return sqlSess.selectList(statment, map);
