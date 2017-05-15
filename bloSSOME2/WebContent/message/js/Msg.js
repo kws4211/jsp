@@ -1,5 +1,5 @@
 $(function(){
-	$("#link").click(function(){
+	$(".btn-xs").click(function(){
 		var num = $("#num").text();
 		$a.popup({
 			title : "쪽지 보기",
