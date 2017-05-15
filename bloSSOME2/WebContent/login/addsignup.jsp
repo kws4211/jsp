@@ -131,6 +131,17 @@
 						</div>
 						
 						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Your File/사진</label>
+							<!-- File Button --> 
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+								    <input id="filebutton" name="filebutton" class="input-file" type="file">
+							  </div>
+							</div>
+						</div>
+						
+						<div class="form-group">
 							<label for="height" class="cols-sm-2 control-label">Your Height/키</label>
 							<div class="cols-sm-10">
 								<div class="input-group">

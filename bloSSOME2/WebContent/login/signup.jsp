@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+<script type="text/javascript" src="/bloSSOME2/login/js/signup.js"></script>
 <!DOCTYPE html>
 <html lang="en">
     <head> 
@@ -38,86 +38,24 @@
 		String input_nickname = (String)session.getAttribute("nickname"); 
 		String input_name = (String)session.getAttribute("name"); 
 		String input_filebutton = (String)session.getAttribute("filebutton"); 
-		String input_year = (String)session.getAttribute("year"); 
-		String input_mon = (String)session.getAttribute("mon"); 
-		String input_yo = (String)session.getAttribute("yo"); 
-		String input_tel_first = (String)session.getAttribute("tel_first"); 
+		String input_birthday = (String)session.getAttribute("birthday"); 
+		String input_tel_0 = (String)session.getAttribute("tel_0"); 
+		String input_tel_1 = (String)session.getAttribute("tel_1"); 
+		String input_tel_2 = (String)session.getAttribute("tel_2"); 
 		String input_area = (String)session.getAttribute("area"); 
 		String input_email = (String)session.getAttribute("email"); 
 		
 		%>
-<!-- 		<script type="text/javascript"> -->
-<!-- 		function input_check_func(){ -->
-<!-- 			var input_open = document.getElementById('open').value; -->
-<!-- 			var input_id = document.getElementById('id').value; -->
-<!-- 			var input_password = document.getElementById('password').value; -->
-<!-- 			var input_confirm = document.getElementById('confirm').value; -->
-<!-- 			var input_question = document.getElementById('question').value; -->
-<!-- 			var input_answer = document.getElementById('answer').value; -->
-<!-- 			var input_nickname = document.getElementById('nickname').value; -->
-<!-- 			var input_name = document.getElementById('name').value; -->
-<!-- 			var input_filebutton = document.getElementById('filebutton').value; -->
-<!-- 			var input_year = document.getElementById('year').value; -->
-<!-- 			var input_mon = document.getElementById('mon').value; -->
-<!-- 			var input_yo = document.getElementById('yo').value; -->
-<!-- 			var input_tel_first = document.getElementById('tel-first').value; -->
-<!-- 			var input_area = document.getElementById('area').value; -->
-<!-- 			var input_email = document.getElementById('email').value; -->
-<!-- 			var input_blood = document.getElementById('blood').value; -->
-<!-- 			var input_hobby = document.getElementById('hobby').value; -->
-<!-- 			var input_religion = document.getElementById('religion').value; -->
-<!-- 			var input_height = document.getElementById('height').value; -->
-<!-- 			var input_ability = document.getElementById('ability').value; -->
-<!-- 			var input_gender_1 = document.getElementById('gender-1').value; -->
-<!-- 			var input_gender_2 = document.getElementById('gender-2').value; -->
-			
-<!-- 			if(input_id == null || input_name == null || input_nickname == null || input_password == null || input_year == null || -->
-<!-- 				input_mon == null || input_yo == null || input_tel_first == null ||input_area == null ||input_email == null ||  -->
-<!-- 				input_id == "" || input_name == "" || input_nickname == "" || input_password == "" || input_year == "" || -->
-<!-- 				input_mon == "" || input_yo == "" || input_tel_first == "" || input_area == "" ||input_email == "" ||input_open == "" ){ -->
-<!-- 				alert("필수입력창을 입력하세요"); -->
-<!-- 				return false; -->
-<!-- 			}else{ -->
-<!-- 				return ture; -->
-<!-- 			} -->
-			
-<!-- 		} -->
-		
-<!-- 		//정규화 -->
-<!-- // 		window.onload = function(){ -->
-<!-- // 			var id = document.getElementById("id"); //id 정규화 -->
-<!-- // 			id.onblur = function(){ -->
-<!-- // 				id = /^[a-z]+[a-z0-9]{5,19}$/g; -->
-<!-- // 				var nid = document.frm.id.value; -->
-<!-- // 				if(!id.test(nid)){ -->
-<!-- // 					alert("잘못된 아이디 형식입니다"); -->
-<!-- // 				} //if문 끝 -->
-<!-- // 			} -->
-			
-<!-- // 			var pass = document.getElementById("password"); -->
-<!-- // 			pass.onblur = function(){ -->
-<!-- // 				pass = /^[A-Za-z0-9]{6,12}$/; -->
-<!-- // 				var npass = document.frm.pass.value; -->
-<!-- // 				if(!pass.test(npass)){ -->
-<!-- // 					alert("잘못된 패스워드입니다"); -->
-<!-- // 				} //if문 끝 -->
-<!-- // 			} -->
-			
-<!-- // 			============================정규화 추가 -->
-			
-<!-- // 		} -->
-		
-<!-- 		</script> -->
-		
+	
 		
 	</head>
 	<body>
 	
-	<%if(input_id != null && input_name != null && input_nickname != null && input_password != null && input_year != null &&
-			input_mon != null && input_yo != null && input_tel_first != null && input_area != null && input_email != null && 
-			input_id != "" && input_name != "" && input_nickname != "" && input_password != "" && input_year != "" &&
-			input_mon != "" && input_yo != "" && input_tel_first != "" && input_area != "" && input_email != "" && input_open != ""){ %>
-		<%response.sendRedirect("index.blossom"); %>
+	<%if(input_id != null && input_name != null && input_nickname != null && input_password != null && input_birthday != null &&
+			input_tel_0 != null && input_tel_1 != null && input_tel_2 != null && input_area != null && input_email != null && input_id != "" && input_name != "" && 
+			input_nickname != "" && input_password != "" && input_birthday != "" && input_tel_0 != "" && input_tel_1 != "" && input_tel_0 != "" && input_area != "" 
+			&& input_email != "" && input_open != ""){ %>
+		<%response.sendRedirect("index.login?cmd=inmemdb"); %>
 	<%} %>
 	
 		<div class="container">
@@ -147,6 +85,7 @@
 							<label for="id" class="cols-sm-2 control-label">Your Id/아이디</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
+								<!-- 앞에그림 -->
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
 									<input type="text" class="form-control" name="id" id="id"  placeholder="Enter your Id"/>
 									<input type="submit"id = 'input' value="중복확인"/>
@@ -155,7 +94,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label for="password" class="cols-sm-2 control-label">Password/비밀번호</label>
+							<label for="password" class="cols-sm-2 control-label">Your Password/비밀번호</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
@@ -215,70 +154,58 @@
 							</div>
 						</div>
 						
-						<div class="form-group">
-						<label for="name" class="cols-sm-2 control-label">Your File/사진</label>
-						<!-- File Button --> 
-						<div class="cols-sm-10">
-						<div class="input-group">
-						<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-						    <input id="filebutton" name="filebutton" class="input-file" type="file">
-						  </div>
-						</div>
-
-						</div>
-						
 						
 						<div class="form-group">
 							<label for="birthday" class="cols-sm-2 control-label">Your Birthday/생일</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<select><option id="year" value="1990년">1990년</option>
+									<select><option id="birthday" value="1990">1990년</option>
 									</select>
-									<select><option id="mon" value="1월">1월</option>
-											<option id="mon" value="2월">2월</option>
-											<option id="mon" value="3월">3월</option>
-											<option id="mon" value="4월">4월</option>
-											<option id="mon" value="5월">5월</option>
-											<option id="mon" value="6월">6월</option>
-											<option id="mon" value="7월">7월</option>
-											<option id="mon" value="8월">8월</option>
-											<option id="mon" value="9월">9월</option>
-											<option id="mon" value="10월">10월</option>
-											<option id="mon" value="11월">11월</option>
-											<option id="mon" value="12월">12월</option>
+									<select><option id="birthday" value="1">1월</option>
+											<option id="birthday" value="2">2월</option>
+											<option id="birthday" value="3">3월</option>
+											<option id="birthday" value="4">4월</option>
+											<option id="birthday" value="5">5월</option>
+											<option id="birthday" value="6">6월</option>
+											<option id="birthday" value="7">7월</option>
+											<option id="birthday" value="8">8월</option>
+											<option id="birthday" value="9">9월</option>
+											<option id="birthday" value="10">10월</option>
+											<option id="birthday" value="11">11월</option>
+											<option id="birthday" value="12">12월</option>
 									</select>
-									<select><option id="yo" value="1일">1일</option>
-									<option id="yo" value="2일">2일
-									<option id="yo" value="3일">3일
-									<option id="yo" value="4일">4일
-									<option id="yo" value="5">5일
-									<option id="yo" value="6일">6일
-									<option id="yo" value="7일">7일
-									<option id="yo" value="8일">8일
-									<option id="yo" value="9일">9일
-									<option id="yo" value="10일">10
-									<option id="yo" value="11일">11일
-									<option id="yo" value="12일">12일
-									<option id="yo" value="13일">13일
-									<option id="yo" value="14일">14일
-									<option id="yo" value="15일">15일
-									<option id="yo" value="16일">16일
-									<option id="yo" value="17일">17일
-									<option id="yo" value="18일">18일
-									<option id="yo" value="19일">19일
-									<option id="yo" value="20일">20일
-									<option id="yo" value="21일">21일
-									<option id="yo" value="22일">22일
-									<option id="yo" value="23일">23일
-									<option id="yo" value="24일">24일
-									<option id="yo" value="25일">25일
-									<option id="yo" value="26일">26일
-									<option id="yo" value="27일">27일
-									<option id="yo" value="28일">28일
-									<option id="yo" value="29일">29일
-									<option id="yo" value="30일">30일
-									<option id="yo" value="31일">31일
+									<select><option id="birthday" value="1">1일</option>
+											<option id="birthday" value="2">2일
+											<option id="birthday" value="3">3일
+											<option id="birthday" value="4">4일
+											<option id="birthday" value="5">5일
+											<option id="birthday" value="6">6일
+											<option id="birthday" value="7">7일
+											<option id="birthday" value="8">8일
+											<option id="birthday" value="9">9일
+											<option id="birthday" value="10">10
+											<option id="birthday" value="11">11일
+											<option id="birthday" value="12">12일
+											<option id="birthday" value="13">13일
+											<option id="birthday" value="14">14일
+											<option id="birthday" value="15">15일
+											<option id="birthday" value="16">16일
+											<option id="birthday" value="17">17일
+											<option id="birthday" value="18">18일
+											<option id="birthday" value="19">19일
+											<option id="birthday" value="20">20일
+											<option id="birthday" value="21">21일
+											<option id="birthday" value="22">22일
+											<option id="birthday" value="23">23일
+											<option id="birthday" value="24">24일
+											<option id="birthday" value="25">25일
+											<option id="birthday" value="26">26일
+											<option id="birthday" value="27">27일
+											<option id="birthday" value="28">28일
+											<option id="birthday" value="29">29일
+											<option id="birthday" value="30">30일
+											<option id="birthday" value="31">31일
 									</select>
 									<div id='result'></div>
 								</div>
@@ -291,11 +218,11 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
 									</select>
-									<input name="tel010" type="text" id="tel010" size="3" />
+									<input name="tel_0" type="text" id="tel_0" size="3" />
                 				  <span class="text1">                  - 
-             				     <input name="tel" type="text" id="tel" size="5" />
+             				     <input name="tel_1" type="text" id="tel_1" size="5" />
             	   				       -
-                      <input name="tel2" type="text" id="tel2" size="5" />
+                      <input name="tel_2" type="text" id="tel_2" size="5" />
               	    </span></td>
 								</div>
 							</div>
@@ -333,7 +260,7 @@
 	
 
 						<div class="form-group ">
-							<button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-button" id="signup">회원가입 완료</button>
 						</div>
 						<div class="login-register">
 				            <a href="index.php">Login</a>

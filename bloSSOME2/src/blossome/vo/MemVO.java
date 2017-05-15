@@ -12,8 +12,12 @@ public class MemVO {
 	private String memPass;
 	//생일
 	private String memBirth;
-	//전화번호
-	private String memTel;
+	//전화번호 첫번째
+	private String memTel0;
+	//전화번호 두번째
+	private String memTel1;
+	//전화번호 세번째
+	private String memTel2;
 	//지역
 	private String memLoc;
 	//이메일
@@ -75,12 +79,30 @@ public class MemVO {
 		this.memBirth = memBirth;
 	}
 
-	public String getMemTel() {
-		return memTel;
+
+
+	public String getMemTel0() {
+		return memTel0;
 	}
 
-	public void setMemTel(String memTel) {
-		this.memTel = memTel;
+	public void setMemTel0(String memTel0) {
+		this.memTel0 = memTel0;
+	}
+
+	public String getMemTel1() {
+		return memTel1;
+	}
+
+	public void setMemTel1(String memTel1) {
+		this.memTel1 = memTel1;
+	}
+
+	public String getMemTel2() {
+		return memTel2;
+	}
+
+	public void setMemTel2(String memTel2) {
+		this.memTel2 = memTel2;
 	}
 
 	public String getMemLoc() {

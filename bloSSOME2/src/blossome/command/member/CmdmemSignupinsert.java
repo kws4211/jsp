@@ -23,13 +23,31 @@ public class CmdmemSignupinsert implements Command{
 		
 		//받아온 값들을 vo의 내용값지정
 		vo.setMemId(request.getParameter("id"));
+		
 		vo.setMemName(request.getParameter("name"));
+		
 		vo.setMemNick(request.getParameter("nick"));
+		System.out.println("nick : "+vo.getMemNick());
+		
 		vo.setMemPass(request.getParameter("pass"));
+		System.out.println("pass : "+vo.getMemPass());
+		
+		vo.setMemQuestion(request.getParameter("question"));
+		
+		vo.setMemAnswer(request.getParameter("answer"));
+		
 		vo.setMemBirth(request.getParameter("birth"));
-		vo.setMemTel(request.getParameter("tel"));
+		System.out.println("birth : "+vo.getMemBirth());
+		
+		vo.setMemTel0(request.getParameter("tel_0"));
+		vo.setMemTel1(request.getParameter("tel_1"));
+		vo.setMemTel2(request.getParameter("tel_2"));
+
 		vo.setMemLoc(request.getParameter("loc"));
+		System.out.println("loc : "+vo.getMemLoc());
+		
 		vo.setMemEmail(request.getParameter("email"));
+		
 		String open = request.getParameter("open");
 		
 		//상태 유형에 따른 숫자 지정
@@ -42,8 +60,10 @@ public class CmdmemSignupinsert implements Command{
 		}else{
 			vo.setMemState(3);
 		}
+		
+		
 		SignupRepository repo = new SignupRepository();
-		repo.insertSignup(vo);
+		//repo.insertSignup(vo);
 //***************************************여기수정
 //		List<MemVO> list = repo.selbyIdlist(vo.getMemId());
 //		request.setAttribute("list", list);

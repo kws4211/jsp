@@ -19,6 +19,7 @@ import blossome.command.member.CmdmemCheckId;
 import blossome.command.member.CmdmemLogout;
 import blossome.command.member.CmdmemSearchFirst;
 import blossome.command.member.CmdmemSearchSecond;
+import blossome.command.member.CmdmemSignupinsert;
 
 
 /**
@@ -39,6 +40,7 @@ public class LoginControl extends HttpServlet {
 	private void initCommand(){
 		commandMap = new HashMap();
 		commandMap.put("inmem", new CommandNull("signup.jsp"));
+		commandMap.put("inmemdb", new CmdmemSignupinsert("loginform.jsp"));
 		commandMap.put("login", new CommandNull("loginform.jsp"));
 		commandMap.put("search", new CommandNull("loginsearch.jsp"));
 		commandMap.put("checkid", new CmdmemCheckId("loginform.jsp"));

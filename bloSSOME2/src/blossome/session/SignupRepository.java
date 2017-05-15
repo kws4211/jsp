@@ -30,25 +30,12 @@ public class SignupRepository {
 
 //****************************************************** 여기서부터 수정
 	
-//	public List<MemVO> selbyIdlist(String id){
-//		SqlSession sqlSess = getSelSessionFactory().openSession();
-//		try {
-//			HashMap map = new HashMap();
-//			map.put("id", id);
-//			String statment = namespace + ".alllist";
-//			return sqlSess.selectList(statment, map);
-//		} finally {
-//			sqlSess.close();
-//		}
-//	} //selbyIdlist 끝
-	
 	
 	public List<MemVO> insertSignup(MemVO vo){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try {
 			
 			String statment = namespace + ".seqlogin";
-			String a = "signup";
 			
 			statment = namespace + ".insertMem";
 			//모든 작업 완료 후 insert
@@ -65,7 +52,6 @@ public class SignupRepository {
 			HashMap map = new HashMap();
 			map.put("id", vo.getMemId());
 			
-			statment = namespace + ".alllist";
 			return sqlSess.selectList(statment, map);
 		} finally {
 			sqlSess.close();
