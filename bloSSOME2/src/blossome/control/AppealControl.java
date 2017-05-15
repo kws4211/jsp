@@ -32,12 +32,17 @@ public class AppealControl extends HttpServlet {
 
 	private void initCommand(){
 		commandMap = new HashMap();
+		//어필게시판 메인
 		commandMap.put("appealView", new CmdAppealView("appealView.jsp"));
+		//어필게시판 상세보기
 	    commandMap.put("appdetail", new CmdAppealList("appealViewDetail.jsp"));
+	    //어필게시판 추가
 	    commandMap.put("appinsert", new CmdAppealNull("AppealInputForm.jsp"));
 	    commandMap.put("insertappeal", new CmdAppealInput("AppealSave.jsp"));
+	    //어필게시판 수정
 	    commandMap.put("appmodi", new CmdAppealModify("appModifyForm.jsp"));
 	    commandMap.put("appmodidi", new CmdAppealModify2("appModify.jsp"));
+	    //어필게시판 삭제(바로 메인으로감)
 	    commandMap.put("appdelete", new CmdAppealDelete("appealView.jsp"));
 	}
 

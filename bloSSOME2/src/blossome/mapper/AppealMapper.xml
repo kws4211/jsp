@@ -8,12 +8,13 @@
  <select id="selectAppealView"  resultType="blossome.vo.AppealVO">
 	SELECT * 
 	FROM (SELECT rownum as rnum, g.*
-			  FROM (SELECT *
-			  			FROM blo_appeal
-			  			ORDER BY app_num desc) g)
+			  FROM (SELECT a.*, m.mem_name
+			  			FROM blo_appeal a, blo_member m
+			  			WHERE a.mem_id = m.mem_id
+			  			ORDER BY a.app_num desc)  g)
 	<where>
 			<if test="id != null">
-				mem_id = #{id} AND 
+				a.mem_id = #{id} AND 
 			</if>
 			rnum <![CDATA[>=]]>  #{startnum} AND rnum <![CDATA[<=]]> #{endnum}
 		</where>   		

@@ -29,9 +29,8 @@
 <div class="container">
 <h2>Appeal board</h2>
 	
+    
     <div class="row">
-    <button><a href="xxxxx.appeal?cmd=appinsert">글쓰기</a></button>
-    <%if(list.size() > 0 && session.getAttribute("id") != null){ %>
     <% for( AppealVO vo : list) { %>
      <div class="col-sm-10 col-sm-offset-1">
         <div class="col-md-4 col-sm-6">
@@ -58,7 +57,7 @@
 
         </div> <!-- end col-sm-10 -->
         <%} %>
-        <%} %>
+        <button><a href="xxxxx.appeal?cmd=appinsert">글쓰기</a></button>
     </div> <!-- end row -->
     <div class="space-200"></div>
     <div align="center">
