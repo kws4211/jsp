@@ -31,28 +31,19 @@ public class SignupRepository {
 //****************************************************** 여기서부터 수정
 	
 	
-	public List<MemVO> insertSignup(MemVO vo){
+	public int insertSignup(MemVO vo){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try {
 			
-			String statment = namespace + ".seqlogin";
-			
-			statment = namespace + ".insertMem";
+			String statment = namespace + ".insertMem";
 			//모든 작업 완료 후 insert
 			int res = sqlSess.insert(statment, vo);
-			if(res < 4){
+			if(res > 0){
 				sqlSess.commit();
 			}else{
 				sqlSess.rollback();
 			}
-		
-			
-//***********************************
-			
-			HashMap map = new HashMap();
-			map.put("id", vo.getMemId());
-			
-			return sqlSess.selectList(statment, map);
+			return res;
 		} finally {
 			sqlSess.close();
 		}

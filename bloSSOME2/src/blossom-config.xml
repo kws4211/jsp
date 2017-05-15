@@ -27,5 +27,6 @@
 		<mapper resource="blossome/mapper/MatchingMapper.xml" />
 		<mapper resource="blossome/mapper/ReviewMapper.xml" />
 		<mapper resource="blossome/mapper/MsgMapper.xml" />
+		<mapper resource="blossome/mapper/SignupMapper.xml" />
 	</mappers>
 </configuration>
