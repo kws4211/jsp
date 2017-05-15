@@ -40,8 +40,11 @@ public class CmdfindResult implements Command{
 		SimpleDateFormat f =  new SimpleDateFormat("yyyy");
 		String ye = f.format(d);
 		//나이값  20 으로 받아오면 년도로 전환해서 vo에 입력
-		vo.setAge1(String.valueOf((Integer.parseInt(ye) - Integer.parseInt(age1) +1)));
-		vo.setAge2(String.valueOf((Integer.parseInt(ye) - Integer.parseInt(age2) +1)));
+		if(age1 == null || age1.equals("")){
+		}else{
+			vo.setAge1(String.valueOf((Integer.parseInt(ye) - Integer.parseInt(age1) +1)));
+			vo.setAge2(String.valueOf((Integer.parseInt(ye) - Integer.parseInt(age2) +1)));
+		}
 		//나머지 값도 vo에 입력
 		vo.setGender(gender);
 		vo.setLoc(loc);
