@@ -2,7 +2,7 @@ package blossome.command.member;
 
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletResponse;
 
 import blossome.command.Command;
 import blossome.command.CommandException;
@@ -19,9 +19,10 @@ public class CmdmemSignupinsert implements Command{
 	@Override
 	public String execute(HttpServletRequest request) throws CommandException {
 		MemVO vo = new MemVO();
-		//받아온 값들을 vo의 내용값지정
 		
-//		String id = (String)session.setAttribute("id");
+		//받아온 값들을 vo의 내용값지정
+		vo.setMemId(request.getParameter("id"));
+		request.setAttribute("memid", vo.getMemId());
 		
 		vo.setMemName(request.getParameter("name"));
 		
@@ -63,22 +64,24 @@ public class CmdmemSignupinsert implements Command{
 		return next;
 	}
 	
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response){
-//		//요청한 url
-//		String url = request.getRequestURI().toString();
-//		System.out.println(url);
-//		
-//		SignupRepository repo = new SignupRepository();
-//		if(url.indexOf("") != -1){
-//			
-//		}
-//		
-//		//get방식으로 넘어온 데이터
-//		String id=request.getParameter("id");
-//		String nick=request.getParameter("nick");
-//		//repo에 로그인 체크 요청
-//		String result=repo.
-//		//***********하다가 말았음
-//	}
+
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response){
+		//요청한 url
+		String url = request.getRequestURI().toString();
+		System.out.println(url);
+		
+		SignupRepository repo = new SignupRepository();
+		if(url.indexOf("") != -1){
+			
+		}
+		
+		//get방식으로 넘어온 데이터
+		String id=request.getParameter("id");
+		String nick=request.getParameter("nick");
+		//repo에 로그인 체크 요청
+		String result=repo.
+		//***********하다가 말았음
+	}
 	
 }

@@ -1,9 +1,8 @@
-<script type="text/javascript" src="/bloSSOME2/lib/jquery-3.2.1.js"></script>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- 
+<% String id = (String)request.getAttribute("memid"); %>
 
-
+<script type="text/javascript" src="/bloSSOME2/lib/jquery-3.2.1.js"></script>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <!-- Optional theme -->
@@ -28,49 +27,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
 		<title>Add Signup</title>
-		<script type="text/javascript">
-		
-		//정규화
-		window.onload = function(){
-			
-			//키 정규화
-			var height = document.getElementById('height'); 
-			height.onblur = function(){
-				height = /^[0-9]+$/;
- 				var nheight = document.frm.height.value;
- 				if(!height.test(nheight)){
- 					alert("잘못된 형식입니다");
- 				}
- 			}
-			//연봉 정규화
-			var salary = document.getElementById('salary'); 
-			salary.onblur = function(){
-				salary = /^[0-9]+$/;
- 				var nsalary = document.frm.salary.value;
- 				if(!salary.test(nsalary)){
- 					alert("잘못된 형식입니다");
- 				}
- 			}
-			//재산 정규화
-			var property = document.getElementById('property'); 
-			property.onblur = function(){
-				property = /^[0-9]+$/;
- 				var nproperty = document.frm.property.value;
- 				if(!property.test(nproperty)){
- 					alert("잘못된 형식입니다");
- 				}
- 			}
-			
-			
-			
-			height
-		}
-		
-		
-		</script>
 
-		
-		
 	</head>
 	<body>
 	
@@ -85,7 +42,7 @@
 	            </div> 
 				<div class="main-login main-center">
 					<form class="form-horizontal" method="post" action="index.login?cmd=inmemsucc" onsubmit="return input_check_func()" name="frm">
-						
+						<input type="hidden" name="id" value="<%=id%>"/>
 						
 
 						<div class="form-group">

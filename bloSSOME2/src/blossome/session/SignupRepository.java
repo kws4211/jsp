@@ -35,7 +35,6 @@ public class SignupRepository {
 	public int insertSignup(MemVO vo){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try {
-			System.out.println("dd");
 			String statment = namespace + ".insertMem";
 			//모든 작업 완료 후 insert
 			int res = sqlSess.insert(statment, vo);
@@ -54,7 +53,6 @@ public class SignupRepository {
 	public int insertAddSignup(AddMemVO vo){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try {
-			System.out.println("dd");
 			String statment = namespace + ".insertAddMem";
 			//모든 작업 완료 후 insert
 			int res = sqlSess.insert(statment, vo);
@@ -69,4 +67,20 @@ public class SignupRepository {
 		}
 	}
 	
+	//비공개회원 승인안됨으로 바꿔야함
+	public int changeMem(AddMemVO vo){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			String statment = namespace + ".changeMem";
+			int res = sqlSess.insert(statment, vo);
+			if(res > 0){
+				sqlSess.commit();
+			}else{
+				sqlSess.rollback();
+			}
+			return res;
+		} finally {
+			sqlSess.close();
+		}
+	}
 }
