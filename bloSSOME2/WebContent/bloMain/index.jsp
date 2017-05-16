@@ -81,15 +81,14 @@
                             	<li><a class="page-scroll" href="index.login">Login</a></li>
                             <%}else{ %>
                             	<li><a class="page-scroll" href="index.login?cmd=logout">Logout</a></li>
+                            	<li><a class="page-scroll" href="index.member?cmd=menu"><%=session.getAttribute("id") %></a></li>
                             <%} %>
-                            
                             <%if(st != null && st.equals("admin")){ %>
                             	<li><a class="page-scroll" href="index.admin">관리자메뉴</a></li>
                             <%} %>
                             <li><a class="page-scroll" href="index.find">이상형찾기</a></li>
                             <li><a class="page-scroll" href="index.appeal">어필게시판</a></li>
                             <li><a class="page-scroll" href="index.review">후기</a></li>                            
-                            <li><a class="page-scroll" href="#prices-section">이상형월드컵</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                   </div><!-- /.container -->
