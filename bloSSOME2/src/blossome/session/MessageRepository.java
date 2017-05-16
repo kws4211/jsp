@@ -80,12 +80,13 @@ public class MessageRepository {
 			sqlSess.close();
 		}
 	}
+	
 	public int countRead(String num) {
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try{
 			HashMap map = new HashMap();
 			map.put("num", num);
-			int res = sqlSess.selectOne(namespace + ".countread", map);
+			int res = sqlSess.update(namespace + ".countread", map);
 			if(res > 0 ){
 				sqlSess.commit();
 			}else{
