@@ -15,8 +15,10 @@ import blossome.command.CommandNull;
 import blossome.command.admin.CmdadQnaList;
 import blossome.command.appeal.CmdAppealList;
 import blossome.command.appeal.CmdAppealView;
+import blossome.command.member.CmdmemPopup;
 import blossome.command.member.CmdmemQnaList;
 import blossome.command.member.CmdmemQnainsert;
+import blossome.command.member.CmdmemView;
 
 
 /**
@@ -26,7 +28,7 @@ public class MemberControl extends HttpServlet {
 	
 	private HashMap commandMap;
 	private String  error = "error.jsp";
-	private String dir = "/memqna/";
+	private String dir = "/member/";
 	
 
     public MemberControl() {
@@ -38,6 +40,9 @@ public class MemberControl extends HttpServlet {
 		commandMap = new HashMap();
 		commandMap.put("memqna", new CmdmemQnaList("memqna.jsp"));
 		commandMap.put("insert", new CmdmemQnainsert("memqna.jsp"));
+		commandMap.put("view", new CmdmemView("infoView.jsp"));
+		commandMap.put("menu", new CommandNull("selectMenu.jsp"));
+		commandMap.put("popup", new CmdmemPopup("pwpopup.jsp"));
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
