@@ -3,18 +3,32 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="blossom.mapper.SignupMapper">
+
 	<!-- 기본회원 insert -->
  	<insert id="insertMem" parameterType="blossome.vo.MemVO">
 		insert into BLO_MEMBER(mem_id ,mem_name ,mem_nick ,mem_pass ,mem_birth ,mem_tel ,mem_loc ,mem_email ,mem_state ,mem_signup ,mem_question ,mem_answer, mem_leave) 
 		values(#{memId}, #{memName}, #{memNick}, #{memPass}, #{memBirth}, #{memTel}, #{memLoc}, #{memEmail}, #{memState}, sysdate, #{memQuestion},  #{memAnswer}, 0)
 	</insert>
+	
 	<!-- 공개회원 insert -->
 	<insert id="insertAddMem" parameterType="blossome.vo.AddMemVO">
 		insert into BLO_ADDMEMBER(mem_id ,MEM_BLOOD ,MEM_HOBBY ,MEM_RELIGION ,MEM_HEIGHT ,MEM_ABILITY ,MEM_GENDER ,MEM_FAVOR_GENDER ,MEM_SALARY ,MEM_PROPERTY ,MEM_COUNT ,MEM_JOB ) 
 		values(#{memId},#{memBlood}, #{memHobby}, #{memReligion}, #{memHeight}, #{memAbility}, #{memGender}, #{memFavorgender}, #{memSalary}, #{memProperty}, 0, #{memJob})
 	</insert>
+	
 	<!-- 공개회원으로 전환 -->
 	<update id="changeMem" parameterType="blossome.vo.AddMemVO">
 		UPDATE BLO_ADDMEMBER SET MEM_COUNT=0  WHERE mem_id=#{memId}
 	</update>
+	
+	<!-- 아이디 중복확인 -->
+	<select id="confirmid" parameterType="blossome.vo.MemVO">
+		select * from BLO_MEMBER where mem_id=#{memId}
+	</select>
+	
+	<!-- 닉네임 중복확인 -->
+	<select id="confirmni" parameterType="blossome.vo.MemVO">
+		select * from BLO_MEMBER where mem_nick=#{memNick}
+	</select>
+	
 </mapper>

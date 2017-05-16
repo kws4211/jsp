@@ -83,4 +83,38 @@ public class SignupRepository {
 			sqlSess.close();
 		}
 	}
+	
+	//아이디 중복확인
+	public int confirmid(MemVO vo){
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			String statment = namespace + ".confirmid";
+			int res = sqlSess.insert(statment, vo);
+			if(res > 0){
+				sqlSess.commit();
+			}else{
+				sqlSess.rollback();
+			}
+			return res;
+		} finally {
+			sqlSess.close();
+		}
+	}
+	
+	//닉네임 중복확인
+		public int confirmni(MemVO vo){
+			SqlSession sqlSess = getSelSessionFactory().openSession();
+			try{
+				String statment = namespace + ".confirmni";
+				int res = sqlSess.insert(statment, vo);
+				if(res > 0){
+					sqlSess.commit();
+				}else{
+					sqlSess.rollback();
+				}
+				return res;
+			} finally {
+				sqlSess.close();
+			}
+		}
 }

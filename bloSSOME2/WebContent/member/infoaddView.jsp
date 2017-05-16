@@ -38,7 +38,7 @@
       <div class="form-group">
         <label class="col-sm-3 control-label" for="name">이름</label>
         <div class="col-sm-3">
-          <input type="text" class="form-control" name="name" id="name" value="<%=vo.getMemName()%>" readonly="readonly">
+          <input type="text" class="form-control" name="name" id="name" readonly="readonly">
         </div>
       </div>
       

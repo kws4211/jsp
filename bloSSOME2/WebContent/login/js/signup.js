@@ -152,7 +152,7 @@ $(function(){
 //아이디 중복확인
 $('#id_check').click(function(){
 $.ajax({
-	url : 'check.jsp',
+	url : 'check.id',
 	type : 'get',
 	data : { 'id' : $('#id').val()},
 	dataType : 'text',
@@ -174,7 +174,7 @@ $.ajax({
 //닉네임 중복확인
 $('#nick_check').click(function(){
 $.ajax({
-	url : 'check.jsp',
+	url : 'check.ni',
 	type : 'get',
 	data : { 'nick' : $('#nick').val()},
 	dataType : 'text',
