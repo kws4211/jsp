@@ -17,6 +17,7 @@ import blossome.command.appeal.CmdAppealList;
 import blossome.command.appeal.CmdAppealView;
 import blossome.command.member.CmdmemCheckId;
 import blossome.command.member.CmdmemCheckIdserver;
+import blossome.command.member.CmdmemChecknickserver;
 import blossome.command.member.CmdmemLogout;
 import blossome.command.member.CmdmemPopCheckId;
 import blossome.command.member.CmdmemSearchFirst;
@@ -53,6 +54,7 @@ public class LoginControl extends HttpServlet {
 		commandMap.put("logout", new CmdmemLogout("index.jsp")); //로그아웃되면 index로 가고
 		commandMap.put("idpopup", new CmdmemPopCheckId("CheckID.jsp"));
 		commandMap.put("idpopupserver", new CmdmemCheckIdserver("view.jsp"));
+		commandMap.put("nickpopupserver", new CmdmemChecknickserver("view.jsp"));
 		
 	}
 

@@ -114,7 +114,7 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
 									<input type="text" class="form-control" name="nick" id="nick"  placeholder="Enter your Nickname"/>
-									<input type="submit" id = 'nick_check' value="중복확인"/>
+									<input type="button" id = 'nick_check' value="중복확인"/>
 									<div id="idme_ssage" style="display:none;"></div>
 								</div>
 							</div>

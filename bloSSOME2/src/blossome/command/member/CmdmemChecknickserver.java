@@ -17,7 +17,7 @@ public class CmdmemChecknickserver implements Command{
 	public String execute(HttpServletRequest request) throws CommandException {
 		String nick = request.getParameter("userNick");
 		MemberRepository repo = new MemberRepository();
-		int res = repo.checkLogin(nick);
+		int res = repo.checkNick(nick);
 		
 		request.setAttribute("res", res);
 		

@@ -2,9 +2,14 @@ $a.page(function() {
 	this.init = function(id, param) {
 		// $a.popup() 이 넘겨받은 data를 param으로 전달.
 		var id = param["userId"];
+		var nick = param["userNick"];
 		$('#check').val(id);
+		$("#Check").val(nick);
 		$('#btnclose').click(function() { // close 버튼을 누르면 
 			$a.close($('#check').val());
+		});
+		$('#btnClose').click(function() { // close 버튼을 누르면 
+			$a.close($('#Check').val());
 		});
 	}
 });
@@ -32,7 +37,7 @@ $(function(){
 	});
 	$("#btnNick").click(function(){
 		$.ajax({
-			url : "check.login?cmd=idpopupserver", //
+			url : "check.login?cmd=nickpopupserver", //
 			type : "post",
 			data : {"userNick" : $("#Check").val()}, 
 			dataType : 'text',
