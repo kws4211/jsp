@@ -15,10 +15,6 @@ import blossome.vo.QnaVO;
 
 public class CmdmemQnaList implements Command{
 	private String next;
-	private int totalcol = 0; // 총 컬럼 갯수
-	private int startNum = 0; // 시작  숫자
-	private int endNum = 0; // 끝  숫자
-	private int currentpage = 3; // 페이지 당 표시할  컬럼수	
 	
 	public CmdmemQnaList(String _next) {
 		next = _next;

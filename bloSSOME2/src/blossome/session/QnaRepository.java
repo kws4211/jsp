@@ -99,7 +99,7 @@ public class QnaRepository {
 		}
 	}
 	
-	public List<QnaVO> insetQna(QnaVO vo){
+	public int insetQna(QnaVO vo){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try {
 			
@@ -123,11 +123,7 @@ public class QnaRepository {
 				sqlSess.rollback();
 			}
 			
-			HashMap map = new HashMap();
-			map.put("id", vo.getMemId());
-			
-			statment = namespace + ".alllist";
-			return sqlSess.selectList(statment, map);
+			return res;
 		} finally {
 			sqlSess.close();
 		}
