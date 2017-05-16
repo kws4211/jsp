@@ -1,23 +1,20 @@
 $(function(){
-	$(".btn-success").click(function(){
-		openWin();
+	$(".btn-sm").click(function(){
+		var num = $(this).next().val();
+		
+		$a.popup({
+			title : "꾸욱하기",
+			width : 250, //크기
+			height : 100,
+			url : "xx.tuk?cmd=popup&choicenum="+num,
+			iframe : false
+		});
 	});
 	
 	$("#rebtn").click(function(){
 		alert('oo');
 	});
 });
-
-function openWin() {
-
-	$a.popup({
-		title : "꾸욱 쪽지보내기",
-		width : 680, //크기
-		height : 400,
-		url : "/bloSSOME2/tuk/gguckMessage.jsp", // 팝업에 표시될 HTML
-		iframe : false // default
-	});
-}
 
 $(function(){
 	$('#btn_tuk').click(function(){

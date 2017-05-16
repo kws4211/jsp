@@ -18,7 +18,7 @@ public class CmdMyTukPopup implements Command{
 	
 	public String execute(HttpServletRequest request) throws CommandException {
 		//초이스번호를 받음
-		String num = request.getParameter("num");
+		String num = request.getParameter("choicenum");
 		TukRepository repo = new TukRepository();
 //		TukVO vo = repo.selectByNum(num);
 				

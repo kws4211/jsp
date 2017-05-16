@@ -15,16 +15,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+<link rel="stylesheet" href="/bloSSOME2/lib/alopex-ui-default.css" />
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900" rel="stylesheet">
-<link rel="stylesheet" href="/bloSSOME2/lib/alopex-ui-default.css" />
 <link href="/bloSSOME2/tuk/css/tuk.css" type="text/css" rel="stylesheet">
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/bloSSOME2/lib/alopex-ui.min.js"></script> 
 <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
-<script type="text/javascript" src="/bloSSOME2/lib/alopex-ui.min.js"></script>
 <script type="text/javascript" src="/bloSSOME2/tuk/js/tuk.js"></script>
 
 </head>
@@ -121,8 +120,9 @@
                         <div class="footer">
                             <div class="social-links text-center">
                          	    <button type="button" class="btn btn-success btn-sm"><a href="xx.tuk?cmd=mydelete-do&choicenum=<%=vo.getChoiceNum()%>">툭취소</a></button>
+                         	    <button type="button" class="btn btn-success btn-sm">꾸욱하기</button>
+<%--                          	    xx.tuk?cmd=popup&choicenum=<%=vo.getChoiceNum()%> --%>
 								<input type="hidden" name="choiceN" value="<%=vo.getChoiceNum() %>"/>                         	    
-                         	    <button type="button" class="btn btn-success btn-sm"><a id="gguck" href="xx.tuk?cmd=popup&choicenum=<%=vo.getChoiceNum()%>">꾸욱하기</a></button>
                             </div>
                         </div>
                      </div> <!-- end back panel -->
