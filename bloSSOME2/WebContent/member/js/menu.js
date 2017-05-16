@@ -1,5 +1,5 @@
 $(function() {
-	$("a").click(function() {
+	$(".btn").click(function() {
 		var sel = $(this).next().val();
 		$a.popup({
 			title : "비밀번호 입력",

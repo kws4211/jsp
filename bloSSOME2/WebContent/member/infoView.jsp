@@ -45,14 +45,14 @@
       <div class="form-group">
         <label class="col-sm-3 control-label" for="pw">PASSWORD</label>
         <div class="col-sm-3">
-          <input type="text" class="form-control" name="pw" id="pw" placeholder="비밀번호를 입력해주세요" value="<%=vo.getMemPass()%>">
+          <input type="password" class="form-control" name="pw" id="pw" placeholder="비밀번호를 입력해주세요" value="<%=vo.getMemPass()%>">
         </div>
       </div>
       
       <div class="form-group">
         <label class="col-sm-3 control-label" for="pwch">PASSWORD CHECK</label>
         <div class="col-sm-3">
-          <input type="text" class="form-control" name="pwch" id="pwch" placeholder="다시한번 입력해주세요">
+          <input type="password" class="form-control" name="pwch" id="pwch" placeholder="다시한번 입력해주세요">
         </div>
       </div>
       

@@ -6,6 +6,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="/bloSSOME2/lib/alopex-ui-default.css" />
+<style type="text/css">
+button {
+	border: 0;
+	background-color: white;
+}
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="/bloSSOME2/lib/alopex-ui.min.js"></script> 
 <script type="text/javascript" src="/bloSSOME2/member/js/menu.js"></script>
@@ -16,8 +22,9 @@
 <br/>
 <br/>
 <!-- info.member?cmd=view info.member?cmd=add-->
-	<a href="#">기본정보수정</a><input type="hidden" value="1" /><br/>
-	<a href="#">추가 정보 수정</a><input type="hidden" value="2" /><br/>
-
+<center>
+	<button class="btn" id="btn1"><img class="btn-img" src="/bloSSOME2/member/img/basic.png"></button><input type="hidden" value="1" />
+	<button class="btn" id="btn2"><img class="btn-img" src="/bloSSOME2/member/img/add.png"></button><input type="hidden" value="2" />
+</center>
 </body>
 </html>
