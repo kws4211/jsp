@@ -70,4 +70,9 @@ $(function() {
 		$("#frm").attr("action","index.member?cmd=modify");
 		$("#frm").submit();
 	});
+	
+	$(".btn-info").click(function(){
+		$("#pw").removeAttr("readonly");
+		$("#pwch").removeAttr("readonly");
+	});
 });
