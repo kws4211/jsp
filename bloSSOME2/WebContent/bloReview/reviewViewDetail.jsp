@@ -4,6 +4,7 @@
 <%
 	// 1. 해당 게시물의 게시글번호값을 얻어온다
 	ReviewVO vo = (ReviewVO)request.getAttribute("vo");
+String id = (String)session.getAttribute("id");
 %>    
 <!DOCTYPE html>
 <html>
@@ -86,8 +87,11 @@
 							</h5> -->
 							<div class="action">
 							    <button class="add-to-cart btn btn-default" type="button" onclick="location.href='xx.review?cmd=reviewView' ">뒤로가기</button>
+								
+								<%if(id.equals(vo.getMemId())){ %>
 								<button class="add-to-cart btn btn-default" type="button"  onclick="location.href='xx.review?cmd=revmodi&revId=<%=vo.getMemId()%>' ">수정하기</button>
 								<button class="add-to-cart btn btn-default" type="button" id="delBtn" name="delBtn" >삭제하기</button>
+								<%} %>
 								<form method="post" id="frm">
 								<input type="hidden" name="revId" id="revId" value="<%=vo.getRevNum() %>" />
 								</form>

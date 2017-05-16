@@ -12,6 +12,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import blossome.vo.AppealVO;
 import blossome.vo.FIndVO;
 import blossome.vo.MemVO;
+import blossome.vo.TukVO;
 
 public class MemberRepository {
 	
@@ -91,6 +92,18 @@ public class MemberRepository {
 			sqlSess.close();
 		}
 	}
+	
+	public List<TukVO> Findtuk(TukVO vo) {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			List<TukVO> list = sqlSess.selectList(namespace + ".findtuk", vo);
+			return list;
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
+	
 	
 	public int idinfo(String id) {
 		SqlSession sqlSess = getSelSessionFactory().openSession();

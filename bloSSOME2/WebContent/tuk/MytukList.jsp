@@ -55,7 +55,7 @@
                             <!-- 이름/ 지역 받아오기 -->
                             
                                 <h3 class="name"><%=vo.getMemName() %> / <%=vo.getMemLoc() %></h3>
-                                <p class="age">나이  <%=vo.getMemAge() %></p>
+<%--                                 <p class="age">나이  <%=vo.getMemAge() %></p> --%>
                                 <div class="stats-container">
                                     <div class="stats">
                                         <h4>혈액형</h4>
@@ -120,14 +120,9 @@
                         </div>
                         <div class="footer">
                             <div class="social-links text-center">
-
                          	    <button type="button" class="btn btn-success btn-sm"><a href="xx.tuk?cmd=mydelete-do&choicenum=<%=vo.getChoiceNum()%>">툭취소</a></button>
 								<input type="hidden" name="choiceN" value="<%=vo.getChoiceNum() %>"/>                         	    
                          	    <button type="button" class="btn btn-success btn-sm"><a id="gguck" href="xx.tuk?cmd=popup&choicenum=<%=vo.getChoiceNum()%>">꾸욱하기</a></button>
-<%-- 								<%if(vo.getChoiceState() == 1){ %> --%>
-<%-- 								<%}else{ %> --%>
-								
-<%-- 								<%} %> --%>
                             </div>
                         </div>
                      </div> <!-- end back panel -->
@@ -141,78 +136,7 @@
 </div>
                     <%}%> <!-- end of for -->
 					<%}else{ %>
-					<h3 class="name">이름 / 지역</h3>
-<!--                                 <p class="age">나이 </p> -->
-                                <div class="stats-container">
-                                    <div class="stats">
-                                        <h4>혈액형</h4>
-                                        <p>
-                                            AA
-                                        </p>
-                                    </div>
-                                    <div class="stats">
-                                        <h4>키</h4>
-                                        <p>
-                                           	AA
-                                        </p>
-                                    </div>
-                                    <div class="stats">
-                                        <h4>학력</h4>
-                                        <p>
-                                           	AA
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="footer">
-                            </div>
-                        </div>
-                    </div> <!-- end front panel -->
-                    
-                    <!-- 툭 뒷면 -->
-                    <div class="back">
-                        
-                        <div class="content">
-                            <div class="main">
-                          
-                                <div class="stats-container">
-                                    <div class="">
-                                        <h4>취미</h4>
-                                        <p>
-                                           	AA
-                                        </p>
-                                    </div>
-                                    <div class="">
-                                        <h4>이메일</h4>
-                                        <p>
-                                           	AA
-                                        </p>
-                                    </div>
-                                    <div class="stats">
-                                        <h4>생일</h4>
-                                        <p>
-                                           	AA
-                                        </p>
-                                    </div>
-                                    <div class="stats">
-                                        <h4>종교</h4>
-                                        <p>
-                                           	AA
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="footer">
-                            <div class="social-links text-center">
-								
-                         	    <button type="button" class="btn btn-success btn-sm"><a href="">툭취소</a></button>
-                         	   <a  class="btn btn-success btn-sm" id="gguck">꾸욱하기</a>
-                         	   
-
-                            </div>
-                        </div>
+					내가 툭한 사람이 없습니다.
 					
 					
 					

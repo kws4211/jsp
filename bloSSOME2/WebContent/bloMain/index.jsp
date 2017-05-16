@@ -88,7 +88,7 @@
                             <%} %>
                             <li><a class="page-scroll" href="index.find">이상형찾기</a></li>
                             <li><a class="page-scroll" href="index.appeal">어필게시판</a></li>
-                            <li><a class="page-scroll" href="#team-section">후기</a></li>                            
+                            <li><a class="page-scroll" href="index.review">후기</a></li>                            
                             <li><a class="page-scroll" href="#prices-section">이상형월드컵</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
