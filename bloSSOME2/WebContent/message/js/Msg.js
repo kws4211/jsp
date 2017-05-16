@@ -1,6 +1,6 @@
 $(function(){
 	$(".btn-xs").click(function(){
-		var num = $("#num").text();
+		var num = $("#num").val();
 		$a.popup({
 			title : "쪽지 보기",
 			width : 600, //크기

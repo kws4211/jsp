@@ -22,7 +22,7 @@ public class CmdMsgView implements Command{
 		String num = request.getParameter("num");
 		MessageRepository repo = new MessageRepository();
 		MsgVO vo = repo.view(num);
-		repo.countRead(num);
+//		repo.countRead(num);
 	
 		request.setAttribute("vo", vo);
 		return next;

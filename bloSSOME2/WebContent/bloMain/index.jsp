@@ -70,7 +70,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>
-                      <a class="navbar-brand page-scroll" href="index.html">Unika</a>
+                      <a class="navbar-brand page-scroll" href="index.html">BloSSome</a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -109,9 +109,9 @@
                                 <div class="page-header-wrapper">
                                     <div class="container">
                                         <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                                            <h2>Our Works</h2>
+                                            <h2>BloSSome</h2>
                                             <div class="devider"></div>
-                                            <p class="subtitle">What we are proud of</p>
+                                            <p class="subtitle">설레임의 만남</p>
                                         </div>
                                     </div>
                                 </div>
