@@ -76,8 +76,11 @@
 		INSERT INTO BLO_CHOICE
 		VALUES ( #{choiceNum}, #{id}, #{choiceId}, sysdate, 4 )
 	</insert>
-	<select id="">
-		select 
-	</select>
+	
+	<update id="gguckChange" parameterType="hashMap">
+		update BLO_CHOICE
+		set CHOICE_STATE=2
+		where mem_id=#{memid} and choice_id=#{choId}
+	</update>
 	
 </mapper>

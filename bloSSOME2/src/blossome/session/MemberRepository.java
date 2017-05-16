@@ -165,51 +165,68 @@ public class MemberRepository {
              String result = sqlSess.selectOne(namespace2 + ".selectTukSeq");
             
             return result;
-         }finally{
-            sqlSess.close();
-         }
-               
-            
-                   
-      }
-   
-   //툭하기
-   public Integer insertTuk(TukVO tvo) {
-      // JDBC : Connection, Mybatis : SqlSession
-               SqlSession sqlSess = getSelSessionFactory().openSession();
-               
-               try {
-                  
-                  String statment = namespace2 + ".tukInsert";
-                  int result = sqlSess.insert(statment, tvo);
-                  if( result > 0){
-                     sqlSess.commit();
-                     // JDBC : auto-commit, Mybatis : �븘�떂
-                  }else{
-                     sqlSess.rollback();
-                  }
-                  return result;
-               } finally {
-                  sqlSess.close();
-               }
-   }
-   
-   //툭삭제
-         public int deleteTuk(TukVO vo) {
-            SqlSession sqlSess = getSelSessionFactory().openSession();
-            try {
-               String statment = namespace2 + ".tukDelete";
-               int result = sqlSess.delete(statment, vo);
-               if( result > 0){
-                  sqlSess.commit();
-               }else{
-                  sqlSess.rollback();
-               }
-               return result;
-            } finally {
-               sqlSess.close();
-            }
-      }
-   
-   
+		} finally {
+			sqlSess.close();
+		}
+
+	}
+
+	// 툭하기
+	public Integer insertTuk(TukVO tvo) {
+		// JDBC : Connection, Mybatis : SqlSession
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+
+		try {
+
+			String statment = namespace2 + ".tukInsert";
+			int result = sqlSess.insert(statment, tvo);
+			if (result > 0) {
+				sqlSess.commit();
+				// JDBC : auto-commit, Mybatis : �븘�떂
+			} else {
+				sqlSess.rollback();
+			}
+			return result;
+		} finally {
+			sqlSess.close();
+		}
+	}
+
+	// 툭삭제
+	public int deleteTuk(TukVO vo) {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			String statment = namespace2 + ".tukDelete";
+			int result = sqlSess.delete(statment, vo);
+			if (result > 0) {
+				sqlSess.commit();
+			} else {
+				sqlSess.rollback();
+			}
+			return result;
+		} finally {
+			sqlSess.close();
+		}
+	}
+	
+	//꾸욱여부로 바꾸기
+	
+	public int gguck(String id) {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			String statment = namespace + ".gguck";
+			HashMap map = new HashMap<>();
+			map.put("id", id);
+			int result = sqlSess.update(statment, map);
+			if (result > 0) {
+				sqlSess.commit();
+			} else {
+				sqlSess.rollback();
+			}
+			return result;
+		} finally {
+			sqlSess.close();
+		}
+	}
+
 }

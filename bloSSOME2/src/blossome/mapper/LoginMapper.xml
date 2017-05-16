@@ -52,6 +52,13 @@
 	where mem_id = #{memId}
 </update>
 
+
+<update id="gguck" parameterType="hashMap">
+	update blo_addmember
+	set mem_count = 1
+	where mem_id=#{id}
+</update>
+
 <select id="find" parameterType="blossome.vo.FIndVO" resultType="blossome.vo.MemVO">
 	select  m.*
 	from blo_member m,BLO_ADDMEMBER a

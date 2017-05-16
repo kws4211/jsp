@@ -32,17 +32,21 @@ public class CmdMsgInsert implements Command{
 		
 		MsgVO mvo = new MsgVO();
 		mvo.setMemId(myid);
+		mvo.setMsgId(choid);
 		mvo.setMsgContent(con);
 		mvo.setMsgName(vo.getMemName());
-		mvo.setMsgId(choid);
 		
 		//메시지 입력
 		MessageRepository mrepo = new MessageRepository();
-		mrepo.insertMsg(vo);
+		mrepo.insertMsg(mvo);
 		
-		// 꾸욱여부 1로 전환
-		
+		// 꾸욱여부로 전환
 		TukRepository repo = new TukRepository();
+		repo.gguckChange(myid, choid);
+		
+		//내정보에 꾸욱 여부 카운트 증가
+		remem.gguck(myid);
+		
 		List<TukVO> list = repo.mygguckselectlist(myid);
 		request.setAttribute("list", list);
 		return next;

@@ -62,6 +62,6 @@
 	
 	<insert id="insert" parameterType="blossome.vo.MsgVO">
 		insert into blo_message
-		value(#{msgNum},#{msgId},#{msgId},#{MsgName},#{msgContent},2)
+		values(#{msgNum},#{memId},#{msgId},#{msgName},#{msgContent},2)
 	</insert>
 </mapper>

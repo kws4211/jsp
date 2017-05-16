@@ -185,7 +185,28 @@ public class TukRepository {
 		} finally {
 			sqlSess.close();
 		}
+	}
+	
+	public Integer gguckChange( String memid, String choId){
+		// JDBC : Connection, Mybatis : SqlSession
+		SqlSession sqlSess = getSelSessionFactory().openSession();
 		
+		try {
+			String statment = namespace + ".gguckChange";
+			HashMap map = new HashMap();
+			map.put("memid", memid);
+			map.put("choId", choId);
+			
+			int res = sqlSess.update(statment, map);
+			if( res > 0){
+				sqlSess.commit();
+			}else{
+				sqlSess.rollback();
+			}
+			return res;
+		} finally {
+			sqlSess.close();
+		}
 	}
 
 }
