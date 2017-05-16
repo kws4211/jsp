@@ -209,4 +209,42 @@ public class TukRepository {
 		}
 	}
 
+
+	public int seekMyInfo(TukVO tvo) {
+		// JDBC : Connection, Mybatis : SqlSession
+				SqlSession sqlSess = getSelSessionFactory().openSession();
+				
+				try {
+					String statment = namespace + ".seekMyInfo";
+					
+					int res = sqlSess.selectOne(statment, tvo);
+					if( res > 0){
+						sqlSess.commit();
+					}else{
+						sqlSess.rollback();
+					}
+					return res;
+				} finally {
+					sqlSess.close();
+				}
+	}
+
+
+	public void ggukInsert(TukVO tvo) {
+		// JDBC : Connection, Mybatis : SqlSession
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		
+		try {
+			String statment = namespace + ".gguckInsert";
+			
+			int res = sqlSess.insert(statment, tvo);
+			if( res > 0){
+				sqlSess.commit();
+			}else{
+				sqlSess.rollback();
+			}
+		} finally {
+			sqlSess.close();
+		}
+	}
 }

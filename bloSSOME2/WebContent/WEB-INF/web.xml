@@ -9,14 +9,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  <servlet>
+  <servlet> 
     <servlet-name>BlossomControl</servlet-name>
     <servlet-class>blossome.control.BlossomControl</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>BlossomControl</servlet-name>
     <url-pattern>/BlossomControl</url-pattern>
-    <url-pattern>*.blossom</url-pattern>
+    <url-pattern>*.blossom</url-pattern>  
   </servlet-mapping>
   
   <servlet>

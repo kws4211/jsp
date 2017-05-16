@@ -64,4 +64,6 @@
 		insert into blo_message
 		values(#{msgNum},#{memId},#{msgId},#{msgName},#{msgContent},2)
 	</insert>
+	
+	
 </mapper>
