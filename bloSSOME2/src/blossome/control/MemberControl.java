@@ -36,7 +36,7 @@ public class MemberControl extends HttpServlet {
         super();       
 		initCommand();
 	}
-
+ 
 	private void initCommand(){
 		commandMap = new HashMap();
 		commandMap.put("memqna", new CmdmemQnaList("memqna.jsp"));
