@@ -28,7 +28,7 @@
 </head>
  <body>
  <jsp:include page="../bloMain/mainHeader.jsp" flush="false"/>
-	<form class="form-horizontal" method="post" role="form" id="frm">
+	<form class="form-horizontal" method="post" role="form" id="frm" enctype="multipart/form-data">
 	
 	<div class="input-form">
 	
@@ -52,9 +52,10 @@
 		</div>
 	</div>
 	<input type='hidden' name='memid' value='<%=id%>'>
-	<input type='hidden' name='appImg' value='appimg'>
+	<!-- <input type='hidden' name='appImg' value='appimg'> -->
+	<input type="file" name="appImg" size=40 >
 	
-	</form>
+</form>
 <jsp:include page="../bloMain/footer.jsp" flush="false"/>
 </body>
 </html>
