@@ -35,6 +35,7 @@
   			</foreach>
 		</if>
 	</where>
+	and m.mem_id != #{memId} 
 </select>
 
 <!-- 시퀀스 생성 -->

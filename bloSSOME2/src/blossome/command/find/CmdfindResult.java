@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import blossome.command.Command;
 import blossome.command.CommandException;
@@ -22,6 +23,9 @@ public class CmdfindResult implements Command{
 	}
 	
 	public String execute(HttpServletRequest request) throws CommandException {
+		
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("id");
 		/*
 		 * 폼에 저장된 값을 가져와서 받아줌
 		 * 그리고 test.jsp에 값을 보내줌
@@ -53,6 +57,7 @@ public class CmdfindResult implements Command{
 		vo.setKey1(key1);
 		vo.setKey2(key2);
 		vo.setMo(mo);
+		vo.setMemId(id);
 		
 		//Repository에 값 전달
 		MemberRepository repo = new MemberRepository();

@@ -9,6 +9,8 @@ public class FIndVO {
 	private String key1;
 	private String key2;
 	private String[] mo;
+	private String memId;
+	
 	public String getAge1() {
 		return age1;
 	}
@@ -57,4 +59,11 @@ public class FIndVO {
 	public void setMo(String[] mo) {
 		this.mo = mo;
 	}
+	public String getMemId() {
+		return memId;
+	}
+	public void setMemId(String memId) {
+		this.memId = memId;
+	}
+	
 }
