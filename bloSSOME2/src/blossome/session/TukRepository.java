@@ -43,17 +43,16 @@ public class TukRepository {
 	}	
 		
 	// 나를 툭 리스트 
-		public List<TukVO> meselectlist(){
+		public List<TukVO> meselectlist(String id){
 			SqlSession sqlSess = getSelSessionFactory().openSession();
 			try {
 				HashMap map = new HashMap();
-				map.put("id", "myid");
+				map.put("id", id);
 				String statment = namespace + ".metukList";
 				return sqlSess.selectList(statment, map);
 			} finally {
 				sqlSess.close();
 			}
-		
 	}	
 		
 		
@@ -117,11 +116,11 @@ public class TukRepository {
 	
 	
 	//꾸욱 리스트
-	public List<TukVO> mygguckselectlist(){
+	public List<TukVO> mygguckselectlist(String id){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try {
 			HashMap map = new HashMap();
-			map.put("id", "myid");
+			map.put("id", id);
 			String statment = namespace + ".mygguckList";
 			return sqlSess.selectList(statment, map);
 		} finally {
@@ -131,11 +130,11 @@ public class TukRepository {
 	}
 	
 	// 나를 꾹 리스트 
-	public List<TukVO> megguckselectlist(){
+	public List<TukVO> megguckselectlist(String id){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try {
 			HashMap map = new HashMap();
-			map.put("id", "myid");
+			map.put("id", id);
 			String statment = namespace + ".megguckList";
 			return sqlSess.selectList(statment, map);
 		} finally {

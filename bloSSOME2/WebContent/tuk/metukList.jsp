@@ -7,7 +7,7 @@
 // 	String mem_id = request.getParameter("mem_id");
 	// 2. Service에 getArticleById() 호출하여 그 게시글번호를 갖는 레코드를 검색한다.
 	List<TukVO> list = (List<TukVO>)request.getAttribute("list");
-	String id = (String)session.getAttribute("id");
+// 	String id = (String)session.getAttribute("id");
 %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -49,7 +49,6 @@ $(function(){
 // }
 
 	$('#btn_tuk').click(function(){
-		alert('ss');
 		$('#frm').attr("action", "xx.tuk?cmd=tuk-insert");
 		$('#frm').submit();
 	});
@@ -85,7 +84,7 @@ $(function(){
                             <!-- 이름/ 지역 받아오기 -->
                             
                                 <h3 class="name"><%=vo.getMemName() %> / <%=vo.getMemLoc() %></h3>
-                                <p class="age">나이  <%=vo.getMemAge() %></p>
+<%--                                 <p class="age">나이  <%=vo.getMemAge() %></p> --%>
                                 <div class="stats-container">
                                     <div class="stats">
                                         <h4>혈액형</h4>
@@ -156,9 +155,9 @@ $(function(){
 <%-- 								<input type="hidden" name="choiceN" value="<%=vo.getChoiceNum() %>"/> --%>
 								<!-- 상대방 아이디 -->
 								<input type="hidden" name="memId" value="<%=vo.getMemId() %>"/>
-								<input type="hidden" name="choiceId" value="<%=vo.getChoiceId() %>"/>
-								<input type="hidden" name="date" value="<%=vo.getChoiceDate() %>"/>
-								<input type="hidden" name="state" value="<%=vo.getChoiceState() %>"/>
+<%-- 								<input type="hidden" name="choiceId" value="<%=vo.getChoiceId() %>"/> --%>
+<%-- 								<input type="hidden" name="date" value="<%=vo.getChoiceDate() %>"/> --%>
+<%-- 								<input type="hidden" name="state" value="<%=vo.getChoiceState() %>"/> --%>
 
 								
 <%-- 								<input type="hidden" name="choiceId" value="<%=vo.getChoiceId() %>"/> --%>
@@ -182,81 +181,7 @@ $(function(){
 </div>
                     <%}%> <!-- end of for -->
 					<%}else{ %>
-					<h3 class="name">이름 / 지역</h3>
-                                <p class="age">나이 </p>
-                                <div class="stats-container">
-                                    <div class="stats">
-                                        <h4>혈액형</h4>
-                                        <p>
-                                            AA
-                                        </p>
-                                    </div>
-                                    <div class="stats">
-                                        <h4>키</h4>
-                                        <p>
-                                           	AA
-                                        </p>
-                                    </div>
-                                    <div class="stats">
-                                        <h4>학력</h4>
-                                        <p>
-                                           	AA
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="footer">
-                            </div>
-                        </div>
-                    </div> <!-- end front panel -->
-                    
-                    <!-- 툭 뒷면 -->
-                    <div class="back">
-                        
-                        <div class="content">
-                            <div class="main">
-                          
-                                <div class="stats-container">
-                                    <div class="">
-                                        <h4>취미</h4>
-                                        <p>
-                                           	AA
-                                        </p>
-                                    </div>
-                                    <div class="">
-                                        <h4>이메일</h4>
-                                        <p>
-                                           	AA
-                                        </p>
-                                    </div>
-                                    <div class="stats">
-                                        <h4>생일</h4>
-                                        <p>
-                                           	AA
-                                        </p>
-                                    </div>
-                                    <div class="stats">
-                                        <h4>종교</h4>
-                                        <p>
-                                           	AA
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="footer">
-                            <div class="social-links text-center">
-
-                         	    <button type="button" class="btn btn-success btn-sm"><a href="">툭취소</a></button>
-                         	    <a  class="btn btn-success btn-sm" id="gguck">꾸욱하기</a>
-                         	   
-
-                            </div>
-                        </div>
-					
-					
-					
+					나를 툭한 사람이 없습니다.
 					 <%}%> <!-- end of if -->
 
 

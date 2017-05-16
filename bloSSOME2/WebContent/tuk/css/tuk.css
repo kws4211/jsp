@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900');
+h3 {
+	text-align: center;
+}
 body {
 	margin-top: 60px;
 	font-size: 14px;

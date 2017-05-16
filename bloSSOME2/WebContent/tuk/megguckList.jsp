@@ -24,8 +24,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 <script type="text/javascript" src="/bloSSOME2/lib/alopex-ui.min.js"></script>
-<script type="text/javascript" src="/bloSSOME2/tuk/js/tuk.js"></script>
-
+<!-- <script type="text/javascript" src="/bloSSOME2/tuk/js/tuk.js"></script> -->
+<script type="text/javascript">
+$(function(){
+	$('#btn_tuk').click(function(){
+		alert('툭목록에 담았습니다.');
+		$('#frm').attr("action", "xx.tuk?cmd=tuk-insert");
+		$('#frm').submit();
+	});
+});
+</script>
 
 
 </head>
@@ -55,7 +63,7 @@
                             <!-- 이름/ 지역 받아오기 -->
                             
                                 <h3 class="name"><%=vo.getMemName() %> / <%=vo.getMemLoc() %></h3>
-                                <p class="age">나이  <%=vo.getMemAge() %></p>
+<%--                                 <p class="age">나이  <%=vo.getMemAge() %></p> --%>
                                 <div class="stats-container">
                                     <div class="stats">
                                         <h4>혈액형</h4>
@@ -126,11 +134,11 @@
 <%-- 								<input type="hidden" name="choiceN" value="<%=vo.getChoiceNum() %>"/> --%>
 								<!-- 상대방 아이디 -->
 								<input type="hidden" name="memId" value="<%=vo.getMemId() %>"/>
-								<input type="hidden" name="choiceId" value="<%=vo.getChoiceId() %>"/>
-								<input type="hidden" name="date" value="<%=vo.getChoiceDate() %>"/>
-								<input type="hidden" name="state" value="<%=vo.getChoiceState() %>"/>
-								<input type="hidden" name="mainImg" value="mainImg"/>
-								<input type="hidden" name="subImg" value="SubImg"/>
+<%-- 								<input type="hidden" name="choiceId" value="<%=vo.getChoiceId() %>"/> --%>
+<%-- 								<input type="hidden" name="date" value="<%=vo.getChoiceDate() %>"/> --%>
+<%-- 								<input type="hidden" name="state" value="<%=vo.getChoiceState() %>"/> --%>
+<!-- 								<input type="hidden" name="mainImg" value="mainImg"/> -->
+<!-- 								<input type="hidden" name="subImg" value="SubImg"/> -->
 								
 <%-- 								<input type="hidden" name="choiceId" value="<%=vo.getChoiceId() %>"/> --%>
 								<button type="button" class="btn btn-success btn-sm"><a href="xx.tuk?cmd=megguck-block&choicenum=<%=vo.getChoiceNum()%>">차단하기</a></button>

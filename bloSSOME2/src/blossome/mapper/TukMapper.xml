@@ -9,6 +9,7 @@
 		select b.*, m.*, am.* 
 		from BLO_CHOICE b, BLO_MEMBER m, BLO_ADDMEMBER am 
 		where b.mem_id=#{id} and b.CHOICE_ID=m.MEM_ID and b.CHOICE_ID=am.MEM_ID and CHOICE_STATE in (1, 2)
+		ORDER BY CHOICE_NUM desc
 	</select>
 	
 	<!-- 나를 툭 리스트 -->
@@ -16,6 +17,7 @@
 		select b.*, m.*, am.* 
 		from BLO_CHOICE b, BLO_MEMBER m, BLO_ADDMEMBER am 
 		where b.CHOICE_ID=#{id} and b.mem_ID=m.MEM_ID and b.mem_ID=am.MEM_ID and CHOICE_STATE in (1, 2)
+		ORDER BY CHOICE_NUM desc
 	</select>
 	
 	<!-- 나를 툭한 리스트에서 툭하기  -->	
@@ -39,6 +41,7 @@
 		select b.*, m.*, am.* 
 		from BLO_CHOICE b, BLO_MEMBER m, BLO_ADDMEMBER am 
 		where b.mem_id=#{id} and b.CHOICE_STATE=2 and b.CHOICE_ID=m.MEM_ID and b.CHOICE_ID=am.MEM_ID
+		ORDER BY CHOICE_NUM desc
 	</select>
 	
 	<!-- 나를 꾹 리스트 -->
@@ -46,6 +49,7 @@
 		select b.*, m.*, am.* 
 		from BLO_CHOICE b, BLO_MEMBER m, BLO_ADDMEMBER am 
 		where b.choice_id=#{id} and b.CHOICE_STATE=2 and b.mem_ID=m.MEM_ID and b.mem_ID=am.MEM_ID
+		ORDER BY CHOICE_NUM desc
 	</select>
 	
 	<!-- 꾸욱취소 -->
@@ -70,7 +74,7 @@
 	</update>
 	<insert id="gguckInsert">
 		INSERT INTO BLO_CHOICE
-		VALUES ( #{choiceNum}, #{memId}, #{choiceId}, sysdate, 4, #{choiceMainImg}, #{choiceSubImg} )
+		VALUES ( #{choiceNum}, #{id}, #{choiceId}, sysdate, 4 )
 	</insert>
 	<select id="">
 		select 

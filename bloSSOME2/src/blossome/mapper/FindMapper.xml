@@ -36,4 +36,37 @@
 	</where>
 </select>
 
+<select id="findtuk" parameterType="blossome.vo.FIndVO" resultType="blossome.vo.TukVO">
+	select  m.*, a.*
+	from blo_member m,BLO_ADDMEMBER a
+	<where>
+		m.mem_id = a.mem_id and mem_state = 1
+		<if test="age1 != null and  age1 != 'null' and age1 != '' ">
+			and to_char(m.mem_birth,'yyyy') between #{age1} and #{age2}
+		</if>
+		<if test="key1 != null and  key1 != 'null' and key1 != '' ">
+			and a.MEM_HEIGHT between #{key1} and #{key2}
+		</if>
+		<if test="loc != null">
+			and m.mem_loc in
+			<foreach collection="loc" item="loc"   open="(" close=")" separator=",">
+       			#{loc}
+  			</foreach>
+		</if>
+		<if test="hak != null">
+			and a.mem_ability in
+			<foreach collection="hak" item="hak"   open="(" close=")" separator=",">
+       			#{hak}
+  			</foreach>
+		</if>
+		<if test="mo != null">
+			and a.mem_religion in
+			<foreach collection="mo" item="mo"   open="(" close=")" separator=",">
+       			#{mo}
+  			</foreach>
+		</if>
+	</where>
+</select>
+
+
 </mapper>

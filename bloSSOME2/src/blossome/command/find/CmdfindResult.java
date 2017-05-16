@@ -11,6 +11,7 @@ import blossome.command.CommandException;
 import blossome.session.MemberRepository;
 import blossome.vo.FIndVO;
 import blossome.vo.MemVO;
+import blossome.vo.TukVO;
 import javafx.scene.input.DataFormat;
 
 public class CmdfindResult implements Command{
@@ -56,7 +57,9 @@ public class CmdfindResult implements Command{
 		//Repository에 값 전달
 		MemberRepository repo = new MemberRepository();
 		List<MemVO> list = repo.Find(vo);
+//		List<TukVO> list2 = repo.Findtuk(vo);
 		request.setAttribute("list", list);
+//		request.setAttribute("list2", list2);
 		return next;
 	}
 

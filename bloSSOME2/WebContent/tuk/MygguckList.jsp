@@ -54,7 +54,7 @@
                             <!-- 이름/ 지역 받아오기 -->
                             
                                 <h3 class="name"><%=vo.getMemName() %> / <%=vo.getMemLoc() %></h3>
-                                <p class="age">나이  <%=vo.getMemAge() %></p>
+<%--                                 <p class="age">나이  <%=vo.getMemAge() %></p> --%>
                                 <div class="stats-container">
                                     <div class="stats">
                                         <h4>혈액형</h4>

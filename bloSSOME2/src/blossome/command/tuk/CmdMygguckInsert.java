@@ -23,12 +23,12 @@ public class CmdMygguckInsert implements Command{
 		
 		TukVO vo = new TukVO();
 		//나를 툭한 리스트에서 memId가 내가 선택할아이디니까 memId를 넣어줌
-		vo.setMemId(request.getParameter("choiceId"));
+		vo.setMemId(id);
 		vo.setChoiceId(request.getParameter("memId"));
 		vo.setChoiceDate(request.getParameter("date"));
 		vo.setChoiceState(Integer.parseInt(request.getParameter("state")));
-		vo.setChoiceMainImg(request.getParameter("mainImg"));
-		vo.setChoiceSubImg(request.getParameter("subImg"));
+//		vo.setChoiceMainImg(request.getParameter("mainImg"));
+//		vo.setChoiceSubImg(request.getParameter("subImg"));
 //		
 //		vo.setMemName(request.getParameter("name"));
 //		vo.setMemLoc(request.getParameter("loc"));
