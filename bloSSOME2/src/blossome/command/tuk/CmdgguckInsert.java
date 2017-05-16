@@ -10,6 +10,7 @@ import blossome.command.CommandException;
 import blossome.session.MemberRepository;
 import blossome.session.MessageRepository;
 import blossome.session.TukRepository;
+import blossome.vo.MatchingVO;
 import blossome.vo.MemVO;
 import blossome.vo.MsgVO;
 import blossome.vo.TukVO;
@@ -44,7 +45,7 @@ public class CmdgguckInsert implements Command{
 		TukVO tvo = new TukVO();
 		TukRepository repo = new TukRepository();
 		
-		//시퀀스 값 받아오기
+		//툭시퀀스 값 받아오기
 		String tukSeq = repo.selectSeq();
         
         String seq = "tuk";
@@ -61,16 +62,39 @@ public class CmdgguckInsert implements Command{
 		// 꾸욱여부로 전환
 		int result = repo.seekMyInfo(tvo);
 		
+		//매칭시퀀스 만들기
+		String matSeq = repo.selectMseq();
+		String mSeq = "mat";
+		for(int i=0; i<7-matSeq.length();i++){
+			mSeq += "0";
+		}
+		mSeq += matSeq;
+		
+		MatchingVO matvo = new MatchingVO();
+		
+		matvo.setMatNum(mSeq);
+		matvo.setMatId1(myid);
+		matvo.setMatId2(choiceId);
+		
 		//result !=0이면 이미 값이 있는것=>update
 		if(result != 0){
 			//내꾹 4로 update
 			repo.gguckUpdateMatching(myid, choiceId);
 			//상대방꺼 4로 update
 			repo.gguckUpdateMatching2(myid, choiceId);
+			//다취소
+			repo.matchingOtherCancel(myid, choiceId);
+			//매칭테이블 insert
+			
+			repo.insertMatcing(matvo);
 		}else{
 			repo.ggukInsert(tvo);
 			//상대방꺼 4로 update
 			repo.gguckUpdateMatching2(myid, choiceId);
+			//다취소
+			repo.matchingOtherCancel(myid, choiceId);
+			//매칭테이블insert
+			repo.insertMatcing(matvo);
 		}
 
 		//내정보에 꾸욱 여부 카운트 증가

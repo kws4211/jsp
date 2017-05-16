@@ -102,7 +102,7 @@ public class TukRepository {
 	}
 	
 	
-	//시퀀스 생성
+	//툭시퀀스 생성
 	public String selectSeq(){
 	      SqlSession sqlSess = getSelSessionFactory().openSession();
 	      try{
@@ -113,6 +113,18 @@ public class TukRepository {
 	         sqlSess.close();
 	      }
 	   }
+	
+	//매칭시퀀스 생성
+		public String selectMseq(){
+		      SqlSession sqlSess = getSelSessionFactory().openSession();
+		      try{
+		          String result = sqlSess.selectOne(namespace + ".selectMatSeq");
+		         
+		         return result;
+		      }finally{
+		         sqlSess.close();
+		      }
+		   }
 	
 	
 	//꾸욱 리스트
@@ -291,5 +303,45 @@ public class TukRepository {
 		} finally {
 			sqlSess.close();
 		}
+	}
+
+
+	public void matchingOtherCancel(String myid, String choiceId) {
+				SqlSession sqlSess = getSelSessionFactory().openSession();
+				
+				try {
+					String statment = namespace + ".matchingOtherCancel";
+					HashMap map = new HashMap();
+					map.put("memid", myid);
+					map.put("choId", choiceId);
+					
+					int res = sqlSess.delete(statment, map);
+					if( res > 0){
+						sqlSess.commit();
+					}else{
+						sqlSess.rollback();
+					}
+				} finally {
+					sqlSess.close();
+				}
+		
+	}
+
+
+	public void insertMatcing(MatchingVO matvo) {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		
+		try {
+			String statment = namespace + ".insertMatcing";
+			int res = sqlSess.delete(statment, matvo);
+			if( res > 0){
+				sqlSess.commit();
+			}else{
+				sqlSess.rollback();
+			}
+		} finally {
+			sqlSess.close();
+		}
+
 	}
 }

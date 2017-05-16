@@ -31,9 +31,14 @@
 		delete from BLO_CHOICE where CHOICE_NUM=#{choiceN}
 	</delete>
 	
-	<!-- 게시판 시퀀스 추가 -->
+	<!-- 게시판 툭시퀀스 추가 -->
 	<select id="selectTukSeq" resultType="String">
   	 SELECT tuk_seq.nextval as tuk_seq FROM dual
+	</select>
+	
+	<!-- 게시판 매칭시퀀스 추가 -->
+	<select id="selectMatSeq" resultType="String">
+  	 SELECT mat_seq.nextval as mat_seq FROM dual
 	</select>
 	
 	<!-- 내가 꾹 리스트 -->
@@ -104,5 +109,25 @@
 		set CHOICE_STATE=4
 		where mem_id=#{choId} and choice_id=#{memid}
 	</update>
+	
+	<delete id="matchingOtherCancel" parameterType="hashMap">
+		DELETE 
+		FROM BLO_CHOICE 
+		where choice_num
+		not in(select choice_num from BLO_CHOICE
+		         where choice_state = 4
+		        and mem_id=#{memid}
+		        and choice_id = #{choId})
+		and choice_num
+		not in(select choice_num from BLO_CHOICE
+		         where choice_state = 4
+		         and mem_id=#{choId}
+		         and choice_id = #{memid})
+	</delete>
+	
+	<insert id="insertMatcing" >
+		INSERT INTO BLO_MATCHING
+		VALUES ( #{matNum}, #{matId1}, #{matId2}, 1, sysdate )
+	</insert>
 	
 </mapper>
