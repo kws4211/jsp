@@ -30,5 +30,25 @@ $(function(){
 			}
 		});
 	});
+	$("#btnNick").click(function(){
+		$.ajax({
+			url : "check.login?cmd=idpopupserver", //
+			type : "post",
+			data : {"userNick" : $("#Check").val()}, 
+			dataType : 'text',
+			success : function(data){
+				if(data.trim() == '0'){
+					$('#nsg').text("["+$("#Check").val()+"]은 사용가능합니다"); 
+					$("#btnClose").attr("type","button");
+				}else{
+					$('#nsg').text("["+$("#Check").val()+"]은 사용 불가능합니다"); 
+					$("#btnClose").attr("type","hidden");
+				}
+			},
+			error : function(err){
+				alert("에러발생" + err.toString);
+			}
+		});
+	});
 });
 

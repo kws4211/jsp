@@ -6,18 +6,18 @@ import blossome.command.Command;
 import blossome.command.CommandException;
 import blossome.session.MemberRepository;
 
-public class CmdmemCheckIdserver implements Command{
+public class CmdmemChecknickserver implements Command{
 	private String next;
 	
-	public CmdmemCheckIdserver(String _next) {
+	public CmdmemChecknickserver(String _next) {
 		next = _next;
 	}
 
 	@Override
 	public String execute(HttpServletRequest request) throws CommandException {
-		String id = request.getParameter("userId");
+		String nick = request.getParameter("userNick");
 		MemberRepository repo = new MemberRepository();
-		int res = repo.checkLogin(id);
+		int res = repo.checkLogin(nick);
 		
 		request.setAttribute("res", res);
 		

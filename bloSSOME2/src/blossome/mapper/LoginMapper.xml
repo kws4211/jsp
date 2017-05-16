@@ -15,6 +15,14 @@
 	</where>
 </select>
 
+<select id="checknick" parameterType="hashMap" resultType="int">
+	SELECT count(*) as count
+	FROM BLO_MEMBER
+	<where>
+		MEM_NICK = #{nick}
+	</where>
+</select>
+
 <select id="info" parameterType="hashMap" resultType="blossome.vo.MemVO">
 	SELECT *
 	FROM BLO_MEMBER

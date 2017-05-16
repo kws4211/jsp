@@ -60,6 +60,18 @@ public class MemberRepository {
 	      }
 
 	   }
+   
+   public int checkNick(String nick){
+	      SqlSession sqlSess = getSelSessionFactory().openSession();
+	      try{
+	         HashMap map = new HashMap();
+	         map.put("nick", nick);
+	         return sqlSess.selectOne(namespace + ".checknick", map);
+	      }finally{
+	         sqlSess.close();
+	      }
+
+	   }
    /*
     * SearchFirst
     * 역할 : 이름과 email정보로 질문 값 가져옴

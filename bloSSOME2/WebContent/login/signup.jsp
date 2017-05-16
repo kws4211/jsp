@@ -238,9 +238,6 @@
 						<div class="form-group ">
 							<button type="submit" class="btn btn-primary btn-lg btn-block login-button" id="signup">회원가입 완료</button>
 						</div>
-						<div class="login-register">
-				            <a href="index.php">Login</a>
-				         </div>
 					</form>
 				</div>
 			</div>
