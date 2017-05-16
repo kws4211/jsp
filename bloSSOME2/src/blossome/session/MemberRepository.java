@@ -116,4 +116,20 @@ public class MemberRepository {
 			sqlSess.close();
 		}
 	}
+	
+	public int modyfy(MemVO vo) {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			int res = sqlSess.update(namespace + ".modify", vo);
+			if(res>0){
+				sqlSess.commit();
+			}else{
+				sqlSess.rollback();
+			}
+			return res;
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
 }

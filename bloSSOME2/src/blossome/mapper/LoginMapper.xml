@@ -34,6 +34,19 @@
 	WHERE mem_id = #{id}
 </select>
 
+<update id="modify" parameterType="blossome.vo.MemVO">
+	update BLO_MEMBER
+	set mem_pass = #{memPass},
+		mem_nick = #{memNick},
+		mem_birth = #{memBirth},
+		mem_tel = #{memTel},
+		mem_loc = #{memLoc},
+		mem_question = #{memQuestion},
+		mem_answer = #{memAnswer},
+		mem_email = #{memEmail}
+	where mem_id = #{memId}
+</update>
+
 <select id="find" parameterType="blossome.vo.FIndVO" resultType="blossome.vo.MemVO">
 	select  m.*
 	from blo_member m,BLO_ADDMEMBER a
