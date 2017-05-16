@@ -151,24 +151,38 @@ $(function(){
 $(function(){
 //아이디 중복확인
 $('#id_check').click(function(){
-$.ajax({
-	url : 'check.id',
-	type : 'get',
-	data : { 'id' : $('#id').val()},
-	dataType : 'text',
-	success : function(data){
-		if(data.trim() == 'YES'){
-			$('#idmessage').text("이미 사용중인 아이디가 있습니다");
-			$('#idmessage').show();
-		}else if(data.trim() == 'NO'){
-			$('#idmessage').text("사용가능합니다");
-			$('#idmessage').show();
+//$.ajax({
+//	url : 'check.id',
+//	type : 'get',
+//	data : { 'id' : $('#id').val()},
+//	dataType : 'text',
+//	success : function(data){
+//		if(data.trim() == 'YES'){
+//			$('#idmessage').text("이미 사용중인 아이디가 있습니다");
+//			$('#idmessage').show();
+//		}else if(data.trim() == 'NO'){
+//			$('#idmessage').text("사용가능합니다");
+//			$('#idmessage').show();
+//		}
+//	},
+//	error : function( err ){
+//		alert('id 중복검사 에러발생' + err.toString());
+//	}
+//})
+	var id = $("#id").val();
+	$a.popup({
+		title : "ID 중복 체크",
+		width : 400, //크기
+		height : 300,
+		url : "/bloSSOME2/login/CheckID.jsp", 
+		iframe : true, // default
+		data : {"userId" : id},
+		callback : function(data) {
+			if (data !== null) {
+				$("#id").val(data);
+			}
 		}
-	},
-	error : function( err ){
-		alert('id 중복검사 에러발생' + err.toString());
-	}
-})
+	});
 }); //id_check function 끝
 
 //닉네임 중복확인

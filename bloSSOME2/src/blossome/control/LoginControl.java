@@ -16,7 +16,9 @@ import blossome.command.admin.CmdadQnaList;
 import blossome.command.appeal.CmdAppealList;
 import blossome.command.appeal.CmdAppealView;
 import blossome.command.member.CmdmemCheckId;
+import blossome.command.member.CmdmemCheckIdserver;
 import blossome.command.member.CmdmemLogout;
+import blossome.command.member.CmdmemPopCheckId;
 import blossome.command.member.CmdmemSearchFirst;
 import blossome.command.member.CmdmemSearchSecond;
 import blossome.command.member.CmdmemSignupinsert;
@@ -49,6 +51,9 @@ public class LoginControl extends HttpServlet {
 		commandMap.put("searchfirst", new CmdmemSearchFirst("loginanswer.jsp"));
 		commandMap.put("searchsecond", new CmdmemSearchSecond("EndSearch.jsp")); //searchsecond가 되면 end로 가고
 		commandMap.put("logout", new CmdmemLogout("index.jsp")); //로그아웃되면 index로 가고
+		commandMap.put("idpopup", new CmdmemPopCheckId("CheckID.jsp"));
+		commandMap.put("idpopupserver", new CmdmemCheckIdserver("view.jsp"));
+		
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -48,6 +48,18 @@ public class MemberRepository {
       }
 
    }
+   
+   public int checkLogin(String id){
+	      SqlSession sqlSess = getSelSessionFactory().openSession();
+	      try{
+	         HashMap map = new HashMap();
+	         map.put("id", id);
+	         return sqlSess.selectOne(namespace + ".checklogin", map);
+	      }finally{
+	         sqlSess.close();
+	      }
+
+	   }
    /*
     * SearchFirst
     * 역할 : 이름과 email정보로 질문 값 가져옴

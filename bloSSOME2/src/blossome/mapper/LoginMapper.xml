@@ -7,7 +7,12 @@
 <select id="checklogin" parameterType="hashMap" resultType="int">
 	SELECT count(*) as count
 	FROM BLO_MEMBER
-	WHERE MEM_ID = #{id} and mem_pass = #{pw}
+	<where>
+		MEM_ID = #{id}
+		<if test="pw != null">
+			and mem_pass = #{pw}
+		</if>
+	</where>
 </select>
 
 <select id="info" parameterType="hashMap" resultType="blossome.vo.MemVO">
