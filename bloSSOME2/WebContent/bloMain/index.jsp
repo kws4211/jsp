@@ -125,7 +125,7 @@
                                                 <div class="portfolio_single_content">
                                                     <img src="/bloSSOME2/bloMain/img/portfolio/p2.jpg" alt="title"/>
                                                     <div>
-                                                        <a href=" main.appeal">어필게시판</a>
+                                                        <a href="main.appeal">어필게시판</a>
                                                         <span>어필 어필</span>
                                                     </div>
                                                 </div>

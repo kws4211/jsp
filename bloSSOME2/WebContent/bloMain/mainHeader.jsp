@@ -20,6 +20,7 @@
                 	<li>
                 		<span class="submenu"><%=session.getAttribute("id") %></span>
                 		<ul>
+                			<li><a href="index.tuk">Tuk</a></li>
                 			<li><a href="index.msg">쪽지함</a></li>
                 			<li><a href="index.member?cmd=memqna">1:1문의</a></li>
                 			<li><a href="index.member?cmd=menu">회원정보수정</a></li>
@@ -30,7 +31,6 @@
 				<li><a href="index.find">이상형찾기</a></li>
 				<li><a href="index.appeal">어필게시판</a></li>
 				<li><a href="index.review">후기</a></li>
-				<li><a href="#">이상형월드컵</a></li>
 			</ul>
 		</div>
 	</div>
