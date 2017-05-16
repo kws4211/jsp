@@ -9,12 +9,15 @@
 	select  m.*, a.*
 	from blo_member m,BLO_ADDMEMBER a
 	<where>
-		m.mem_id = a.mem_id and mem_state = 1
+		m.mem_id = a.mem_id and m.mem_state = 1
 		<if test="age1 != null and  age1 != 'null' and age1 != '' ">
 			and to_char(m.mem_birth,'yyyy') between #{age1} and #{age2}
 		</if>
 		<if test="key1 != null and  key1 != 'null' and key1 != '' ">
 			and a.MEM_HEIGHT between #{key1} and #{key2}
+		</if>
+		<if test="gender != null and  gender != 'null' and gender != '' ">
+			and a.MEM_GENDER like '%'||#{gender}||'%'
 		</if>
 		<if test="loc != null">
 			and m.mem_loc in
@@ -34,8 +37,10 @@
        			#{mo}
   			</foreach>
 		</if>
+		<if test="memId != null">
+			and m.mem_id != #{memId} 
+		</if>
 	</where>
-	and m.mem_id != #{memId} 
 </select>
 
 <!-- 시퀀스 생성 -->
