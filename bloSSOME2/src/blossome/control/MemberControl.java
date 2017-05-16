@@ -19,6 +19,7 @@ import blossome.command.member.CmdmemPopup;
 import blossome.command.member.CmdmemQnaList;
 import blossome.command.member.CmdmemQnainsert;
 import blossome.command.member.CmdmemView;
+import blossome.command.member.CmdmemaddView;
 
 
 /**
@@ -41,6 +42,7 @@ public class MemberControl extends HttpServlet {
 		commandMap.put("memqna", new CmdmemQnaList("memqna.jsp"));
 		commandMap.put("insert", new CmdmemQnainsert("memqna.jsp"));
 		commandMap.put("view", new CmdmemView("infoView.jsp"));
+		commandMap.put("addview", new CmdmemaddView("infoaddView.jsp"));
 		commandMap.put("menu", new CommandNull("selectMenu.jsp"));
 		commandMap.put("popup", new CmdmemPopup("pwpopup.jsp"));
 	}
