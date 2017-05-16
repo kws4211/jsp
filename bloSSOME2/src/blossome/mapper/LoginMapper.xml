@@ -13,7 +13,12 @@
 <select id="info" parameterType="hashMap" resultType="blossome.vo.MemVO">
 	SELECT *
 	FROM BLO_MEMBER
-	WHERE MEM_ID = #{id} and mem_pass = #{pw}
+	<where>
+		MEM_ID = #{id}
+		<if test="pw != null ">
+			and mem_pass = #{pw}
+		</if>
+	</where>
 </select>
 
 <select id="searchfirst" parameterType="hashMap" resultType="blossome.vo.MemVO">

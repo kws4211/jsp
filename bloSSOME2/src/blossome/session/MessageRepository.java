@@ -84,5 +84,31 @@ public class MessageRepository {
 		}
 	}
 	
+	public int insertMsg(MsgVO vo) {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			String statment = namespace + ".seqmsg";
+			//시퀀스 값을 증가 시킨 후 값을 저장
+			vo.setMsgNum(sqlSess.selectOne(statment));
+			//qna0000001  <- 글번호 지정
+			String a = "qna";
+			for(int i = 0 ; i < 7-vo.getMsgNum().length() ; i++){
+			   a += "0";
+			}
+			a+=vo.getMsgNum();
+			vo.setMsgNum(a);
+			
+			int res = sqlSess.insert(namespace + ".insert", vo);
+			if(res>0){
+				sqlSess.commit();
+			}else{
+				sqlSess.rollback();
+			}
+			
+			return res;
+		}finally{
+			sqlSess.close();
+		}
+	}
 	
 }

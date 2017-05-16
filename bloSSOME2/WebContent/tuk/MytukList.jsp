@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
 <%@ page import="blossome.vo.TukVO" %>
 <%
-	// 1. «ÿ¥Á æ∆¿Ãµ¿« ¡§∫∏∏¶ æÚæÓø¬¥Ÿ
+	// 1. Ìï¥Îãπ ÏïÑÏù¥ÎîîÏùò Ï†ïÎ≥¥Î•º ÏñªÏñ¥Ïò®Îã§
 // 	String mem_id = request.getParameter("mem_id");
-	// 2. Serviceø° getArticleById() »£√‚«œø© ±◊ ∞‘Ω√±€π¯»£∏¶ ∞Æ¥¬ ∑πƒ⁄µÂ∏¶ ∞Àªˆ«—¥Ÿ.
+	// 2. ServiceÏóê getArticleById() Ìò∏Ï∂úÌïòÏó¨ Í∑∏ Í≤åÏãúÍ∏ÄÎ≤àÌò∏Î•º Í∞ñÎäî Î†àÏΩîÎìúÎ•º Í≤ÄÏÉâÌïúÎã§.
 	List<TukVO> list = (List<TukVO>)request.getAttribute("list");
 	String id = (String)session.getAttribute("id");
 %>    
@@ -23,13 +23,12 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="/bloSSOME2/lib/alopex-ui.min.js"></script> 
-<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 <script type="text/javascript" src="/bloSSOME2/tuk/js/tuk.js"></script>
 
 </head>
 <body>
 <jsp:include page="../bloMain/mainHeader.jsp"></jsp:include>
-<h3>≥ª∞° ≈ˆ«— ªÁ∂˜</h3>
+<h3>ÎÇ¥Í∞Ä Ìà≠Ìïú ÏÇ¨Îûå</h3>
 <%if(list.size() != 0){ %>
 <%for(TukVO vo : list){ %>
 <div class="container">
@@ -39,37 +38,37 @@
          
              <div class="card-container">
                 <div class="card">
-                	<!-- ≈ˆ æ’∏È -->
+                	<!-- Ìà≠ ÏïûÎ©¥ -->
                     <div class="front">
-						<!-- πË∞Ê¿ÃπÃ¡ˆ -->
+						<!-- Î∞∞Í≤ΩÏù¥ÎØ∏ÏßÄ -->
                         <div class="cover">
                             <img src="https://www.clipartsgram.com/image/129556292-kyz84k3.jpg"/>
                         </div>
-                        <!-- «¡∑Œ« ¿ÃπÃ¡ˆ -->
+                        <!-- ÌîÑÎ°úÌïÑÏù¥ÎØ∏ÏßÄ -->
                         <div class="user">
                             <img class="img-circle" src="https://www2.mmu.ac.uk/media/mmuacuk/style-assets/images/r-research/profile-Zeyad.jpg"/>
                         </div>
                         <div class="content">
                             <div class="main">
-                            <!-- ¿Ã∏ß/ ¡ˆø™ πﬁæ∆ø¿±‚ -->
+                            <!-- Ïù¥Î¶Ñ/ ÏßÄÏó≠ Î∞õÏïÑÏò§Í∏∞ -->
                             
                                 <h3 class="name"><%=vo.getMemName() %> / <%=vo.getMemLoc() %></h3>
-<%--                                 <p class="age">≥™¿Ã  <%=vo.getMemAge() %></p> --%>
+<%--                                 <p class="age">ÎÇòÏù¥  <%=vo.getMemAge() %></p> --%>
                                 <div class="stats-container">
                                     <div class="stats">
-                                        <h4>«˜æ◊«¸</h4>
+                                        <h4>ÌòàÏï°Ìòï</h4>
                                         <p>
                                             <%=vo.getMemBlood() %>
                                         </p>
                                     </div>
                                     <div class="stats">
-                                        <h4>≈∞</h4>
+                                        <h4>ÌÇ§</h4>
                                         <p>
                                            	<%=vo.getMemHeight() %>
                                         </p>
                                     </div>
                                     <div class="stats">
-                                        <h4>«–∑¬</h4>
+                                        <h4>ÌïôÎ†•</h4>
                                         <p>
                                            	<%=vo.getMemAbility() %>
                                         </p>
@@ -82,7 +81,7 @@
                         </div>
                     </div> <!-- end front panel -->
                     
-                    <!-- ≈ˆ µﬁ∏È -->
+                    <!-- Ìà≠ Îí∑Î©¥ -->
                     <div class="back">
                         
                         <div class="content">
@@ -90,25 +89,25 @@
                           
                                 <div class="stats-container">
                                     <div class="">
-                                        <h4>√ÎπÃ</h4>
+                                        <h4>Ï∑®ÎØ∏</h4>
                                         <p>
                                            	<%=vo.getMemHobby() %>
                                         </p>
                                     </div>
                                     <div class="">
-                                        <h4>¿Ã∏ﬁ¿œ</h4>
+                                        <h4>Ïù¥Î©îÏùº</h4>
                                         <p>
                                            	<%=vo.getMemEmail() %>
                                         </p>
                                     </div>
                                     <div class="stats">
-                                        <h4>ª˝¿œ</h4>
+                                        <h4>ÏÉùÏùº</h4>
                                         <p>
                                            	<%=vo.getMemBirth() %>
                                         </p>
                                     </div>
                                     <div class="stats">
-                                        <h4>¡æ±≥</h4>
+                                        <h4>Ï¢ÖÍµê</h4>
                                         <p>
                                            	<%= vo.getMemReligion() %>
                                         </p>
@@ -119,10 +118,11 @@
                         </div>
                         <div class="footer">
                             <div class="social-links text-center">
-                         	    <button type="button" class="btn btn-success btn-sm"><a href="xx.tuk?cmd=mydelete-do&choicenum=<%=vo.getChoiceNum()%>">≈ˆ√Îº“</a></button>
-                         	    <button type="button" class="btn btn-success btn-sm">≤ŸøÌ«œ±‚</button>
+                         	    <button type="button" class="btn btn-success btn-sm"><a href="xx.tuk?cmd=mydelete-do&choicenum=<%=vo.getChoiceNum()%>">Ìà≠Ï∑®ÏÜå</a></button>
+                         	    <button type="button" id="gguk" class="btn btn-success btn-sm">Íæ∏Ïö±ÌïòÍ∏∞</button>
 <%--                          	    xx.tuk?cmd=popup&choicenum=<%=vo.getChoiceNum()%> --%>
-								<input type="hidden" name="choiceN" value="<%=vo.getChoiceNum() %>"/>                         	    
+								<input type="hidden" name="choiceN" value="<%=vo.getChoiceId() %>"/>                         	    
+								<input type="hidden" name="choiceN" value="<%=vo.getMemName() %>"/>                         	    
                             </div>
                         </div>
                      </div> <!-- end back panel -->
@@ -136,7 +136,7 @@
 </div>
                     <%}%> <!-- end of for -->
 					<%}else{ %>
-					≥ª∞° ≈ˆ«— ªÁ∂˜¿Ã æ¯Ω¿¥œ¥Ÿ.
+					ÎÇ¥Í∞Ä Ìà≠Ìïú ÏÇ¨ÎûåÏù¥ ÏóÜÏäµÎãàÎã§.
 					
 					
 					

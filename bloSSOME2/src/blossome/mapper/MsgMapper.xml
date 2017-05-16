@@ -55,4 +55,13 @@
 			</if>
 		</where>
 	</select>
+	
+	<select id="seqmsg" resultType="String">
+		select MSG_SEQ.nextval from dual
+	</select>
+	
+	<insert id="insert" parameterType="blossome.vo.MsgVO">
+		insert into blo_message
+		value(#{msgNum},#{msgId},#{msgId},#{MsgName},#{msgContent},2)
+	</insert>
 </mapper>

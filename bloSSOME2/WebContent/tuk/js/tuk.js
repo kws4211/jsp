@@ -1,18 +1,21 @@
 $(function(){
-	$(".btn-sm").click(function(){
-		var num = $(this).next().val();
-		
+	$("#gguk").click(function(){
+		var id = $(this).next().val();
+		var name = $(this).next().next().val();
+		alert(name)
 		$a.popup({
 			title : "꾸욱하기",
-			width : 250, //크기
-			height : 100,
-			url : "xx.tuk?cmd=popup&choicenum="+num,
+			width : 500, //크기
+			height : 300,
+			url : "xx.tuk?cmd=popup&choiceid="+id+"&name="+name,
 			iframe : false
 		});
 	});
 	
 	$("#rebtn").click(function(){
-		alert('oo');
+		$("#frm").attr("action","xx.tuk?cmd=insert");
+		$("#frm").submit();
+		$a.close();
 	});
 });
 

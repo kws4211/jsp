@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import blossome.command.Command;
 import blossome.command.CommandException;
 import blossome.command.CommandNull;
-
+import blossome.command.message.CmdMsgInsert;
 import blossome.command.tuk.CmdMyTukDelete;
 import blossome.command.tuk.CmdMyTukInsert;
 import blossome.command.tuk.CmdMyTukList;
@@ -66,6 +66,8 @@ public class TukControl extends HttpServlet {
 		commandMap.put("megguck-block", new CmdMegguckblock("megguckList.jsp"));
 		//나를 꾸욱 리스트에서 꾹하기
 		commandMap.put("megguck-insert", new CmdMygguckInsert("megguckList.jsp"));
+		//쪽지보내기
+		commandMap.put("insert", new CmdMsgInsert("MygguckList.jsp"));
 		
 	}
 

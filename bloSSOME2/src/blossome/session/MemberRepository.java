@@ -131,6 +131,18 @@ public class MemberRepository {
       }
    }
    
+   public MemVO info(String id) {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			HashMap map = new HashMap();
+			map.put("id", id);
+			
+			return sqlSess.selectOne(namespace + ".info", map);
+		}finally{
+			sqlSess.close();
+		}
+	}
+   
    public int modyfy(MemVO vo) {
                       
       SqlSession sqlSess = getSelSessionFactory().openSession();
