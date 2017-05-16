@@ -14,7 +14,6 @@
 	<% response.setHeader("Refresh","1;URL=index.member?cmd=menu");
 }else{ %>
 	
-	
 <%} %>
 </body>
 </html>
