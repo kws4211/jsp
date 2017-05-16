@@ -1,10 +1,30 @@
-<%@page import="blossome.vo.MemVO"%>
+<%-- <%@page import="blossome.vo.MemVO"%> --%>
 <%@page import="blossome.vo.TukVO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% List<MemVO> list = (List<MemVO>)request.getAttribute("list"); %>
-<% List<TukVO> list2 = (List<TukVO>)request.getAttribute("list2"); %>
+<% List<TukVO> list2 = (List<TukVO>)request.getAttribute("list2"); 
+String id = (String)session.getAttribute("id");
+
+/* int result = 0;
+Object obj = request.getAttribute("result");
+if( obj != null){
+	result = 1;
+}else {
+	result = 0;
+}
+
+int result2 = 0;
+Object obj2 = request.getAttribute("result2");
+if( obj2 != null){
+	result2 = 1;
+}else {
+	result2 = 0;
+} */
+
+
+
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -22,12 +42,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 <script type="text/javascript" src="/bloSSOME2/lib/alopex-ui.min.js"></script>
+<script type="text/javascript" src="/bloSSOME2/find/js/findidealtype.js"></script>
+
 <title>Insert title here</title>
 </head>
 <body>
 <h3>이상형찾기 결과입니다! 당신의 이상형을 만나보세요</h3>
-<%for(MemVO vo : list){ %>
-	<%=vo.getMemId() %> <br/>
+<%for(TukVO vo : list2){ %>
 <div class="container">
     <div class="row">
      <div class="col-sm-10 col-sm-offset-1">
@@ -54,19 +75,19 @@
                                     <div class="stats">
                                         <h4>혈액형</h4>
                                         <p>
-<%--                                             <%=vo.getMemBlood() %> --%>
+                                            <%=vo.getMemBlood() %>
                                         </p>
                                     </div>
                                     <div class="stats">
                                         <h4>키</h4>
                                         <p>
-<%--                                            	<%=vo.getMemHeight() %> --%>
+                                           	<%=vo.getMemHeight() %>
                                         </p>
                                     </div>
                                     <div class="stats">
                                         <h4>학력</h4>
                                         <p>
-<%--                                            	<%=vo.getMemAbility() %> --%>
+                                           	<%=vo.getMemAbility() %>
                                         </p>
                                     </div>
                                 </div>
@@ -87,7 +108,7 @@
                                     <div class="">
                                         <h4>취미</h4>
                                         <p>
-<%--                                            	<%=vo.getMemHobby() %> --%>
+                                           	<%=vo.getMemHobby() %>
                                         </p>
                                     </div>
                                     <div class="">
@@ -105,7 +126,7 @@
                                     <div class="stats">
                                         <h4>종교</h4>
                                         <p>
-<%--                                            	<%= vo.getMemReligion() %> --%>
+                                           	<%= vo.getMemReligion() %>
                                         </p>
                                     </div>
                                 </div>
@@ -119,19 +140,12 @@
 								<!-- 나를툭한사람의 정보를 넘겨줌 -->
 <%-- 								<input type="hidden" name="choiceN" value="<%=vo.getChoiceNum() %>"/> --%>
 								<!-- 상대방 아이디 -->
-								<input type="hidden" name="memId" value="<%=vo.getMemId() %>"/>
-<%-- 								<input type="hidden" name="choiceId" value="<%=vo.getChoiceId() %>"/> --%>
-<%-- 								<input type="hidden" name="date" value="<%=vo.getChoiceDate() %>"/> --%>
-<%-- 								<input type="hidden" name="state" value="<%=vo.getChoiceState() %>"/> --%>
-
+								<input type="hidden" id="memId" name="memId" value="<%=vo.getMemId() %>"/>
+								<input type="hidden" id="id" name="id" value="<%=id%>"/>
 								
-<%-- 								<input type="hidden" name="choiceId" value="<%=vo.getChoiceId() %>"/> --%>
-
-<!--                          	    <input type="button" id="btn_tuk" value="툭하기" /> -->
                          	    <button type="button" id="btn_tuk" class="btn btn-success btn-sm">툭하기</button>
+                         	    <button type="button" id="btn_can" class="btn btn-success btn-sm">툭취소</button>
                          	    </form>
-<%--                          	    <button type="button" id="btn_tuk" class="btn btn-success btn-sm"><a href="xx.tuk?cmd=mydelete-do&choicenum=<%=vo.getChoiceNum()%>">툭취소</a></button> --%>
-<%-- 								<input type="button"><a href="xx.tuk?cmd=mydelete-do&choicenum=<%=vo.getChoiceNum()%>">툭취소</a></input> --%>
 
                             </div>
                         </div>

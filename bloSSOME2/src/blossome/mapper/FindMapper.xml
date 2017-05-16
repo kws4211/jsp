@@ -4,39 +4,8 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="blossom.mapper.FindMapper">
 
-<select id="find" parameterType="blossome.vo.FIndVO" resultType="blossome.vo.MemVO">
-	select  m.*
-	from blo_member m,BLO_ADDMEMBER a
-	<where>
-		m.mem_id = a.mem_id and mem_state = 1
-		<if test="age1 != null and  age1 != 'null' and age1 != '' ">
-			and to_char(m.mem_birth,'yyyy') between #{age1} and #{age2}
-		</if>
-		<if test="key1 != null and  key1 != 'null' and key1 != '' ">
-			and a.MEM_HEIGHT between #{key1} and #{key2}
-		</if>
-		<if test="loc != null">
-			and m.mem_loc in
-			<foreach collection="loc" item="loc"   open="(" close=")" separator=",">
-       			#{loc}
-  			</foreach>
-		</if>
-		<if test="hak != null">
-			and a.mem_ability in
-			<foreach collection="hak" item="hak"   open="(" close=")" separator=",">
-       			#{hak}
-  			</foreach>
-		</if>
-		<if test="mo != null">
-			and a.mem_religion in
-			<foreach collection="mo" item="mo"   open="(" close=")" separator=",">
-       			#{mo}
-  			</foreach>
-		</if>
-	</where>
-</select>
 
-<select id="findtuk" parameterType="blossome.vo.FIndVO" resultType="blossome.vo.TukVO">
+<select id="findtuk" parameterType="blossome.vo.TukVO" resultType="blossome.vo.TukVO">
 	select  m.*, a.*
 	from blo_member m,BLO_ADDMEMBER a
 	<where>
@@ -68,5 +37,21 @@
 	</where>
 </select>
 
+<!-- 시퀀스 생성 -->
+<select id="selectTukSeq" resultType="String">
+  	 SELECT tuk_seq.nextval as tuk_seq FROM dual
+</select>
 
+<!-- 툭하기 -->
+<!-- 나를 툭한 리스트에서 툭하기  -->	
+	<insert id="tukInsert" parameterType="blossome.vo.TukVO">
+		INSERT INTO BLO_CHOICE (choice_num, mem_id, CHOICE_ID, CHOICE_DATE, CHOICE_STATE)
+		VALUES (#{choiceNum}, #{memId}, #{choiceId}, sysdate, 1)
+	</insert>
+	
+	<!-- 툭취소 -->
+	<delete id="tukDelete" parameterType="blossome.vo.TukVO">
+	DELETE FROM BLO_CHOICE
+	WHERE mem_id=#{memId} AND choice_id = #{choiceId}
+	</delete>
 </mapper>

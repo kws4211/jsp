@@ -1,4 +1,16 @@
 $(function () {
+	
+/*	$('#btn_can').hide();
+	if( "<%= result%>" == 1 ){
+		$('#btn_can').show();
+		$('#btn_tuk').hide();
+	}
+	if( "<%= result2%>" == 1 ){
+		$('#btn_can').hide();
+		$('#btn_tuk').show();
+	}*/
+	
+	
     //Initialize tooltips
 	$('.nav-tabs > li a[title]').tooltip();
     
@@ -29,7 +41,26 @@ $(function () {
     	$("#frm").submit();
     });
     
-    
+    //툭하기 버튼
+	$('#btn_tuk').click(function(){
+		var memId = $(this).next().val();
+		
+		alert(memId);
+		$('#frm').attr("action", "xx.find?cmd=tuk-insert");
+		$('#frm').submit();
+	});
+	
+	//툭취소 버튼
+	$('#btn_can').click(function(){
+		alert('툭취소되었습니다');
+		$('#frm').attr("action", "xx.find?cmd=tuk-delete");
+		$('#frm').submit();
+	});
+	
+	
+	
+	
+	
 });
 
 function nextTab(elem) {

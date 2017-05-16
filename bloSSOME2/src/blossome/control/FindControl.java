@@ -15,6 +15,8 @@ import blossome.command.CommandNull;
 import blossome.command.admin.CmdadQnaList;
 import blossome.command.appeal.CmdAppealList;
 import blossome.command.appeal.CmdAppealView;
+import blossome.command.find.CmdTukDelete;
+import blossome.command.find.CmdTukInsert;
 import blossome.command.find.CmdfindResult;
 
 
@@ -37,6 +39,8 @@ public class FindControl extends HttpServlet {
 		commandMap = new HashMap();
 		commandMap.put("find", new CommandNull("findidealtype.jsp"));
 		commandMap.put("res", new CmdfindResult("test.jsp"));
+		commandMap.put("tuk-insert", new CmdTukInsert("test.jsp"));
+		commandMap.put("tuk-delete", new CmdTukDelete("test.jsp"));
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

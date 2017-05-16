@@ -56,10 +56,8 @@ public class CmdfindResult implements Command{
 		
 		//Repository에 값 전달
 		MemberRepository repo = new MemberRepository();
-		List<MemVO> list = repo.Find(vo);
-//		List<TukVO> list2 = repo.Findtuk(vo);
-		request.setAttribute("list", list);
-//		request.setAttribute("list2", list2);
+		List<TukVO> list2 = repo.Findtuk(vo);
+		request.setAttribute("list2", list2);
 		return next;
 	}
 
