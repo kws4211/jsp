@@ -9,8 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%if(vo == null) {
-	response.sendRedirect("index.member?cmd=menu");
+<%if(vo == null) {%>
+	비밀번호 오류
+	<% response.setHeader("Refresh","1;URL=index.member?cmd=menu");
 }else{ %>
 
 여기에 출력
