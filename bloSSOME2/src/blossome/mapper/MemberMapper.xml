@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="blossome.mapper.MemberMapper">
+	<select id="alllist" resultType="blossome.vo.MemVO">
+		select * 
+		from BLO_MEMBER
+		order by mem_signup
+		
+	</select>
+	
+	<select id="sellist" parameterType="hashmap" resultType="blossome.vo.MemVO">
+		select * 
+		from BLO_MEMBER
+		where mem_id = #{memId}
+		
+	</select>
+	
+	<select id="addsellist" parameterType="hashmap" resultType="blossome.vo.AddMemVO">
+		select * 
+		from BLO_ADDMEMBER
+		where mem_id = #{memId}
+		
+	</select>
+	
+	<select id="update" parameterType="String">
+		update BLO_MEMBER
+		set mem_state = 1
+		where mem_id = #{memId}
+		
+	</select>
+	
+	<select id="refusal" parameterType="String">
+		delete
+		from BLO_ADDMEMBER
+		where mem_id = #{memId}
+		
+	</select>
+	
+	<select id="memlist" resultType="blossome.vo.MemVO">
+		select * 
+		from BLO_MEMBER
+		order by mem_leave
+		
+	</select>
+	
+	<select id="leave" parameterType="String">
+		update BLO_MEMBER
+		set mem_leave = 1
+		where mem_id = #{memId}
+		
+	</select>
+	
+	<select id="memsearch" parameterType="hashmap" resultType="blossome.vo.MemVO">
+		select * 
+		from BLO_MEMBER
+		where <if test="memId != null">mem_id = #{memId}</if>
+		<if test="memName != null">mem_name = #{memName}</if>
+		<if test="memSignup != null">mem_signup = #{memSignup}</if>
+		
+	</select>
+	
+</mapper>
