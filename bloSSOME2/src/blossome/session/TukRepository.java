@@ -247,4 +247,49 @@ public class TukRepository {
 			sqlSess.close();
 		}
 	}
+
+
+	public int gguckUpdateMatching(String myid, String choiceId) {
+		// JDBC : Connection, Mybatis : SqlSession
+				SqlSession sqlSess = getSelSessionFactory().openSession();
+				
+				try {
+					String statment = namespace + ".gguckUpdateMatching";
+					HashMap map = new HashMap();
+					map.put("memid", myid);
+					map.put("choId", choiceId);
+					
+					int res = sqlSess.update(statment, map);
+					if( res > 0){
+						sqlSess.commit();
+					}else{
+						sqlSess.rollback();
+					}
+					return res;
+				} finally {
+					sqlSess.close();
+				}
+	}
+
+
+	public void gguckUpdateMatching2(String myid, String choiceId) {
+		// JDBC : Connection, Mybatis : SqlSession
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		
+		try {
+			String statment = namespace + ".gguckUpdateMatching2";
+			HashMap map = new HashMap();
+			map.put("memid", myid);
+			map.put("choId", choiceId);
+			
+			int res = sqlSess.update(statment, map);
+			if( res > 0){
+				sqlSess.commit();
+			}else{
+				sqlSess.rollback();
+			}
+		} finally {
+			sqlSess.close();
+		}
+	}
 }

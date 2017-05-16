@@ -93,4 +93,16 @@
 		VALUES ( #{choiceNum}, #{memId}, #{choiceId}, sysdate, 4 )
 	</insert>
 	
+	<update id="gguckUpdateMatching" parameterType="hashMap">
+		update BLO_CHOICE
+		set CHOICE_STATE=4
+		where mem_id=#{memid} and choice_id=#{choId}
+	</update>
+	
+	<update id="gguckUpdateMatching2" parameterType="hashMap">
+		update BLO_CHOICE
+		set CHOICE_STATE=4
+		where mem_id=#{choId} and choice_id=#{memid}
+	</update>
+	
 </mapper>

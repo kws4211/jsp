@@ -22,6 +22,7 @@ public class CmdgguckInsert implements Command{
 	}
 	
 	public String execute(HttpServletRequest request) throws CommandException {
+		System.out.println("<<<<<<<<<<<<<<<일로옴>>>>>>>>>>>>>>>>>>");
 		//세션가져오기
 		HttpSession session = request.getSession();
 		String myid = (String)session.getAttribute("id");
@@ -62,9 +63,14 @@ public class CmdgguckInsert implements Command{
 		
 		//result !=0이면 이미 값이 있는것=>update
 		if(result != 0){
-			repo.gguckChange(myid, choiceId);			
+			//내꾹 4로 update
+			repo.gguckUpdateMatching(myid, choiceId);
+			//상대방꺼 4로 update
+			repo.gguckUpdateMatching2(myid, choiceId);
 		}else{
 			repo.ggukInsert(tvo);
+			//상대방꺼 4로 update
+			repo.gguckUpdateMatching2(myid, choiceId);
 		}
 
 		//내정보에 꾸욱 여부 카운트 증가
