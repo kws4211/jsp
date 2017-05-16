@@ -10,7 +10,7 @@ String id = (String)session.getAttribute("id");
 <html>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-    <link href="/bloSSOME4/bloAppeal/css/detail.css" rel="stylesheet">
+    <link href="/bloSSOME2/bloAppeal/css/detail.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript">>
 	$(function(){
