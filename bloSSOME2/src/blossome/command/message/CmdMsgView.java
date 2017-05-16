@@ -23,6 +23,8 @@ public class CmdMsgView implements Command{
 		MessageRepository repo = new MessageRepository();
 		MsgVO vo = repo.view(num);
 		
+		repo.countRead(num);
+	
 		request.setAttribute("vo", vo);
 		return next;
 	}
