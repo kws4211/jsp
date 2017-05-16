@@ -27,7 +27,7 @@
  
  <!-- 게시판 추가 -->
  <insert id="insertAppeal" parameterType="blossome.vo.AppealVO" >
-	INSERT INTO blo_appeal
+	INSERT INTO blo_appeal(app_num, mem_id, app_title, app_content, app_date, app_img, app_count)
  	VALUES(#{appNum}, #{memId}, #{appTitle}, #{appContent}, sysdate ,#{appImg},0  )
 </insert> 
 
