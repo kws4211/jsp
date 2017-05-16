@@ -9,8 +9,8 @@
 	</insert>
 	
 	<insert id="insertAddMem" parameterType="blossome.vo.AddMemVO">
-		insert into BLO_ADDMEMBER(MEM_BLOOD ,MEM_HOBBY ,MEM_RELIGION ,MEM_HEIGHT ,MEM_ABILITY ,MEM_GENDER ,MEM_FAVOR_GENDER ,MEM_SALARY ,MEM_PROPERTY ,MEM_COUNT ,MEM_JOB ,MEM_IMG) 
-		values(#{memBlood}, #{memHobby}, #{memReligion}, #{memHeight}, #{memAbility}, #{memGender}, #{memFavorgender}, #{memSalary}, #{memProperty}, #{memCount}, #{memJob})
+		insert into BLO_ADDMEMBER(mem_id ,MEM_BLOOD ,MEM_HOBBY ,MEM_RELIGION ,MEM_HEIGHT ,MEM_ABILITY ,MEM_GENDER ,MEM_FAVOR_GENDER ,MEM_SALARY ,MEM_PROPERTY ,MEM_COUNT ,MEM_JOB ) 
+		values(#{memId},#{memBlood}, #{memHobby}, #{memReligion}, #{memHeight}, #{memAbility}, #{memGender}, #{memFavorgender}, #{memSalary}, #{memProperty}, 0, #{memJob})
 	</insert>
 
 </mapper>

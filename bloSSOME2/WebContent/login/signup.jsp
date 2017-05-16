@@ -37,7 +37,7 @@
 		 			//id 정규화
 		 			var id = document.getElementById('id'); 
 		 			id.onblur = function(){ 
-		 			id = /^[a-z]+[a-z0-9]{5,19}$/g; 
+		 			id = /^[a-z]+[a-z0-9]{4,19}$/g; 
 		 				var nid = document.frm.id.value; 
 		 				if(!id.test(nid)){ 
 		 					alert("잘못된 아이디 형식입니다"); 
@@ -177,13 +177,13 @@
 					<form class="form-horizontal" method="post" onsubmit="return input_check_func()" name="frm">
 						
 						<div class="form-group">
-							<label for="view" class="cols-sm-2 control-label">Your View/공개여부</label>
+							<label for="state" class="cols-sm-2 control-label">Your View/공개여부</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 								<!-- 앞에그림 -->
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type = "radio"  id= 'open' name='open' value="공개">공개
-									<input type = "radio"  id= 'open' name='open' value="비공개"> 비공개
+									<input type = "radio"  id= 'state' name='state' value="공개">공개
+									<input type = "radio"  id= 'state' name='state' value="비공개"> 비공개
 								</div>
 							</div>
 						</div>

@@ -27,7 +27,7 @@ public class CmdmemView implements Command{
 		//세션에서 ID값 받아옴
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("id");
-		String pw = request.getParameter("pw");
+		String pw = request.getParameter("pw"); 
 		
 		MemberRepository repo = new MemberRepository();
 		int res = repo.checkLogin(id, pw);

@@ -31,7 +31,7 @@ public class SignupRepository {
 
 //****************************************************** 여기서부터 수정
 	
-	
+	//회원가입 insert (비공개회원)
 	public int insertSignup(MemVO vo){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try {
@@ -50,6 +50,7 @@ public class SignupRepository {
 		}
 	}
 	
+	//추가회원가입 insert (공개회원)
 	public int insertAddSignup(AddMemVO vo){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try {

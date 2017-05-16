@@ -28,6 +28,46 @@
 		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
 		<title>Add Signup</title>
+		<script type="text/javascript">
+		
+		//정규화
+		window.onload = function(){
+			
+			//키 정규화
+			var height = document.getElementById('height'); 
+			height.onblur = function(){
+				height = /^[0-9]+$/;
+ 				var nheight = document.frm.height.value;
+ 				if(!height.test(nheight)){
+ 					alert("잘못된 형식입니다");
+ 				}
+ 			}
+			//연봉 정규화
+			var salary = document.getElementById('salary'); 
+			salary.onblur = function(){
+				salary = /^[0-9]+$/;
+ 				var nsalary = document.frm.salary.value;
+ 				if(!salary.test(nsalary)){
+ 					alert("잘못된 형식입니다");
+ 				}
+ 			}
+			//재산 정규화
+			var property = document.getElementById('property'); 
+			property.onblur = function(){
+				property = /^[0-9]+$/;
+ 				var nproperty = document.frm.property.value;
+ 				if(!property.test(nproperty)){
+ 					alert("잘못된 형식입니다");
+ 				}
+ 			}
+			
+			
+			
+			height
+		}
+		
+		
+		</script>
 
 		
 		
@@ -44,7 +84,7 @@
 	               	</div>
 	            </div> 
 				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="#" onsubmit="return input_check_func()">
+					<form class="form-horizontal" method="post" action="index.login?cmd=inmemsucc" onsubmit="return input_check_func()" name="frm">
 						
 						
 
@@ -54,10 +94,10 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
 									</select>
-									<select name="blood"><option value="A형">A형</option>
-									<option value="B형">B형</option>
-									<option value="O형">O형</option>
-									<option value="AB형">AB형</option>
+									<select name="blood"><option value="A">A형</option>
+									<option value="B">B형</option>
+									<option value="O">O형</option>
+									<option value="AB">AB형</option>
 									</select>
 								</div>
 							</div>
@@ -105,13 +145,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<select name="height"><option value="140">150cm이하</option>
-									<option value="150">150~159cm</option>
-									<option value="160">160~169cm</option>
-									<option value="170">170~179cm</option>
-									<option value="180">180~189cm</option>
-									<option value="190">190cm이상</option>
-									</select>
+									<input type="text" class="form-control" name="height" id="height"  placeholder="Enter your Height"/>
 								</div>
 							</div>
 						</div>
@@ -134,8 +168,8 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type = "radio"  id= 'gender-1' name='gender-1' value="남자">남자
-									<input type = "radio"  id= 'gender-1' name='gender-1' value="여자"> 여자
+									<input type = "radio"  id= 'gender' name='gender' value="남">남
+									<input type = "radio"  id= 'gender' name='gender' value="여"> 여
 								</div>
 							</div>
 						</div>
@@ -145,53 +179,46 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type = "radio"  id= 'gender_2' name='gender_2' value="남자">남자
-									<input type = "radio"  id= 'gender_2' name='gender_2' value="여자"> 여자
+									<input type = "radio"  id= 'favorgender' name='favorgender' value="남">남
+									<input type = "radio"  id= 'favorgender' name='favorgender' value="여"> 여
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="gender2" class="cols-sm-2 control-label">salary/연봉</label>
+							<label for="gender2" class="cols-sm-2 control-label">Your salary/연봉</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<select name="salary"><option value="1000">1000이하</option>
-									<option value="1000">1000이상</option>
-									<option value="2000">2000이상</option>
-									<option value="3000">3000이상</option>
-									<option value="4000">4000이상</option>
-									<option value="5000">5000이상</option>
-									<option value="6000">6000이상</option>
-									</select>
+									<input type="text" class="form-control" name="salary" id="salary"  placeholder="Enter your Salary"/>
 								</div>
 							</div>
 						</div>
 						
 						<div class="form-group">
-							<label for="gender2" class="cols-sm-2 control-label">property/재산</label>
+							<label for="gender2" class="cols-sm-2 control-label">Your property/재산</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<select name="property"><option value="1000">1000이하</option>
-									<option value="1000">1000이상</option>
-									<option value="2000">2000이상</option>
-									<option value="3000">3000이상</option>
-									<option value="4000">4000이상</option>
-									<option value="5000">5000이상</option>
-									<option value="6000">6000이상</option>
-									<option value="7000">7000이상</option>
-									<option value="8000">8000이상</option>
-									<option value="9000">9000이상</option>
-									</select>
+									<input type="text" class="form-control" name="property" id="property"  placeholder="Enter your Property"/>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="gender2" class="cols-sm-2 control-label">Your job/직업</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="job" id="job"  placeholder="job"/>
 								</div>
 							</div>
 						</div>
 						
 
 						<div class="form-group ">
-							<button type="submit" class="btn btn-primary btn-lg btn-block login-button">추가회원가입 완료</button>
-							<button type="submit" class="btn btn-primary btn-lg btn-block login-button">추가 안함</button>
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-button" id="addsignup">추가회원가입 완료</button>
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-button" id="addcancel"><a href="index.blossom">추가 안함</a></button>
 						</div>
 						<div class="Addlogin-register">
 				            <a href="index.php">AddLogin</a>

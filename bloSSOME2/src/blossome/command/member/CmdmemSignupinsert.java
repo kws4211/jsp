@@ -1,10 +1,8 @@
 package blossome.command.member;
 
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import blossome.command.Command;
 import blossome.command.CommandException;
@@ -21,9 +19,9 @@ public class CmdmemSignupinsert implements Command{
 	@Override
 	public String execute(HttpServletRequest request) throws CommandException {
 		MemVO vo = new MemVO();
-		
 		//받아온 값들을 vo의 내용값지정
-		vo.setMemId(request.getParameter("id"));
+		
+//		String id = (String)session.setAttribute("id");
 		
 		vo.setMemName(request.getParameter("name"));
 		
@@ -43,14 +41,15 @@ public class CmdmemSignupinsert implements Command{
 		
 		vo.setMemEmail(request.getParameter("email"));
 		
-		String open = request.getParameter("open");
+		String state = request.getParameter("state");
+		System.out.println("State:"+state);
 		
 		//상태 유형에 따른 숫자 지정
-		if(open.equals("승인안됨")){
+		if(state.equals("승인안됨")){
 			vo.setMemState(0);
-		}else if(open.equals("공개")){
+		}else if(state.equals("공개")){
 			vo.setMemState(1);
-		}else if(open.equals("비공개")){
+		}else if(state.equals("비공개")){
 			vo.setMemState(2);
 		}else{
 			vo.setMemState(3);
@@ -60,28 +59,26 @@ public class CmdmemSignupinsert implements Command{
 		
 		SignupRepository repo = new SignupRepository();
 		repo.insertSignup(vo);
-//***************************************여기수정
-//		List<MemVO> list = repo.selbyIdlist(vo.getMemId());
-//		request.setAttribute("list", list);
+
 		return next;
 	}
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response){
-		//요청한 url
-		String url = request.getRequestURI().toString();
-		System.out.println(url);
-		
-		SignupRepository repo = new SignupRepository();
+//	protected void doGet(HttpServletRequest request, HttpServletResponse response){
+//		//요청한 url
+//		String url = request.getRequestURI().toString();
+//		System.out.println(url);
+//		
+//		SignupRepository repo = new SignupRepository();
 //		if(url.indexOf("") != -1){
 //			
 //		}
-		
-		//get방식으로 넘어온 데이터
-		String id=request.getParameter("id");
-		String nick=request.getParameter("nick");
-		//repo에 로그인 체크 요청
+//		
+//		//get방식으로 넘어온 데이터
+//		String id=request.getParameter("id");
+//		String nick=request.getParameter("nick");
+//		//repo에 로그인 체크 요청
 //		String result=repo.
-		//***********하다가 말았음
-	}
+//		//***********하다가 말았음
+//	}
 	
 }
