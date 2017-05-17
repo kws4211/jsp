@@ -3,7 +3,7 @@ $(function() {
 		var sel = $(this).next().val();
 		$a.popup({
 			title : "비밀번호 입력",
-			width : 250, //크기
+			width : 350, //크기
 			height : 100,
 			url : "popup.member?cmd=popup&sel=" + sel,
 			iframe : false
