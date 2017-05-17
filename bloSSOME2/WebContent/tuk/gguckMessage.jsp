@@ -11,6 +11,8 @@
             <div class="form-group col-md-15 ">                                
                 <label id="messageLabel" for="message">어필 할 수 있는 Message를 전해주세요 </label>
                 <textarea class="form-control input-sm" type="textarea" name="con" id="message" placeholder="Message"  rows="7"></textarea>
+            	<input type="hidden"  id="id"  name="id"  value="<%=id %>" />
+            	<input type="hidden"  id="name"  name="name" value="<%=name %>" />
             </div>
         <br style="clear:both">
         <div class="form-group col-md-3">

@@ -1,12 +1,13 @@
 $(function(){
 	$("#gguk").click(function(){
+		
 		var id = $(this).next().val();
 		var name = $(this).next().next().val();
 		$a.popup({
 			title : "꾸욱하기",
 			width : 500, //크기
 			height : 300,
-			url : "xx.tuk?cmd=popup&choiceid="+id+"&name="+name,
+			url : "xx.tuk?cmd=popup&id="+id+"&name="+name,
 			iframe : false
 		});
 	});

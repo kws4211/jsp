@@ -127,6 +127,11 @@ public class MessageRepository {
 			}
 			a+=vo.getMsgNum();
 			vo.setMsgNum(a);
+			System.out.println(vo.getMemId());
+			System.out.println(vo.getMsgContent());
+			System.out.println(vo.getMsgName());
+			System.out.println(vo.getMsgId());
+			System.out.println(vo.getMsgNum());
 			
 			int res = sqlSess.insert(namespace + ".insert", vo);
 			if(res>0){
