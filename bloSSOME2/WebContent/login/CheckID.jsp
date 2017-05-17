@@ -9,6 +9,7 @@
 <script type="text/javascript" src="/bloSSOME2/lib/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="/bloSSOME2/lib/alopex-ui.min.js"></script>
 <script type="text/javascript" src="/bloSSOME2/login/js/popup.js"></script>
+<script type="text/javascript" src="/bloSSOME2/login/js/signup.js"></script>
 </head>
 <body>
 

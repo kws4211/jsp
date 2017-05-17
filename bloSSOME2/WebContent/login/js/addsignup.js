@@ -4,7 +4,6 @@
 //정규화
 		window.onload = function(){
 			
-			alert($("#id").val());
 			
 			//키 정규화
 			var height = document.getElementById('height'); 

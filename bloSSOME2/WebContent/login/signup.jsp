@@ -24,6 +24,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 		
 		<link rel="stylesheet" href="/bloSSOME2/lib/alopex-ui-default.css" />
+		
 
 		<title>Signup</title>
 		
@@ -31,6 +32,8 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="/bloSSOME2/lib/alopex-ui.min.js"></script>
 		<script type="text/javascript" src="/bloSSOME2/login/js/signup.js"></script>
+		<script type="text/javascript" src="/bloSSOME2/login/js/loginform.js"></script>
+		
 	</head>
 	<body>
 		<div class="container">
@@ -62,8 +65,8 @@
 								<div class="input-group">
 								<!-- 앞에그림 -->
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="id" id="id"  placeholder="Enter your Id"/>
-									<input type="button" id = 'id_check' value="중복확인"/>
+									<input type="text" class="form-control" name="id" id="id"  readonly="readonly" />
+									<input type="button" id = 'id_check' value="중복확인" />
 									<div id="idmessage" style="display:none;"></div>
 								</div>
 							</div>
@@ -114,7 +117,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="nick" id="nick"  placeholder="Enter your Nickname"/>
+									<input type="text" class="form-control" name="nick" id="nick"  readonly="readonly" />
 									<input type="button" id = 'nick_check' value="중복확인"/>
 									<div id="idme_ssage" style="display:none;"></div>
 								</div>

@@ -18,7 +18,7 @@
 	
 	<!-- 공개회원으로 전환 -->
 	<update id="changeMem" parameterType="blossome.vo.AddMemVO">
-		UPDATE BLO_ADDMEMBER SET MEM_COUNT=0  WHERE mem_id=#{memId}
+		UPDATE BLO_MEMBER SET MEM_COUNT=0  WHERE mem_id=#{memId}
 	</update>
 	
 
