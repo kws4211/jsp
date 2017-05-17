@@ -35,12 +35,12 @@ $(function(){
 			alert("PW를 입력해주세요");
 			$("#pass").focus();
 			return false;
-		}else if($("#confirm").val() == "" || $("#confirm").val() != $("#pass").val()){
-			alert($("#confirm").val());
-			alert($("#pass").val());
-			alert("PW 확인을 입력해주세요");
-			$("#confirm").focus();
-			return false;
+//		}else if($("#confirm").val() == "" || $("#confirm").val() != $("#pass").val()){
+//			alert($("#confirm").val());
+//			alert($("#pass").val());
+//			alert("PW 확인을 입력해주세요");
+//			$("#confirm").focus();
+//			return false;
 		}else if($("#question").val() == "" ){
 			alert("PW 질문를 입력해주세요");
 			$("#question").focus();
@@ -69,26 +69,26 @@ $(function(){
 			alert("생일을 입력해주세요");
 			$("#date").focus();
 			return false;
-		}else if($("#tel_0").val() == "" || chtel0 == false){
-			alert("전화번호를 입력해주세요");
-			$("#tel_0").focus();
-			return false;
-		}else if($("#tel_1").val() == "" || chtel1 == false){
-			alert("전화번호를 입력해주세요");
-			$("#tel_1").focus();
-			return false;
-		}else if($("#tel_2").val() == "" || chtel2 == false){
-			alert("전화번호를 입력해주세요");
-			$("#tel_2").focus();
-			return false;
+//		}else if($("#tel_0").val() == "" || chtel0 == false){
+//			alert("전화번호를 입력해주세요");
+//			$("#tel_0").focus();
+//			return false;
+//		}else if($("#tel_1").val() == "" || chtel1 == false){
+//			alert("전화번호를 입력해주세요");
+//			$("#tel_1").focus();
+//			return false;
+//		}else if($("#tel_2").val() == "" || chtel2 == false){
+//			alert("전화번호를 입력해주세요");
+//			$("#tel_2").focus();
+//			return false;
 		}else if($("#area").val() == ""){
 			alert("지역을 입력해주세요");
 			$("#area").focus();
 			return false;
-		}else if($("#email").val() == "" || chem == false){
-			alert("이메일을 입력해주세요");
-			$("#email").focus();
-			return false;
+//		}else if($("#email").val() == "" || chem == false){
+//			alert("이메일을 입력해주세요");
+//			$("#email").focus();
+//			return false;
 		}else{
 			$(".form-horizontal").attr("action","index.login?cmd=inmemdb");
 		}
