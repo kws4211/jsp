@@ -3,62 +3,119 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="blossome.mapper.MemberMapper">
+
+	<!-- 회원승인 리스트 -->
 	<select id="alllist" resultType="blossome.vo.MemVO">
-		select * 
+		SELECT *
+		FROM (SELECT rownum as rnum, g.*
+		FROM (select *
 		from BLO_MEMBER
-		order by mem_signup
-		
+		where mem_state = 0 AND mem_leave = 0
+		order by mem_signup) g)
+		<where>
+			<if test="memId != null">
+				mem_id = #{memId} AND
+			</if>
+			rnum <![CDATA[>=]]>
+			#{startnum} AND rnum <![CDATA[<=]]>
+			#{endnum}
+		</where>
 	</select>
-	
-	<select id="sellist" parameterType="hashmap" resultType="blossome.vo.MemVO">
-		select * 
+
+	<!-- 상세보기 회원정보 -->
+	<select id="sellist" parameterType="String" resultType="blossome.vo.MemVO">
+		select *
 		from BLO_MEMBER
 		where mem_id = #{memId}
-		
 	</select>
-	
-	<select id="addsellist" parameterType="hashmap" resultType="blossome.vo.AddMemVO">
-		select * 
+
+	<!-- 상세보기 회원추가정보 -->
+	<select id="addsellist" parameterType="String" resultType="blossome.vo.AddMemVO">
+		select *
 		from BLO_ADDMEMBER
 		where mem_id = #{memId}
-		
 	</select>
-	
+
+	<!-- 회원승인처리 -->
 	<select id="update" parameterType="String">
 		update BLO_MEMBER
-		set mem_state = 1
+		set mem_state
+		= 1
 		where mem_id = #{memId}
-		
 	</select>
-	
+
+	<!-- 승인거절시 추가정보삭제 -->
 	<select id="refusal" parameterType="String">
 		delete
 		from BLO_ADDMEMBER
 		where mem_id = #{memId}
-		
 	</select>
-	
-	<select id="memlist" resultType="blossome.vo.MemVO">
-		select * 
-		from BLO_MEMBER
-		order by mem_leave
-		
+
+	<!-- 승인거절시 비공개회원처리 -->
+	<select id="nonmem" parameterType="String">
+		update BLO_MEMBER
+		set mem_state
+		= 2
+		where mem_id = #{memId}
 	</select>
-	
+
+	<!-- 회원관리 리스트 -->
+	<select id="memlist" parameterType="hashmap" resultType="blossome.vo.MemVO">
+
+		SELECT *
+		FROM (SELECT rownum as rnum, g.*
+			  FROM (select *
+					from BLO_MEMBER
+					where mem_leave = 0
+					order by mem_name) g)
+		<where>
+			<if test="memId != null">
+				mem_id = #{memId} AND
+			</if>
+			rnum <![CDATA[>=]]> #{startnum} AND rnum <![CDATA[<=]]> #{endnum}
+		</where>
+	</select>
+
+	<!-- 회원탈퇴처리 -->
 	<select id="leave" parameterType="String">
 		update BLO_MEMBER
-		set mem_leave = 1
+		set mem_leave
+		= 1
 		where mem_id = #{memId}
-		
 	</select>
-	
+
+	<!-- 회원관리 검색기능 -->
 	<select id="memsearch" parameterType="hashmap" resultType="blossome.vo.MemVO">
-		select * 
+		select *
 		from BLO_MEMBER
-		where <if test="memId != null">mem_id = #{memId}</if>
+		where
+		<if test="memId != null">mem_id = #{memId}</if>
 		<if test="memName != null">mem_name = #{memName}</if>
 		<if test="memSignup != null">mem_signup = #{memSignup}</if>
-		
 	</select>
-	
+
+	<!-- 회원관리 페이지번호(회원관리 전체수) -->
+	<select id="memlisttotalcol" parameterType="Hashmap" resultType="int">
+		Select count(*)
+		from BLO_MEMBER
+		<where>
+			mem_leave = 0
+			<if test="memId != null">
+				mem_id = #{memId}
+			</if>
+		</where>
+	</select>
+
+	<!-- 회원승인 페이지번호(회원승인 전체수) -->
+	<select id="approvetotalcol" parameterType="Hashmap" resultType="int">
+		Select count(*)
+		from BLO_MEMBER
+		<where>
+			mem_leave = 0 AND mem_state = 0
+			<if test="memId != null">
+				mem_id = #{memId}
+			</if>
+		</where>
+	</select>
+
 </mapper>

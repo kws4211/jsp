@@ -98,4 +98,14 @@
     <url-pattern>/MessageControl</url-pattern>
     <url-pattern>*.msg</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>BloAdminControl</servlet-name>
+    <servlet-class>blossome.control.BloAdminControl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BloAdminControl</servlet-name>
+    <url-pattern>/BloAdminControl</url-pattern>
+    <url-pattern>*.bloadmin</url-pattern>
+  </servlet-mapping>
 </web-app>

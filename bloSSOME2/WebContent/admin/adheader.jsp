@@ -15,8 +15,8 @@
 			<ul>
 				<li><a href="index.blossom">HOME</a></li>
 				<li><a href="index.login?cmd=logout">Logout</a></li>
-				<li><a href="#">회원 승인</a></li>
-				<li><a href="#">회원 관리</a></li>
+				<li><a href="approve.admin?cmd=approve">회원 승인</a></li>
+				<li><a href="memlist.admin?cmd=memlist">회원 관리</a></li>
 				<li><a href="Qna.admin?cmd=adqna">문의</a></li>
 				<li><a href="Qna.admin?cmd=admat">매칭관리</a></li>
 			</ul>

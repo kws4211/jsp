@@ -11,14 +11,19 @@ import javax.servlet.http.HttpServletResponse;
 
 import blossome.command.Command;
 import blossome.command.CommandException;
-import blossome.command.CommandNull;
+import blossome.command.admin.CmdadApproveList;
+import blossome.command.admin.CmdadApproveRe;
+import blossome.command.admin.CmdadApproveUp;
+import blossome.command.admin.CmdadDetailAddMem;
+import blossome.command.admin.CmdadMemLeave;
+import blossome.command.admin.CmdadMemList;
+import blossome.command.admin.CmdadMemSearch;
 import blossome.command.admin.CmdadQnaList;
 import blossome.command.admin.CmdadQnaPopup;
 import blossome.command.admin.CmdadQnaReple;
 import blossome.command.admin.CmdadmatchingDel;
 import blossome.command.admin.CmdadmatchingList;
-import blossome.command.appeal.CmdAppealList;
-import blossome.command.appeal.CmdAppealView;
+
 
 
 
@@ -43,6 +48,14 @@ public class AdminControl extends HttpServlet {
 		commandMap.put("popup", new CmdadQnaPopup("adqnareple.jsp"));
 		commandMap.put("insert", new CmdadQnaReple("adqna.jsp"));
 		commandMap.put("delect", new CmdadmatchingDel("admatching.jsp"));
+		
+		commandMap.put("approve", new CmdadApproveList("approve.jsp"));	 // 회원승인목록
+		commandMap.put("detail", new CmdadDetailAddMem("detail.jsp"));	 // 회원상세보기
+		commandMap.put("update", new CmdadApproveUp("approve.jsp"));	 // 회원승인
+		commandMap.put("refusal", new CmdadApproveRe("approve.jsp"));	 // 회원승인거절
+		commandMap.put("memlist", new CmdadMemList("admemlist.jsp"));	 // 회원관리목록
+		commandMap.put("leave", new CmdadMemLeave("admemlist.jsp"));	 // 회원탈퇴
+		commandMap.put("memsearch", new CmdadMemSearch("admemlist.jsp"));// 회원관리검색
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
