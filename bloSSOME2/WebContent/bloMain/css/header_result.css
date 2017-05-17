@@ -1,0 +1,55 @@
+@CHARSET "UTF-8";
+
+div.header {
+	height: 65px;
+	background-color: #242424;
+	margin-top: -58px;
+}
+
+div.header .MainName {
+	float: left;
+	margin-left: 15%;
+	margin-top: 10px;
+	color: white;
+}
+
+div.header .Menu {
+	float: right;
+	margin-right: 20%;
+	margin-top: 15px;
+}
+
+div.header .Menu ul li {
+	display: inline;
+	padding: 0 20px;
+	color : gray;
+	font-family: "헤드라인";
+	font-weight: bold;
+}
+
+div.header .Menu ul li a{
+	color : gray;
+	text-decoration: none;
+}
+
+div.header .Menu ul li a:hover{
+	border-bottom : solid 2px white;
+	color: white;
+}
+
+div.header .Menu ul li:hover{
+	color: white;
+}
+
+div.header .Menu ul li:hover ul{
+	display: block;
+}
+
+div.header .Menu ul ul{
+	padding-left : 10px;
+	padding-top : 2px;
+	position:absolute;
+	background-color: #242424;
+	height:30px;
+	display: none;
+}
