@@ -22,7 +22,10 @@ public class CommandMain implements Command{
 		int metchingMem = repo.MetchingMem();
 		//툭에서 불러오기
 		int waitMem = totalMem-metchingMem;
-		int[] result = {totalMem,waitMem,metchingMem};
+		//관리자
+		int adminMem = repo.AdminMem();
+		
+		int[] result = {totalMem,waitMem,metchingMem,adminMem};
 		
 		request.setAttribute("res", result);
 		return next;

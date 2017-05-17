@@ -240,8 +240,8 @@
 								<div class="fact-inner">
 									<i class="fa fa-coffee fa-3x"></i>
                                     <div class="extra-space-l"></div>
-									<span class="counter">1100</span>
-									<p class="lead">Cups of coffee drinking</p>
+									<span class="counter"><%=res[3] %></span>
+									<p class="lead">관리자</p>
 								</div>
 							</div>
 
