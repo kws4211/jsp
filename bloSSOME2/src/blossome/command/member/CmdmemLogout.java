@@ -27,8 +27,24 @@ public class CmdmemLogout implements Command{
 
 		HttpSession session = request.getSession();
 		session.removeAttribute("id");
-		session.removeAttribute("admin");
+		if(session.getAttribute("admin") != null){
+			session.removeAttribute("admin");
+		}
+		if(session.getAttribute("nick") != null){
+			session.removeAttribute("nick");
+		}
+		MemberRepository repo = new MemberRepository();
+		//전체인원
+		int totalMem = repo.checkMem();
+		//매칭을 기다리는 멤버
+		int metchingMem = repo.MetchingMem();
+		//툭에서 불러오기
+		int waitMem = totalMem-metchingMem;
+		int adminMem = repo.AdminMem();
 		
+		int[] result = {totalMem,waitMem,metchingMem,adminMem};
+		
+		request.setAttribute("res", result);
 		return next;
 	}
 	

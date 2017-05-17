@@ -33,6 +33,40 @@ public class MemberRepository {
       return factory;
    }
    /*
+    * 총 회원수
+    */
+	public int checkMem() {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			return sqlSess.selectOne(namespace + ".checkMem");
+		} finally {
+			sqlSess.close();
+		}
+	}
+	
+	/*
+	 * 매칭을 기다리는 회원
+	 */
+	public int MetchingMem() {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			return sqlSess.selectOne(namespace + ".metchingMem");
+		} finally {
+			sqlSess.close();
+		}
+	}
+	/*
+	 * 관리자 인원
+	 */
+	public int AdminMem() {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			return sqlSess.selectOne(namespace + ".adminMem");
+		} finally {
+			sqlSess.close();
+		}
+	}
+   /*
     * checkLogin
     * 역할 : 로그인 확인
     */

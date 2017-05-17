@@ -13,6 +13,7 @@ import blossome.command.Command;
 import blossome.command.CommandException;
 import blossome.session.MemberRepository;
 import blossome.session.QnaRepository;
+import blossome.vo.MemVO;
 import blossome.vo.QnaVO;
 
 public class CmdmemCheckId implements Command{
@@ -29,9 +30,11 @@ public class CmdmemCheckId implements Command{
 		MemberRepository repo = new MemberRepository();
 		int res = repo.checkLogin(id, pw);
 		int st = repo.idinfo(id);
+		MemVO vo = repo.info(id);
 		if(res > 0){
 			HttpSession session = request.getSession();
 			session.setAttribute("id", id);
+			session.setAttribute("nick", vo.getMemNick());
 			if(st == 3){
 				session.setAttribute("admin", "admin");
 			}

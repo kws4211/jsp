@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
     <head> 
@@ -44,13 +45,13 @@
 					<form class="form-horizontal" method="post" onsubmit="return input_check_func()" name="frm">
 						
 						<div class="form-group">
-							<label for="state" class="cols-sm-2 control-label">Your View/공개여부</label>
+							<label for="state" class="cols-sm-2 control-label" >Your View/공개여부</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 								<!-- 앞에그림 -->
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type = "radio"  id= 'state' name='state' value="공개">공개
-									<input type = "radio"  id= 'state' name='state' value="비공개"> 비공개
+									<input type = "radio"  id= 'state' name='state' value="0">공개
+									<input type = "radio"  id= 'state_2' name='state' value="1"> 비공개
 								</div>
 							</div>
 						</div>
@@ -73,7 +74,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="pass" id="pass"  placeholder="Enter your Password"/>
+									<input type="password" class="form-control" name="pass" id="pass"  placeholder="Enter your Password"/>
 								</div>
 							</div>
 						</div>
@@ -83,7 +84,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
 								</div>
 							</div>
 						</div>
@@ -131,14 +132,35 @@
 						</div>
 						
 						
-						<div class="form-group">
+						
+
+
+				<div class="form-group">
 							<label for="birthday" class="cols-sm-2 control-label">Your Birthday/생일</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<select name="year" ><option value="1990">1990년</option>
+									<select name="year" ><option value="1980">1980년</option>
+											<option value="1981">1981년</option>
+											<option value="1982">1982년</option>
+											<option value="1983">1983년</option>
+											<option value="1984">1984년</option>
+											<option value="1985">1985년</option>
+											<option value="1986">1986년</option>
+											<option value="1987">1987년</option>
+											<option value="1988">1988년</option>
+											<option value="1989">1989년</option>
+											<option value="1990">1990년</option>
+											<option value="1991">1991년</option>
+											<option value="1992">1992년</option>
+											<option value="1993">1993년</option>
+											<option value="1994">1994년</option>
+											<option value="1995">1995년</option>
+											<option value="1996">1996년</option>
+											<option value="1997">1997년</option>
+											<option value="1998">1998년</option>
 									</select>
-									<select name="mon" ><option value="01">1월</option>
+									<select name="month" ><option value="01">1월</option>
 											<option value="02">2월</option>
 											<option value="03">3월</option>
 											<option value="04">4월</option>
@@ -151,7 +173,7 @@
 											<option value="11">11월</option>
 											<option value="12">12월</option>
 									</select>
-									<select name="birth" ><option value="01">1일</option>
+									<select name="date" ><option value="01">1일</option>
 											<option value="02">2일
 											<option value="03">3일
 											<option value="04">4일
@@ -208,16 +230,23 @@
 							<label for="loc" class="cols-sm-2 control-label">Your Area/지역</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<select name="loc" ><option value="서울">서울</option>
-									<option value="경기">경기</option>
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<select name="loc"><option value="서울">서울</option>
+									<option value="부산">부산</option>
+									<option value="인천">인천</option>
+									<option value="대구">대구</option>
+									<option value="대전">대전</option>
+									<option value="광주">광주</option>
+									<option value="울산">울산</option>
+									<option value="세종">세종</option>
 									<option value="강원">강원</option>
-									<option value="충북">충북</option>
+									<option value="경기">경기</option>
 									<option value="충남">충남</option>
-									<option value="전북">전북</option>
-									<option value="전남">전남</option>
+									<option value="충북">충북</option>
 									<option value="경북">경북</option>
+									<option value="전남">전남</option>
 									<option value="경남">경남</option>
+									<option value="전북">전북</option>
 									<option value="제주">제주</option>
 									</select>
 								</div>

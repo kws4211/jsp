@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% String id = (String)request.getAttribute("memid"); %>
+<% String id = (String)request.getAttribute("id"); %>
 
 <script type="text/javascript" src="/bloSSOME2/lib/jquery-3.2.1.js"></script>
 <!-- Latest compiled and minified CSS -->
@@ -41,8 +41,8 @@
 	               	</div>
 	            </div> 
 				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="index.login?cmd=inmemsucc" onsubmit="return input_check_func()" name="frm">
-						<input type="hidden" name="id" value="<%=id%>"/>
+					<form class="form-horizontal" method="post" action="index.login?cmd=inmemsucc" onsubmit="return input_check_func()" name="frm" enctype="multipart/form-data">
+						<input type="hidden" id="id" name="id" value="<%=id%>"/>
 						
 
 						<div class="form-group">
@@ -92,7 +92,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-								    <input id="filebutton" name="filebutton" class="input-file" type="file">
+								    <input id="file" name="file" class="input-file" type="file">
 							  </div>
 							</div>
 						</div>
@@ -125,8 +125,8 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type = "radio"  id= 'gender' name='gender' value="남">남
-									<input type = "radio"  id= 'gender' name='gender' value="여"> 여
+									<input type = "radio"  id= 'gender_m' name='gender' value="남">남
+									<input type = "radio"  id= 'gender_w' name='gender' value="여"> 여
 								</div>
 							</div>
 						</div>
@@ -136,8 +136,8 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type = "radio"  id= 'favorgender' name='favorgender' value="남">남
-									<input type = "radio"  id= 'favorgender' name='favorgender' value="여"> 여
+									<input type = "radio"  id= 'favorgender_m' name='favorgender' value="남">남
+									<input type = "radio"  id= 'favorgender_w' name='favorgender' value="여"> 여
 								</div>
 							</div>
 						</div>

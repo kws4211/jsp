@@ -2,7 +2,6 @@ $(function(){
 	$("#gguk").click(function(){
 		var id = $(this).next().val();
 		var name = $(this).next().next().val();
-		alert(name)
 		$a.popup({
 			title : "꾸욱하기",
 			width : 500, //크기

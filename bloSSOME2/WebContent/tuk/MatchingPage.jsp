@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="tukheader.jsp"></jsp:include>
 	매칭성공
 </body>
 </html>

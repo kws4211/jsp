@@ -19,6 +19,8 @@ public class AddMemVO {
 	private String memGender;
 	//상대성별
 	private String memFavorgender;
+	//사진
+	private String memFile;
 	//연봉
 	private String memSalary;
 	//재산
@@ -52,6 +54,18 @@ public class AddMemVO {
 
 
 
+
+
+
+	public String getMemFile() {
+		return memFile;
+	}
+
+
+
+	public void setMemFile(String memFile) {
+		this.memFile = memFile;
+	}
 
 
 

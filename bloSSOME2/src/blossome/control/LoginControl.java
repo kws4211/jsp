@@ -44,14 +44,15 @@ public class LoginControl extends HttpServlet {
 	private void initCommand(){
 		commandMap = new HashMap();
 		commandMap.put("inmem", new CommandNull("signup.jsp"));
-		commandMap.put("inmemdb", new CmdmemSignupinsert("addsignup.jsp")); //signup가 되면 add로
-		commandMap.put("inmemsucc", new CmdmemAddSignupinsert("loginform.jsp")); //addsignup이 되면 로그인
+		commandMap.put("inmemdb", new CmdmemSignupinsert("addsignup.jsp")); 
+		commandMap.put("inmemsucc", new CmdmemAddSignupinsert("loginform.jsp")); 
 		commandMap.put("login", new CommandNull("loginform.jsp"));
 		commandMap.put("search", new CommandNull("loginsearch.jsp"));
+		commandMap.put("loginsing", new CommandNull("signup.jsp"));
 		commandMap.put("checkid", new CmdmemCheckId("loginform.jsp"));
 		commandMap.put("searchfirst", new CmdmemSearchFirst("loginanswer.jsp"));
-		commandMap.put("searchsecond", new CmdmemSearchSecond("EndSearch.jsp")); //searchsecond가 되면 end로 가고
-		commandMap.put("logout", new CmdmemLogout("index.jsp")); //로그아웃되면 index로 가고
+		commandMap.put("searchsecond", new CmdmemSearchSecond("EndSearch.jsp"));
+		commandMap.put("logout", new CmdmemLogout("index.jsp")); 
 		commandMap.put("idpopup", new CmdmemPopCheckId("CheckID.jsp"));
 		commandMap.put("idpopupserver", new CmdmemCheckIdserver("view.jsp"));
 		commandMap.put("nickpopupserver", new CmdmemChecknickserver("view.jsp"));

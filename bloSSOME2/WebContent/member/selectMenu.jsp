@@ -23,8 +23,8 @@ button {
 <br/>
 <!-- info.member?cmd=view info.member?cmd=add-->
 <center>
-	<button class="btn" id="btn1"><img class="btn-img" src="/bloSSOME2/member/img/basic.png"></button><input type="hidden" value="1" />
-	<button class="btn" id="btn2"><img class="btn-img" src="/bloSSOME2/member/img/add.png"></button><input type="hidden" value="2" />
+	<button class="btn" id="btn1"><img class="btn-img" src="/bloSSOME2/member/img/basic2.png"></button><input type="hidden" value="1" />
+	<button class="btn" id="btn2"><img class="btn-img" src="/bloSSOME2/member/img/add2.png"></button><input type="hidden" value="2" />
 </center>
 </body>
 </html>

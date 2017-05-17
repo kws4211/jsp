@@ -37,7 +37,7 @@
 					<tr>
 						<td><%=vo.getMsgNum() %></td>
 						<td><%=vo.getMsgId() %></td>
-						<td>...</td>
+						<td><%=vo.getMsgName() %></td>
 						<!-- if문으로 상태에 따라 다르게 출력 -->
 						<td>
 							<%if(vo.getMsgState()==2){ %>
@@ -49,32 +49,13 @@
 								<span class="glyphicon glyphicon-edit" ></span>읽음
 							</a>	
 							<%} %>
+							<input type="hidden" id="num" value="<%=vo.getMsgNum() %>"/>
+							<input type="hidden" id="send" value="send"/>
 						</td>
 					</tr>
 					<%}%>
 				<%}else{ %>
-				<tr>
-					<td>0001</td>
-					<td>신고</td>
-					<td>질문이 없습니다</td>
-					<td>2017/05/10</td>
-					<td>
-						<a href="#" class="btn btn-danger btn-xs">
-							<span class="glyphicon glyphicon-remove" ></span>답변대기중
-						</a>
-					</td>
-				</tr>
-				<tr>
-					<td>0001</td>
-					<td>질문이 없습니다</td>
-					<td>김모시기</td>
-					<td>2017/05/10</td>
-					<td>
-						<a href="#" class="btn btn-info btn-xs">
-							<span class="glyphicon glyphicon-edit" ></span>답변완료
-						</a>
-					</td>
-				</tr>
+				
 				<%} %>
 			</table>
 		</div>

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import blossome.command.Command;
 import blossome.command.CommandException;
+import blossome.command.CommandMain;
 import blossome.command.CommandNull;
 import blossome.command.CommandSide;
 import blossome.command.admin.CmdadQnaList;
@@ -30,7 +31,7 @@ public class BlossomControl extends HttpServlet {
 
 	private void initCommand(){
 		commandMap = new HashMap();
-		commandMap.put("main", new CommandNull("index.jsp"));
+		commandMap.put("main", new CommandMain("index.jsp"));
 		commandMap.put("aside", new CommandSide("asidemenu.jsp"));
 	}
 

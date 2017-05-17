@@ -20,8 +20,14 @@ public class CmdMsgView implements Command{
 	public String execute(HttpServletRequest request) throws CommandException {
 		//msg 리스를 불러와서 출력
 		String num = request.getParameter("num");
+		String send = request.getParameter("send");
 		MessageRepository repo = new MessageRepository();
-		MsgVO vo = repo.view(num);
+		MsgVO vo;
+		if(send != null && send.equals("send")){
+			vo = repo.sendview(num);
+		}else{
+			vo = repo.view(num);
+		}
 //		repo.countRead(num);
 	
 		request.setAttribute("vo", vo);
