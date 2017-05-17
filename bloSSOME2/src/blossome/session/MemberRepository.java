@@ -33,6 +33,29 @@ public class MemberRepository {
       return factory;
    }
    /*
+    * 총 회원수
+    */
+	public int checkMem() {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			return sqlSess.selectOne(namespace + ".checkMem");
+		} finally {
+			sqlSess.close();
+		}
+	}
+	
+	/*
+	 * 매칭을 기다리는 회원
+	 */
+	public int WaitMem() {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			return sqlSess.selectOne(namespace + ".waitMem");
+		} finally {
+			sqlSess.close();
+		}
+	}
+   /*
     * checkLogin
     * 역할 : 로그인 확인
     */

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <% String name = (String)request.getAttribute("re"); %>
 <% String st = (String)session.getAttribute("admin"); %>
+<% int res[] = (int[])request.getAttribute("res"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -212,7 +213,7 @@
 								<div class="fact-inner">
 									<i class="fa fa-users fa-3x"></i>
                                     <div class="extra-space-l"></div>
-									<span class="counter">99999</span>
+									<span class="counter"><%=res[0] %></span>
 									<p class="lead">총회원수</p>
 								</div>
 							</div>
@@ -221,7 +222,7 @@
 								<div class="fact-inner">
 									<i class="fa fa-leaf fa-3x"></i>
                                     <div class="extra-space-l"></div>
-									<span class="counter">800</span>
+									<span class="counter"><%=res[1] %></span>
 									<p class="lead">만남을 기다리는 회원</p>
 								</div>
 							</div>
@@ -230,7 +231,7 @@
 								<div class="fact-inner">
 									<i class="fa fa-trophy fa-3x"></i>
                                     <div class="extra-space-l"></div>
-									<span class="counter">55</span>
+									<span class="counter"><%=res[2] %></span>
 									<p class="lead">매칭에 성공한 회원</p>
 								</div>
 							</div>

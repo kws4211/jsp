@@ -15,6 +15,23 @@
 	</where>
 </select>
 
+<select id="checkMem" resultType="int">
+	SELECT count(*) as count
+	FROM BLO_MEMBER
+	where mem_state  not in(3)
+</select>
+
+<select id="waitMem" resultType="int">
+	select count(*) 
+	from blo_member
+	where mem_id not in(SELECT c.mem_id 
+						FROM blo_member m , BLO_CHOICE c
+						where m.mem_id = c.mem_id and c.choice_state = 4
+						group by c.mem_id)
+	and mem_state not in(3)
+</select>
+
+
 <select id="checknick" parameterType="hashMap" resultType="int">
 	SELECT count(*) as count
 	FROM BLO_MEMBER
