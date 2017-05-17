@@ -23,7 +23,7 @@ public class MemVO {
 	//답변
 	private String memAnswer;
 	//상태
-	private int memState;
+	private String memState;
 	//가입날짜
 	private String memSignup;
 	//탈퇴여부
@@ -118,11 +118,11 @@ public class MemVO {
 		this.memAnswer = memAnswer;
 	}
 
-	public int getMemState() {
+	public String getMemState() {
 		return memState;
 	}
 
-	public void setMemState(int memState) {
+	public void setMemState(String memState) {
 		this.memState = memState;
 	}
 

@@ -35,7 +35,8 @@
 				<input name="user" type="text" placeholder="username" style="margin-bottom: 10px">
 				<input name="pw" type="password" placeholder="password" style="margin-bottom: 10px">
 				<button class="btn btn-info btn-block login" type="submit" id='login' style="margin-bottom: 30px">Login</button>
-				<input type='button' id='search' value="아이디/비밀번호 찾기" />
+				<input type='button' id='search' value="아이디/비밀번호 찾기" style="margin-bottom: 5px"/>
+				<input type='button' id='sign' value="회원가입" />
 			</form>
 		</div>
 	</div>
