@@ -55,6 +55,17 @@ public class MemberRepository {
 			sqlSess.close();
 		}
 	}
+	/*
+	 * 관리자 인원
+	 */
+	public int AdminMem() {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try {
+			return sqlSess.selectOne(namespace + ".adminMem");
+		} finally {
+			sqlSess.close();
+		}
+	}
    /*
     * checkLogin
     * 역할 : 로그인 확인

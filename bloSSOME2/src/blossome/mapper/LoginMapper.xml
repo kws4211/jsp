@@ -21,6 +21,12 @@
 	where mem_state  not in(3)
 </select>
 
+<select id="adminMem" resultType="int">
+	SELECT count(*) as count
+	FROM BLO_MEMBER
+	where mem_state = 3
+</select>
+
 <select id="metchingMem" resultType="int">
 	select count(*) 
 	from blo_member
