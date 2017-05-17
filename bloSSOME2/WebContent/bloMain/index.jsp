@@ -70,7 +70,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>
-                      <a class="navbar-brand page-scroll" href="index.html">Unika</a>
+                      <a class="navbar-brand page-scroll" href="index.html">BloSSome</a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -79,16 +79,17 @@
                             <li><a class="page-scroll" href="index.blossom">Home</a></li>
                             <%if(session.getAttribute("id") == null) {%>
                             	<li><a class="page-scroll" href="index.login">Login</a></li>
+                            	<li><a class="page-scroll" href="index.login?cmd=inmem">회원가입</a></li>
                             <%}else{ %>
                             	<li><a class="page-scroll" href="index.login?cmd=logout">Logout</a></li>
                             	<li><a class="page-scroll" href="index.member?cmd=menu"><%=session.getAttribute("id") %></a></li>
+                            	<li><a class="page-scroll" href="index.appeal">어필게시판</a></li>
                             <%} %>
+                            <li><a class="page-scroll" href="index.find">이상형찾기</a></li>
+                            <li><a class="page-scroll" href="index.review">후기</a></li>                            
                             <%if(st != null && st.equals("admin")){ %>
                             	<li><a class="page-scroll" href="index.admin">관리자메뉴</a></li>
                             <%} %>
-                            <li><a class="page-scroll" href="index.find">이상형찾기</a></li>
-                            <li><a class="page-scroll" href="index.appeal">어필게시판</a></li>
-                            <li><a class="page-scroll" href="index.review">후기</a></li>                            
                         </ul>
                     </div><!-- /.navbar-collapse -->
                   </div><!-- /.container -->
@@ -109,9 +110,9 @@
                                 <div class="page-header-wrapper">
                                     <div class="container">
                                         <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                                            <h2>Our Works</h2>
+                                            <h2>BloSSome</h2>
                                             <div class="devider"></div>
-                                            <p class="subtitle">What we are proud of</p>
+                                            <p class="subtitle">설레임의 만남</p>
                                         </div>
                                     </div>
                                 </div>
@@ -120,20 +121,11 @@
                                     
                                     <div class="portfolio_content">
                                         <div class="row"  id="portfolio">
-                                            <div class="col-xs-12 col-sm-4 appsDevelopment">
-                                                <div class="portfolio_single_content">
-                                                    <img src="/bloSSOME2/bloMain/img/portfolio/p1.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="#">Skull Awesome</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <div class="col-xs-12 col-sm-4 GraphicDesign">
                                                 <div class="portfolio_single_content">
                                                     <img src="/bloSSOME2/bloMain/img/portfolio/p2.jpg" alt="title"/>
                                                     <div>
-                                                        <a href=" main.appeal">어필게시판</a>
+                                                        <a href="main.appeal">어필게시판</a>
                                                         <span>어필 어필</span>
                                                     </div>
                                                 </div>
@@ -147,15 +139,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xs-12 col-sm-4 webDesign websites">
-                                                <div class="portfolio_single_content">
-                                                    <img src="/bloSSOME2/bloMain/img/portfolio/p4.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="#"><%=st %></a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <div class="col-xs-12 col-sm-4 appsDevelopment websites">
                                                 <div class="portfolio_single_content">
                                                     <img src="/bloSSOME2/bloMain/img//portfolio/p5.jpg" alt="title"/>
@@ -165,15 +148,33 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xs-12 col-sm-4 GraphicDesign">
-                                                <div class="portfolio_single_content">
-                                                    <img src="/bloSSOME2/bloMain/img/portfolio/p6.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="#">Night Crawlers</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+<!--                                             <div class="col-xs-12 col-sm-4 webDesign websites"> -->
+<!--                                                 <div class="portfolio_single_content"> -->
+<!--                                                     <img src="/bloSSOME2/bloMain/img/portfolio/p4.jpg" alt="title"/> -->
+<!--                                                     <div> -->
+<!--                                                         <a href="#">구현중입니다</a> -->
+<!--                                                         <span>기다려 주세요</span> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
+<!--                                             <div class="col-xs-12 col-sm-4 appsDevelopment"> -->
+<!--                                                 <div class="portfolio_single_content"> -->
+<!--                                                     <img src="/bloSSOME2/bloMain/img/portfolio/p1.jpg" alt="title"/> -->
+<!--                                                     <div> -->
+<!--                                                         <a href="#">구현중입니다</a> -->
+<!--                                                         <span>기다려 주세요</span> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
+<!--                                             <div class="col-xs-12 col-sm-4 GraphicDesign"> -->
+<!--                                                 <div class="portfolio_single_content"> -->
+<!--                                                     <img src="/bloSSOME2/bloMain/img/portfolio/p6.jpg" alt="title"/> -->
+<!--                                                     <div> -->
+<!--                                                         <a href="#">구현중입니다</a> -->
+<!--                                                         <span>기다려 주세요</span> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -196,9 +197,9 @@
                     <div class="page-header-wrapper">
                         <div class="container">
                             <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                                <h2>Some Fun Facts</h2>
+                                <h2>BloSSome</h2>
                                 <div class="devider"></div>
-                                <p class="subtitle">Before anyone is not told</p>
+                                <p class="subtitle">현재 진행형</p>
                             </div>
                         </div>
                     </div>
@@ -212,7 +213,7 @@
 									<i class="fa fa-users fa-3x"></i>
                                     <div class="extra-space-l"></div>
 									<span class="counter">99999</span>
-									<p class="lead">Clients Worked With</p>
+									<p class="lead">총회원수</p>
 								</div>
 							</div>
 
@@ -221,7 +222,7 @@
 									<i class="fa fa-leaf fa-3x"></i>
                                     <div class="extra-space-l"></div>
 									<span class="counter">800</span>
-									<p class="lead">Completed Projects</p>
+									<p class="lead">만남을 기다리는 회원</p>
 								</div>
 							</div>
 
@@ -230,7 +231,7 @@
 									<i class="fa fa-trophy fa-3x"></i>
                                     <div class="extra-space-l"></div>
 									<span class="counter">55</span>
-									<p class="lead">Winning Awards</p>
+									<p class="lead">매칭에 성공한 회원</p>
 								</div>
 							</div>
 

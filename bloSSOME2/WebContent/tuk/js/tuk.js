@@ -13,9 +13,15 @@ $(function(){
 	});
 	
 	$("#rebtn").click(function(){
-		$("#frm").attr("action","xx.tuk?cmd=insert");
-		$("#frm").submit();
-		$a.close();
+		var result = confirm("쪽지를 보내시겠습니까?");
+		
+		if(result){
+			$("#frm").attr("action","xx.tuk?cmd=insert");
+			$("#frm").submit();
+			$a.close();
+		}else{
+			return;
+		}
 	});
 });
 

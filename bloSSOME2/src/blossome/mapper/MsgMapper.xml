@@ -64,4 +64,10 @@
 		insert into blo_message
 		values(#{msgNum},#{memId},#{msgId},#{msgName},#{msgContent},2)
 	</insert>
+	
+	<update id="countread" parameterType="hashMap">
+		update blo_message
+		set msg_state = 1
+		where msg_num = #{num}
+	</update>
 </mapper>

@@ -67,37 +67,4 @@ public class CmdmemSignupinsert implements Command{
 	
 
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response){
-//		//요청한 url
-//		String url = request.getRequestURI().toString();
-//		System.out.println(url);
-//		
-//		SignupRepository repo = new SignupRepository();
-//		if(url.indexOf("check.id") != -1){
-//			//id체크 기능
-//		}else if(url.indexOf("check.ni") != -1){
-//			//nick체크 기능
-//		}
-//		//get방식으로 넘어온 데이터
-//		String id=request.getParameter("id");
-//		String nick=request.getParameter("nick");
-//		//repo에 로그인 체크 요청
-//		String result=repo.check(id,nick);
-//		System.out.println(result);
-//		//***********하다가 말았음
-		
-		MemVO vo = new MemVO();
-		HttpSession session = request.getSession();
-		String id=request.getParameter("id");
-		System.out.println("id: "+ id);
-		String nick=request.getParameter("nick");
-		System.out.println("nick:  "+nick);
-		
-		SignupRepository repo = new SignupRepository();
-		
-		repo.insertSignup(vo);
-
-		
-	}
-	
 }

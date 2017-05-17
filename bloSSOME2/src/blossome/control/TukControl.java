@@ -21,6 +21,7 @@ import blossome.command.tuk.CmdMygguckInsert;
 import blossome.command.tuk.CmdMygguckList;
 import blossome.command.tuk.CmdMegguckblock;
 import blossome.command.tuk.CmdMygguckdelete;
+import blossome.command.tuk.CmdgguckInsert;
 import blossome.command.tuk.CmdMeTukDelete;
 import blossome.command.tuk.CmdMeTukList;
 import blossome.command.tuk.CmdMegguckList;
@@ -68,6 +69,9 @@ public class TukControl extends HttpServlet {
 		commandMap.put("megguck-insert", new CmdMygguckInsert("megguckList.jsp"));
 		//쪽지보내기
 		commandMap.put("insert", new CmdMsgInsert("MygguckList.jsp"));
+		
+		commandMap.put("insert-gguck", new CmdgguckInsert("MatchingPage.jsp"));
+		
 		
 	}
 

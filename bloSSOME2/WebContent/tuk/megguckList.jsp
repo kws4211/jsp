@@ -32,7 +32,24 @@ $(function(){
 		$('#frm').attr("action", "xx.tuk?cmd=tuk-insert");
 		$('#frm').submit();
 	});
+	
+	$("#gguk").click(function(){
+			var result = confirm("꾸욱 하시겠습니까?");
+			
+			if(result){
+				$("#frm").attr("action","xx.tuk?cmd=insert-gguck");
+				$("#frm").submit();
+				$a.close();
+			}else{
+				return;
+			}
+		});
+		
 });
+
+
+
+
 </script>
 
 
@@ -142,7 +159,7 @@ $(function(){
 								
 <%-- 								<input type="hidden" name="choiceId" value="<%=vo.getChoiceId() %>"/> --%>
 								<button type="button" class="btn btn-success btn-sm"><a href="xx.tuk?cmd=megguck-block&choicenum=<%=vo.getChoiceNum()%>">차단하기</a></button>
-								<button type="button" class="btn btn-success btn-sm"><a href="xx.tuk?cmd=megguck-insert&choicenum=<%=vo.getChoiceNum()%>">꾸욱하기</a></button>
+								<button type="button" id="gguk" class="btn btn-success btn-sm">꾸욱하기</button>
 								<button type="button" id="btn_tuk" class="btn btn-success btn-sm">툭하기</button>
 <!--                          	    <input type="button" id="btn_tuk" value="툭하기" /> -->
                          	    </form>

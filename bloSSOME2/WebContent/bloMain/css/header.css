@@ -22,6 +22,8 @@ div.header .Menu ul li {
 	display: inline;
 	padding: 0 20px;
 	color : gray;
+	font-family: "헤드라인";
+	font-weight: bold;
 }
 
 div.header .Menu ul li a{

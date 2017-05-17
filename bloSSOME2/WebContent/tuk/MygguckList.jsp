@@ -137,77 +137,7 @@
 </div>
                     <%}%> <!-- end of for -->
 					<%}else{ %>
-					<h3 class="name">이름 / 지역</h3>
-                                <p class="age">나이 </p>
-                                <div class="stats-container">
-                                    <div class="stats">
-                                        <h4>혈액형</h4>
-                                        <p>
-                                            AA
-                                        </p>
-                                    </div>
-                                    <div class="stats">
-                                        <h4>키</h4>
-                                        <p>
-                                           	AA
-                                        </p>
-                                    </div>
-                                    <div class="stats">
-                                        <h4>학력</h4>
-                                        <p>
-                                           	AA
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="footer">
-                            </div>
-                        </div>
-                    </div> <!-- end front panel -->
-                    
-                    <!-- 툭 뒷면 -->
-                    <div class="back">
-                        
-                        <div class="content">
-                            <div class="main">
-                          
-                                <div class="stats-container">
-                                    <div class="">
-                                        <h4>취미</h4>
-                                        <p>
-                                           	AA
-                                        </p>
-                                    </div>
-                                    <div class="">
-                                        <h4>이메일</h4>
-                                        <p>
-                                           	AA
-                                        </p>
-                                    </div>
-                                    <div class="stats">
-                                        <h4>생일</h4>
-                                        <p>
-                                           	AA
-                                        </p>
-                                    </div>
-                                    <div class="stats">
-                                        <h4>종교</h4>
-                                        <p>
-                                           	AA
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="footer">
-                            <div class="social-links text-center">
-                         	    <button type="button" class="btn btn-success btn-sm"><a href="">꾸욱취소</a></button>
-                            </div>
-                        </div>
-					
-					
-					
+						내가 꾹한 사람이 없습니다.					
 					 <%}%> <!-- end of if -->
 
 
