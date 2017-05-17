@@ -36,6 +36,7 @@ public class CmdadMemLeave implements Command{
 		List<MemVO> list = repo.memlist(res[1],res[2]);
 		request.setAttribute("list", list);
 		request.setAttribute("total", res[0]);
+		request.setAttribute("alllist",1);
 		return next;
 	}
 	
