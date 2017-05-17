@@ -344,4 +344,20 @@ public class TukRepository {
 		}
 
 	}
+	//매칭 리스트
+		public List<TukVO> matList(String id){
+			SqlSession sqlSess = getSelSessionFactory().openSession();
+			try {
+				HashMap map = new HashMap();
+				map.put("id", id);
+				String statment = namespace + ".matList";
+				return sqlSess.selectList(statment, map);
+			} finally {
+				sqlSess.close();
+			}
+		
+		}
+		
+		
+	
 }

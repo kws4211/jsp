@@ -19,10 +19,10 @@ public class CmdmatList implements Command{
 	public String execute(HttpServletRequest request) throws CommandException {
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("id");
-		
+		System.out.println(id);
 		
 		TukRepository repo = new TukRepository();
-		List<TukVO> list = repo.meselectlist(id);
+		List<TukVO> list = repo.matList(id);
 		request.setAttribute("list", list);
 		return next;
 	}

@@ -130,4 +130,17 @@
 		VALUES ( #{matNum}, #{matId1}, #{matId2}, 1, sysdate )
 	</insert>
 	
+	<!-- 매칭리스트 -->
+	<select id="matList" parameterType="hashMap" resultType="blossome.vo.TukVO">
+		select m.*, am.* 
+            from  BLO_MEMBER m, BLO_ADDMEMBER am 
+            where  m.mem_id = am.mem_id and
+            m.mem_id in(
+            (SELECT mat_id2 FROM BLO_MATCHING where mat_id1 = #{id} or mat_id2 = #{id}),
+            (SELECT mat_id1 FROM BLO_MATCHING where mat_id1 = #{id} or mat_id2 = #{id}))
+            and m.mem_id != #{id}
+	</select>
+	
+	
+	
 </mapper>

@@ -72,7 +72,7 @@ public class TukControl extends HttpServlet {
 		commandMap.put("insert", new CmdMsgInsert("MygguckList.jsp"));
 		
 		commandMap.put("insert-gguck", new CmdgguckInsert("MatchingPage.jsp"));
-		
+		//매칭리스트
 		commandMap.put("matList", new CmdmatList("MatchingPage.jsp"));
 		
 		
