@@ -29,15 +29,19 @@ public class CmdmemCheckId implements Command{
 		String pw = request.getParameter("pw");
 		MemberRepository repo = new MemberRepository();
 		int res = repo.checkLogin(id, pw);
-		int st = repo.idinfo(id);
-		MemVO vo = repo.info(id);
+		HttpSession session = request.getSession();
 		if(res > 0){
-			HttpSession session = request.getSession();
-			session.setAttribute("id", id);
-			session.setAttribute("nick", vo.getMemNick());
-			if(st == 3){
-				session.setAttribute("admin", "admin");
+			int st = repo.idinfo(id);
+			MemVO vo = repo.info(id);
+			if(res > 0){
+				session.setAttribute("id", id);
+				session.setAttribute("nick", vo.getMemNick());
+				if(st == 3){
+					session.setAttribute("admin", "admin");
+				}
 			}
+		}else{
+			session.setAttribute("id", "miss");
 		}
 		
 		return next;

@@ -28,7 +28,13 @@
 <body>
 	<%if(id != null){ %>
 		<%response.sendRedirect("index.blossom"); %>
-	<%} %>
+	<%}else if(session.getAttribute("error") != null){ %>
+		<center>
+			<h1>로그인 오류</h1><br/>
+			<h3>다시 로그인 해주세요</h3>
+		</center>
+	<%session.removeAttribute("error"); } %>
+
 	<div class="container">
 		<div class="login-container">
 			<form method="post" id="frm">

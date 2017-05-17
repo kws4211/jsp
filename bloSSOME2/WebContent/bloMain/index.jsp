@@ -3,6 +3,12 @@
 <% String name = (String)request.getAttribute("re"); %>
 <% String st = (String)session.getAttribute("admin"); %>
 <% int res[] = (int[])request.getAttribute("res"); %>
+<% String id = (String)session.getAttribute("id"); %>
+<%if(id != null && id.equals("miss")){ 
+	session.removeAttribute("id");
+	session.setAttribute("error", "error");
+	response.sendRedirect("index.login");
+}%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
