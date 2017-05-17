@@ -1,5 +1,6 @@
 
 
+
 $(function(){
 	$("#signup").click(function(){
 		if($("#id").val() == ""){
@@ -34,13 +35,13 @@ $(function(){
 			alert("생일을 입력해주세요");
 			$("#year").focus();
 			return false;
-		}else if($("#mon").val() == ""){
+		}else if($("month").val() == ""){
 			alert("생일을 입력해주세요");
-			$("#mon").focus();
+			$("#month").focus();
 			return false;
-		}else if($("#birthday").val() == ""){
+		}else if($("#date").val() == ""){
 			alert("생일을 입력해주세요");
-			$("#birthday").focus();
+			$("#date").focus();
 			return false;
 		}else if($("#tel_0").val() == ""){
 			alert("전화번호를 입력해주세요");
@@ -79,7 +80,7 @@ $(function(){
 		id = /^[a-z]+[a-z0-9]{4,19}$/g; 
 			var nid = document.frm.id.value; 
 			if(!id.test(nid)){ 
-				alert("잘못된 아이디 형식입니다"); 
+				alert("최소 4자 이상 입력해주세요"); 
 			} //if문 끝 
 		} 
 	//pass 정규화
@@ -88,7 +89,7 @@ $(function(){
 		pass = /^[A-Za-z0-9]{6,12}$/;
 			var npass = document.frm.pass.value; 
 			if(!pass.test(npass)){ 
-				alert("잘못된 패스워드입니다"); 
+				alert("영문과 숫자를 조합해 6자 이상 입력해주세요"); 
 			} //if문 끝
 		} 
 	//tel 정규화
