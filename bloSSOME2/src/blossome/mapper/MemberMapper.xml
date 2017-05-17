@@ -79,8 +79,7 @@
 	<!-- 회원탈퇴처리 -->
 	<select id="leave" parameterType="String">
 		update BLO_MEMBER
-		set mem_leave
-		= 1
+		set mem_leave = 1
 		where mem_id = #{memId}
 	</select>
 
