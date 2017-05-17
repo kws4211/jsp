@@ -127,4 +127,10 @@
 	</where>
 </select>
 
+<select id="imgInfo" resultType="String">
+	select mem_img
+	from BLO_ADDMEMBER
+	where mem_id=#{id}
+</select>
+
 </mapper>

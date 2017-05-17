@@ -8,10 +8,12 @@
  <select id="selectAppealView"  resultType="blossome.vo.AppealVO">
 	SELECT * 
 	FROM (SELECT rownum as rnum, g.*
-			  FROM (SELECT a.*, m.mem_name
-			  			FROM blo_appeal a, blo_member m
-			  			WHERE a.mem_id = m.mem_id
-			  			ORDER BY a.app_num desc)  g)
+			  FROM (SELECT a.*, m.mem_name, ad.mem_img
+FROM blo_appeal a, blo_member m, blo_addmember ad
+WHERE a.mem_id = m.mem_id
+AND m.mem_id = ad.mem_id
+AND ad.mem_id = a.mem_id
+ORDER BY a.app_num desc)  g)
 	<where>
 			rnum <![CDATA[>=]]>  #{startnum} AND rnum <![CDATA[<=]]> #{endnum}
 		</where>   		
@@ -85,5 +87,12 @@
 	DELETE FROM BLO_CHOICE
 	WHERE mem_id=#{memId} AND choice_id = #{choiceId}
 	</delete>
+	
+	 <!-- 이미지 가져오기 -->
+<select id="selectMemImg" parameterType="hashMap"  resultType="blossome.vo.AddMemVO">
+	  SELECT mem_img
+	 FROM blo_addmember 
+	 where mem_id = #{id}
+ </select>
 
 </mapper>

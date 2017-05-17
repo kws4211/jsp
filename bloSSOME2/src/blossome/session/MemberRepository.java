@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import blossome.vo.AddMemVO;
 import blossome.vo.AppealVO;
 import blossome.vo.FIndVO;
 import blossome.vo.MemVO;
@@ -286,5 +287,17 @@ public class MemberRepository {
 			sqlSess.close();
 		}
 	}
+	
+	 public String imgInfo(String id) {
+			SqlSession sqlSess = getSelSessionFactory().openSession();
+			try{
+				HashMap map = new HashMap();
+				map.put("id", id);
+				
+				return sqlSess.selectOne(namespace + ".imgInfo", map);
+			}finally{
+				sqlSess.close();
+			}
+		}
 
 }

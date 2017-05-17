@@ -209,4 +209,15 @@ public class AppealRepository {
 				sqlSess.close();
 			}
 	}
+		//이미지가져오기
+		public String selectImg(String id) {
+			SqlSession sqlSess = getSelSessionFactory().openSession();
+			try{
+				HashMap map = new HashMap();
+				map.put("id", id);
+				return sqlSess.selectOne(namespace + ".selectMemImg", map);
+			}finally{
+				sqlSess.close();
+			}
+		}
 }

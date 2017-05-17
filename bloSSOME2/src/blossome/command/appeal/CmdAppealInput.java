@@ -37,7 +37,7 @@ public class CmdAppealInput implements Command {
 			seq += appealSeq;
 			
 			//파일 업로드
-			String savePath = "C:\\yenni\\workspace4\\bloSSOME2\\WebContent\\upload";
+			String savePath = "C:\\Users\\kosta\\git\\jsp23\\bloSSOME2\\WebContent\\upload";
 			String dbPath = "/bloSSOME2/upload";
 			int sizeLimit = 1024*1024*15;
 			

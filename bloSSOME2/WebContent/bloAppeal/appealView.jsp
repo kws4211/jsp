@@ -4,6 +4,7 @@
 <%
    // list를 가져옴
    List<AppealVO> list = (List<AppealVO>)request.getAttribute("list");
+	String img = (String)session.getAttribute("img");
 %>
 <% int totalpage = (int)request.getAttribute("totalPage"); %>
 <% String isnull = ""; %>
@@ -37,12 +38,11 @@
                 <div class="card"> 
                     <div class="front">
                         <div class="user">
-                            <img class="img-circle" src="/bloSSOME2/bloAppeal/img/hyeuntae2.jpg"/>
+                            <img class="img-circle" src="<%=vo.getMemImg()%>"/>
                         </div>
                         <div class="content">
                             <div class="main">
                                 <h3 class="name"><%=vo.getMemName() %></h3>
-                                <p class="profession"><%=vo.getMemJob() %></p>
                                 <p class="text-center"><%=vo.getAppTitle() %></p>
                             </div>
                             <div class="footer2">

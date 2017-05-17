@@ -26,6 +26,9 @@ public class AppealVO {
 	
 	//조회수
 	private String appCount;
+	
+	//이미지
+	private String memImg;
 
 	// 생성자
 	public AppealVO()
@@ -112,5 +115,15 @@ public class AppealVO {
 	public void setChoiceId(String choiceId) {
 		this.choiceId = choiceId;
 	}
+
+	public String getMemImg() {
+		return memImg;
+	}
+
+	public void setMemImg(String memImg) {
+		this.memImg = memImg;
+	}
+	
+	
 	
 }

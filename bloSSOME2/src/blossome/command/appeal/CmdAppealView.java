@@ -36,10 +36,13 @@ public class CmdAppealView implements Command {
  		pageNumClass p = new pageNumClass();
  		//계산된 숫자를 res배열에 저장
  		int[] res = p.SettingPageNum(repo.totalcol(id), 3, pageNum);
+ 		//이미지가져오기
+ 		//String memImg = repo.selectImg(id);
          List<AppealVO> list = repo.selectAppealList(id,res[1], res[2]);
 
          request.setAttribute("list", list);
          request.setAttribute("totalPage", res[0]);
+         //request.setAttribute("memImg", memImg);
          
       }catch( Exception ex ){
          throw new CommandException("CommandInput.java < 입력시 > " + ex.toString() ); 
