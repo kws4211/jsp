@@ -28,7 +28,7 @@
 </head>
 <body>
 <jsp:include page="tukheader.jsp"></jsp:include>
-<h3>내가 툭한 사람</h3>
+<h3 class="h3_title">내가 툭한 사람</h3>
 <%if(list.size() != 0){ %>
 <%for(TukVO vo : list){ %>
 <div class="container">
@@ -46,7 +46,7 @@
                         </div>
                         <!-- 프로필이미지 -->
                         <div class="user">
-                            <img class="img-circle" src="https://www2.mmu.ac.uk/media/mmuacuk/style-assets/images/r-research/profile-Zeyad.jpg"/>
+                            <img class="img-circle" src="<%= vo.getMemImg() %>"/>
                         </div>
                         <div class="content">
                             <div class="main">
@@ -132,11 +132,10 @@
 <!--         <div class="col-sm-1"></div> -->
 </div> <!-- end col-sm-10 -->
 </div> <!-- end row -->
-    <div class="space-200"></div>
 </div>
                     <%}%> <!-- end of for -->
 					<%}else{ %>
-					내가 툭한 사람이 없습니다.
+					<h4 class="empty_text">내가 툭한 사람이 없습니다.</h4>
 					
 					
 					

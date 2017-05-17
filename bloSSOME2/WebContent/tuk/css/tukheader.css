@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+
+div.header {
+	height: 58px;
+	background-color: black;
+	margin-top: -60px;
+}
+
+div.header .MainName {
+	float: left;
+	margin-left: 15%;
+	margin-top: 10px;
+	color: white;
+}
+
+div.header .Menu {
+	float: right;
+	margin-right: 20%;
+	margin-top: 15px;
+}
+
+div.header .Menu ul li {
+	display: inline;
+	border-left: 1px solid #999;
+	padding: 0 10px;
+}
+
+div.header .Menu ul li a{
+	color : gray;
+	text-decoration: none;
+}
+
+div.header .Menu ul li a:hover{
+	color: white;
+}
+
+div.header .Menu ul li:first-child {
+	border-left: none;
+}

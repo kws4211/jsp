@@ -48,7 +48,7 @@ if( obj2 != null){
 </head>
 <body>
 <jsp:include page="../bloMain/mainHeader.jsp"></jsp:include>
-<h3>이상형찾기 결과입니다! 당신의 이상형을 만나보세요</h3>
+<h3 class="h3_title">이상형찾기 결과입니다! 당신의 이상형을 만나보세요</h3>
 <%for(TukVO vo : list2){ %>
 <div class="container">
     <div class="row">
@@ -64,7 +64,7 @@ if( obj2 != null){
                         </div>
                         <!-- 프로필이미지 -->
                         <div class="user">
-                            <img class="img-circle" src="https://www2.mmu.ac.uk/media/mmuacuk/style-assets/images/r-research/profile-Zeyad.jpg"/>
+                            <img class="img-circle" src="<%= vo.getMemImg() %>"/>
                         </div>
                         <div class="content">
                             <div class="main">
@@ -157,7 +157,6 @@ if( obj2 != null){
 <!--         <div class="col-sm-1"></div> -->
 </div> <!-- end col-sm-10 -->
 </div> <!-- end row -->
-    <div class="space-200"></div>
 </div>
 <%}%> <!-- end of for -->
 </body>
