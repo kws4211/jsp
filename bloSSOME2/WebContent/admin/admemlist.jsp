@@ -8,6 +8,8 @@
 	List<MemVO> list = (List<MemVO>)request.getAttribute("list");
 	// 회원관리 총페이지수
 	int total = (int)request.getAttribute("total");
+	// 전체보기
+	int alllist = (int)request.getAttribute("alllist");
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -80,6 +82,10 @@
 						<!-- 페이지생성 -->
 						<%for(int i = 1 ; i <= total ; i++){ %>
 							<a href="index.admin?cmd=memlist&pnum=<%=i %>">&#171;<%=i %>&#187;</a>
+						<%} %>
+						<!-- 검색후 전체보기 -->
+						<%if( alllist == 1){ %>
+							<a href="index.admin?cmd=memlist&pnum=<%=alllist %>">전체보기</a>
 						<%} %>
 					</td>
 				</tr>
