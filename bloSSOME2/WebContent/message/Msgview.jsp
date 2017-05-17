@@ -7,13 +7,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/bloSSOME2/message/css/msgview.css">
 </head>
 <body>
-	글번호 : <%=vo.getMsgNum() %> <br/>
-	보낸사람ID : <%=vo.getMemId() %><br/>
-	보낸사람이름 : <%=vo.getMsgName() %><br/>
-	내용 : <%=vo.getMsgContent() %><br/>
-	
+<%-- 	글번호 : <%=vo.getMsgNum() %> <br/> --%>
 	<div class="container">
     <blockquote class="quote-box">
       <p class="quotation-mark">
