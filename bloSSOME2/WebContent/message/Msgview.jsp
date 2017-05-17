@@ -8,9 +8,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
-<link rel="stylesheet" href="/bloSSOME2/message/css/msgview.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="/bloSSOME2/lib/alopex-ui.min.js"></script> 
+<script type="text/javascript" src="/bloSSOME2/message/js/Msgview.js"></script> 
 <style type="text/css">
 blockquote{
     border-left:none
@@ -36,7 +36,7 @@ blockquote{
     
     margin-top: -10px;
     font-weight: bold;
-    font-size:100px;
+    font-size:80px;
     color:#4ADFCC;
     font-family: "Times New Roman", Georgia, Serif;
     
@@ -45,17 +45,10 @@ blockquote{
 .quote-text{
     font-size: 19px;
     margin-top: -65px;
-    margin-bottom: 48%;	
+    margin-bottom: 54%;	
     
 }
 </style>
-<script type="text/javascript">
-	$(function(){
-		$("body").click(function(){
-			$a.close();
-		});
-	});
-</script>
 </head>
 <body>
 <%-- 	글번호 : <%=vo.getMsgNum() %> <br/> --%>
