@@ -17,4 +17,8 @@ $(function(){
 		window.location.href="search.login?cmd=search";
 	});
 	
+	$("#sign").click(function(){
+		window.location.href="insert.login?cmd=loginsing";
+	});
+	
 });
