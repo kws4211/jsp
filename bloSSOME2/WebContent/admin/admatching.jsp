@@ -49,19 +49,7 @@
 						</td>
 					<%} %>
 				<%}else{ %>
-				<tr>
-					<td>0001</td>
-					<td>dnwks78</td>
-					<td>모시기</td>
-					<td>ghdrld34</td>
-					<td>홍씨</td>
-					<td>2017/05/10</td>
-					<td>
-						<a href="matching.admin?cmd=admat&num=0" class="btn btn-danger btn-xs">
-							<span class="glyphicon glyphicon-remove" ></span>매칭해제
-						</a>
-					</td>
-				</tr>
+				
 				<%} %>
 			</table>
 		</div>
