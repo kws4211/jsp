@@ -44,12 +44,7 @@
 	    		<%} %>
 	    	<%} %>
     	<%}else{ %>
-	        <div class="qna badger-left badger-danger" data-badger="신고">신고 내용</div>
-	        <div class="qna badger-left badger-info" data-badger="1:1 질문">1:1질문내용</div>
-	        <div class="qna badger-right badger-success" data-badger="1:1 질문 답변o">1:1질문 답변내용</div>
-	        <div class="qna badger-right" data-badger="1:1 질문 답변x">답변이 등록되지 않았습니다</div>
-	        <div class="qna badger-right badger-success" data-badger="신고 답변내용o">신고 답변내용</div>
-	        <div class="qna badger-right" data-badger="신고 답변내용x">답변이 등록되지 않았습니다</div>
+
         <%} %>
     </div>
     <div class="qna" align="center">
