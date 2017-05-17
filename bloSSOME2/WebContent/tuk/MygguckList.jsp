@@ -29,7 +29,7 @@
 </head>
 <body>
 <jsp:include page="tukheader.jsp"></jsp:include>
-<h3>내가 꾸욱한 사람</h3>
+<h3 class="h3_title">내가 꾸욱한 사람</h3>
 <%if(list.size() != 0){ %>
 <%for(TukVO vo : list){ %>
 <div class="container">
@@ -137,7 +137,7 @@
 </div>
                     <%}%> <!-- end of for -->
 					<%}else{ %>
-						내가 꾹한 사람이 없습니다.					
+						<h4 class="empty_text">내가 꾹한 사람이 없습니다.	</h4>				
 					 <%}%> <!-- end of if -->
 
 

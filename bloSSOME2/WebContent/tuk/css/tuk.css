@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900');
-h3 {
+.h3_title {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	text-align: center;
+}
+.empty_text{
+	margin-top: 50px;
 	text-align: center;
 }
 body {
@@ -87,9 +93,12 @@ body {
 
 
 .card{
+	/* 	카드 넓이 수정 */
+	width: 900px;
     background: none repeat scroll 0 0 #FFFFFF;
     border-radius: 4px;
     color: #444444;
+    
 }
 .card-container, .front, .back {
 	width: 100%;
