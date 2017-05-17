@@ -41,7 +41,6 @@
 						<td><%=vo.getMsgName() %></td>
 						<!-- if문으로 상태에 따라 다르게 출력 -->
 						<td>
-						<input type="hidden" id="num" value="<%=vo.getMsgNum() %>"/>
 							<%if(vo.getMsgState()==2){ %>
 							<a href="#" class="btn btn-danger btn-xs">
 								<span class="glyphicon glyphicon-remove"></span>읽지않음
@@ -51,6 +50,7 @@
 								<span class="glyphicon glyphicon-edit" ></span>읽음
 							</a>	
 							<%} %>
+						<input type="hidden" id="num" value="<%=vo.getMsgNum() %>"/>
 						</td>
 					</tr>
 					<%}%>

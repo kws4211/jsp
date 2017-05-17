@@ -74,6 +74,18 @@ public class MessageRepository {
 		}
 	}
 	
+	public MsgVO sendview(String num) {
+		SqlSession sqlSess = getSelSessionFactory().openSession();
+		try{
+			HashMap map = new HashMap();
+			map.put("num", num);
+			
+			return sqlSess.selectOne(namespace + ".sendview", map);
+		}finally{
+			sqlSess.close();
+		}
+	}
+	
 //	public int countRead(String num) {
 //		SqlSession sqlSess = getSelSessionFactory().openSession();
 //		try{

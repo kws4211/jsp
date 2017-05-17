@@ -24,6 +24,7 @@ public class CmdMsgSendList implements Command{
 		MessageRepository repo = new MessageRepository();
 		List<MsgVO> list = repo.Sendalllist(id);
 		
+		
 		request.setAttribute("list", list);
 		return next;
 	}
