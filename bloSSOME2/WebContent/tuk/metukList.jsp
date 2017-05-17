@@ -59,7 +59,7 @@ $(function(){
 </head>
 <body>
 
-<jsp:include page="../bloMain/mainHeader.jsp"></jsp:include>
+<jsp:include page="tukheader.jsp"></jsp:include>
 <h3>나를 툭한 사람</h3>
 <%if(list.size() != 0){ %>
 <%for(TukVO vo : list){ %>

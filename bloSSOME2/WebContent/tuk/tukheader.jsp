@@ -15,14 +15,13 @@
 			<ul>
 				<li><a href="index.blossom">HOME</a></li>
 				<li><a href="index.login?cmd=logout">Logout</a></li>
-				<li><a href="#">Me tu</a></li>
-				<li><a href="#">I tuk</a></li>
-				<li><a href="#">Me GGUCK</a></li>
-				<li><a href="#">I GGUCK</a></li>
-				<li><a href="">Matching</a></li>
+				<li><a href="index.tuk?cmd=metuk">나를툭</a></li>
+				<li><a href="index.tuk?cmd=mytuk">내가툭</a></li>
+				<li><a href="index.tuk?cmd=megguck">나를꾸욱</a></li>
+				<li><a href="index.tuk?cmd=mygguck">내가꾸욱</a></li>
+				<li><a href="index.tuk?cmd=matList">매칭현황</a></li>
 			</ul>
 		</div>
 	</div>
-	
 </body>
 </html>

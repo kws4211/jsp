@@ -47,6 +47,7 @@ if( obj2 != null){
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="../bloMain/mainHeader.jsp"></jsp:include>
 <h3>이상형찾기 결과입니다! 당신의 이상형을 만나보세요</h3>
 <%for(TukVO vo : list2){ %>
 <div class="container">
