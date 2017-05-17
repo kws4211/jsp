@@ -31,9 +31,7 @@ public class AddMemVO {
 	private String memJob;
 	//이미지
 	private String memImg;
-	
 		
-	
 
 
 
