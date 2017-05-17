@@ -14,8 +14,9 @@ public class TukVO {
 	private	int		choiceState;
 	//배경 이미지주소
 	private	String	choiceMainImg;
+	
 	//프로필 이미지주소
-	private	String	choiceSubImg;
+	private	String	memImg;
 	
 	//이름
 	private	String	memName;
@@ -91,13 +92,15 @@ public class TukVO {
 		this.choiceMainImg = choiceMainImg;
 	}
 
-	public String getChoiceSubImg() {
-		return choiceSubImg;
+
+	public String getMemImg() {
+		return memImg;
 	}
 
-	public void setChoiceSubImg(String choiceSubImg) {
-		this.choiceSubImg = choiceSubImg;
+	public void setMemImg(String memImg) {
+		this.memImg = memImg;
 	}
+
 
 	public String getMemName() {
 		return memName;

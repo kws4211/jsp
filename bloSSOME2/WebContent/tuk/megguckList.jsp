@@ -73,7 +73,7 @@ $(function(){
                         </div>
                         <!-- 프로필이미지 -->
                         <div class="user">
-                            <img class="img-circle" src="https://www2.mmu.ac.uk/media/mmuacuk/style-assets/images/r-research/profile-Zeyad.jpg"/>
+                            <img class="img-circle" src="<%= vo.getMemImg() %>"/>
                         </div>
                         <div class="content">
                             <div class="main">
