@@ -22,9 +22,6 @@ public class CommandMain implements Command{
 		int metchingMem = repo.MetchingMem();
 		//툭에서 불러오기
 		int waitMem = totalMem-metchingMem;
-		System.out.println(totalMem);
-		System.out.println(waitMem);
-		System.out.println(metchingMem);
 		int[] result = {totalMem,waitMem,metchingMem};
 		
 		request.setAttribute("res", result);

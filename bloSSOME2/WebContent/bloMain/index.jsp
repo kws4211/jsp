@@ -83,7 +83,7 @@
                             	<li><a class="page-scroll" href="index.login?cmd=inmem">회원가입</a></li>
                             <%}else{ %>
                             	<li><a class="page-scroll" href="index.login?cmd=logout">Logout</a></li>
-                            	<li><a class="page-scroll" href="index.member?cmd=menu"><%=session.getAttribute("id") %></a></li>
+                            	<li><a class="page-scroll" href="index.member?cmd=menu"><%=session.getAttribute("nick") %></a></li>
                             	<li><a class="page-scroll" href="index.appeal">어필게시판</a></li>
                             <%} %>
                             <li><a class="page-scroll" href="index.find">이상형찾기</a></li>

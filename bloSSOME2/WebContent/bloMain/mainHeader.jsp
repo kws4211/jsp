@@ -18,7 +18,7 @@
 					<li><a href="index.login?cmd=login">Login</a></li>
                 <%}else{ %>
                 	<li>
-                		<span class="submenu"><%=session.getAttribute("id") %></span>
+                		<span class="submenu"><%=session.getAttribute("nick") %></span>
                 		<ul>
                 			<li><a href="index.tuk">Tuk</a></li>
                 			<li><a href="index.msg">쪽지함</a></li>
