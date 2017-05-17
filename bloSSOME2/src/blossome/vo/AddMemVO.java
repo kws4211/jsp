@@ -27,11 +27,13 @@ public class AddMemVO {
 	private String memCount;
 	//직업
 	private String memJob;
-
+	//이미지
+	private String memImg;
 	
 		
 	
-	
+
+
 
 	// 생성자
 	public AddMemVO()
@@ -255,7 +257,19 @@ public class AddMemVO {
 		this.memJob = memJob;
 	}
 
+	
+	
+	
+	
+	public String getMemImg() {
+		return memImg;
+	}
 
+
+
+	public void setMemImg(String memImg) {
+		this.memImg = memImg;
+	}
 	
 	
 	
