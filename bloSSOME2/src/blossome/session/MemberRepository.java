@@ -47,10 +47,10 @@ public class MemberRepository {
 	/*
 	 * 매칭을 기다리는 회원
 	 */
-	public int WaitMem() {
+	public int MetchingMem() {
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try {
-			return sqlSess.selectOne(namespace + ".waitMem");
+			return sqlSess.selectOne(namespace + ".metchingMem");
 		} finally {
 			sqlSess.close();
 		}

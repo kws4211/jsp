@@ -21,10 +21,10 @@
 	where mem_state  not in(3)
 </select>
 
-<select id="waitMem" resultType="int">
+<select id="metchingMem" resultType="int">
 	select count(*) 
 	from blo_member
-	where mem_id not in(SELECT c.mem_id 
+	where mem_id in(SELECT c.mem_id 
 						FROM blo_member m , BLO_CHOICE c
 						where m.mem_id = c.mem_id and c.choice_state = 4
 						group by c.mem_id)

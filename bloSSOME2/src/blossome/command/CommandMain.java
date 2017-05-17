@@ -19,11 +19,13 @@ public class CommandMain implements Command{
 		//전체인원
 		int totalMem = repo.checkMem();
 		//매칭을 기다리는 멤버
-		int waitMem = repo.WaitMem();
+		int metchingMem = repo.MetchingMem();
 		//툭에서 불러오기
-		int matchingMem = totalMem-waitMem;
-		
-		int[] result = {totalMem,waitMem,matchingMem};
+		int waitMem = totalMem-metchingMem;
+		System.out.println(totalMem);
+		System.out.println(waitMem);
+		System.out.println(metchingMem);
+		int[] result = {totalMem,waitMem,metchingMem};
 		
 		request.setAttribute("res", result);
 		return next;
