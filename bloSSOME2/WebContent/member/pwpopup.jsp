@@ -12,7 +12,7 @@
     			<div class="input-group">
 					<input type="hidden" id="sel" value="<%=sel %>"/>
       				<input name="appendedtext" class="form-control" id="appendedtext"name="pw" type="password" placeholder="비밀번호 입력해주세요">
-      				<span id="btn" class="input-group-addon">보내기</span>
+      				<span id="btn" class="input-group-addon">입력</span>
 				</div>
 			</div>
 		</div>
