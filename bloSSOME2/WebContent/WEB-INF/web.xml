@@ -48,7 +48,6 @@
     <url-pattern>/FindControl</url-pattern>
     <url-pattern>*.find</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>LoginControl</servlet-name>
     <servlet-class>blossome.control.LoginControl</servlet-class>
