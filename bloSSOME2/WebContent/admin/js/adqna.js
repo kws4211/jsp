@@ -12,12 +12,6 @@ function openWin() {
 		height : 400,
 		data : {"item" : data},
 		url : "/bloSSOME2/admin/adqnareple.jsp", // 팝업에 표시될 HTML
-		iframe : false, // default
-		callback : function(data) {
-
-		},
-		xButtonClickCallback : function(el) {
-			return false; 
-		}
+		iframe : true // default
 	});
 }

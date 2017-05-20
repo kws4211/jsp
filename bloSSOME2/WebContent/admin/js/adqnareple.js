@@ -4,8 +4,9 @@ $(function(){
 	    	var text = param["item"];
 	        $("#text").val(text);
 	    }
-	});
-	$("#rebtn").click(function(){
-		$a.close("");
+	    $("#rebtn").click(function(){
+	    	alert("D");
+			$a.close();
+		});
 	});
 });
