@@ -4,7 +4,7 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="blossome.mapper.MatchingMapper">
 <select id="list" resultType="blossome.vo.MatchingVO">
-	select b.mat_num, b.mat_id1, m1.mem_name as mat_id1name, b.mat_id2, m2.mem_name as mat_id1name, b.mat_state, b.mat_date  
+	select b.mat_num, b.mat_id1, m1.mem_name as mat_id1name, b.mat_id2, m2.mem_name as mat_id2name, b.mat_state, b.mat_date  
 	from blo_matching b, blo_member m1,blo_member m2
 	where b.mat_id1 = m1.mem_id and b.mat_id2 = m2.mem_id
 </select>
