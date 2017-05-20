@@ -77,8 +77,8 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li><a class="page-scroll" href="xx.blossom?cmd=main">Home</a></li>
                             <li><a class="page-scroll" href="#about-section">회원승인</a></li>
-                            <li><a class="page-scroll" href="#services-section">문의</a></li>
-                            <li><a class="page-scroll" href="#portfolio-section">매칭관리</a></li>
+                            <li><a class="page-scroll" href="matching.admin?cmd=adqna">문의</a></li>
+                            <li><a class="page-scroll" href="matching.admin?cmd=admat">매칭관리</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                   </div><!-- /.container -->

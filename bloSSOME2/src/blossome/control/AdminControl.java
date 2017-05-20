@@ -56,7 +56,7 @@ public class AdminControl extends HttpServlet {
 		String nextPage = "";
 		String cmdKey	= request.getParameter("cmd");//페이지 명을 보낼 파라미터 이름
 		if( cmdKey == null ){
-			cmdKey = "admat";//메인 페이지 명
+			cmdKey = "adqna";//메인 페이지 명
 		}
 		
 		Command cmd = null;
