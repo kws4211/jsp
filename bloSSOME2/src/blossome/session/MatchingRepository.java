@@ -11,7 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import blossome.vo.MatchingVO;
 
 public class MatchingRepository {
-	String namespace = "blossom.mapper.QnaMapper";
+	String namespace = "blossome.mapper.MatchingMapper";
 
 	private SqlSessionFactory getSelSessionFactory(){
 		String resource = "blossom-config.xml";
@@ -29,7 +29,8 @@ public class MatchingRepository {
 	public List<MatchingVO> selectlist(){
 		SqlSession sqlSess = getSelSessionFactory().openSession();
 		try {
-			return null;
+			String statment = namespace + ".list";
+			return sqlSess.selectList(statment);
 		} finally {
 			sqlSess.close();
 		}
