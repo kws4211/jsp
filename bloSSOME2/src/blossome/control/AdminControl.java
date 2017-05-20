@@ -31,6 +31,7 @@ public class AdminControl extends HttpServlet {
 
     public AdminControl() {
         super();       
+        
 		initCommand();
 	}
 
