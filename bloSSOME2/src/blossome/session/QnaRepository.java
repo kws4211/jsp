@@ -11,6 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import blossome.vo.QnaVO;
 
 public class QnaRepository {
+	
 	String namespace = "blossom.mapper.QnaMapper";
 
 	private SqlSessionFactory getSelSessionFactory(){
@@ -21,7 +22,6 @@ public class QnaRepository {
 		} catch (Exception e) {
 			
 		}
-		
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(input);
 		return factory;
 	}
