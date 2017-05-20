@@ -10,12 +10,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"><link rel="stylesheet" href="/bloSSOME2/admin/css/admatching.css">
 <link rel="stylesheet" href="/bloSSOME2/admin/css/admatching.css">
 <link rel="stylesheet" href="/bloSSOME2/lib/alopex-ui-default.css" />
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/bloSSOME2/lib/alopex-ui.min.js"></script>
+<script type="text/javascript" src="/bloSSOME2/lib/alopex-ui.min.js"></script>
 <script type="text/javascript" src="/bloSSOME2/admin/js/adqna.js"></script>
 
 </head>
@@ -45,6 +45,7 @@
 						<td><%=vo.getQnaDate() %></td>
 						<!-- if문으로 상태에 따라 다르게 출력 -->
 						<td>
+							<input type="hidden" id="qna" value="<%=vo.getQuestionContent() %>" />
 							<%if(vo.getAnswerContent()==null){ %>
 							<a href="#" class="btn btn-danger btn-xs">
 								<span class="glyphicon glyphicon-remove"></span>답변대기중
@@ -64,6 +65,7 @@
 					<td>질문이 없습니다</td>
 					<td>2017/05/10</td>
 					<td>
+						<input type="hidden" id="qna" value="넘어가랏!" />
 						<a href="#" class="btn btn-danger btn-xs">
 							<span class="glyphicon glyphicon-remove" ></span>답변대기중
 						</a>
