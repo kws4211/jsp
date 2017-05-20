@@ -13,6 +13,7 @@ import blossome.command.Command;
 import blossome.command.CommandException;
 import blossome.command.CommandNull;
 import blossome.command.admin.CmdadQnaList;
+import blossome.command.admin.CmdadmatchingList;
 import blossome.command.appeal.CmdAppealList;
 import blossome.command.appeal.CmdAppealView;
 import blossome.command.tuk.CmdTukList;
@@ -36,6 +37,7 @@ public class AdminControl extends HttpServlet {
 	private void initCommand(){
 		commandMap = new HashMap();
 		commandMap.put("adqna", new CmdadQnaList("adqna.jsp"));
+		commandMap.put("admat", new CmdadmatchingList("admatching.jsp"));
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

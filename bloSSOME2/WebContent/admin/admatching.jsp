@@ -1,5 +1,8 @@
+<%@page import="blossome.vo.MatchingVO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% List<MatchingVO> list = (List<MatchingVO>)request.getAttribute("list"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -30,6 +33,21 @@
 					</tr>
 				</thead>
 				<!-- 추가되는 부분 for문 돌릴부분 -->
+				<%if(list.size() != 0 ){ %>
+					<%for(MatchingVO vo : list){ %>
+						<td><%=vo.getMatNum() %></td>
+						<td><%=vo.getMatId1() %></td>
+						<td><%=vo.getMatId1name() %></td>
+						<td><%=vo.getMatId2() %></td>
+						<td><%=vo.getMatId2name() %></td>
+						<td><%=vo.getMatDate() %></td>
+						<td>
+							<a href="#" class="btn btn-danger btn-xs">
+								<span class="glyphicon glyphicon-remove" ></span>매칭해제
+							</a>
+						</td>
+					<%} %>
+				<%}else{ %>
 				<tr>
 					<td>0001</td>
 					<td>dnwks78</td>
@@ -43,6 +61,7 @@
 						</a>
 					</td>
 				</tr>
+				<%} %>
 			</table>
 		</div>
 	</div>
